@@ -10,5 +10,5 @@ package agentx.control;
  * @author matiasmikkola
  */
 public class test {
-    jaijdd
+   
 }
