@@ -6,6 +6,7 @@
 package agentx.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     private String gameName;
-    private int[] gameData;
+    private String saveTime;
 
     public String getGameName() {
         return gameName;
@@ -23,14 +24,47 @@ public class Game implements Serializable{
         this.gameName = gameName;
     }
 
-    public int[] getGameData() {
-        return gameData;
+    public String getSaveTime() {
+        return saveTime;
     }
 
-    public void setGameData(int[] gameData) {
-        this.gameData = gameData;
+    public void setSaveTime(String saveTime) {
+        this.saveTime = saveTime;
     }
-    
+
+    public Game() {
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" + "gameName=" + gameName + ", saveTime=" + saveTime + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.gameName);
+        hash = 79 * hash + Objects.hashCode(this.saveTime);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Game other = (Game) obj;
+        if (!Objects.equals(this.gameName, other.gameName)) {
+            return false;
+        }
+        if (!Objects.equals(this.saveTime, other.saveTime)) {
+            return false;
+        }
+        return true;
+    }
     
     
 }
