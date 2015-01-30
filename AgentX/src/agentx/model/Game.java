@@ -13,10 +13,5 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     private String gameName;
-    private int[10] gameData;
-
-   
-    
-    
-    
+    private int[10] gameData;   
 }
