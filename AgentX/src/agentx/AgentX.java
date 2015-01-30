@@ -5,6 +5,7 @@
  */
 
 package agentx;
+import agentx.model.Inventory;
 import agentx.model.Player;
 
 
@@ -25,6 +26,15 @@ public class AgentX {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        Inventory inventoryOne = new Inventory();
+        
+        inventoryOne.setItem("Wrench");
+        inventoryOne.setQuantity(1);
+        inventoryOne.setType(3);
+        
+        String inventoryInfo = inventoryOne.toString();
+        System.out.println(inventoryInfo);
     }
     
 }
