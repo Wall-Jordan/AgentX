@@ -27,13 +27,7 @@ public class AgentX {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
-        Game gameOne = new Game();
-        
-        gameOne.setGameName("Agent Fred");
-        gameOne.setSaveTime("1.30.15 23:59");
-        
-        String gameInfo = gameOne.toString();
-        System.out.println(gameInfo);
+
     }
     
 }
