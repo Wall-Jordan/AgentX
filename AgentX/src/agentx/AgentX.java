@@ -6,6 +6,7 @@
 
 package agentx;
 import agentx.model.Inventory;
+import agentx.model.Game;
 import agentx.model.Player;
 
 
