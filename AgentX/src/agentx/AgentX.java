@@ -21,6 +21,11 @@ public class AgentX {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        /***********************************************************************
+         * Initialize player instance.
+         * Written by Team 3
+         **********************************************************************/
         Player playerOne = new Player();
        
         playerOne.setName("Fred Flintstone");
@@ -28,6 +33,10 @@ public class AgentX {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        /***********************************************************************
+         * Initialize inventory instance.
+         * Written by Chris Hanna
+         **********************************************************************/
         Inventory inventoryOne = new Inventory();
         
         inventoryOne.setItem("Wrench");
