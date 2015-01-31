@@ -5,11 +5,15 @@
  */
 
 package agentx;
+import agentx.model.Actor;
 import agentx.model.Backpack;
 import agentx.model.Fuel_Container;
 import agentx.model.Inventory;
 import agentx.model.Game;
+import agentx.model.GameBoard;
 import agentx.model.Player;
+import agentx.model.Section;
+import agentx.model.TimeShip;
 import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
 
@@ -101,6 +105,58 @@ public class AgentX {
         weapons_beltOne.setBeltItems("Knife");
         String weapons_beltInfo = weapons_beltOne.toString();
         System.out.println(weapons_beltInfo);
+        
+        /***********************************************************************
+         * Initialize Actor instance.
+         * Written by Jordan Wall
+         **********************************************************************/
+        Actor actorOne = new Actor();
+        
+        actorOne.setStamina(68.0);
+        actorOne.setDescription("Agent-X the CIA agent trying to save the world"
+                + " by finding the terrorist Chaotica.");
+        actorOne.setHealth(99.00);
+        actorOne.setType("main player");
+        
+        String actorOneInfo = actorOne.toString();
+        System.out.println(actorOneInfo);
+        
+        
+        /***********************************************************************
+         * Initialize TimeShip instance.
+         * Written by Jordan Wall
+         **********************************************************************/
+        TimeShip timeShipOne = new TimeShip();
+        
+        timeShipOne.setFuel(20.0);
+        timeShipOne.setStatus(1);
+        timeShipOne.setDescription("State of the art time ship. Top of it's class."
+                + " Goverment only edition.");
+        
+        String timeShipInfo = timeShipOne.toString();
+        System.out.println(timeShipInfo);
+        
+        /***********************************************************************
+         * Initialize GameBoard instance.
+         * Written by Jordan Wall
+         **********************************************************************/
+        GameBoard gameBoardOne = new GameBoard();
+        
+        gameBoardOne.setSection(1);
+        
+        String gameBoardInfo = gameBoardOne.toString();
+        System.out.println(gameBoardInfo);
+        
+        /***********************************************************************
+         * Initialize Section instance.
+         * Written by Jordan Wall
+         **********************************************************************/
+        Section sectionOne = new Section();
+        
+        sectionOne.setLocation(4);
+        
+        String sectionInfo = sectionOne.toString();
+        System.out.println(sectionInfo);
+        
     }
-    
 }
