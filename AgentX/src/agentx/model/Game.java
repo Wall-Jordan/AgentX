@@ -15,6 +15,9 @@ import java.util.Objects;
 public class Game implements Serializable{
     private String gameName;
     private String saveTime;
+    
+    public Game() {
+    }
 
     public String getGameName() {
         return gameName;
@@ -30,9 +33,6 @@ public class Game implements Serializable{
 
     public void setSaveTime(String saveTime) {
         this.saveTime = saveTime;
-    }
-
-    public Game() {
     }
 
     @Override
