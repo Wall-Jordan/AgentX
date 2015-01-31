@@ -6,6 +6,7 @@
 
 package agentx;
 import agentx.model.Backpack;
+import agentx.model.Fuel_Container;
 import agentx.model.Inventory;
 import agentx.model.Game;
 import agentx.model.Player;
@@ -68,6 +69,16 @@ public class AgentX {
         backpackOne.setBackpackItems("Drill");
         String backpackInfo = backpackOne.toString();
         System.out.println(backpackInfo);
+        
+        /***********************************************************************
+         * Initialize Fuel_Container instance.
+         * Written by Chris Hanna
+         **********************************************************************/
+        Fuel_Container fuel_containerOne = new Fuel_Container();
+        
+        fuel_containerOne.setGallons(0);
+        String fuel_containerInfo = fuel_containerOne.toString();
+        System.out.println(fuel_containerInfo);
     }
     
 }
