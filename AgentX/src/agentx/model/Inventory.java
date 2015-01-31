@@ -12,6 +12,10 @@ public class Inventory implements Serializable{
     private int quantity;
     private int type;
 
+    
+    public Inventory() {
+    }
+    
     public String getItem() {
         return item;
     }
@@ -34,9 +38,6 @@ public class Inventory implements Serializable{
 
     public void setType(int type) {
         this.type = type;
-    }
-
-    public Inventory() {
     }
 
     @Override
