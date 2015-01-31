@@ -11,6 +11,7 @@ import agentx.model.Inventory;
 import agentx.model.Game;
 import agentx.model.Player;
 import agentx.model.Weapon;
+import agentx.model.Weapons_Belt;
 
 
 /**
@@ -82,7 +83,7 @@ public class AgentX {
         System.out.println(fuel_containerInfo);
         
         /***********************************************************************
-         * Initialize Fuel_Container instance.
+         * Initialize Weapon instance.
          * Written by Chris Hanna
          **********************************************************************/
         Weapon weaponOne = new Weapon();
@@ -90,6 +91,16 @@ public class AgentX {
         weaponOne.setDamage(0);
         String weaponInfo = weaponOne.toString();
         System.out.println(weaponInfo);
+        
+        /***********************************************************************
+         * Initialize Weapons_Belt instance.
+         * Written by Chris Hanna
+         **********************************************************************/
+        Weapons_Belt weapons_beltOne = new Weapons_Belt();
+        
+        weapons_beltOne.setBeltItems("Knife");
+        String weapons_beltInfo = weapons_beltOne.toString();
+        System.out.println(weapons_beltInfo);
     }
     
 }
