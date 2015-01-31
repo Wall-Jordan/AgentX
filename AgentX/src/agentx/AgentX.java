@@ -10,6 +10,7 @@ import agentx.model.Fuel_Container;
 import agentx.model.Inventory;
 import agentx.model.Game;
 import agentx.model.Player;
+import agentx.model.Weapon;
 
 
 /**
@@ -79,6 +80,16 @@ public class AgentX {
         fuel_containerOne.setGallons(0);
         String fuel_containerInfo = fuel_containerOne.toString();
         System.out.println(fuel_containerInfo);
+        
+        /***********************************************************************
+         * Initialize Fuel_Container instance.
+         * Written by Chris Hanna
+         **********************************************************************/
+        Weapon weaponOne = new Weapon();
+        
+        weaponOne.setDamage(0);
+        String weaponInfo = weaponOne.toString();
+        System.out.println(weaponInfo);
     }
     
 }
