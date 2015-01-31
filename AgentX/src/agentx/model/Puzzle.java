@@ -38,10 +38,7 @@ public class Puzzle implements Serializable{
             return false;
         }
         final Puzzle other = (Puzzle) obj;
-        if (Double.doubleToLongBits(this.solved) != Double.doubleToLongBits(other.solved)) {
-            return false;
-        }
-        return true;
+        return Double.doubleToLongBits(this.solved) == Double.doubleToLongBits(other.solved);
     }
 
     @Override
