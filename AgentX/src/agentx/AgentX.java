@@ -5,6 +5,7 @@
  */
 
 package agentx;
+import agentx.model.Backpack;
 import agentx.model.Inventory;
 import agentx.model.Game;
 import agentx.model.Player;
@@ -57,6 +58,16 @@ public class AgentX {
         
         String gameInfo = gameOne.toString();
         System.out.println(gameInfo);
+        
+        /***********************************************************************
+         * Initialize Backpack instance.
+         * Written by Chris Hanna
+         **********************************************************************/
+        Backpack backpackOne = new Backpack();
+        
+        backpackOne.setBackpackItems("Drill");
+        String backpackInfo = backpackOne.toString();
+        System.out.println(backpackInfo);
     }
     
 }
