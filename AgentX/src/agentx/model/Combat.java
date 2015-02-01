@@ -15,7 +15,6 @@ public class Combat implements Serializable {
     private double boss;
 
     public Combat() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public double getBoss() {
@@ -26,14 +25,15 @@ public class Combat implements Serializable {
         this.boss = boss;
     }
 
-    public Combat(double boss) {
-        this.boss = boss;
+    @Override
+    public String toString() {
+        return "Combat{" + "boss=" + boss + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 23 * hash + (int) (Double.doubleToLongBits(this.boss) ^ (Double.doubleToLongBits(this.boss) >>> 32));
+        int hash = 7;
+        hash = 71 * hash + (int) (Double.doubleToLongBits(this.boss) ^ (Double.doubleToLongBits(this.boss) >>> 32));
         return hash;
     }
 
@@ -50,16 +50,5 @@ public class Combat implements Serializable {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "combat{" + "boss=" + boss + '}';
-    }
-
-    public void setBoss() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+    }   
 }

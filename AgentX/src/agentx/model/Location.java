@@ -16,7 +16,6 @@ public class Location implements Serializable {
     private Boolean visited;
 
     public Location() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Boolean getVisited() {
@@ -34,8 +33,8 @@ public class Location implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.visited);
+        int hash = 3;
+        hash = 17 * hash + Objects.hashCode(this.visited);
         return hash;
     }
 
@@ -48,22 +47,14 @@ public class Location implements Serializable {
             return false;
         }
         final Location other = (Location) obj;
-        return Objects.equals(this.visited, other.visited);
+        if (!Objects.equals(this.visited, other.visited)) {
+            return false;
+        }
+        return true;
     }
-
-    public Location(Boolean visited) {
-        this.visited = visited;
-    }
-
-    public void setVisited() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-      
-}
-        
-        
-       
-        
+    
+    
     
 
-
+         
+}

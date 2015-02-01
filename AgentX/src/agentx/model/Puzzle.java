@@ -14,6 +14,9 @@ import java.io.Serializable;
 public class Puzzle implements Serializable{
     private double solved;
 
+    public Puzzle() {
+    }
+
     public double getSolved() {
         return solved;
     }
@@ -23,9 +26,14 @@ public class Puzzle implements Serializable{
     }
 
     @Override
+    public String toString() {
+        return "Puzzle{" + "solved=" + solved + '}';
+    }
+
+    @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.solved) ^ (Double.doubleToLongBits(this.solved) >>> 32));
+        int hash = 5;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.solved) ^ (Double.doubleToLongBits(this.solved) >>> 32));
         return hash;
     }
 
@@ -38,17 +46,10 @@ public class Puzzle implements Serializable{
             return false;
         }
         final Puzzle other = (Puzzle) obj;
-        return Double.doubleToLongBits(this.solved) == Double.doubleToLongBits(other.solved);
+        if (Double.doubleToLongBits(this.solved) != Double.doubleToLongBits(other.solved)) {
+            return false;
+        }
+        return true;
     }
-
-    @Override
-    public String toString() {
-        return "Puzzle{" + "solved=" + solved + '}';
-    }
-
-    public void setSolved() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
 }

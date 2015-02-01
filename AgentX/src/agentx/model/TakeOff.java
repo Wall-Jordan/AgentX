@@ -14,17 +14,17 @@ import java.io.Serializable;
 
 
 public class TakeOff implements Serializable{
-    
     private double instructions;
-              
-    public TakeOff(double instructions) {
-        this.instructions = instructions;
-        
-        
-    }
 
     public TakeOff() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public double getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(double instructions) {
+        this.instructions = instructions;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class TakeOff implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + (int) (Double.doubleToLongBits(this.instructions) ^ (Double.doubleToLongBits(this.instructions) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.instructions) ^ (Double.doubleToLongBits(this.instructions) >>> 32));
         return hash;
     }
 
@@ -53,15 +53,6 @@ public class TakeOff implements Serializable{
         }
         return true;
     }
-
     
     
-    public double getInstructions() {
-        return instructions;
-    }
-
-    public void setInstructions(double instructions) {
-        this.instructions = instructions;
-    }
-
 }

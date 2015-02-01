@@ -6,6 +6,7 @@
 package agentx.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -13,12 +14,11 @@ import java.io.Serializable;
  */
 public class Explore implements Serializable{
     private double fuel;
-    private double tool;
-    private double weapon;
-    private double instructions;
+    private String tool;
+    private String weapon;
+    private String instructions;
 
     public Explore() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public double getFuel() {
@@ -29,37 +29,42 @@ public class Explore implements Serializable{
         this.fuel = fuel;
     }
 
-    public double getTool() {
+    public String getTool() {
         return tool;
     }
 
-    public void setTool(double tool) {
+    public void setTool(String tool) {
         this.tool = tool;
     }
 
-    public double getWeapon() {
+    public String getWeapon() {
         return weapon;
     }
 
-    public void setWeapon(double weapon) {
+    public void setWeapon(String weapon) {
         this.weapon = weapon;
     }
 
-    public double getInstructions() {
+    public String getInstructions() {
         return instructions;
     }
 
-    public void setInstructions(double instructions) {
+    public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
 
     @Override
+    public String toString() {
+        return "Explore{" + "fuel=" + fuel + ", tool=" + tool + ", weapon=" + weapon + ", instructions=" + instructions + '}';
+    }
+
+    @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.fuel) ^ (Double.doubleToLongBits(this.fuel) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.tool) ^ (Double.doubleToLongBits(this.tool) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.weapon) ^ (Double.doubleToLongBits(this.weapon) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.instructions) ^ (Double.doubleToLongBits(this.instructions) >>> 32));
+        int hash = 3;
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.fuel) ^ (Double.doubleToLongBits(this.fuel) >>> 32));
+        hash = 29 * hash + Objects.hashCode(this.tool);
+        hash = 29 * hash + Objects.hashCode(this.weapon);
+        hash = 29 * hash + Objects.hashCode(this.instructions);
         return hash;
     }
 
@@ -75,29 +80,15 @@ public class Explore implements Serializable{
         if (Double.doubleToLongBits(this.fuel) != Double.doubleToLongBits(other.fuel)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.tool) != Double.doubleToLongBits(other.tool)) {
+        if (!Objects.equals(this.tool, other.tool)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.weapon) != Double.doubleToLongBits(other.weapon)) {
+        if (!Objects.equals(this.weapon, other.weapon)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.instructions) != Double.doubleToLongBits(other.instructions)) {
+        if (!Objects.equals(this.instructions, other.instructions)) {
             return false;
         }
         return true;
+    }  
     }
-
-    public Explore(double fuel, double tool, double weapon, double instructions) {
-        this.fuel = fuel;
-        this.tool = tool;
-        this.weapon = weapon;
-        this.instructions = instructions;
-    }
-
-    @Override
-    public String toString() {
-        return "Explore{" + "fuel=" + fuel + ", tool=" + tool + ", weapon=" + weapon + ", instructions=" + instructions + '}';
-    }
-            
-    
-}
