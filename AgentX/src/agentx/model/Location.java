@@ -15,6 +15,10 @@ import java.util.Objects;
 public class Location implements Serializable {
     private Boolean visited;
 
+    public Location() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Boolean getVisited() {
         return visited;
     }
@@ -49,6 +53,10 @@ public class Location implements Serializable {
 
     public Location(Boolean visited) {
         this.visited = visited;
+    }
+
+    public void setVisited() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
       
 }

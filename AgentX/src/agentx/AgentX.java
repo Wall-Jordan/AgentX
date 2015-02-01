@@ -16,6 +16,11 @@ import agentx.model.Section;
 import agentx.model.TimeShip;
 import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
+import agentx.model.Location;
+import agentx.model.TakeOff;
+import agentx.model.Explore;
+import agentx.model.Combat;
+import agentx.model.Puzzle;
 
 
 /**
@@ -158,5 +163,62 @@ public class AgentX {
         String sectionInfo = sectionOne.toString();
         System.out.println(sectionInfo);
         
+        /***********************************************************************
+         * Initialize Location instance.
+         * Written by Matias Mikkola
+         **********************************************************************/
+        
+        Location locationOne = new Location();
+        locationOne.setVisited();
+        String locationInfo = locationOne.toString();
+        System.out.println(locationInfo);
+      
+        /***********************************************************************
+         * Initialize Puzzle instance.
+         * Written by Matias Mikkola
+         **********************************************************************/
+        
+        Puzzle puzzleOne = new Puzzle();
+        puzzleOne.setSolved();
+        String puzzleInfo = puzzleOne.toString();
+        System.out.println("Puzzle Question / Problem");
+        
+        /***********************************************************************
+         * Initialize Combat instance.
+         * Written by Matias Mikkola
+         **********************************************************************/
+        
+        Combat combatOne = new Combat();
+        combatOne.setBoss();
+        String combatInfo = combatOne.toString();
+        System.out.println("Use weapons in the weapons belt!" + weapons_beltInfo + "are available!");
+      
+        /***********************************************************************
+         * Initialize Explore instance.
+         * Written by Matias Mikkola
+         **********************************************************************/
+        
+        Explore exploreOne = new Explore();
+        exploreOne.setInstructions(1);
+        String exploreInstructions = exploreOne.toString();
+        System.out.println("You can either gather fuel, use a tool, or use a weapon.");
+        
+        exploreOne.setFuel(50.0);
+        String exploreFuel = exploreOne.toString();
+        System.out.println("You have found 50.0 gallons of fuel!");
+        
+        exploreOne.setWeapon(1);
+        String exploreWeapon = exploreOne.toString();
+        System.out.println("The Agent has found" + weaponOne + "to use as a weapon!");
+      
+        /***********************************************************************
+         * Initialize TakeOff instance.
+         * Written by Matias Mikkola
+         **********************************************************************/
+        
+        TakeOff takeOffOne = new TakeOff();
+        takeOffOne.setInstructions(1);
+        String takeOffInstructions = takeOffOne.toString();
+        System.out.println("The Agent will travel into another time to find Chaotica!");
     }
 }

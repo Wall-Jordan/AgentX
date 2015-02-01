@@ -14,6 +14,10 @@ import java.io.Serializable;
 public class Combat implements Serializable {
     private double boss;
 
+    public Combat() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public double getBoss() {
         return boss;
     }
@@ -51,6 +55,10 @@ public class Combat implements Serializable {
     @Override
     public String toString() {
         return "combat{" + "boss=" + boss + '}';
+    }
+
+    public void setBoss() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

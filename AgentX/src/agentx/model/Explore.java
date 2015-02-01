@@ -17,6 +17,10 @@ public class Explore implements Serializable{
     private double weapon;
     private double instructions;
 
+    public Explore() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public double getFuel() {
         return fuel;
     }

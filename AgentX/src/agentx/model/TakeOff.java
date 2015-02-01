@@ -14,12 +14,17 @@ import java.io.Serializable;
 
 
 public class TakeOff implements Serializable{
+    
     private double instructions;
-
+              
     public TakeOff(double instructions) {
         this.instructions = instructions;
         
         
+    }
+
+    public TakeOff() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
