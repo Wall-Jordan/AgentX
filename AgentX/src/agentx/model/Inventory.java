@@ -8,20 +8,11 @@ import java.util.Objects;
  * @author Chris
  */
 public class Inventory implements Serializable{
-    private String item;
     private int quantity;
     private int type;
 
     
     public Inventory() {
-    }
-    
-    public String getItem() {
-        return item;
-    }
-
-    public void setItem(String item) {
-        this.item = item;
     }
 
     public int getQuantity() {
@@ -42,13 +33,12 @@ public class Inventory implements Serializable{
 
     @Override
     public String toString() {
-        return "Inventory{" + "item=" + item + ", quantity=" + quantity + ", type=" + type + '}';
+        return "Inventory{" + "quantity=" + quantity + ", type=" + type + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 97 * hash + Objects.hashCode(this.item);
         hash = 97 * hash + this.quantity;
         hash = 97 * hash + this.type;
         return hash;
@@ -63,9 +53,6 @@ public class Inventory implements Serializable{
             return false;
         }
         final Inventory other = (Inventory) obj;
-        if (!Objects.equals(this.item, other.item)) {
-            return false;
-        }
         if (this.quantity != other.quantity) {
             return false;
         }

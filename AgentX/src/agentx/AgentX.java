@@ -53,7 +53,6 @@ public class AgentX {
          **********************************************************************/
         Inventory inventoryOne = new Inventory();
         
-        inventoryOne.setItem("Wrench");
         inventoryOne.setQuantity(1);
         inventoryOne.setType(3);
         
