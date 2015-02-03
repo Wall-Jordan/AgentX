@@ -7,6 +7,7 @@
 package agentx;
 import agentx.model.Actor;
 import agentx.model.Backpack;
+import agentx.model.Boss;
 import agentx.model.Fuel_Container;
 import agentx.model.Inventory;
 import agentx.model.Game;
@@ -225,5 +226,16 @@ public class AgentX {
         
         String takeOffInstructions = takeOffOne.toString();
         System.out.println(takeOffInstructions);
+        
+        /***********************************************************************
+         * Initialize Boss instance.
+         * Written by Jordan Wall
+         **********************************************************************/
+        Boss bossOne = new Boss();
+        
+        bossOne.setDamage(10);
+        
+        String bossInfo = bossOne.toString();
+        System.out.println(bossInfo);
     }
 }
