@@ -11,14 +11,23 @@ package agentx.control;
  */
 public class PuzzleControl {
     
-    /*public static void main (String[] args){
-        double gallonsOfFuel = calcNeededFuelAmount(200, 2, 300);
-        System.out.println(gallonsOfFuel);
-    }*/
-    
-public static double calcNeededFuelAmount(double years, double fuelType, double mass)
+public static int calcNeededFuelAmount(double years, double fuelType, double mass)
 {
     double gallonsOfFuel;
+    
+    //Boundary Check
+    
+    if (years < 0 || years > 1000)
+    {
+        return -1;
+    }
+    if (mass < 0 || mass > 1000)
+    {
+        return -1;
+    }
+    
+    //fuel calculation
+                
     if (fuelType == 1){
         gallonsOfFuel = Math.sqrt((years*mass)/50);
     }
@@ -32,11 +41,16 @@ public static double calcNeededFuelAmount(double years, double fuelType, double 
         return -1;
     }
     
+    //remove trailing numbers
+    gallonsOfFuel = (int) gallonsOfFuel;
+    
+    //final fuel error check
     if(gallonsOfFuel < 0){
         return -1;
     }
+    //Special case. You need at least 1 gallon of fuel to time travel!
     if(gallonsOfFuel == 0){
-        return 0;
+        return 1;
     }
     
     return (int) gallonsOfFuel;
