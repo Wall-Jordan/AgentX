@@ -97,5 +97,40 @@ public class PuzzleControlTest {
         result = PuzzleControl.calcNeededFuelAmount(years, fuelType, mass);
         assertEquals(expResult, result, 0.0);
     }
+
+    /**
+     * Test of calcEntrance method, of class PuzzleControl.
+     */
+    @Test
+    public void testCalcEntrance() {
+        System.out.println("calcEntrance");
+        
+        /***************************
+        *Test Case #1 - calcEntrance
+        ****************************/
+        System.out.println("\tTest case #1");
+        double x = 0.0;
+        boolean expResult = false;
+        boolean result = PuzzleControl.calcEntrance(x);
+        assertEquals(expResult, result);
+        
+        /***************************
+        *Test Case #2 - calcEntrance
+        ****************************/
+        System.out.println("\tTest case #2");
+        x = -7.0;
+        expResult = false;
+        result = PuzzleControl.calcEntrance(x);
+        assertEquals(expResult, result);
+        
+        /***************************
+        *Test Case #3 - calcEntrance
+        ****************************/
+        System.out.println("\tTest case #3");
+        x = 6.0;
+        expResult = true;
+        result = PuzzleControl.calcEntrance(x);
+        assertEquals(expResult, result);
+    }
     
 }

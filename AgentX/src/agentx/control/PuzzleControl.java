@@ -10,7 +10,22 @@ package agentx.control;
  * @author Chris
  */
 public class PuzzleControl {
-    
+
+public static boolean calcEntrance(double x)
+{
+    if (x <= 0)
+    {
+        return false;
+    }
+    else if (x == (2*(x -2)+(96/6))/4)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 public static int calcNeededFuelAmount(double years, double fuelType, double mass)
 {
     double gallonsOfFuel;
