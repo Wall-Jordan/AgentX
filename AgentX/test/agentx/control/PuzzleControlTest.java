@@ -132,5 +132,43 @@ public class PuzzleControlTest {
         result = PuzzleControl.calcEntrance(x);
         assertEquals(expResult, result);
     }
+
+    /**
+     * Test of calcDrillDepth method, of class PuzzleControl.
+     */
+    @Test
+    public void testCalcDrillDepth() {
+        System.out.println("calcDrillDepth");
+        
+        /***************************
+        *Test Case #1 - calcDrillDepth
+        ****************************/
+        System.out.println("\tTest case #1");
+        
+        String drillBit = "1";
+        double expResult = 6.93;
+        double result = PuzzleControl.calcDrillDepth(drillBit);
+        assertEquals(expResult, result, 0.01);
+        
+        /***************************
+        *Test Case #2 - calcDrillDepth
+        ****************************/
+        System.out.println("\tTest case #2");
+        
+        drillBit = "2";
+        expResult = 4;
+        result = PuzzleControl.calcDrillDepth(drillBit);
+        assertEquals(expResult, result, 0.01);
+        
+        /***************************
+        *Test Case #3 - calcDrillDepth
+        ****************************/
+        System.out.println("\tTest case #3");
+        
+        drillBit = "3";
+        expResult = -1;
+        result = PuzzleControl.calcDrillDepth(drillBit);
+        assertEquals(expResult, result, 0.01);
+    }
     
 }

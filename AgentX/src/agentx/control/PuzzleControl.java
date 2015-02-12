@@ -70,5 +70,30 @@ public static int calcNeededFuelAmount(double years, double fuelType, double mas
     
     return (int) gallonsOfFuel;
 }
+
+public static double calcDrillDepth (String drillBit){
+    //Define variables.
+    double drillDepth;
+    double bitWidth;
+    
+    //Set bitWidth in mm based on drillBit selected.
+    switch (drillBit){
+        case "1":
+        case "01":
+            bitWidth = 13.0;
+            break;
+        case "2":
+        case "02":
+            bitWidth = 16.0;
+            break;
+        default:
+            return -1;
+    }
+    
+    //Calculate drillDepth of drillBit Type.
+    drillDepth = Math.sqrt((bitWidth % 7)/.125);
+    
+    return drillDepth;
+}
     
 }
