@@ -11,6 +11,7 @@ package agentx.control;
  */
 public class PuzzleControl {
 
+
 public static boolean calcEntrance(double x)
 {
     if (x <= 0)
@@ -95,5 +96,28 @@ public static double calcDrillDepth (String drillBit){
     
     return drillDepth;
 }
+            // Calculate Damage Function //
+
+        public static double calcDamage (double stamina, int weaponType, int blockAttack, double health) {
     
+            // Boundary Check // 
+            
+    if (stamina < 0 || stamina > 100) {
+        return -1;
+    }
+    if (weaponType < 0 || weaponType > 3) {
+        return -1;
+    }
+    if (blockAttack < 0 || blockAttack > 4) {
+        return -1;
+    }
+    if (health < 0 || health > 100) {
+        return -1;
+    }
+    
+            // Calculate Amount of Damage //
+    double damage = ((stamina / ((double)weaponType * (double)blockAttack)) + health);
+    return damage;
+        }
 }
+        

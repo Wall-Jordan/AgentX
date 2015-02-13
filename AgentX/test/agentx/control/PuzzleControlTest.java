@@ -169,6 +169,76 @@ public class PuzzleControlTest {
         expResult = -1;
         result = PuzzleControl.calcDrillDepth(drillBit);
         assertEquals(expResult, result, 0.01);
+    } 
+
+    /**
+     * Test of calcDamage method, of class PuzzleControl.
+     */
+    @Test
+    public void testCalcDamage() {
+        System.out.println("calcDamage");
+        
+        // TEST 1
+        System.out.println("\tTest 1");
+        double stamina = 50.0;
+        int weaponType = 2;
+        int blockAttack = 1;
+        double health = 20.0;
+        double expResult = 45.0;
+        double result = PuzzleControl.calcDamage(stamina, weaponType, blockAttack, health);
+        assertEquals(expResult, result, 0.0);
+        
+        // TEST 2
+        System.out.println("\tTest 2");
+        stamina = 999.0;
+        weaponType = 2;
+        blockAttack = 2;
+        health = 40.0;
+        expResult = -1;
+        result = PuzzleControl.calcDamage(stamina, weaponType, blockAttack, health);
+        assertEquals(expResult, result, 0.0);
+        
+                // TEST 3
+        System.out.println("\tTest 3");
+        stamina = 20;
+        weaponType = 10;
+        blockAttack = 3;
+        health = 30.0;
+        expResult = -1;
+        result = PuzzleControl.calcDamage(stamina, weaponType, blockAttack, health);
+        assertEquals(expResult, result, 0.0);
+        
+                        // TEST 4
+        System.out.println("\tTest 4");
+        stamina = 30;
+        weaponType = 1;
+        blockAttack = 0;
+        health = -1;
+        expResult = -1;
+        result = PuzzleControl.calcDamage(stamina, weaponType, blockAttack, health);
+        assertEquals(expResult, result, 0.0);
+        
+                        // TEST 5
+        System.out.println("\tTest 5");
+        stamina = 100.0;
+        weaponType = 1;
+        blockAttack = 4;
+        health = 100.0;
+        expResult = 125.0;
+        result = PuzzleControl.calcDamage(stamina, weaponType, blockAttack, health);
+        assertEquals(expResult, result, 0.0);
+        
+                        // TEST 6
+        System.out.println("\tTest 6");
+        stamina = 0.0;
+        weaponType = 1;
+        blockAttack = 1;
+        health = 0.0;
+        expResult = 0.0;
+        result = PuzzleControl.calcDamage(stamina, weaponType, blockAttack, health);
+        assertEquals(expResult, result, 0.0);
     }
-    
-}
+    }
+
+
+  
