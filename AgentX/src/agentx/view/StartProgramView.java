@@ -11,9 +11,9 @@ package agentx.view;
  */
 public class StartProgramView {
     
-    public static void main (String[] args){
-        displayBanner();
-    }
+//    public static void main (String[] args){                                                     //Take out commits!
+//        displayBanner();
+//    }
     
     public StartProgramView(){
     }
@@ -22,7 +22,7 @@ public class StartProgramView {
         this.displayBanner();
     }
 
-    public static void displayBanner() {
+    public /*static*/ void displayBanner() {                                                        //Take out commits!
         System.out.println("\n\n\t*****************************************************"
                            + "\n\t*                                                   *");
         System.out.println(    "\t*                     AGENT X:                      *"
