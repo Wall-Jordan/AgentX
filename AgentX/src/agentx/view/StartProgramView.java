@@ -5,6 +5,8 @@
  */
 package agentx.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Jordan
@@ -20,6 +22,9 @@ public class StartProgramView {
     
     public void startProgram(){        
         this.displayBanner();
+        
+        String playersName = this.getPlayersName();
+        
     }
 
     public /*static*/ void displayBanner() {                                                        //Take out commits!
@@ -35,5 +40,26 @@ public class StartProgramView {
                           +  "\n\t*    YOUR MISSION TO CAPTURE CHAOTICA STARTS NOW!   *"
                           +  "\n\t*                                                   *"
                           +  "\n\t*****************************************************");
+    }
+
+    public String getPlayersName() {
+        boolean valid = false;
+        String playersName = null;
+        Scanner keyboard = new Scanner(System.in);
+        
+        while (!valid) {
+            System.out.println("Please enter your name below:");
+            
+            playersName = keyboard.nextLine();
+            playersName = playersName.trim();
+            
+            if (playersName.length() < 2){
+                System.out.println("Invalid Name");
+                continue;
+            }
+            break;
+        }
+        
+        return playersName;
     }
 }
