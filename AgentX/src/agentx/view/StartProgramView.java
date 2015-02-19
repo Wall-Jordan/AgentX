@@ -5,6 +5,8 @@
  */
 package agentx.view;
 
+import agentx.control.ProgramControl;
+import agentx.model.Player;
 import java.util.Scanner;
 
 /**
@@ -25,6 +27,12 @@ public class StartProgramView {
         
         String playersName = this.getPlayersName();
         
+        Player player = ProgramControl.createPlayer(playersName);
+        
+        this.displayWelcomeMessage(player);
+        
+        MainMenuView mainMenu = new MainMenuView();
+        mainMenu.displayMenu();
     }
 
     public /*static*/ void displayBanner() {                                                        //Take out commits!
@@ -54,12 +62,23 @@ public class StartProgramView {
             playersName = playersName.trim();
             
             if (playersName.length() < 2){
-                System.out.println("Invalid Name");
+                System.out.println("\nInvalid Name\n");
+                continue;
+            }
+            else if ("Chaotica".equals(playersName) || "chaotica".equals(playersName)){
+                System.out.println("\nCongratulations you have found yourself. Now "
+                        + " please choose another name for your player.\n");
                 continue;
             }
             break;
         }
         
         return playersName;
+    }
+
+    public void displayWelcomeMessage(Player player) {
+        System.out.println("\n\n\t*****************************************************"
+                        + "\n\t\tWelcome to the game " + player.getName() + "!");
+        System.out.println("\t*****************************************************");
     }
 }
