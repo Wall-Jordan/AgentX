@@ -5,6 +5,8 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
+import agentx.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -33,7 +35,7 @@ public class MainMenuView {
             selection = input.charAt(0);
             
             this.doAction(selection);
-        }while (selection != 'E');
+        }while (selection != 'E' || selection != 'e');
     }
 
     private String getInput() {
@@ -41,7 +43,7 @@ public class MainMenuView {
         Scanner keyboard = new Scanner(System.in);
         
         
-        System.out.println("Choose your option below:");
+        System.out.println("Choose an option:");
             
         menuOption = keyboard.nextLine();
         menuOption = menuOption.trim();
@@ -49,8 +51,48 @@ public class MainMenuView {
         return menuOption;
     }
 
-    private void doAction(char selection) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void doAction(char selection) {
+        switch (selection) {
+            case 'N':
+            case 'n':
+                this.startNewGame();
+                break;
+            case 'L':
+            case 'l':
+                this.startExistingGame();
+                break;
+            case 'I':
+            case 'i':
+                this.displayInstructions();
+                break;
+            case 'E':
+            case 'e':
+                return;
+            default:
+                System.out.println("\n Invalid selection, try again!");
+                
+                       
+                
+        }
+         
+    }
+
+    private void startNewGame() {
+        GameControl.createNewGame(AgentX.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+        
+    }
+
+    private void startExistingGame() {
+        System.out.println("* startExistingGame function called *");
+    }
+
+    private void displayInstructions() {
+        InstructionsView.displayInstructions();
+        
+        
     }
     
 }
