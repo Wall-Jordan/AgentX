@@ -91,9 +91,7 @@ public class MainMenuView {
 
     private void displayInstructions() {
         InstructionsView instructionsView = new InstructionsView();
-        instructionsView.displayInstructions();
-        
-        
+        instructionsView.displayInstructions();   
     }
     
 }
