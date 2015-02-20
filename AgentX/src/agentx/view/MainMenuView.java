@@ -35,7 +35,7 @@ public class MainMenuView {
             selection = input.charAt(0);
             
             this.doAction(selection);
-        }while (selection != 'E' || selection != 'e');
+        }while (selection != 'E');
     }
 
     private String getInput() {
@@ -90,7 +90,8 @@ public class MainMenuView {
     }
 
     private void displayInstructions() {
-        InstructionsView.displayInstructions();
+        InstructionsView instructionsView = new InstructionsView();
+        instructionsView.displayInstructions();
         
         
     }

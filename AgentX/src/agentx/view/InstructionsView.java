@@ -36,7 +36,8 @@ public class InstructionsView {
             selection = input.charAt(0);
             
             this.doAction(selection);
-        }while (selection != 'Q' || selection != 'q');
+        }while (selection != 'Q');
+        return;
     }
 
     private String getInput() {
