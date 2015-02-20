@@ -87,26 +87,71 @@ public class InstructionsView {
 }
 
     private void displayGoal() {
-        System.out.println("Goal of the game is...");
+        System.out.println("You will accomplish the task of arresting Chaotica by"
+                        + "\ngoing through each location and performing the tasks"
+                        + "\nof that location. The locations will have tasks of "
+                        + "\ngathering objects, using tools to find things and "
+                        + "\nto fix your ship, learning how to use the tools, and"
+                        + "\ncombat the different villains you encounter.");
     }
 
     private void moveInstructions() {
-        System.out.println("You move by...");
+        System.out.println("You can move forward or backward in the time period"
+                        + "\nthat you are located at as long as you meet the "
+                        + "\nrequirements. To move use either of the commands"
+                        + "\nlisted below:");
+        System.out.println("\tF - Move Forward");
+        System.out.println("\t\tThe player is moved forward on the game board"
+                       + "\n\t\tunless they have yet to complete the required"
+                       + "\n\t\tactions in the combat square or the ship repair"
+                       + "\n\t\tsquare.");
+        System.out.println("\tB - Move Backward");
+        System.out.println("\t\tThe player is moved backward unless they are in "
+                         + "\t\tthe first square of their section of the game"
+                         + "\t\tboard.");
     }
 
     private void inventoryInstructions() {
-        System.out.println("You see inventory by...");
+        System.out.println("While exploring a location you can collect resources"
+                       + "\nby completing certain tasks such as completing a "
+                       + "\npuzzle, using tools (such as drilling for fuel) which"
+                       + "\nyou will learn how to use as you play the game, and by"
+                       + "\nusing the C - Collect Items command.");
     }
 
     private void collectInstructions() {
-        System.out.println("Goal of the game is...");
+        System.out.println("When the player selects this option under the "
+                + "\ninstructions menu the program will display the following "
+                + "\ntext:"
+                + "\nWhile exploring a location you can collect resources by "
+                + "\ncompleting certain tasks such as completing a puzzle,"
+                + "\nusing tools (such as drilling for fuel) which you will "
+                + "\nlearn how to use as you play the game, and by using the C "
+                + "\n- Collect Items command.");
     }
+
 
     private void fightInstructions() {
-        System.out.println("Goal of the game is...");
+        System.out.println("\nThe combat menu accessed from the instructions menu "
+                         + "\nwill display all of the combat menu options.");
+        System.out.println("\n\tK - Kick");
+        System.out.println("\n\tP - Punch");
+        System.out.println("\n\tG - Grenade");
+        System.out.println("\n\tD - Use Darts");
+        System.out.println("\n\tS - Stab");
+        System.out.println("\n\tB - Block");
+        System.out.println("\n\tR - Ray Gun");
+        
     }
 
+
     private void toolInstructions() {
-        System.out.println("Goal of the game is...");
+        System.out.println("\nHow to use the tools");
+        System.out.println("\n\tFI - Fuel Inventory");
+        System.out.println("\n\tC - Collect Items");
+        System.out.println("\n\tT1 - Use Wrench");
+        System.out.println("\n\tT2 - Use Welder");
+        System.out.println("\n\tT3 - Use Hammer");
+        System.out.println("\n\tT4 - Use Drill");
     }
 }
