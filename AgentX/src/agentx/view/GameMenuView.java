@@ -10,10 +10,19 @@ package agentx.view;
  * @author matiasmikkola
  */
 public class GameMenuView {
+    
+    private final String GAMEMENU = "\n"
+            + "\n\t*****************************************************"
+            + "\n\t*                    Game Menu                      *"
+            + "\n\t*****************************************************"
+            + "\n\t* F - Move Forward                                  *"
+            + "\n\t* B - Move Backward                                 *"
+            + "\n\t* I - Instructions                                  *"
+            + "\n\t* M - Main Menu                                     *"
+            + "\n\t* S - Save Game                                     *";
 
-    void displayMenu() {
-        System.out.println("\n* displayMenu stub function called *");
-       
+        void displayMenu() {
+
     }
     
 }
