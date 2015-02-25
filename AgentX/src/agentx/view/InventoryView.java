@@ -55,22 +55,21 @@ public class InventoryView {
             
         character = keyboard.nextLine();
         character = character.trim();
+        character = character.toUpperCase();
    
         return character;
     }
 
     public void doAction(char character) {
+        
         switch (character) {
             case 'B':
-            case 'b':
                 this.displayBackpack();
                 break;
             case 'W':
-            case 'w':
                 this.displayWeaponsBelt();
                 break;
             case 'F':
-            case 'f':
                 this.displayFuelAmmount();
                 break;
             case 'Q':
