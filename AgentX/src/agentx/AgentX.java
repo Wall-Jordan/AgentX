@@ -22,6 +22,7 @@ import agentx.model.TakeOff;
 import agentx.model.Explore;
 import agentx.model.Combat;
 import agentx.model.Puzzle;
+import agentx.view.InventoryView;
 import agentx.view.StartProgramView;
 import static java.lang.Boolean.TRUE;
 
@@ -41,8 +42,11 @@ public class AgentX {
      */
     public static void main(String[] args) {
         
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.startProgram();
+       // StartProgramView startProgramView = new StartProgramView();
+       //startProgramView.startProgram();
+        
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.displayInventory();
        
     }
 
