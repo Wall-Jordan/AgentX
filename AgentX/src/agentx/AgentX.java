@@ -42,7 +42,7 @@ public class AgentX {
      */
     public static void main(String[] args) {
         
-       // StartProgramView startProgramView = new StartProgramView();
+       //StartProgramView startProgramView = new StartProgramView();
        //startProgramView.startProgram();
         
         InventoryView inventoryView = new InventoryView();
