@@ -22,6 +22,7 @@ import agentx.model.TakeOff;
 import agentx.model.Explore;
 import agentx.model.Combat;
 import agentx.model.Puzzle;
+import agentx.view.GameMenuView;
 import agentx.view.StartProgramView;
 import static java.lang.Boolean.TRUE;
 
@@ -44,6 +45,8 @@ public class AgentX {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.startProgram();
        
+        
+        
     }
 
     public static Game getCurrentGame() {
