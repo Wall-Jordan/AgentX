@@ -80,8 +80,8 @@ public class MainMenuView {
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
         
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenu();
         
     }
 
