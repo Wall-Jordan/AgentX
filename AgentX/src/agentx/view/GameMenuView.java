@@ -26,7 +26,10 @@ public class GameMenuView {
             + "\n\t* O - Other Commands                                *"
             + "\n\t* E - Explore                                       *"
             + "\n\t* M - Main Menu                                     *"
-            + "\n\t* S - Save Game                                     *";
+            + "\n\t* S - Save Game                                     *"
+            + "\n\t*****************************************************";
+    
+    
     
     private boolean valid;
     
@@ -62,13 +65,67 @@ public class GameMenuView {
             
         } while (selection != 'M');
         }
+    
+
 
     private void doAction(char selection) {
-        throw new UnsupportedOperationException("doAction"); //To change body of generated methods, choose Tools | Templates.
+        switch (selection) {
+            case 'E':
+                ExploreView exploreView = new ExploreView();
+                exploreView.displayDrill();
+                break;
+                case 'F':
+                case 'f':
+                this.moveForward();
+                break;
+                case 'B':
+                case 'b':
+                this.moveBackward();
+                break;
+                case 'I':
+                case 'i':
+                this.instructions();
+                break;
+                case 'O':
+                case 'o':
+                this.moveOthercommands();
+                break;
+                case 'M':
+                case 'm':
+                this.mainMenu();
+                break;
+                case 'S':
+                case 's':
+                this.saveGame();
+                break;
+    }
     }
 
     void displayMenu() {
         throw new UnsupportedOperationException("displayMenu"); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private void moveForward() {
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    private void moveBackward() {
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void instructions() {
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void moveOthercommands() {
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void mainMenu() {
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void saveGame() {
+        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    }
