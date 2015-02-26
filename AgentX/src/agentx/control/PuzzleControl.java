@@ -18,7 +18,7 @@ public static boolean calcEntrance(double x)
     {
         return false;
     }
-    else if (x == (2*(x -2)+(96/6))/4)
+    else if (x == (2*(x - 2)+(96/6))/4)
     {
         return true;
     }
