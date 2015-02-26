@@ -23,6 +23,7 @@ import agentx.model.Explore;
 import agentx.model.Combat;
 import agentx.model.Puzzle;
 import agentx.view.GameMenuView;
+import agentx.view.PuzzleView;
 import agentx.view.StartProgramView;
 
 
@@ -43,7 +44,7 @@ public class AgentX {
    	 
    	StartProgramView startProgramView = new StartProgramView();
    	startProgramView.startProgram();
-   	 
+        
         
         
         }

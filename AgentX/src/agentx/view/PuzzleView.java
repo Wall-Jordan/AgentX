@@ -30,7 +30,9 @@ public class PuzzleView {
             double userIn = Double.parseDouble(input);
 
             this.doAction(userIn);
+
         }while (result == false);
+        
     }
 
     private String getInput() {
