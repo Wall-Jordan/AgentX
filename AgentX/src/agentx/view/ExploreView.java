@@ -28,7 +28,7 @@ public class ExploreView {
             selection = input;
             this.doAction(selection);
             
-        } while (selection != "M");
+        } while (!"M".equals(selection));
    }
    public String getInput() {
         String selection = null;
