@@ -23,9 +23,7 @@ public class OtherCommandsMenuView {
             + "\n\t\tT2 - Use Welder"
             + "\n\t\tT3 - Use Hammer"
             + "\n\t\tT4 - Use Drill"
-            + "\n\t\tI - Item Inventory"
-            + "\n\t\tW - Weapons Inventory"
-            + "\n\t\tFI - Fuel Inventory"
+            + "\n\t\tI -  Inventory"
             + "\n\t\tR - Return to location"
             + "\n\t*****************************************************";
             

@@ -20,7 +20,7 @@ public class PuzzleView {
             + "\n\tX=(2*(X-2)+(96/6))/4"
             + "\n\n\tSolve for X to Enter!";
    
-    public void enteranceQuiz() {
+    public void entranceQuiz() {
             
         do {
             System.out.println(SIGN);

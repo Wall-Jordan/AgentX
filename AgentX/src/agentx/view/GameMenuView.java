@@ -28,13 +28,13 @@ public class GameMenuView {
             + "\n\t* M - Main Menu                                     *"
             + "\n\t* S - Save Game                                     *"
             + "\n\t*****************************************************"
-            + "******NOTE: THE FOLLOWING WILL NOT BE IN THIS MENU*******"
-            + "******  THEY ARE JUST FOR ACCESSING SOME LOCATIONS*******"
-            + "******  BEFORE THEY ARE ADDED TO THE GAME BOARD   *******"
-            + "*********************************************************"
-            + "****** T - Take Off                                ******"
-            + "****** P - Puzzle Entrance                         ******"
-            + "*********************************************************";
+            + "\n\t****NOTE: THE FOLLOWING WILL NOT BE IN THIS MENU*****"
+            + "\n\t****  THEY ARE JUST FOR ACCESSING SOME LOCATIONS*****"
+            + "\n\t****  BEFORE THEY ARE ADDED TO THE GAME BOARD   *****"
+            + "\n\t*****************************************************"
+            + "\n\t**** T - Take Off                                ****"
+            + "\n\t**** P - Puzzle Entrance                         ****"
+            + "\n\t*****************************************************";
     
     
     
@@ -113,7 +113,9 @@ public class GameMenuView {
                     takeOffView.displayTakeOff();
                     break;
                 case 'P':
-                    
+                case 'p':
+                    PuzzleView puzzleView = new PuzzleView();
+                    puzzleView.entranceQuiz();
                     break;
     }
     }
