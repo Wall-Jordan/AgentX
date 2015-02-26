@@ -23,8 +23,11 @@ public class GameMenuView {
             + "\n\t* F - Move Forward                                  *"
             + "\n\t* B - Move Backward                                 *"
             + "\n\t* I - Instructions                                  *"
+            + "\n\t* O - Other Commands                                *"
+            + "\n\t* E - Explore                                       *"
             + "\n\t* M - Main Menu                                     *"
             + "\n\t* S - Save Game                                     *";
+    
     private boolean valid;
     
             public String getInput() {
