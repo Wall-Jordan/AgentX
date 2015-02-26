@@ -27,7 +27,15 @@ public class GameMenuView {
             + "\n\t* E - Explore                                       *"
             + "\n\t* M - Main Menu                                     *"
             + "\n\t* S - Save Game                                     *"
-            + "\n\t*****************************************************";
+            + "\n\t*****************************************************"
+            + "******NOTE: THE FOLLOWING WILL NOT BE IN THIS MENU*******"
+            + "******  THEY ARE JUST FOR ACCESSING SOME LOCATIONS*******"
+            + "******  BEFORE THEY ARE ADDED TO THE GAME BOARD   *******"
+            + "*********************************************************"
+            + "****** T - Take Off                                ******"
+            + "****** P - Puzzle Entrance                         ******"
+            + "*********************************************************";
+    
     
     
     
@@ -40,6 +48,7 @@ public class GameMenuView {
             
             selection = keyboard.nextLine();
             selection = selection.trim();
+            selection = selection.toUpperCase();
    
             if (selection.length() < 1) {
                 System.out.println("Input something else");
@@ -88,7 +97,8 @@ public class GameMenuView {
                 break;
                 case 'O':
                 case 'o':
-                this.moveOthercommands();
+                OtherCommandsMenuView otherCommandsView = new OtherCommandsMenuView();
+                otherCommandsView.displayOtherCommandsMenu();
                 break;
                 case 'M':
                 case 'm':
@@ -98,6 +108,13 @@ public class GameMenuView {
                 case 's':
                 this.saveGame();
                 break;
+                case 'T':
+                    TakeOffView takeOffView = new TakeOffView();
+                    takeOffView.displayTakeOff();
+                    break;
+                case 'P':
+                    
+                    break;
     }
     }
 
