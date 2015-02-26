@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class PuzzleView {
         
-         boolean result;
-         final String SIGN = "\n"
+        private boolean result;
+        private final String SIGN = "\n"
             + "\n\tYou are at a door. Next to the door is a security keypad. Above the keypad is a small sign that says..."
             + "\n\tX=(2*(X-2)+(96/6))/4"
             + "\n\n\tSolve for X to Enter!";
@@ -26,10 +26,6 @@ public class PuzzleView {
             System.out.println(SIGN);
             
             String input = this.getInput();
-            if(input == "Q" || input == "E")
-            {
-                result = true;
-            }
             
             double userIn = Double.parseDouble(input);
 
@@ -56,9 +52,10 @@ public class PuzzleView {
         boolean test = PuzzleControl.calcEntrance(number);
         if (test == true)
         {
+            System.out.println("\n\tCORRECT! You may now proceed.");
             result = true;
         }
-        else if (test == false)
+        else
         {
             System.out.println("\n\tWRONG!!! Please try again.");
             result = false;
