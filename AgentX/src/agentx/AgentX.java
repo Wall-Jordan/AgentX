@@ -22,7 +22,7 @@ import agentx.model.TakeOff;
 import agentx.model.Explore;
 import agentx.model.Combat;
 import agentx.model.Puzzle;
-import agentx.view.InventoryView;
+import agentx.view.GameMenuView;
 import agentx.view.StartProgramView;
 import static java.lang.Boolean.TRUE;
 
@@ -34,34 +34,36 @@ import static java.lang.Boolean.TRUE;
 public class AgentX {
     
 
-    private static Game currentGame = null;
-    private static Player player = null;
+	private static Game currentGame = null;
+	private static Player player = null;
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+	/**
+ 	* @param args the command line arguments
+ 	*/
+	public static void main(String[] args) {
+   	 
+   	StartProgramView startProgramView = new StartProgramView();
+   	startProgramView.startProgram();
+   	 
         
-       StartProgramView startProgramView = new StartProgramView();
-       startProgramView.startProgram();
         
-    }
+        }
 
-    public static Game getCurrentGame() {
-        return currentGame;
-    }
+	public static Game getCurrentGame() {
+    	return currentGame;
+	}
 
-    public static void setCurrentGame(Game currentGame) {
-        AgentX.currentGame = currentGame;
-    }
+	public static void setCurrentGame(Game currentGame) {
+    	AgentX.currentGame = currentGame;
+	}
 
-    public static Player getPlayer() {
-        return player;
-    }
+	public static Player getPlayer() {
+    	return player;
+	}
 
-    public static void setPlayer(Player player) {
-        AgentX.player = player;
-    }
+	public static void setPlayer(Player player) {
+    	AgentX.player = player;
+	}
     
     
 }
