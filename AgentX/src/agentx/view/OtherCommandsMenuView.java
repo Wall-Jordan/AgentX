@@ -31,15 +31,15 @@ public class OtherCommandsMenuView {
             
 
     public void displayOtherCommandsMenu() {
-        char selection = ' ';
+        String selection = " ";
         do {
             System.out.println(OTHER_COMMANDS);
             
             String input = this.getInput();
-            selection = input.charAt(0);
+            selection = input;
             
             this.doAction(selection);
-        }while (selection != 'Q');
+        }while (!"R".equals(selection));
         return;
     }
 
@@ -52,39 +52,89 @@ public class OtherCommandsMenuView {
             
         character = keyboard.nextLine();
         character = character.trim();
+        character = character.toUpperCase();
    
         return character;
     }
 
-    public void doAction(char character) {
+    public void doAction(String character) {
         switch (character) {
-            case 'A':
-            case 'a':
-                this.displayGoal();
+            case "C":
+                this.collectItems();
                 break;
-            case 'S':
-            case 's':
-                this.moveInstructions();
+            case "D":
+                this.drillForFuel();
                 break;
-            case 'D':
-            case 'd':
-                this.inventoryInstructions();
+            case "M":
+                this.gameBoardView();
                 break;
-            case 'F':
-            case 'f':
-                this.collectInstructions();
+            case "T1":
+                this.useWrench();
                 break;
-            case 'G':
-            case 'g':
-                this.fightInstructions();
-            case 'H':
-            case 'h':
-                this.toolInstructions();
-            case 'Q':
-            case 'q':
+            case "T2":
+                this.useWelder();
+                break;
+            case "T3":
+                this.useHammer();
+                break;
+            case "T4":
+                this.useDrill();
+                break;
+            case "I":
+                this.itemInventory();
+                break;
+            case "W":
+                this.weaponsInventory();
+                break;
+            case "FI":
+                this.fuelInventory();
+                break;
+            case "R":
                 return;
             default:
                 System.out.println("\n Invalid selection, try again!");
                 
+    }
+}
+
+    private void collectItems() {
+        System.out.println("\t\t*Collect Items*");
+    }
+
+    private void drillForFuel() {
+        System.out.println("\t\t*Drill For Fuel");
+    }
+
+    private void gameBoardView() {
+        System.out.println("\t\t***Show Game Board View***");
+    }
+
+    private void useWrench() {
+        System.out.println("\t\t***Use Wrench***");
+    }
+
+    private void useWelder() {
+        System.out.println("\t\t***Use Welder***");
+    }
+
+    private void useHammer() {
+        System.out.println("\t\t***Use Hammer***");
+    }
+
+    private void useDrill() {
+        System.out.println("\t\t***Use Drill***");
+    }
+
+    private void itemInventory() {
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.displayInventory();
+    }
+
+    private void weaponsInventory() {
+        System.out.println("\t\t***Call weapons inventory view***");
+    }
+
+    private void fuelInventory() {
+        System.out.println("\t\t***Call fuel inventory view***");
     }
 }
