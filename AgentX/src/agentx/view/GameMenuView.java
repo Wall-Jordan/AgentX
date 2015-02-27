@@ -92,7 +92,8 @@ public class GameMenuView {
                 this.moveBackward();
                 break;
                 case 'I':
-                this.instructions();
+                InstructionsView instructionsView = new InstructionsView();    
+                instructionsView.displayInstructions();
                 break;
                 case 'O':
                 OtherCommandsMenuView otherCommandsView = new OtherCommandsMenuView();
