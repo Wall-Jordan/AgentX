@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 
 /**
@@ -70,6 +71,7 @@ public class GameMenuView {
             
             String input = this.getInput();
             selection = input.charAt(0);
+            selection = toUpperCase(selection);
             this.doAction(selection);
             
         } while (selection != 'M');
@@ -84,28 +86,22 @@ public class GameMenuView {
                 exploreView.displayDrill();
                 break;
                 case 'F':
-                case 'f':
                 this.moveForward();
                 break;
                 case 'B':
-                case 'b':
                 this.moveBackward();
                 break;
                 case 'I':
-                case 'i':
                 this.instructions();
                 break;
                 case 'O':
-                case 'o':
                 OtherCommandsMenuView otherCommandsView = new OtherCommandsMenuView();
                 otherCommandsView.displayOtherCommandsMenu();
                 break;
                 case 'M':
-                case 'm':
                 this.mainMenu();
                 break;
                 case 'S':
-                case 's':
                 this.saveGame();
                 break;
                 case 'T':
@@ -113,7 +109,6 @@ public class GameMenuView {
                     takeOffView.displayTakeOff();
                     break;
                 case 'P':
-                case 'p':
                     PuzzleView puzzleView = new PuzzleView();
                     puzzleView.entranceQuiz();
                     break;
