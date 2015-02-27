@@ -35,6 +35,7 @@ public class InstructionsView {
             String input = this.getInput();
             selection = input.charAt(0);
             
+            
             this.doAction(selection);
         }while (selection != 'Q');
         return;
@@ -49,6 +50,7 @@ public class InstructionsView {
             
         character = keyboard.nextLine();
         character = character.trim();
+        character = character.toUpperCase();
    
         return character;
     }
@@ -56,29 +58,22 @@ public class InstructionsView {
     public void doAction(char character) {
         switch (character) {
             case 'A':
-            case 'a':
                 this.displayGoal();
                 break;
             case 'S':
-            case 's':
                 this.moveInstructions();
                 break;
             case 'D':
-            case 'd':
                 this.inventoryInstructions();
                 break;
             case 'F':
-            case 'f':
                 this.collectInstructions();
                 break;
             case 'G':
-            case 'g':
                 this.fightInstructions();
             case 'H':
-            case 'h':
                 this.toolInstructions();
             case 'Q':
-            case 'q':
                 return;
             default:
                 System.out.println("\n Invalid selection, try again!");
