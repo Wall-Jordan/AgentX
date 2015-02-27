@@ -47,6 +47,7 @@ public class MainMenuView {
             
         menuOption = keyboard.nextLine();
         menuOption = menuOption.trim();
+        menuOption = menuOption.toUpperCase();
    
         return menuOption;
     }
@@ -54,19 +55,15 @@ public class MainMenuView {
     public void doAction(char selection) {
         switch (selection) {
             case 'N':
-            case 'n':
                 this.startNewGame();
                 break;
             case 'L':
-            case 'l':
                 this.startExistingGame();
                 break;
             case 'I':
-            case 'i':
                 this.displayInstructions();
                 break;
             case 'E':
-            case 'e':
                 return;
             default:
                 System.out.println("\n Invalid selection, try again!");
