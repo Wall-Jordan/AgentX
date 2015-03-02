@@ -91,7 +91,7 @@ public class InventoryView {
         {
             System.out.println("\n\tHammer = 1");
         }
-        else if (hammer() == false)
+        else
         {
             System.out.println("\n\tHammer = 0");
         }
@@ -99,7 +99,7 @@ public class InventoryView {
         {
             System.out.println("\n\tWelder = 1");
         }
-        else if (welder() == false)
+        else
         {
             System.out.println("\n\tWelder = 0");
         }
@@ -107,7 +107,7 @@ public class InventoryView {
         {
             System.out.println("\n\tWrench = 1");
         }
-        else if (wrench() == false)
+        else
         {
             System.out.println("\n\tWrench = 0");
         }
@@ -115,7 +115,7 @@ public class InventoryView {
         {
             System.out.println("\n\tDrill = 1");
         }
-        else if (drill() == false)
+        else
         {
             System.out.println("\n\tDrill = 0");
         }
@@ -132,7 +132,7 @@ public class InventoryView {
         {
             System.out.println("\n\tRay Gun = 1");
         }
-        else if (gun() == false)
+        else
         {
             System.out.println("\n\tRay Gun = 0");
         }
@@ -140,7 +140,7 @@ public class InventoryView {
         {
             System.out.println("\n\tKnife = 1");
         }
-        else if (knife() == false)
+        else
         {
             System.out.println("\n\tKnife = 0");
         }
