@@ -19,6 +19,7 @@ public class TakeOffView {
         
         boolean traveled = false;
         String goBack = " ";
+        
         do {           
             System.out.println(TAKE_OFF);
             
