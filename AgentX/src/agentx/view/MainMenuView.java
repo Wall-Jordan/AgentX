@@ -7,15 +7,18 @@ package agentx.view;
 
 import agentx.AgentX;
 import agentx.control.GameControl;
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Jordan
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private final String MENU = "\n"
+    public MainMenuView()
+    {
+        super("\n"
             + "\n\t*****************************************************"
             + "\n\t*                       Main Menu                   *"
             + "\n\t*****************************************************"
@@ -23,37 +26,18 @@ public class MainMenuView {
             + "\n\t\tL - Load Game"
             + "\n\t\tI - Instructions"
             + "\n\t\tE - Exit"
-            + "\n\t*****************************************************";
-            
-
-    public void displayMenu() {
-        char selection = ' ';
-        do {
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-        }while (selection != 'E');
+            + "\n\t*****************************************************");
     }
 
-    private String getInput() {
-        String menuOption = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        
-        System.out.println("Choose an option:");
-            
-        menuOption = keyboard.nextLine();
-        menuOption = menuOption.trim();
-        menuOption = menuOption.toUpperCase();
-   
-        return menuOption;
-    }
-
-    public void doAction(char selection) {
-        switch (selection) {
+    @Override
+            public boolean doAction(Object obj)
+            {
+                String value = (String) obj;
+                
+                value = value.toUpperCase();
+                char choice = value.charAt(0);
+                
+                switch (choice) {
             case 'N':
                 this.startNewGame();
                 break;
@@ -64,15 +48,12 @@ public class MainMenuView {
                 this.displayInstructions();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 System.out.println("\n Invalid selection, try again!");
-                
-                       
-                
-        }
-         
-    }
+            }
+                return true;
+            }
 
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
@@ -88,7 +69,7 @@ public class MainMenuView {
 
     private void displayInstructions() {
         InstructionsView instructionsView = new InstructionsView();
-        instructionsView.displayInstructions();   
+        instructionsView.display();   
     }
     
 }

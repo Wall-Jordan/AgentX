@@ -14,15 +14,18 @@ import static agentx.control.InventoryControl.hammer;
 import static agentx.control.InventoryControl.knife;
 import static agentx.control.InventoryControl.welder;
 import static agentx.control.InventoryControl.wrench;
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Chris
  */
-public class InventoryView {
+public class InventoryView extends View {
 
-        private final String INVENTORY = "\n"
+            public InventoryView()
+            {
+            super("\n"
             + "\n\t*****************************************************"
             + "\n\t*                 Inventory Types                   *"
             + "\n\t*****************************************************"
@@ -30,39 +33,18 @@ public class InventoryView {
             + "\n\t\tW - Weapons Belt"
             + "\n\t\tF - Fuel Container"
             + "\n\t\tQ - Quit Instructions Menu"
-            + "\n\t*****************************************************";
+            + "\n\t*****************************************************");
+            }
             
-
-    public void displayInventory() {
-        char selection = ' ';
-        do {
-            System.out.println(INVENTORY);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-        }while (selection != 'Q');
-        return;
-    }
-
-    private String getInput() {
-        String character = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        
-        System.out.println("Choose an option:");
-            
-        character = keyboard.nextLine();
-        character = character.trim();
-        character = character.toUpperCase();
-   
-        return character;
-    }
-
-    public void doAction(char character) {
-        
-        switch (character) {
+            @Override
+            public boolean doAction(Object obj)
+            {
+                String value = (String) obj;
+                
+                value = value.toUpperCase();
+                char choice = value.charAt(0);
+                
+                switch (choice) {
             case 'B':
                 this.displayBackpack();
                 break;
@@ -73,15 +55,14 @@ public class InventoryView {
                 this.displayFuelAmmount();
                 break;
             case 'Q':
-                return;
+                return true;
             default:
                 System.out.println("\n Invalid selection, try again!");
-                
-    }
-    
-}
+                }
+                return true;
+            }
 
-    private void displayBackpack() {
+            private void displayBackpack() {
         
         System.out.println("\n"
             + "\n\t*****************************************************"
