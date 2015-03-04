@@ -5,14 +5,18 @@
  */
 package agentx.view;
 
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Jordan
  */
-public class OtherCommandsMenuView {
-    private final String OTHER_COMMANDS = "\n"
+public class OtherCommandsMenuView extends View {
+    
+    public OtherCommandsMenuView()
+    {
+        super("\n"
             + "\n\t*****************************************************"
             + "\n\t*             Other Commands Menu                   *"
             + "\n\t*****************************************************"
@@ -25,38 +29,18 @@ public class OtherCommandsMenuView {
             + "\n\t\tT4 - Use Drill"
             + "\n\t\tI -  Inventory"
             + "\n\t\tR - Return to location"
-            + "\n\t*****************************************************";
-            
-
-    public void displayOtherCommandsMenu() {
-        String selection = " ";
-        do {
-            System.out.println(OTHER_COMMANDS);
-            
-            String input = this.getInput();
-            selection = input;
-            
-            this.doAction(selection);
-        }while (!"R".equals(selection));
-        return;
+            + "\n\t*****************************************************");
     }
-
-    private String getInput() {
-        String character = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        
-        System.out.println("Choose an option:");
-            
-        character = keyboard.nextLine();
-        character = character.trim();
-        character = character.toUpperCase();
-   
-        return character;
-    }
-
-    public void doAction(String character) {
-        switch (character) {
+    
+@Override
+            public boolean doAction(Object obj)
+            {
+                String value = (String) obj;
+                
+                value = value.toUpperCase();
+                String choice = value;
+                
+                switch (choice) {
             case "C":
                 this.collectItems();
                 break;
@@ -79,7 +63,8 @@ public class OtherCommandsMenuView {
                 this.useDrill();
                 break;
             case "I":
-                this.itemInventory();
+                InventoryView inventoryView = new InventoryView();
+                inventoryView.display();
                 break;
             case "W":
                 this.weaponsInventory();
@@ -88,12 +73,14 @@ public class OtherCommandsMenuView {
                 this.fuelInventory();
                 break;
             case "R":
-                return;
+                return true;
             default:
                 System.out.println("\n Invalid selection, try again!");
                 
     }
-}
+                return true;
+            }
+   
 
     private void collectItems() {
         System.out.println("\t\t*Collect Items*");
@@ -121,11 +108,6 @@ public class OtherCommandsMenuView {
 
     private void useDrill() {
         System.out.println("\t\t***Use Drill***");
-    }
-
-    private void itemInventory() {
-        InventoryView inventoryView = new InventoryView();
-        inventoryView.displayInventory();
     }
 
     private void weaponsInventory() {

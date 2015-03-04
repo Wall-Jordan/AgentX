@@ -23,7 +23,7 @@ import agentx.model.Explore;
 import agentx.model.Combat;
 import agentx.model.Puzzle;
 import agentx.view.GameMenuView;
-import agentx.view.PuzzleView;
+import agentx.view.EntranceView;
 import agentx.view.StartProgramView;
 
 

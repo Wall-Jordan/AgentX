@@ -5,15 +5,18 @@
  */
 package agentx.view;
 
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author matiasmikkola
  */
-public class InstructionsView {
+public class InstructionsView extends View {
 
-        private final String INSTRUCTIONS = "\n"
+    public InstructionsView()
+    {
+        super("\n"
             + "\n\t*****************************************************"
             + "\n\t*                    Instructions                   *"
             + "\n\t*****************************************************"
@@ -24,39 +27,18 @@ public class InstructionsView {
             + "\n\t\tG - How do I fight?"
             + "\n\t\tH - How do I use my tools?"
             + "\n\t\tQ - Quit Instructions Menu"
-            + "\n\t*****************************************************";
-            
-
-    public void displayInstructions() {
-        char selection = ' ';
-        do {
-            System.out.println(INSTRUCTIONS);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            
-            this.doAction(selection);
-        }while (selection != 'Q');
-        return;
+            + "\n\t*****************************************************");
     }
-
-    private String getInput() {
-        String character = null;
-        Scanner keyboard = new Scanner(System.in);
-        
-        
-        System.out.println("Choose an option:");
-            
-        character = keyboard.nextLine();
-        character = character.trim();
-        character = character.toUpperCase();
-   
-        return character;
-    }
-
-    public void doAction(char character) {
-        switch (character) {
+    
+            @Override
+            public boolean doAction(Object obj)
+            {
+                String value = (String) obj;
+                
+                value = value.toUpperCase();
+                char choice = value.charAt(0);
+                
+                switch (choice) {
             case 'A':
                 this.displayGoal();
                 break;
@@ -76,13 +58,14 @@ public class InstructionsView {
                 this.toolInstructions();
                 break;
             case 'Q':
-                return;
+                return true;
             default:
                 System.out.println("\n Invalid selection, try again!");
                 
-    }
+            }
+                return true;
+            }
     
-}
 
     private void displayGoal() {
         System.out.println("\n"

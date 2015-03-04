@@ -83,7 +83,7 @@ public class GameMenuView {
         switch (selection) {
             case 'E':
                 ExploreView exploreView = new ExploreView();
-                exploreView.displayDrill();
+                exploreView.display();
                 break;
                 case 'F':
                 this.moveForward();
@@ -93,11 +93,11 @@ public class GameMenuView {
                 break;
                 case 'I':
                 InstructionsView instructionsView = new InstructionsView();    
-                instructionsView.displayInstructions();
+                instructionsView.display();
                 break;
                 case 'O':
                 OtherCommandsMenuView otherCommandsView = new OtherCommandsMenuView();
-                otherCommandsView.displayOtherCommandsMenu();
+                otherCommandsView.display();
                 break;
                 case 'M':
                 this.mainMenu();
@@ -107,11 +107,11 @@ public class GameMenuView {
                 break;
                 case 'T':
                     TakeOffView takeOffView = new TakeOffView();
-                    takeOffView.displayTakeOff();
+                    takeOffView.display();
                     break;
                 case 'P':
-                    PuzzleView puzzleView = new PuzzleView();
-                    puzzleView.entranceQuiz();
+                    EntranceView puzzleView = new EntranceView();
+                    puzzleView.display();
                     break;
     }
     }

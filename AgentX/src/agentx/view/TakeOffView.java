@@ -5,16 +5,23 @@
  */
 package agentx.view;
 
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Jordan
  */
-public class TakeOffView {
+public class TakeOffView extends View {
+    
+    public TakeOffView()
+    {
+        super("");
+    }
     private final String TAKE_OFF = "************* TAKE OFF *************";
     
-    public void displayTakeOff() {
+    @Override
+    public void display() {
         String year = " ";
         
         boolean traveled = false;
@@ -46,8 +53,8 @@ public class TakeOffView {
         
         
     }
-    
-    private String getInput() {
+    @Override
+    public String getInput() {
         String year = null;
         Scanner keyboard = new Scanner(System.in);
         
@@ -74,8 +81,9 @@ public class TakeOffView {
    
         return year;
     }
-    
-    public boolean doAction(String year) {
+    @Override
+    public boolean doAction(Object obj) {
+        String year = (String) obj;
         if ("3097AD".equals(year)){
             return true;
         }
