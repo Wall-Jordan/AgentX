@@ -28,7 +28,7 @@ public class OtherCommandsMenuView extends View {
             + "\n\t\tT3 - Use Hammer"
             + "\n\t\tT4 - Use Drill"
             + "\n\t\tI -  Inventory"
-            + "\n\t\tQ - Return to location"
+            + "\n\t\tR - Return to location"
             + "\n\t*****************************************************");
     }
     
@@ -72,8 +72,8 @@ public class OtherCommandsMenuView extends View {
             case "FI":
                 this.fuelInventory();
                 break;
-            case "Q":
-                return true;
+            case "R":
+                return false;
             default:
                 System.out.println("\n Invalid selection, try again!");
                 
