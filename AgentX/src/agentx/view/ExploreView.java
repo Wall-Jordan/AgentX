@@ -45,6 +45,7 @@ public class ExploreView extends View
                 else if ("S".equals(choice))
                 {
                     System.out.println("You've decided to not drill right now. Thats fine, you can come back later.");
+                    return false;
                 }
                 else
                 {

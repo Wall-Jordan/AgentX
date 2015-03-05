@@ -36,7 +36,11 @@ public interface ViewInterface {
             
                 System.out.println(this.promptMessage);
                 value = this.getInput();
-                this.doAction(value);
+                boolean result = this.doAction(value);
+                
+                if(result == false){
+                    value = "Q";
+                }
                 
             }while(!value.equals("Q"));
         }
