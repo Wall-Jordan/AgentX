@@ -13,11 +13,12 @@ import java.util.Objects;
  * @author Jordan
  */
 public class Actor implements Serializable {
+
     private double stamina;
     private String description;
     private double health;
     private String type;
-    
+
     public Actor() {
     }
 
@@ -92,7 +93,4 @@ public class Actor implements Serializable {
         return true;
     }
 
-    
-    
-    
 }

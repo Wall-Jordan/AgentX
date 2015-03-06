@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author matiasmikkola
  */
 public class Combat implements Serializable {
+
     private double boss;
 
     public Combat() {
@@ -50,5 +51,5 @@ public class Combat implements Serializable {
             return false;
         }
         return true;
-    }   
+    }
 }

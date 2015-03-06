@@ -12,12 +12,12 @@ import java.io.Serializable;
  * @author Chris
  */
 public class Fuel_Container implements Serializable {
-    
+
     private double gallons;
 
     public Fuel_Container() {
     }
-    
+
     public double getGallons() {
         return gallons;
     }
@@ -52,7 +52,5 @@ public class Fuel_Container implements Serializable {
         }
         return true;
     }
-    
-    
-    
+
 }

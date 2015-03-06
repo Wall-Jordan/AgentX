@@ -12,80 +12,72 @@ import java.util.Scanner;
  * @author Chris
  */
 public interface ViewInterface {
-    
+
     public void display();
+
     public String getInput();
+
     public boolean doAction(Object obj);
-    
-    public abstract class View implements ViewInterface
-    {
-        
+
+    public abstract class View implements ViewInterface {
+
         private String promptMessage;
-        
-        public View(String promptMessage)
-        {
+
+        public View(String promptMessage) {
             this.promptMessage = promptMessage;
         }
-        
+
         @Override
-        public void display()
-        {
+        public void display() {
             String value;
-            
-            do{
-            
+            boolean done = false;
+
+            do {
+
                 System.out.println(this.promptMessage);
                 value = this.getInput();
                 boolean result = this.doAction(value);
-                
-                if(result == false){
-                    value = "Q";
-                }
-                
-            }while(!value.equals("Q"));
+
+                done = this.doAction(value);
+
+            } while (!done);
         }
-        
+
         @Override
-        public String getInput()
-        {
-            
+        public String getInput() {
+
             Scanner keyboard = new Scanner(System.in);
             boolean valid = false;
             String selection = null;
-            
-            while(!valid)
-            {
-                
+
+            while (!valid) {
+
                 System.out.println("Enter your selection");
                 selection = keyboard.nextLine();
                 selection = selection.trim();
                 selection = selection.toUpperCase();
-                
-                if(selection.length() < 1)
-                {
-                    
+
+                if (selection.length() < 1) {
+
                     System.out.println("Invalid Selection. Please try again.");
                     continue;
-                    
+
                 }
                 break;
-                
-                
+
             }
             return selection;
-            
+
         }
-        
-        public String getPromptMessage()
-        {
+
+        public String getPromptMessage() {
             return promptMessage;
         }
-        
-        public void setPromptMessage(String message)
-        {
+
+        public void setPromptMessage(String message) {
             this.promptMessage = message;
         }
-        
+
     }
-    
+
 }

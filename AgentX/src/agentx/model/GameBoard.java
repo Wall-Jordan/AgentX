@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author Jordan
  */
-public class GameBoard implements Serializable{
+public class GameBoard implements Serializable {
+
     private int section;
 
     public GameBoard() {
@@ -51,6 +52,5 @@ public class GameBoard implements Serializable{
         }
         return true;
     }
-    
-    
+
 }

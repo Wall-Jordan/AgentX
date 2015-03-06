@@ -13,34 +13,32 @@ import java.util.Scanner;
  * @author Jordan
  */
 public class OtherCommandsMenuView extends View {
-    
-    public OtherCommandsMenuView()
-    {
+
+    public OtherCommandsMenuView() {
         super("\n"
-            + "\n\t*****************************************************"
-            + "\n\t*             Other Commands Menu                   *"
-            + "\n\t*****************************************************"
-            + "\n\t\tC - Collect Items"
-            + "\n\t\tD - Drill for Fuel"
-            + "\n\t\tM - Show Game Board"
-            + "\n\t\tT1 - Use Wrench"
-            + "\n\t\tT2 - Use Welder"
-            + "\n\t\tT3 - Use Hammer"
-            + "\n\t\tT4 - Use Drill"
-            + "\n\t\tI -  Inventory"
-            + "\n\t\tR - Return to location"
-            + "\n\t*****************************************************");
+                + "\n\t*****************************************************"
+                + "\n\t*             Other Commands Menu                   *"
+                + "\n\t*****************************************************"
+                + "\n\t\tC - Collect Items"
+                + "\n\t\tD - Drill for Fuel"
+                + "\n\t\tM - Show Game Board"
+                + "\n\t\tT1 - Use Wrench"
+                + "\n\t\tT2 - Use Welder"
+                + "\n\t\tT3 - Use Hammer"
+                + "\n\t\tT4 - Use Drill"
+                + "\n\t\tI -  Inventory"
+                + "\n\t\tR - Return to location"
+                + "\n\t*****************************************************");
     }
-    
-        @Override
-            public boolean doAction(Object obj)
-            {
-                String value = (String) obj;
-                
-                value = value.toUpperCase();
-                String choice = value;
-                
-                switch (choice) {
+
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+
+        value = value.toUpperCase();
+        String choice = value;
+
+        switch (choice) {
             case "C":
                 this.collectItems();
                 break;
@@ -76,11 +74,10 @@ public class OtherCommandsMenuView extends View {
                 return false;
             default:
                 System.out.println("\n Invalid selection, try again!");
-                
-                }
-                return true;
-            }
-   
+
+        }
+        return true;
+    }
 
     private void collectItems() {
         System.out.println("\t\t*Collect Items*");

@@ -12,10 +12,11 @@ import java.util.Objects;
  *
  * @author Jordan
  */
-public class Game implements Serializable{
+public class Game implements Serializable {
+
     private String gameName;
     private String saveTime;
-    
+
     public Game() {
     }
 
@@ -65,6 +66,5 @@ public class Game implements Serializable{
         }
         return true;
     }
-    
-    
+
 }

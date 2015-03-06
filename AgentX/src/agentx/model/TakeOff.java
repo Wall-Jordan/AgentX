@@ -11,9 +11,8 @@ import java.io.Serializable;
  *
  * @author matiasmikkola
  */
+public class TakeOff implements Serializable {
 
-
-public class TakeOff implements Serializable{
     private double instructions;
 
     public TakeOff() {
@@ -53,6 +52,5 @@ public class TakeOff implements Serializable{
         }
         return true;
     }
-    
-    
+
 }

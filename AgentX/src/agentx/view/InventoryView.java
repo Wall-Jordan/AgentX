@@ -23,28 +23,26 @@ import java.util.Scanner;
  */
 public class InventoryView extends View {
 
-            public InventoryView()
-            {
-            super("\n"
-            + "\n\t*****************************************************"
-            + "\n\t*                 Inventory Types                   *"
-            + "\n\t*****************************************************"
-            + "\n\t\tB - Backpack"
-            + "\n\t\tW - Weapons Belt"
-            + "\n\t\tF - Fuel Container"
-            + "\n\t\tQ - Quit Instructions Menu"
-            + "\n\t*****************************************************");
-            }
-            
-            @Override
-            public boolean doAction(Object obj)
-            {
-                String value = (String) obj;
-                
-                value = value.toUpperCase();
-                char choice = value.charAt(0);
-                
-                switch (choice) {
+    public InventoryView() {
+        super("\n"
+                + "\n\t*****************************************************"
+                + "\n\t*                 Inventory Types                   *"
+                + "\n\t*****************************************************"
+                + "\n\t\tB - Backpack"
+                + "\n\t\tW - Weapons Belt"
+                + "\n\t\tF - Fuel Container"
+                + "\n\t\tQ - Quit Instructions Menu"
+                + "\n\t*****************************************************");
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+
+        switch (choice) {
             case 'B':
                 this.displayBackpack();
                 break;
@@ -58,80 +56,62 @@ public class InventoryView extends View {
                 return true;
             default:
                 System.out.println("\n Invalid selection, try again!");
-                }
-                return true;
-            }
-
-            private void displayBackpack() {
-        
-        System.out.println("\n"
-            + "\n\t*****************************************************"
-            + "\n\t*                    Backpack                       *"
-            + "\n\t*****************************************************");
-        if (hammer() == true)
-        {
-            System.out.println("\n\tHammer = 1");
         }
-        else
-        {
+        return true;
+    }
+
+    private void displayBackpack() {
+
+        System.out.println("\n"
+                + "\n\t*****************************************************"
+                + "\n\t*                    Backpack                       *"
+                + "\n\t*****************************************************");
+        if (hammer() == true) {
+            System.out.println("\n\tHammer = 1");
+        } else {
             System.out.println("\n\tHammer = 0");
         }
-        if (welder() == true)
-        {
+        if (welder() == true) {
             System.out.println("\n\tWelder = 1");
-        }
-        else
-        {
+        } else {
             System.out.println("\n\tWelder = 0");
         }
-        if (wrench() == true)
-        {
+        if (wrench() == true) {
             System.out.println("\n\tWrench = 1");
-        }
-        else
-        {
+        } else {
             System.out.println("\n\tWrench = 0");
         }
-        if (drill() == true)
-        {
+        if (drill() == true) {
             System.out.println("\n\tDrill = 1");
-        }
-        else
-        {
+        } else {
             System.out.println("\n\tDrill = 0");
         }
     }
 
     private void displayWeaponsBelt() {
         System.out.println("\n"
-            + "\n\t*****************************************************"
-            + "\n\t*                 Weapons Belt                      *"
-            + "\n\t*****************************************************");
+                + "\n\t*****************************************************"
+                + "\n\t*                 Weapons Belt                      *"
+                + "\n\t*****************************************************");
         System.out.println("\n\tGrenades = " + grenade());
         System.out.println("\n\tPoison darts = " + darts());
-        if (gun() == true)
-        {
+        if (gun() == true) {
             System.out.println("\n\tRay Gun = 1");
-        }
-        else
-        {
+        } else {
             System.out.println("\n\tRay Gun = 0");
         }
-        if (knife() == true)
-        {
+        if (knife() == true) {
             System.out.println("\n\tKnife = 1");
-        }
-        else
-        {
+        } else {
             System.out.println("\n\tKnife = 0");
         }
     }
 
     private void displayFuelAmmount() {
         System.out.println("\n"
-            + "\n\t*****************************************************"
-            + "\n\t*                 Fuel Ammount                      *"
-            + "\n\t*****************************************************");
+                + "\n\t*****************************************************"
+                + "\n\t*                 Fuel Ammount                      *"
+                + "\n\t*****************************************************");
         System.out.println("\n\tYou have " + fuel() + " gallons of fuel.");
     }
 

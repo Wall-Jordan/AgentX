@@ -12,14 +12,13 @@ import java.util.Objects;
  *
  * @author Chris
  */
-public class Backpack implements Serializable
-{
-    
+public class Backpack implements Serializable {
+
     private String backpackItems;
 
     public Backpack() {
     }
-    
+
     public String getBackpackItems() {
         return backpackItems;
     }
@@ -54,6 +53,5 @@ public class Backpack implements Serializable
         }
         return true;
     }
-    
-    
+
 }

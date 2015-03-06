@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author Jordan
  */
 public class Section implements Serializable {
+
     private int location;
 
     public Section() {
@@ -51,7 +52,5 @@ public class Section implements Serializable {
         }
         return true;
     }
-    
-    
-    
+
 }

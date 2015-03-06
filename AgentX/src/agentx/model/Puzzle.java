@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author matiasmikkola
  */
-public class Puzzle implements Serializable{
+public class Puzzle implements Serializable {
+
     private double solved;
 
     public Puzzle() {
@@ -51,5 +52,5 @@ public class Puzzle implements Serializable{
         }
         return true;
     }
-    
+
 }

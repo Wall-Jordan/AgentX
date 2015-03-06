@@ -11,11 +11,10 @@ import java.io.Serializable;
  *
  * @author Chris
  */
-public class Weapon implements Serializable{
-    
+public class Weapon implements Serializable {
+
     private int damage;
 
-    
     public Weapon() {
     }
 
@@ -53,7 +52,5 @@ public class Weapon implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }
