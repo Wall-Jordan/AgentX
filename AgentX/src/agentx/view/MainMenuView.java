@@ -15,29 +15,27 @@ import java.util.Scanner;
  * @author Jordan
  */
 public class MainMenuView extends View {
-    
-    public MainMenuView()
-    {
+
+    public MainMenuView() {
         super("\n"
-            + "\n\t*****************************************************"
-            + "\n\t*                       Main Menu                   *"
-            + "\n\t*****************************************************"
-            + "\n\t\tN - Start New Game"
-            + "\n\t\tL - Load Game"
-            + "\n\t\tI - Instructions"
-            + "\n\t\tQ - Quit"
-            + "\n\t*****************************************************");
+                + "\n\t*****************************************************"
+                + "\n\t*                       Main Menu                   *"
+                + "\n\t*****************************************************"
+                + "\n\t\tN - Start New Game"
+                + "\n\t\tL - Load Game"
+                + "\n\t\tI - Instructions"
+                + "\n\t\tQ - Quit"
+                + "\n\t*****************************************************");
     }
 
     @Override
-            public boolean doAction(Object obj)
-            {
-                String value = (String) obj;
-                
-                value = value.toUpperCase();
-                char choice = value.charAt(0);
-                
-                switch (choice) {
+    public boolean doAction(Object obj) {
+        String value = (String) obj;
+
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
+
+        switch (choice) {
             case 'N':
                 this.startNewGame();
                 break;
@@ -51,16 +49,16 @@ public class MainMenuView extends View {
                 return true;
             default:
                 System.out.println("\n Invalid selection, try again!");
-            }
-                return true;
-            }
+        }
+        return true;
+    }
 
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
-        
+
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenu();
-        
+
     }
 
     private void startExistingGame() {
@@ -69,7 +67,7 @@ public class MainMenuView extends View {
 
     private void displayInstructions() {
         InstructionsView instructionsView = new InstructionsView();
-        instructionsView.display();   
+        instructionsView.display();
     }
-    
+
 }

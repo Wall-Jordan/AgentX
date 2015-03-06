@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author Jordan
  */
-public class Boss implements Serializable{
+public class Boss implements Serializable {
+
     private double damage;
 
     public Boss() {
@@ -51,6 +52,5 @@ public class Boss implements Serializable{
         }
         return true;
     }
-    
-    
+
 }

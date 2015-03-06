@@ -13,6 +13,7 @@ import java.util.Objects;
  * @author matiasmikkola
  */
 public class Location implements Serializable {
+
     private Boolean visited;
 
     public Location() {
@@ -52,9 +53,5 @@ public class Location implements Serializable {
         }
         return true;
     }
-    
-    
-    
 
-         
 }

@@ -5,7 +5,6 @@ package agentx.model;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,12 +12,13 @@ import java.util.Objects;
  *
  * @author matiasmikkola
  */
-public class Player implements Serializable{
+public class Player implements Serializable {
+
     private String name;
 
     public Player() {
     }
-    
+
     public String getName() {
         return name;
     }
@@ -26,8 +26,6 @@ public class Player implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-
-    
 
     @Override
     public String toString() {
@@ -56,5 +54,4 @@ public class Player implements Serializable{
         return true;
     }
 
-  
 }

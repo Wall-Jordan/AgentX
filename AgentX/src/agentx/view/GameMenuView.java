@@ -12,11 +12,8 @@ import java.util.Scanner;
  *
  * @author matiasmikkola
  */
-
-
 public class GameMenuView {
-    
-    
+
     private final String GAMEMENU = "\n"
             + "\n\t*****************************************************"
             + "\n\t*                    Game Menu                      *"
@@ -36,21 +33,18 @@ public class GameMenuView {
             + "\n\t**** T - Take Off                                ****"
             + "\n\t**** P - Puzzle Entrance                         ****"
             + "\n\t*****************************************************";
-    
-    
-    
-    
+
     private boolean valid;
-    
-            public String getInput() {
+
+    public String getInput() {
         String selection = null;
         Scanner keyboard = new Scanner(System.in);
         while (!valid) {
-            
+
             selection = keyboard.nextLine();
             selection = selection.trim();
             selection = selection.toUpperCase();
-   
+
             if (selection.length() < 1) {
                 System.out.println("Input something else");
                 continue;
@@ -58,26 +52,25 @@ public class GameMenuView {
             break;
         }
         return selection;
-            }
+    }
+
     /**
      *
      */
     public void displayGameMenu() {
-        
+
         char selection = ' ';
         do {
-            
+
             System.out.println(GAMEMENU); //display menu
-            
+
             String input = this.getInput();
             selection = input.charAt(0);
             selection = toUpperCase(selection);
             this.doAction(selection);
-            
-        } while (selection != 'M');
-        }
-    
 
+        } while (selection != 'M');
+    }
 
     private void doAction(char selection) {
         switch (selection) {
@@ -85,35 +78,35 @@ public class GameMenuView {
                 ExploreView exploreView = new ExploreView();
                 exploreView.display();
                 break;
-                case 'F':
+            case 'F':
                 this.moveForward();
                 break;
-                case 'B':
+            case 'B':
                 this.moveBackward();
                 break;
-                case 'I':
-                InstructionsView instructionsView = new InstructionsView();    
+            case 'I':
+                InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
                 break;
-                case 'O':
+            case 'O':
                 OtherCommandsMenuView otherCommandsView = new OtherCommandsMenuView();
                 otherCommandsView.display();
                 break;
-                case 'M':
+            case 'M':
                 this.mainMenu();
                 break;
-                case 'S':
+            case 'S':
                 this.saveGame();
                 break;
-                case 'T':
-                    TakeOffView takeOffView = new TakeOffView();
-                    takeOffView.display();
-                    break;
-                case 'P':
-                    EntranceView puzzleView = new EntranceView();
-                    puzzleView.display();
-                    break;
-    }
+            case 'T':
+                TakeOffView takeOffView = new TakeOffView();
+                takeOffView.display();
+                break;
+            case 'P':
+                EntranceView puzzleView = new EntranceView();
+                puzzleView.display();
+                break;
+        }
     }
 
     void displayMenu() {
@@ -143,4 +136,4 @@ public class GameMenuView {
     private void saveGame() {
         System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    }
+}

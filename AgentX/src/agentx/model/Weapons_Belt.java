@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Chris
  */
-public class Weapons_Belt implements Serializable{
-    
+public class Weapons_Belt implements Serializable {
+
     private String beltItems;
 
     public Weapons_Belt() {
@@ -53,7 +53,5 @@ public class Weapons_Belt implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
 }

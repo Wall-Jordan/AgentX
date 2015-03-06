@@ -7,11 +7,11 @@ import java.util.Objects;
  *
  * @author Chris
  */
-public class Inventory implements Serializable{
+public class Inventory implements Serializable {
+
     private int quantity;
     private int type;
 
-    
     public Inventory() {
     }
 
@@ -61,6 +61,5 @@ public class Inventory implements Serializable{
         }
         return true;
     }
-    
-    
+
 }

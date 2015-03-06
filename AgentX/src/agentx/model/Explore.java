@@ -12,7 +12,8 @@ import java.util.Objects;
  *
  * @author matiasmikkola
  */
-public class Explore implements Serializable{
+public class Explore implements Serializable {
+
     private double fuel;
     private String tool;
     private String weapon;
@@ -90,5 +91,5 @@ public class Explore implements Serializable{
             return false;
         }
         return true;
-    }  
     }
+}

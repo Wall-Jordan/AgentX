@@ -12,7 +12,8 @@ import java.util.Objects;
  *
  * @author Jordan
  */
-public class TimeShip implements Serializable{
+public class TimeShip implements Serializable {
+
     private double fuel;
     private int status;
     private String description;
@@ -78,6 +79,5 @@ public class TimeShip implements Serializable{
         }
         return true;
     }
-    
-    
+
 }
