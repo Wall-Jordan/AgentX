@@ -35,6 +35,7 @@ public class GameMenuView {
             + "\n\t*****************************************************"
             + "\n\t**** T - Take Off                                ****"
             + "\n\t**** P - Puzzle Entrance                         ****"
+            + "\n\t**** D - Drill Instructions                      ****"
             + "\n\t*****************************************************";
     
     
@@ -113,6 +114,9 @@ public class GameMenuView {
                     EntranceView puzzleView = new EntranceView();
                     puzzleView.display();
                     break;
+                case 'D':
+                this.drillInstructionsView();
+                    break;
     }
     }
 
@@ -142,5 +146,9 @@ public class GameMenuView {
 
     private void saveGame() {
         System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void drillInstructionsView() {
+        System.out.println("Hello World!");
     }
     }
