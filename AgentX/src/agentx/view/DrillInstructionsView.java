@@ -48,9 +48,9 @@ public abstract class DrillInstructionsView extends View{
             return false;
         } else {
             System.out.println("Invalid drillbit");
-            return false;
+            return true;
 }
-        return false;
+        return true;
     
 }
 }
