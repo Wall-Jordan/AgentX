@@ -33,6 +33,7 @@ public class GameMenuView {
             + "\n\t**** T - Take Off                                ****"
             + "\n\t**** P - Puzzle Entrance                         ****"
             + "\n\t**** D - Drill Instructions                      ****"
+            + "\n\t**** W - Welder Instructions                      ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -110,7 +111,11 @@ public class GameMenuView {
                     break;
             case 'D':
                 this.drillInstructionsView();
-                    break;
+                break;
+            case 'W':
+                WelderInstructionsView welderInstructionsView = new WelderInstructionsView();
+                welderInstructionsView.display();
+                break;
     }
     }
 
