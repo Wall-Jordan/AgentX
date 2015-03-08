@@ -33,7 +33,8 @@ public class GameMenuView {
             + "\n\t**** T - Take Off                                ****"
             + "\n\t**** P - Puzzle Entrance                         ****"
             + "\n\t**** D - Drill Instructions                      ****"
-            + "\n\t**** W - Welder Instructions                      ****"
+            + "\n\t**** W - Welder Instructions                     ****"
+            + "\n\t**** H - Hammer Instructions                     ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -102,13 +103,13 @@ public class GameMenuView {
                 this.saveGame();
                 break;
             case 'T':
-                    TakeOffView takeOffView = new TakeOffView();
-                    takeOffView.display();
-                    break;
+                TakeOffView takeOffView = new TakeOffView();
+                takeOffView.display();
+                break;
             case 'P':
-                    EntranceView puzzleView = new EntranceView();
-                    puzzleView.display();
-                    break;
+                EntranceView puzzleView = new EntranceView();
+                puzzleView.display();
+                break;
             case 'D':
                 this.drillInstructionsView();
                 break;
@@ -116,7 +117,11 @@ public class GameMenuView {
                 WelderInstructionsView welderInstructionsView = new WelderInstructionsView();
                 welderInstructionsView.display();
                 break;
-    }
+            case 'H':
+                HammerView hammerView = new HammerView();
+                hammerView.display();
+                break;
+        }
     }
 
     void displayMenu() {
@@ -148,9 +153,9 @@ public class GameMenuView {
     }
 
     private void drillInstructionsView() {
-        DrillInstructionsView drillInstructionsView = new DrillInstructionsView() {};
-                    drillInstructionsView.display();
+        DrillInstructionsView drillInstructionsView = new DrillInstructionsView() {
+        };
+        drillInstructionsView.display();
     }
 
-    }
-    
+}
