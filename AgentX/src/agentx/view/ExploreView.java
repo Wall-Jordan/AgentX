@@ -36,7 +36,7 @@ public class ExploreView extends View {
             double drillDepth = PuzzleControl.calcDrillDepth(choice);
             System.out.println("You collected: " + drillDepth);
         } else if ("S".equals(choice)) {
-            System.out.println("You've decided to not drill right now. Thats fine, you can come back later.");
+            System.out.println("You've decided to not drill right now. That's fine, you can come back later.");
             return false;
         } else {
             System.out.println("Invalid drillbit");

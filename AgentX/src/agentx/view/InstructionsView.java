@@ -6,7 +6,6 @@
 package agentx.view;
 
 import agentx.view.ViewInterface.View;
-import java.util.Scanner;
 
 /**
  *
