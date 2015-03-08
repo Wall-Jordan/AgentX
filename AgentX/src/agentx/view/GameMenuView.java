@@ -36,6 +36,7 @@ public class GameMenuView {
             + "\n\t*****************************************************";
 
     private boolean valid;
+    private Object drillInstructionsView;
 
     public String getInput() {
         String selection = null;
@@ -99,15 +100,15 @@ public class GameMenuView {
             case 'S':
                 this.saveGame();
                 break;
-                case 'T':
+            case 'T':
                     TakeOffView takeOffView = new TakeOffView();
                     takeOffView.display();
                     break;
-                case 'P':
+            case 'P':
                     EntranceView puzzleView = new EntranceView();
                     puzzleView.display();
                     break;
-                case 'D':
+            case 'D':
                 this.drillInstructionsView();
                     break;
     }
@@ -142,6 +143,9 @@ public class GameMenuView {
     }
 
     private void drillInstructionsView() {
-        System.out.println("Hello World!");
+        DrillInstructionsView drillInstructionsView = new DrillInstructionsView() {};
+                    drillInstructionsView.display();
     }
+
     }
+    
