@@ -16,10 +16,59 @@ public class Game implements Serializable {
 
     private String gameName;
     private String saveTime;
+    
+    private TimeShip timeShip;
 
+    public TimeShip getTimeShip() {
+        return timeShip;
+    }
+
+    public void setTimeShip(TimeShip timeShip) {
+        this.timeShip = timeShip;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public GameBoard getGameBoard() {
+        return gameBoard;
+    }
+
+    public void setGameBoard(GameBoard gameBoard) {
+        this.gameBoard = gameBoard;
+    }
+
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Actor[] getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor[] actor) {
+        this.actor = actor;
+    }
+    private Player player;
+    private GameBoard gameBoard;
+
+    private Inventory[] inventory;
+    private Actor[] actor;
+    
+           
     public Game() {
     }
 
+            
     public String getGameName() {
         return gameName;
     }

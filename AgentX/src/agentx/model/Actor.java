@@ -5,6 +5,7 @@
  */
 package agentx.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,14 +13,27 @@ import java.util.Objects;
  *
  * @author Jordan
  */
-public class Actor implements Serializable {
+public enum Actor implements Serializable {
 
-    private double stamina;
-    private String description;
-    private double health;
-    private String type;
+    AgentX("The Main Character."),
+    Chaotica("Villain"),
+    Boss1("Boss1"),
+    Boss2("Boss2");
 
-    public Actor() {
+    private final double stamina;
+    private final String description;
+    private final int type;
+    private final Point coordinates;
+
+    Actor(String description) {
+        this.description = description;
+        coordinates = new Point(1, 1);
+        stamina = 10;
+        type = 2;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
     }
 
     public double getStamina() {
@@ -27,70 +41,28 @@ public class Actor implements Serializable {
     }
 
     public void setStamina(double stamina) {
-        this.stamina = stamina;
+
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getHealth() {
-        return health;
-    }
-
-    public void setHealth(double health) {
-        this.health = health;
-    }
-
-    public String getType() {
+    public int getType() {
         return type;
     }
 
     public void setType(String type) {
-        this.type = type;
+
     }
 
     @Override
     public String toString() {
-        return "Actor{" + "stamina=" + stamina + ", description=" + description + ", health=" + health + ", type=" + type + '}';
+        return "Actor{" + "stamina=" + stamina + ", description=" + description + ", type=" + type + ", coordinates=" + coordinates + '}';
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.stamina) ^ (Double.doubleToLongBits(this.stamina) >>> 32));
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.health) ^ (Double.doubleToLongBits(this.health) >>> 32));
-        hash = 59 * hash + Objects.hashCode(this.type);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (Double.doubleToLongBits(this.stamina) != Double.doubleToLongBits(other.stamina)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.health) != Double.doubleToLongBits(other.health)) {
-            return false;
-        }
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        return true;
+    public void setCurrentGame(Game game) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

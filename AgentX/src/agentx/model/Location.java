@@ -15,6 +15,17 @@ import java.util.Objects;
 public class Location implements Serializable {
 
     private Boolean visited;
+    private int section;
+
+    public void setSection(int section) {
+        this.section = section;
+    }
+
+    public void setBlock(int block) {
+        this.block = block;
+    }
+    private int block;
+           
 
     public Location() {
     }

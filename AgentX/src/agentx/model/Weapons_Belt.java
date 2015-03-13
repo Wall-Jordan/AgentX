@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Chris
  */
-public class Weapons_Belt implements Serializable {
+public class Weapons_Belt extends Inventory implements Serializable {
 
     private String beltItems;
 

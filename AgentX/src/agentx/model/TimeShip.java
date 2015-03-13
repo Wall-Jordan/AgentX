@@ -19,6 +19,9 @@ public class TimeShip implements Serializable {
     private String description;
 
     public TimeShip() {
+        this.description = "\nThis is the description of the TimeShip";
+        this.status = 0;
+        this.fuel = 0;
     }
 
     public double getFuel() {

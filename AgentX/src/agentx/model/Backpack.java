@@ -15,7 +15,12 @@ import java.util.Objects;
 public class Backpack implements Serializable {
 
     private String backpackItems;
+    private String description;
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
     public Backpack() {
     }
 

@@ -58,6 +58,7 @@ public class MainMenuView extends View {
 
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenu();
+        
 
     }
 
