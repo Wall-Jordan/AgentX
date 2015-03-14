@@ -12,6 +12,7 @@ import agentx.model.GameBoard;
 import agentx.model.Inventory;
 import agentx.model.Player;
 import agentx.model.TimeShip;
+import agentx.view.GameBoardView;
 
 /**
  *
@@ -37,6 +38,8 @@ public class GameControl {
         game.setGameBoard(gameBoard);
         
         GameBoardControl.moveActorsToStartingLocation(gameBoard);
+        
+        GameBoardView gameBoardView = new GameBoardView();
         
     }
     

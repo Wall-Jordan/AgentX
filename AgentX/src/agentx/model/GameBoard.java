@@ -19,6 +19,14 @@ public class GameBoard implements Serializable {
     private int block;
     private boolean visited;
     private Location[][] locations;
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
     private Scene scene;
     private ArrayList<Actor> actors;
 

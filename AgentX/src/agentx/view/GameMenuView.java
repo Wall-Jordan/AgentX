@@ -6,6 +6,7 @@
 package agentx.view;
 
 import static java.lang.Character.toUpperCase;
+import agentx.view.GameBoardView;
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,7 @@ public class GameMenuView {
             + "\n\t* F - Move Forward                                  *"
             + "\n\t* B - Move Backward                                 *"
             + "\n\t* I - Instructions                                  *"
+            + "\n\t* V - View Gameboard                                *"
             + "\n\t* O - Other Commands                                *"
             + "\n\t* E - Explore                                       *"
             + "\n\t* M - Main Menu                                     *"
@@ -116,6 +118,10 @@ public class GameMenuView {
             case 'W':
                 WelderInstructionsView welderInstructionsView = new WelderInstructionsView();
                 welderInstructionsView.display();
+                break;
+            case 'V':
+                GameBoardView gameBoardView = new GameBoardView();
+                gameBoardView.display();
                 break;
             case 'H':
                 HammerView hammerView = new HammerView();
