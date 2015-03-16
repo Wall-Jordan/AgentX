@@ -12,6 +12,15 @@ package agentx.view;
 public class GameBoardView {
 
     void display() {
+        
+        char gameBoard[][] = new char[3][10];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 10; j++) {
+                gameBoard[i][j] = 'X';
+            }
+        }
+        
         System.out.println("                           Agent X Gameboard          ");
         System.out.println("                 1   2   3   4   5   6   7   8   9   10");
         System.out.println("                 -   -   -   -   -   -   -   -   -   - ");
