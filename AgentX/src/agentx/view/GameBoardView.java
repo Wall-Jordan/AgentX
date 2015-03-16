@@ -12,23 +12,17 @@ package agentx.view;
 public class GameBoardView {
 
     void display() {
-        System.out.println("                Agent X Gameboard                    ");
-        System.out.println("                1   2   3   4   5   6   7   8   9   10");
-        System.out.println("                -   -   -   -   -   -   -   -   -   -");
-        
-        for (int row = 1; row <= 3; row++)
-        {
-            System.out.println("Time Period " + row + ": | " + gameBoard[row-1][0] + " | "
-                    + gameBoard[row-1][1] + " | "
-                    + gameBoard[row-1][2] + " | "
-                    + gameBoard[row-1][3] + " | "
-                    + gameBoard[row-1][4] + " | "
-                    + gameBoard[row-1][5] + " | "
-                    + gameBoard[row-1][6] + " | "
-                    + gameBoard[row-1][7] + " | "
-                    + gameBoard[row-1][8] + " | "
-                    + gameBoard[row-1][9] + " | ");
-            System.out.println("                -   -   -   -   -   -   -   -   -   -");
+        System.out.println("                           Agent X Gameboard          ");
+        System.out.println("                 1   2   3   4   5   6   7   8   9   10");
+        System.out.println("                 -   -   -   -   -   -   -   -   -   - ");
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Time Period " + (i+1) + ": | ");
+            for (int j = 0; j < 10; j++) {
+                System.out.print(gameBoard[i][j]);
+                System.out.print(" | ");
+            }
+            System.out.print("\n");
+            System.out.println("                 -   -   -   -   -   -   -   -   -   - ");
         }
         
     }
