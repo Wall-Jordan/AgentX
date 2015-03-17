@@ -11,12 +11,6 @@ package agentx.model;
  */
 public class Scene {
 
-
-
-
-
-
-//
     private static Scene[] createScenes() throws GameBoardControlException {
         return null;
     }
@@ -27,12 +21,52 @@ public class Scene {
         }
     }
 
-    public enum SceneType {
+    Scene[] scenes = new Scene[10];
+    
+    
+    public enum SectionOne {
 
-        combat,
-        puzzle,
-        explore,
-        takeoff;
+        drill,
+        learnDrill,
+        calcFuel,
+        learnFight,
+        hammer,
+        learnHammer,
+        cave,
+        fixShip,
+        fightBoss,
+        takeOff;
 
     }
+
+    public enum SectionTwo {
+
+        calcFuel,
+        enterSchool,
+        toolshop,
+        shopTeachersOffice,
+        roboticsLab,
+        cafeteria,
+        chemistryLab,
+        fixShip,
+        fightBoss,
+        takeOff;
+
+    }
+
+    public enum SectionThree {
+
+        calcFuel,
+        oldVillage,
+        waterfall,
+        findToolbox,
+        findSupplybox,
+        drillFuel,
+        puzzle,
+        fixShip,
+        fightBoss,
+        takeOff;
+
+    }
+
 }

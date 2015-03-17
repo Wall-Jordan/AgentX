@@ -7,11 +7,15 @@ package agentx.control;
 
 import agentx.AgentX;
 import agentx.model.Backpack;
+import agentx.model.Boss;
 import agentx.model.Game;
 import agentx.model.GameBoard;
 import agentx.model.Inventory;
 import agentx.model.Player;
 import agentx.model.TimeShip;
+import agentx.view.GameBoardView;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -37,6 +41,8 @@ public class GameControl {
         game.setGameBoard(gameBoard);
         
         GameBoardControl.moveActorsToStartingLocation(gameBoard);
+        
+        GameBoardView gameBoardView = new GameBoardView();
         
     }
     
@@ -70,11 +76,39 @@ public static Backpack[] createBackpackList() {
     return backpack;
 
 }
+
     public enum Tool {
         hammer,
         welder,
         wrench,
         drill;
-    }
+    }   
     
-}
+    public class ListTools  {
+
+	public ListTools() {
+	   ArrayList<String> listtools = new ArrayList<>();
+	   listtools.add("Hammer");
+	   listtools.add("Welder");
+	   listtools.add("Wrench");
+	   listtools.add("Drill");
+
+	   /*Unsorted List*/
+	   System.out.println("Before Sorting:");
+	   for(String counter: listtools){
+			System.out.println(counter);
+		}
+
+	   /* Sort statement*/
+	   Collections.sort(listtools);
+
+	   /* Sorted List*/
+	   System.out.println("After Sorting:");
+	   for(String counter: listtools){
+			System.out.println(counter);
+		}
+	
+                }
+            }
+    
+        }

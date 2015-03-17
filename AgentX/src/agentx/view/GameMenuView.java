@@ -5,7 +5,9 @@
  */
 package agentx.view;
 
+import agentx.control.PuzzleControl;
 import static java.lang.Character.toUpperCase;
+import agentx.view.GameBoardView;
 import java.util.Scanner;
 
 /**
@@ -21,6 +23,7 @@ public class GameMenuView {
             + "\n\t* F - Move Forward                                  *"
             + "\n\t* B - Move Backward                                 *"
             + "\n\t* I - Instructions                                  *"
+            + "\n\t* V - View Gameboard                                *"
             + "\n\t* O - Other Commands                                *"
             + "\n\t* E - Explore                                       *"
             + "\n\t* M - Main Menu                                     *"
@@ -35,6 +38,8 @@ public class GameMenuView {
             + "\n\t**** D - Drill Instructions                      ****"
             + "\n\t**** W - Welder Instructions                     ****"
             + "\n\t**** H - Hammer Instructions                     ****"
+            + "\n\t**** Y - Alphabetical order                      ****"
+            + "\n\t**** X - Strongest Attacking Boss                ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -117,10 +122,21 @@ public class GameMenuView {
                 WelderInstructionsView welderInstructionsView = new WelderInstructionsView();
                 welderInstructionsView.display();
                 break;
+            case 'V':
+                GameBoardView gameBoardView = new GameBoardView();
+                gameBoardView.display();
+                break;
             case 'H':
                 HammerView hammerView = new HammerView();
                 hammerView.display();
                 break;
+            case 'Y':
+                this.listTools();
+                break;
+            case 'X':
+                PuzzleControl puzzleControl = new PuzzleControl();
+                break;
+
         }
     }
 
@@ -156,6 +172,10 @@ public class GameMenuView {
         DrillInstructionsView drillInstructionsView = new DrillInstructionsView() {
         };
         drillInstructionsView.display();
+    }
+
+    private void listTools() {
+        System.out.println("Connect to GameBoardControl");
     }
 
 }

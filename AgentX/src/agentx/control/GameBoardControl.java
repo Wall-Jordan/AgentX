@@ -8,6 +8,7 @@ package agentx.control;
 import agentx.model.GameBoard;
 import agentx.model.Location;
 import agentx.model.Scene;
+import agentx.model.Scene.SectionOne;
 
 /**
  *
@@ -39,5 +40,11 @@ public class GameBoardControl {
 
         public GameBoardControlException() {
         }
+    }
+    
+    private static void assignScenesToBlock(GameBoard gameBoard, Scene[] scenes) {
+        Location[][] locations = gameBoard.getLocations();
+        
+     //   locations[0][0].setBlock(scenes[SectionOne.drill.ordinal()]);
     }
 }
