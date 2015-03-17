@@ -52,5 +52,7 @@ public class Boss implements Serializable {
         }
         return true;
     }
+    
+    
 
 }
