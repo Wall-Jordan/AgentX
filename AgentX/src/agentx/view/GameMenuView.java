@@ -37,7 +37,7 @@ public class GameMenuView {
             + "\n\t**** D - Drill Instructions                      ****"
             + "\n\t**** W - Welder Instructions                     ****"
             + "\n\t**** H - Hammer Instructions                     ****"
-            + "\n\t**** Y - Sort1                        ****"
+            + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -170,7 +170,7 @@ public class GameMenuView {
     }
 
     private void listTools() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Connect to GameBoardControl");
     }
 
 }
