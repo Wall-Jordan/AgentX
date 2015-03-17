@@ -37,6 +37,7 @@ public class GameMenuView {
             + "\n\t**** D - Drill Instructions                      ****"
             + "\n\t**** W - Welder Instructions                     ****"
             + "\n\t**** H - Hammer Instructions                     ****"
+            + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -127,6 +128,10 @@ public class GameMenuView {
                 HammerView hammerView = new HammerView();
                 hammerView.display();
                 break;
+            case 'Y':
+                this.listTools();
+                break;
+
         }
     }
 
@@ -162,6 +167,10 @@ public class GameMenuView {
         DrillInstructionsView drillInstructionsView = new DrillInstructionsView() {
         };
         drillInstructionsView.display();
+    }
+
+    private void listTools() {
+        System.out.println("Connect to GameBoardControl");
     }
 
 }
