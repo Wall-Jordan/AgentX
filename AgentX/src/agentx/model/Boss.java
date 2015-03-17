@@ -13,9 +13,19 @@ import java.io.Serializable;
  */
 public class Boss implements Serializable {
 
+
     private double damage;
 
     public Boss() {
+    }
+    
+    public int[] getBossDamage(){
+        int[] bossDamage = new int[3];
+        bossDamage[0] = 1;
+        bossDamage[1] = 2;
+        bossDamage[2] = 4;
+        
+        return bossDamage;
     }
 
     public double getDamage() {
@@ -53,6 +63,9 @@ public class Boss implements Serializable {
         return true;
     }
     
-    
-
+    public enum BossNames {
+        Jarik,
+        Nazeem,
+        Chaotica;
+    }
 }
