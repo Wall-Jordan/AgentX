@@ -5,7 +5,7 @@
  */
 package agentx.view;
 
-import agentx.control.GameControl;
+import agentx.control.PuzzleControl;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
 import java.util.Scanner;
@@ -134,7 +134,7 @@ public class GameMenuView {
                 this.listTools();
                 break;
             case 'X':
-                
+                PuzzleControl puzzleControl = new PuzzleControl();
                 break;
 
         }
