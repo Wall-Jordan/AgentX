@@ -6,6 +6,7 @@
 package agentx.control;
 
 import agentx.model.Weapons_Belt;
+import agentx.view.MainMenuView;
 
 /**
  *
@@ -47,5 +48,28 @@ public class InventoryControl {
     public static double fuel()
     {
         return 97.3;
+    }
+        public static void findWeapon(Object obj) {
+        
+        Weapons[] names = Weapons.values();
+
+        Weapons_Belt boss = new Weapons_Belt();
+
+        int index = -1;
+        for (int i = 0; i < names.length - 1; i++) {
+            if (names[i] == obj) {
+                index = i;
+            }
+        }
+
+        System.out.println(obj + " is at index location" + names[index] + ".");
+    }
+    
+        public enum Weapons {
+
+        Grenades,
+        Darts,
+        Knife,
+        Gun;
     }
 }

@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
@@ -40,6 +41,8 @@ public class GameMenuView {
             + "\n\t**** H - Hammer Instructions                     ****"
             + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t**** X - Strongest Attacking Boss                ****"
+            + "\n\t**** Y - Alphabetical order                      ****"
+            + "\n\t**** Z - Find Weapon                             ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -136,6 +139,11 @@ public class GameMenuView {
             case 'X':
                 PuzzleControl puzzleControl = new PuzzleControl();
                 PuzzleControl.hardestBoss();
+                break;
+            case 'Z':
+                String userSearch = this.getInput();
+                InventoryControl inventoryControl = new InventoryControl();
+                InventoryControl.findWeapon(userSearch);
                 break;
 
         }
