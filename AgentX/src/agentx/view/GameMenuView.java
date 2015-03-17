@@ -135,6 +135,7 @@ public class GameMenuView {
                 break;
             case 'X':
                 PuzzleControl puzzleControl = new PuzzleControl();
+                PuzzleControl.hardestBoss();
                 break;
 
         }

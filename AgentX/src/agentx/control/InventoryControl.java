@@ -5,6 +5,8 @@
  */
 package agentx.control;
 
+import agentx.model.Weapons_Belt;
+
 /**
  *
  * @author Chris
