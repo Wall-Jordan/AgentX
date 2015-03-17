@@ -7,6 +7,7 @@ package agentx.control;
 
 import agentx.AgentX;
 import agentx.model.Backpack;
+import agentx.model.Boss;
 import agentx.model.Game;
 import agentx.model.GameBoard;
 import agentx.model.Inventory;
@@ -109,4 +110,42 @@ public static Backpack[] createBackpackList() {
 	
                 }
             }
+    /**
+     * hardestBoss Function
+     *
+     * Calculates and returns the boss that has the highest attack points.
+     */
+    public static void hardestBoss() {
+        // Get array with names of bosses.
+        BossNames[] names = BossNames.values();
+
+        // Get array of damage/attack points of the bosses.
+        Boss boss = new Boss();
+        int bossDamage[] = boss.getBossDamage();
+
+        // Calculate max damage/attack points using for-each loop.
+        int maxDamage = bossDamage[0];
+        for (int damage : bossDamage) {
+            if (damage > maxDamage) {
+                maxDamage = damage;
+            }
+        }
+
+        // Search array for maxDamage to calculate index.
+        int index = -1;
+        for (int i = 0; i < bossDamage.length - 1; i++) {
+            if (bossDamage[i] == maxDamage) {
+                index = i;
+            }
+        }
+
+        System.out.println("The boss with the greatest attack points is " + names[index] + ".");
+    }
+    
+        public enum BossNames {
+
+        Jarik,
+        Nazeem,
+        Chaotica;
+    }
         }

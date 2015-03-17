@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.GameControl;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
 import java.util.Scanner;
@@ -38,6 +39,7 @@ public class GameMenuView {
             + "\n\t**** W - Welder Instructions                     ****"
             + "\n\t**** H - Hammer Instructions                     ****"
             + "\n\t**** Y - Alphabetical order                      ****"
+            + "\n\t**** X - Strongest Attacking Boss                ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -130,6 +132,9 @@ public class GameMenuView {
                 break;
             case 'Y':
                 this.listTools();
+                break;
+            case 'X':
+                
                 break;
 
         }
