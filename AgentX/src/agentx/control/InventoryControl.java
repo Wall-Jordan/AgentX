@@ -51,26 +51,37 @@ public class InventoryControl {
     }
 
     public static void findWeapon(Object obj) {
-
+        String weapon = (String) obj;
         Weapons[] names = Weapons.values();
 
-        Weapons_Belt boss = new Weapons_Belt();
-        System.out.println(obj);
+        Weapons_Belt name = new Weapons_Belt();
         int index = -1;
-        for (int i = 0; i < names.length - 1; i++) {
-            if (names[i].equals(obj)) {
+        for (int i = 0; i < names.length; i++) {
+//            System.out.println(names[i]);
+            if (names[i].getName().toUpperCase().equals(weapon.toUpperCase())) {
                 index = i;
+                break;
             }
         }
-
-        System.out.println(obj + " is at index location" + names[index] + ".");
+        if (index != -1) {
+            System.out.println(weapon + " is at index location " + index + ".");
+        }
     }
 
     public enum Weapons {
 
-        Grenades,
-        Darts,
-        Knife,
-        Gun;
+        Grenades("Grenades"),
+        DARTS("Darts"),
+        Knife("Knife"),
+        Gun("Gun");
+        private final String name;
+
+        Weapons(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }
