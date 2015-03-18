@@ -71,7 +71,7 @@ public class InventoryControl {
     public enum Weapons {
 
         Grenades("Grenades"),
-        DARTS("Darts"),
+        Darts("Darts"),
         Knife("Knife"),
         Gun("Gun");
         private final String name;
