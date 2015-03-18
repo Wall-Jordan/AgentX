@@ -84,9 +84,8 @@ public static Backpack[] createBackpackList() {
         drill;
     }   
     
-    public class ListTools  {
-
-	public ListTools() {
+    public static void ListTools()  {
+        
 	   ArrayList<String> listtools = new ArrayList<>();
 	   listtools.add("Hammer");
 	   listtools.add("Welder");
@@ -111,4 +110,4 @@ public static Backpack[] createBackpackList() {
                 }
             }
     
-        }
+        

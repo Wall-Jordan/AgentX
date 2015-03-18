@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import static java.lang.Character.toUpperCase;
@@ -134,7 +135,8 @@ public class GameMenuView {
                 hammerView.display();
                 break;
             case 'Y':
-                this.listTools();
+                GameControl gameControl = new GameControl();
+                GameControl.ListTools();
                 break;
             case 'X':
                 PuzzleControl puzzleControl = new PuzzleControl();
@@ -183,8 +185,6 @@ public class GameMenuView {
         drillInstructionsView.display();
     }
 
-    private void listTools() {
-        System.out.println("Connect to GameBoardControl");
-    }
+    
 
 }
