@@ -12,8 +12,6 @@ import agentx.model.Boss;
  * @author Chris
  */
 public class PuzzleControl {
-    
-    
 
     public static boolean calcEntrance(double x) {
         if (x <= 0) {
@@ -132,16 +130,18 @@ public class PuzzleControl {
 
         // Search array for maxDamage to calculate index.
         int index = -1;
-        for (int i = 0; i < bossDamage.length - 1; i++) {
+        for (int i = 0; i < bossDamage.length; i++) {
             if (bossDamage[i] == maxDamage) {
                 index = i;
             }
         }
 
-        System.out.println("The boss with the greatest attack points is " + names[index] + ".");
+        if (index != -1) {
+            System.out.println("The boss with the greatest attack points is " + names[index] + ".");
+        }
     }
-    
-        public enum BossNames {
+
+    public enum BossNames {
 
         Jarik,
         Nazeem,
