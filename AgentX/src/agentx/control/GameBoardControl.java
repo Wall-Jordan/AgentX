@@ -9,6 +9,7 @@ import agentx.model.GameBoard;
 import agentx.model.Location;
 import agentx.model.Scene;
 import agentx.model.Scene.SectionOne;
+import agentx.exceptions.GameBoardControlExceptions;
 
 /**
  *
@@ -16,7 +17,7 @@ import agentx.model.Scene.SectionOne;
  */
 public class GameBoardControl {
     
-    public static GameBoard createGameBoard() throws GameBoardControlException {
+    public static GameBoard createGameBoard() throws GameBoardControlExceptions {
         System.out.println("called createGameboard");
         return null;
     }
@@ -36,11 +37,6 @@ public class GameBoardControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private static class GameBoardControlException extends Exception {
-
-        public GameBoardControlException() {
-        }
-    }
     
     private static void assignScenesToBlock(GameBoard gameBoard, Scene[] scenes) {
         Location[][] locations = gameBoard.getLocations();

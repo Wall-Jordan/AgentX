@@ -6,8 +6,11 @@
 package agentx.view;
 
 import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.view.ViewInterface.View;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,19 +31,25 @@ public class ExploreView extends View {
         String choice = value;
 
         if ("1".equals(choice)) {
-            PuzzleControl puzzleControl = new PuzzleControl();
-            double drillDepth = PuzzleControl.calcDrillDepth(choice);
-            System.out.println("You collected: " + drillDepth);
+            try {
+                PuzzleControl puzzleControl = new PuzzleControl();
+                double drillDepth;
+                drillDepth = PuzzleControl.calcDrillDepth(choice);
+                System.out.println("You collected: " + drillDepth);
+            } catch (PuzzleControlExceptions pe) {
+                System.out.println(pe.getMessage());
+            }
         } else if ("2".equals(choice)) {
-            PuzzleControl puzzleControl = new PuzzleControl();
-            double drillDepth = PuzzleControl.calcDrillDepth(choice);
-            System.out.println("You collected: " + drillDepth);
+            try {
+                PuzzleControl puzzleControl = new PuzzleControl();
+                double drillDepth = PuzzleControl.calcDrillDepth(choice);
+                System.out.println("You collected: " + drillDepth);
+            } catch (PuzzleControlExceptions pe) {
+                System.out.println(pe.getMessage());
+            }
         } else if ("S".equals(choice)) {
             System.out.println("You've decided to not drill right now. That's fine, you can come back later.");
             return false;
-        } else {
-            System.out.println("Invalid drillbit");
-            return true;
         }
         return true;
     }
