@@ -30,10 +30,14 @@ public class EntranceView extends View {
                     + "\n\tX=(2*(X-2)+(96/6))/4"
                     + "\n\n\tSolve for X to Enter! ONLY ENTER NUMBERS!!!");
             String input = this.getInput();
+            
+            try {
+                double userIn = Double.parseDouble(input);
+                this.doAction(userIn);
+            } catch (NumberFormatException nf) {
+                System.out.println("\n You must enter in a number.");
+            }
 
-            double userIn = Double.parseDouble(input);
-
-            this.doAction(userIn);
 
         } while (result == false);
 

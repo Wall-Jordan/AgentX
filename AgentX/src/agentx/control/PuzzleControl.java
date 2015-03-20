@@ -5,6 +5,7 @@
  */
 package agentx.control;
 
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Boss;
 
 /**
@@ -12,28 +13,24 @@ import agentx.model.Boss;
  * @author Chris
  */
 public class PuzzleControl {
-    
-    
 
     public static boolean calcEntrance(double x) {
-        if (x <= 0) {
-            return false;
-        } else if (x == (2 * (x - 2) + (96 / 6)) / 4) {
+        if (x == (2 * (x - 2) + (96 / 6)) / 4) {
             return true;
         } else {
             return false;
         }
     }
 
-    public static int calcNeededFuelAmount(double years, double fuelType, double mass) {
+    public static int calcNeededFuelAmount(double years, double fuelType, double mass) throws PuzzleControlExceptions {
         double gallonsOfFuel;
 
         //Boundary Check
         if (years < 0 || years > 1000) {
-            return -1;
+            throw new PuzzleControlExceptions("Cannot have travel - years or more than a 1000 years.");
         }
         if (mass < 0 || mass > 1000) {
-            return -1;
+            throw new PuzzleControlExceptions("Mass of ship out of range.");
         }
 
         //fuel calculation
@@ -44,7 +41,7 @@ public class PuzzleControl {
         } else if (fuelType == 3) {
             gallonsOfFuel = Math.sqrt((years * mass) / 200);
         } else {
-            return -1;
+            throw new PuzzleControlExceptions("Invalid fuel type.");
         }
 
         //remove trailing numbers
@@ -52,17 +49,17 @@ public class PuzzleControl {
 
         //final fuel error check
         if (gallonsOfFuel < 0) {
-            return -1;
+            throw new PuzzleControlExceptions("Cannot have a negative amount of fuel.");
         }
         //Special case. You need at least 1 gallon of fuel to time travel!
         if (gallonsOfFuel == 0) {
-            return 1;
+            throw new PuzzleControlExceptions("Cannot travel on 0 gallons of fuel.");
         }
 
         return (int) gallonsOfFuel;
     }
 
-    public static double calcDrillDepth(String drillBit) {
+    public static double calcDrillDepth(String drillBit) throws PuzzleControlExceptions {
         //Define variables.
         double drillDepth;
         double bitWidth;
@@ -78,7 +75,7 @@ public class PuzzleControl {
                 bitWidth = 16.0;
                 break;
             default:
-                return -1;
+                throw new PuzzleControlExceptions("Invalid drill bit selected.");
         }
 
         //Calculate drillDepth of drillBit Type.
@@ -132,16 +129,18 @@ public class PuzzleControl {
 
         // Search array for maxDamage to calculate index.
         int index = -1;
-        for (int i = 0; i < bossDamage.length - 1; i++) {
+        for (int i = 0; i < bossDamage.length; i++) {
             if (bossDamage[i] == maxDamage) {
                 index = i;
             }
         }
 
-        System.out.println("The boss with the greatest attack points is " + names[index] + ".");
+        if (index != -1) {
+            System.out.println("The boss with the greatest attack points is " + names[index] + ".");
+        }
     }
-    
-        public enum BossNames {
+
+    public enum BossNames {
 
         Jarik,
         Nazeem,

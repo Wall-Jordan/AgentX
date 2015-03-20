@@ -6,7 +6,10 @@
 package agentx.view;
 
 import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.view.ViewInterface.View;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,14 +37,22 @@ public abstract class DrillInstructionsView extends View{
         String choice = value;
         
                 if ("1".equals(choice)) {
-            PuzzleControl puzzleControl = new PuzzleControl();
-            double drillDepth = PuzzleControl.calcDrillDepth(choice);
-            System.out.println("You collected: " + drillDepth);
+            try {
+                PuzzleControl puzzleControl = new PuzzleControl();
+                double drillDepth = PuzzleControl.calcDrillDepth(choice);
+                System.out.println("You collected: " + drillDepth);
+            } catch (PuzzleControlExceptions pe) {
+                System.out.println(pe.getMessage());
+            }
             
                     } else if ("2".equals(choice)) {
-            PuzzleControl puzzleControl = new PuzzleControl();
-            double drillDepth = PuzzleControl.calcDrillDepth(choice);
-            System.out.println("You collected: " + drillDepth);
+            try {
+                PuzzleControl puzzleControl = new PuzzleControl();
+                double drillDepth = PuzzleControl.calcDrillDepth(choice);
+                System.out.println("You collected: " + drillDepth);
+            } catch (PuzzleControlExceptions pe) {
+                System.out.println(pe.getMessage());
+            }
             
                     } else if ("Q".equals(choice)) {
             System.out.println("Looks like you are done practicing. Good luck!");
