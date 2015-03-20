@@ -26,8 +26,8 @@ public class PuzzleControl {
         double gallonsOfFuel;
 
         //Boundary Check
-        if (years < 0 || years > 1000) {
-            throw new PuzzleControlExceptions("Cannot have travel - years or more than a 1000 years.");
+        if (years < 0) {
+            throw new PuzzleControlExceptions("Cannot travel a negative amount of years.");
         }
         if (mass < 0 || mass > 1000) {
             throw new PuzzleControlExceptions("Mass of ship out of range.");
@@ -85,20 +85,20 @@ public class PuzzleControl {
     }
     // Calculate Damage Function //
 
-    public static double calcDamage(double stamina, int weaponType, int blockAttack, double health) {
+    public static double calcDamage(double stamina, int weaponType, int blockAttack, double health) throws PuzzleControlExceptions {
 
         // Boundary Check // 
         if (stamina < 0 || stamina > 100) {
-            return -1;
+            throw new PuzzleControlExceptions ("Stamina must be between 0 and 100.");
         }
         if (weaponType < 0 || weaponType > 3) {
-            return -1;
+            throw new PuzzleControlExceptions ("Weapon type must be between 0 and 3");
         }
         if (blockAttack < 0 || blockAttack > 4) {
-            return -1;
+            throw new PuzzleControlExceptions ("Block Attack must be between o and 4.");
         }
         if (health < 0 || health > 100) {
-            return -1;
+            throw new PuzzleControlExceptions ("Health must be between 0 and 100.");
         }
 
         // Calculate Amount of Damage //
