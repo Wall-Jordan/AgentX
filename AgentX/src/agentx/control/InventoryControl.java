@@ -51,6 +51,9 @@ public class InventoryControl {
     }
 
     public static void findWeapon(Object obj) {
+        if (obj == null){
+            
+        }
         String weapon = (String) obj;
         Weapons[] names = Weapons.values();
 
