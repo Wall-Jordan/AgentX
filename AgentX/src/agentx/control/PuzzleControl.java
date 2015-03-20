@@ -15,9 +15,7 @@ import agentx.model.Boss;
 public class PuzzleControl {
 
     public static boolean calcEntrance(double x) {
-        if (x <= 0) {
-            return false;
-        } else if (x == (2 * (x - 2) + (96 / 6)) / 4) {
+        if (x == (2 * (x - 2) + (96 / 6)) / 4) {
             return true;
         } else {
             return false;
