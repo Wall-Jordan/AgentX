@@ -6,8 +6,11 @@
 package agentx.view;
 
 import agentx.control.ProgramControl;
+import agentx.exceptions.ProgramControlExceptions;
 import agentx.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,9 +29,14 @@ public class StartProgramView {
 
         String playersName = this.getPlayersName();
 
-        Player player = ProgramControl.createPlayer(playersName);
+        Player player;
+        try {
+            player = ProgramControl.createPlayer(playersName);
+            this.displayWelcomeMessage(player);
+        } catch (ProgramControlExceptions ex) {
+            System.out.println(ex.getMessage());
+        }
 
-        this.displayWelcomeMessage(player);
 
         MainMenuView mainMenu = new MainMenuView();
         mainMenu.display();

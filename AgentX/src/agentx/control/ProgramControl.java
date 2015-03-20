@@ -6,6 +6,7 @@
 package agentx.control;
 
 import agentx.AgentX;
+import agentx.exceptions.ProgramControlExceptions;
 import agentx.model.Player;
 
 /**
@@ -14,9 +15,10 @@ import agentx.model.Player;
  */
 public class ProgramControl {
 
-    public static Player createPlayer(String playersName) {
+    public static Player createPlayer(String playersName) throws ProgramControlExceptions {
         if (playersName == null){
-            return null;
+            throw new ProgramControlExceptions("You have to enter a name");
+          
         }
         
         Player player = new Player();
