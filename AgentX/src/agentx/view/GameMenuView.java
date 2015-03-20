@@ -143,6 +143,7 @@ public class GameMenuView {
                 PuzzleControl.hardestBoss();
                 break;
             case 'Z':
+                System.out.println("Please enter the name of a weapon to find its index location.");
                 String userSearch = this.getInput();
                 InventoryControl inventoryControl = new InventoryControl();
                 InventoryControl.findWeapon(userSearch);
