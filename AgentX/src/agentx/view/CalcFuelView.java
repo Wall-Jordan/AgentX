@@ -24,8 +24,7 @@ public class CalcFuelView extends View {
         boolean result = false;
         
         do {
-            System.out.println("\n\tThere's a rock here. Try smashing it open with the Hammer you picked up in the last location."
-                + "\n\tIf you nead help, just enter I for the game instructions.");
+            System.out.println("\n\t Calculate How Much Fuel You Need for Time Travel:");
             String input = this.getInput();
 
             try {
@@ -64,6 +63,7 @@ public class CalcFuelView extends View {
             System.out.println("You will need to collect " + gallonsOfFuel + " gallons of fuel.");
             return true;
         } catch(PuzzleControlExceptions pe){
+            System.out.println(pe.getMessage());
             return false;
         }
     }

@@ -43,10 +43,10 @@ public class GameMenuView {
             + "\n\t**** D - Drill Instructions                      ****"
             + "\n\t**** W - Welder Instructions                     ****"
             + "\n\t**** H - Hammer Instructions                     ****"
-            + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t**** X - Strongest Attacking Boss                ****"
             + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t**** Z - Find Weapon                             ****"
+            + "\n\t**** C - CalcNeededFuel View                     ****"
             + "\n\t*****************************************************";
 
     private boolean valid;
@@ -157,7 +157,9 @@ public class GameMenuView {
                 }
 
                 break;
-
+            case 'C':
+                CalcFuelView calcFuelView = new CalcFuelView();
+                calcFuelView.display();
         }
     }
 
