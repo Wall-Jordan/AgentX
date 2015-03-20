@@ -8,9 +8,12 @@ package agentx.view;
 import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
+import agentx.exceptions.InventoryControlExceptions;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -146,7 +149,13 @@ public class GameMenuView {
                 System.out.println("Please enter the name of a weapon to find its index location.");
                 String userSearch = this.getInput();
                 InventoryControl inventoryControl = new InventoryControl();
-                InventoryControl.findWeapon(userSearch);
+
+                try {
+                    InventoryControl.findWeapon(userSearch);
+                } catch (InventoryControlExceptions ex) {
+                    System.out.println(ex.getMessage());
+                }
+
                 break;
 
         }
@@ -185,7 +194,5 @@ public class GameMenuView {
         };
         drillInstructionsView.display();
     }
-
-    
 
 }

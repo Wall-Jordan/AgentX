@@ -5,6 +5,7 @@
  */
 package agentx.control;
 
+import agentx.exceptions.InventoryControlExceptions;
 import agentx.model.Weapons_Belt;
 import agentx.view.MainMenuView;
 
@@ -50,9 +51,9 @@ public class InventoryControl {
         return 97.3;
     }
 
-    public static void findWeapon(Object obj) {
+    public static void findWeapon(Object obj) throws InventoryControlExceptions {
         if (obj == null){
-            
+            throw new InventoryControlExceptions("You have entered an invalid input");
         }
         String weapon = (String) obj;
         Weapons[] names = Weapons.values();
