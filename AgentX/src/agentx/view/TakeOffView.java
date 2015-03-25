@@ -6,7 +6,10 @@
 package agentx.view;
 
 import agentx.view.ViewInterface.View;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -53,28 +56,32 @@ public class TakeOffView extends View {
     @Override
     public String getInput() {
         String year = null;
-        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Destination year:");
 
-        year = keyboard.nextLine();
-        year = year.trim();
-        year = year.toUpperCase();
+        try {
+            year = this.keyboard.readLine();
+            year = year.trim();
+            year = year.toUpperCase();
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
 
         return year;
     }
 
     private String getInput2() {
-        String year = null;
-        Scanner keyboard = new Scanner(System.in);
+        String selection = null;
 
         System.out.println("Would you like to go back? [Y, N]");
-
-        year = keyboard.nextLine();
-        year = year.trim();
-        year = year.toUpperCase();
-
-        return year;
+        try {
+            selection = this.keyboard.readLine();
+            selection = selection.trim();
+            selection = selection.toUpperCase();
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
+        return selection;
     }
 
     @Override
