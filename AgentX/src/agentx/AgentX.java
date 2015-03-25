@@ -40,7 +40,7 @@ public class AgentX {
             AgentX.logFile = new PrintWriter(filePath);
 
             StartProgramView startProgramView = new StartProgramView();
-            startProgramView.startProgram();
+            startProgramView.display();
 
         } catch (Exception e) {
             System.out.println("Exception: " + e.toString()

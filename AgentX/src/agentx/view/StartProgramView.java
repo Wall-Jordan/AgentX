@@ -8,6 +8,7 @@ package agentx.view;
 import agentx.control.ProgramControl;
 import agentx.exceptions.ProgramControlExceptions;
 import agentx.model.Player;
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,16 +17,26 @@ import java.util.logging.Logger;
  *
  * @author Jordan
  */
-public class StartProgramView {
+public class StartProgramView extends View{
 
-//    public static void main (String[] args){                                                     //Take out commits!
-//        displayBanner();
-//    }
+    
+    
     public StartProgramView() {
+        super("\n\n\t*****************************************************"
+                + "\n\t*                                                   *"
+                + "\n\t*                     AGENT X:                      *"
+                + "\n\t* Agent X is a game of adventure, creativity, and   *"
+                + "\n\t* problem solving in which the player takes on      *"
+                + "\n\t* the persona of a time agent chasing the terrorist *"
+                + "\n\t* Chaotica.                                         *"
+                + "\n\t*                                                   *"
+                + "\n\t*    YOUR MISSION TO CAPTURE CHAOTICA STARTS NOW!   *"
+                + "\n\t*                                                   *"
+                + "\n\t*****************************************************");
     }
-
-    public void startProgram() {
-        this.displayBanner();
+    
+    @Override
+    public void display() {
 
         String playersName = this.getPlayersName();
 
@@ -42,30 +53,15 @@ public class StartProgramView {
         mainMenu.display();
     }
 
-    public /*static*/ void displayBanner() {                                                        //Take out commits!
-        System.out.println("\n\n\t*****************************************************"
-                + "\n\t*                                                   *");
-        System.out.println("\t*                     AGENT X:                      *"
-                + "\n\t* Agent X is a game of adventure, creativity, and   *"
-                + "\n\t* problem solving in which the player takes on      *"
-                + "\n\t* the persona of a time agent chasing the terrorist *"
-                + "\n\t* Chaotica.                                         *");
-
-        System.out.println("\t*                                                   *"
-                + "\n\t*    YOUR MISSION TO CAPTURE CHAOTICA STARTS NOW!   *"
-                + "\n\t*                                                   *"
-                + "\n\t*****************************************************");
-    }
-
+    
     public String getPlayersName() {
         boolean valid = false;
         String playersName = null;
-        Scanner keyboard = new Scanner(System.in);
-
+try{
         while (!valid) {
             System.out.println("Please enter your name below:");
 
-            playersName = keyboard.nextLine();
+            playersName = this.keyboard.readLine();
             playersName = playersName.trim();
 
             if (playersName.length() < 2) {
@@ -78,7 +74,9 @@ public class StartProgramView {
             }
             break;
         }
-
+}catch(Exception e){
+    
+    }
         return playersName;
     }
 
@@ -87,4 +85,9 @@ public class StartProgramView {
                 + "\n\t\tWelcome to the game " + player.getName() + "!");
         System.out.println("\t*****************************************************");
     }
+@Override
+public boolean doAction(Object obj)
+{
+    return false;
+}
 }
