@@ -11,6 +11,7 @@ import agentx.control.PuzzleControl;
 import agentx.exceptions.InventoryControlExceptions;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
+import agentx.view.ViewInterface.View;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,9 +20,10 @@ import java.util.logging.Logger;
  *
  * @author matiasmikkola
  */
-public class GameMenuView {
+public class GameMenuView extends View{
 
-    private final String GAMEMENU = "\n"
+    public GameMenuView(){
+    super("\n"
             + "\n\t*****************************************************"
             + "\n\t*                    Game Menu                      *"
             + "\n\t*****************************************************"
@@ -47,105 +49,76 @@ public class GameMenuView {
             + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t**** Z - Find Weapon                             ****"
             + "\n\t**** C - CalcNeededFuel View                     ****"
-            + "\n\t*****************************************************";
+            + "\n\t*****************************************************");
+}
 
     private boolean valid;
     private Object drillInstructionsView;
 
-    public String getInput() {
-        String selection = null;
-        Scanner keyboard = new Scanner(System.in);
-        while (!valid) {
-
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            selection = selection.toUpperCase();
-
-            if (selection.length() < 1) {
-                System.out.println("Input something else");
-                continue;
-            }
-            break;
-        }
-        return selection;
-    }
-
     /**
      *
      */
-    public void displayGameMenu() {
 
-        char selection = ' ';
-        do {
-
-            System.out.println(GAMEMENU); //display menu
-
-            String input = this.getInput();
-            selection = input.charAt(0);
-            selection = toUpperCase(selection);
-            this.doAction(selection);
-
-        } while (selection != 'M');
-    }
-
-    private void doAction(char selection) {
+    @Override
+    public boolean doAction(Object obj) {
+        String selection = (String) obj;
         switch (selection) {
-            case 'E':
+            case "E":
                 ExploreView exploreView = new ExploreView();
                 exploreView.display();
                 break;
-            case 'F':
+            case "F":
                 this.moveForward();
                 break;
-            case 'B':
+            case "B":
                 this.moveBackward();
                 break;
-            case 'I':
+            case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
                 break;
-            case 'O':
+            case "O":
                 OtherCommandsMenuView otherCommandsView = new OtherCommandsMenuView();
                 otherCommandsView.display();
                 break;
-            case 'M':
+            case "M":
                 this.mainMenu();
-                break;
-            case 'S':
+                return true;
+            case "S":
                 this.saveGame();
                 break;
-            case 'T':
+            case "T":
                 TakeOffView takeOffView = new TakeOffView();
                 takeOffView.display();
                 break;
-            case 'P':
+            case "P":
                 EntranceView puzzleView = new EntranceView();
                 puzzleView.display();
                 break;
-            case 'D':
+            case "D":
                 this.drillInstructionsView();
                 break;
-            case 'W':
+            case "W":
                 WelderInstructionsView welderInstructionsView = new WelderInstructionsView();
                 welderInstructionsView.display();
                 break;
-            case 'V':
+            case "V":
                 GameBoardView gameBoardView = new GameBoardView();
                 gameBoardView.display();
                 break;
-            case 'H':
+            case "H":
                 HammerView hammerView = new HammerView();
                 hammerView.display();
                 break;
-            case 'Y':
+            case "Y":
                 GameControl gameControl = new GameControl();
                 GameControl.ListTools();
                 break;
-            case 'X':
+            case "X":
                 PuzzleControl puzzleControl = new PuzzleControl();
                 PuzzleControl.hardestBoss();
                 break;
-            case 'Z':
+            case "Z":
                 System.out.println("Please enter the name of a weapon to find its index location.");
                 String userSearch = this.getInput();
                 InventoryControl inventoryControl = new InventoryControl();
@@ -157,10 +130,11 @@ public class GameMenuView {
                 }
 
                 break;
-            case 'C':
+            case "C":
                 CalcFuelView calcFuelView = new CalcFuelView();
                 calcFuelView.display();
         }
+        return false;
     }
 
     void displayMenu() {

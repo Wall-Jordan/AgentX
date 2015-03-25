@@ -57,7 +57,7 @@ public class MainMenuView extends View {
         GameControl.createNewGame(AgentX.getPlayer());
 
         GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenu();
+        gameMenuView.display();
         
 
     }
