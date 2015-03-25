@@ -61,7 +61,7 @@ public class PuzzleControl {
 
     public static double calcDrillDepth(String drillBit) throws PuzzleControlExceptions {
         //Define variables.
-        double drillDepth;
+        double drillDepth = 0.0;
         double bitWidth;
 
         //Set bitWidth in mm based on drillBit selected.
@@ -74,8 +74,10 @@ public class PuzzleControl {
             case "02":
                 bitWidth = 16.0;
                 break;
+            case "S":
+                return drillDepth;
             default:
-                throw new PuzzleControlExceptions("Invalid drill bit selected.");
+                throw new PuzzleControlExceptions("\n\nInvalid drill bit selected.");
         }
 
         //Calculate drillDepth of drillBit Type.
