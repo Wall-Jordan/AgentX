@@ -5,6 +5,9 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -22,6 +25,8 @@ public interface ViewInterface {
     public abstract class View implements ViewInterface {
 
         private String promptMessage;
+        protected final BufferedReader keyboard = AgentX.getInFile();
+        protected final PrintWriter console = AgentX.getOutFile();
 
         public View(String promptMessage) {
             this.promptMessage = promptMessage;
@@ -44,26 +49,28 @@ public interface ViewInterface {
         @Override
         public String getInput() {
 
-            Scanner keyboard = new Scanner(System.in);
             boolean valid = false;
             String selection = null;
+            try {
+                while (!valid) {
 
-            while (!valid) {
+                    System.out.println("Enter your selection");
+                    selection = this.keyboard.readLine();
+                    selection = selection.trim();
+                    selection = selection.toUpperCase();
 
-                System.out.println("Enter your selection");
-                selection = keyboard.nextLine();
-                selection = selection.trim();
-                selection = selection.toUpperCase();
+                    if (selection.length() < 1) {
 
-                if (selection.length() < 1) {
+                        System.out.println("Invalid Selection. Please try again.");
+                        continue;
 
-                    System.out.println("Invalid Selection. Please try again.");
-                    continue;
-
+                    }
+                    break;
                 }
-                break;
-
+            } catch (Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
             }
+
             return selection;
 
         }

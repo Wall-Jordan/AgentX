@@ -7,7 +7,10 @@ package agentx.view;
 
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.view.ViewInterface.View;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,7 +25,7 @@ public class CalcFuelView extends View {
     @Override
     public void display() {
         boolean result = false;
-        
+
         do {
             System.out.println("\n\t Calculate How Much Fuel You Need for Time Travel:");
             String input = this.getInput();
@@ -40,15 +43,18 @@ public class CalcFuelView extends View {
 
     @Override
     public String getInput() {
+
         String year = null;
-        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("How many years are you going to travel?");
+        try {
+            year = this.keyboard.readLine();
+            year = year.trim();
+            year = year.toUpperCase();
 
-        year = keyboard.nextLine();
-        year = year.trim();
-        year = year.toUpperCase();
-
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
         return year;
     }
 
@@ -57,12 +63,12 @@ public class CalcFuelView extends View {
         int userSelection = (int) obj;
         double mass = 500;
         double fuelType = 1;
-        
+
         try {
             int gallonsOfFuel = agentx.control.PuzzleControl.calcNeededFuelAmount(userSelection, fuelType, mass);
             System.out.println("You will need to collect " + gallonsOfFuel + " gallons of fuel.");
             return true;
-        } catch(PuzzleControlExceptions pe){
+        } catch (PuzzleControlExceptions pe) {
             System.out.println(pe.getMessage());
             return false;
         }
