@@ -25,7 +25,7 @@ public class EntranceView extends View {
     public void display() {
 
         do {
-            System.out.println("\n"
+            this.console.println("\n"
                     + "\n\tYou are at a door. Next to the door is a security keypad. Above the keypad is a small sign that says..."
                     + "\n\tX=(2*(X-2)+(96/6))/4"
                     + "\n\n\tSolve for X to Enter! ONLY ENTER NUMBERS!!!");
@@ -35,7 +35,7 @@ public class EntranceView extends View {
                 double userIn = Double.parseDouble(input);
                 this.doAction(userIn);
             } catch (NumberFormatException nf) {
-                System.out.println("\n You must enter in a number.");
+                this.console.println("\n You must enter in a number.");
             }
 
 
@@ -48,10 +48,10 @@ public class EntranceView extends View {
         double number = (double) obj;
         boolean test = PuzzleControl.calcEntrance(number);
         if (test == true) {
-            System.out.println("\n\tCORRECT! You may now proceed.");
+            this.console.println("\n\tCORRECT! You may now proceed.");
             result = true;
         } else {
-            System.out.println("\n\tWRONG!!! Please try again.");
+            this.console.println("\n\tWRONG!!! Please try again.");
             result = false;
             return result;
         }

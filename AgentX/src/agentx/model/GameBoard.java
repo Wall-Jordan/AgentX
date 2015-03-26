@@ -5,7 +5,9 @@
  */
 package agentx.model;
 
+import agentx.AgentX;
 import agentx.control.GameControl;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,7 +16,7 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class GameBoard implements Serializable {
-
+protected final static PrintWriter console = AgentX.getOutFile();
     private int section;
     private int block;
     private boolean visited;
@@ -43,7 +45,7 @@ public class GameBoard implements Serializable {
     public GameBoard(int noOfSection, int noOfBlock) {
         
         if (section < 1 || block < 1) {
-            System.out.println("Section and Block have to be > 0");
+            console.println("Section and Block have to be > 0");
             return;
         }
         
