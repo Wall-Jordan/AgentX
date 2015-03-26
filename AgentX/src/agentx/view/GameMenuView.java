@@ -119,14 +119,14 @@ public class GameMenuView extends View{
                 PuzzleControl.hardestBoss();
                 break;
             case "Z":
-                System.out.println("Please enter the name of a weapon to find its index location.");
+                console.println("Please enter the name of a weapon to find its index location.");
                 String userSearch = this.getInput();
                 InventoryControl inventoryControl = new InventoryControl();
 
                 try {
                     InventoryControl.findWeapon(userSearch);
                 } catch (InventoryControlExceptions ex) {
-                    System.out.println(ex.getMessage());
+                    ErrorView.display("GameMenuView.java", ex.getMessage());
                 }
 
                 break;
@@ -142,27 +142,27 @@ public class GameMenuView extends View{
     }
 
     private void moveForward() {
-        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void moveBackward() {
-        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void instructions() {
-        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void moveOthercommands() {
-        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void mainMenu() {
-        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void saveGame() {
-        System.out.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private void drillInstructionsView() {
