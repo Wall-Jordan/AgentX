@@ -5,15 +5,18 @@
  */
 package agentx.control;
 
+import agentx.AgentX;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Boss;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Chris
  */
 public class PuzzleControl {
-
+    protected final static PrintWriter console = AgentX.getOutFile();
+    
     public static boolean calcEntrance(double x) {
         if (x == (2 * (x - 2) + (96 / 6)) / 4) {
             return true;
@@ -138,7 +141,7 @@ public class PuzzleControl {
         }
 
         if (index != -1) {
-            System.out.println("The boss with the greatest attack points is " + names[index] + ".");
+            console.println("The boss with the greatest attack points is " + names[index] + ".");
         }
     }
 

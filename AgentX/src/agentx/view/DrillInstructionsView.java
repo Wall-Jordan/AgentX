@@ -40,25 +40,25 @@ public abstract class DrillInstructionsView extends View{
             try {
                 PuzzleControl puzzleControl = new PuzzleControl();
                 double drillDepth = PuzzleControl.calcDrillDepth(choice);
-                System.out.println("You collected: " + drillDepth);
+                console.println("You collected: " + drillDepth);
             } catch (PuzzleControlExceptions pe) {
-                System.out.println(pe.getMessage());
+                ErrorView.display("DrillInstructionsView.java",pe.getMessage());
             }
             
                     } else if ("2".equals(choice)) {
             try {
                 PuzzleControl puzzleControl = new PuzzleControl();
                 double drillDepth = PuzzleControl.calcDrillDepth(choice);
-                System.out.println("You collected: " + drillDepth);
+                console.println("You collected: " + drillDepth);
             } catch (PuzzleControlExceptions pe) {
-                System.out.println(pe.getMessage());
+                ErrorView.display("DrillInstructionsView.java",pe.getMessage());
             }
             
                     } else if ("Q".equals(choice)) {
-            System.out.println("Looks like you are done practicing. Good luck!");
+            console.println("Looks like you are done practicing. Good luck!");
             return false;
         } else {
-            System.out.println("Invalid drillbit");
+            console.println("Invalid drillbit");
             return true;
 }
         return true;
