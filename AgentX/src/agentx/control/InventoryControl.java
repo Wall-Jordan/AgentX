@@ -5,16 +5,18 @@
  */
 package agentx.control;
 
+import agentx.AgentX;
 import agentx.exceptions.InventoryControlExceptions;
 import agentx.model.Weapons_Belt;
 import agentx.view.MainMenuView;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Chris
  */
 public class InventoryControl {
-
+protected final static PrintWriter console = AgentX.getOutFile();
     public static boolean hammer() {
         return true;
     }
@@ -61,14 +63,14 @@ public class InventoryControl {
         Weapons_Belt name = new Weapons_Belt();
         int index = -1;
         for (int i = 0; i < names.length; i++) {
-//            System.out.println(names[i]);
+//            console.println(names[i]);
             if (names[i].getName().toUpperCase().equals(weapon.toUpperCase())) {
                 index = i;
                 break;
             }
         }
         if (index != -1) {
-            System.out.println(weapon + " is at index location " + index + ".");
+            console.println(weapon + " is at index location " + index + ".");
         }
     }
 
