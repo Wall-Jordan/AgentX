@@ -5,13 +5,16 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.view.ViewInterface.View;
+import java.io.PrintWriter;
 
 /**
  *
  * @author Jordan
  */
 public class OtherCommandsMenuView extends View {
+    protected final static PrintWriter console = AgentX.getOutFile();
 
     public OtherCommandsMenuView() {
         super("\n"
@@ -79,38 +82,38 @@ public class OtherCommandsMenuView extends View {
     }
 
     private void collectItems() {
-        System.out.println("\t\t*Collect Items*");
+        console.println("\t\t*Collect Items*");
     }
 
     private void drillForFuel() {
-        System.out.println("\t\t*Drill For Fuel");
+        console.println("\t\t*Drill For Fuel");
     }
 
     private void gameBoardView() {
-        System.out.println("\t\t***Show Game Board View***");
+        console.println("\t\t***Show Game Board View***");
     }
 
     private void useWrench() {
-        System.out.println("\t\t***Use Wrench***");
+        console.println("\t\t***Use Wrench***");
     }
 
     private void useWelder() {
-        System.out.println("\t\t***Use Welder***");
+        console.println("\t\t***Use Welder***");
     }
 
     private void useHammer() {
-        System.out.println("\t\t***Use Hammer***");
+        console.println("\t\t***Use Hammer***");
     }
 
     private void useDrill() {
-        System.out.println("\t\t***Use Drill***");
+        console.println("\t\t***Use Drill***");
     }
 
     private void weaponsInventory() {
-        System.out.println("\t\t***Call weapons inventory view***");
+        console.println("\t\t***Call weapons inventory view***");
     }
 
     private void fuelInventory() {
-        System.out.println("\t\t***Call fuel inventory view***");
+        console.println("\t\t***Call fuel inventory view***");
     }
 }
