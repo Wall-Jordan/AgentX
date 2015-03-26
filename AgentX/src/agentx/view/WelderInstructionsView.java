@@ -6,7 +6,10 @@
 package agentx.view;
 
 import agentx.view.ViewInterface.View;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -45,7 +48,7 @@ public class WelderInstructionsView extends View {
     @Override
     public void display() {
         System.out.println(WELD_INSTRUCTIONS);
-        
+
         String weldInput = " ";
 
         boolean welded = false;
@@ -67,13 +70,16 @@ public class WelderInstructionsView extends View {
     @Override
     public String getInput() {
         String weld = null;
-        Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Welder Input:");
 
-        weld = keyboard.nextLine();
-        weld = weld.trim();
-        weld = weld.toUpperCase();
+        try {
+            weld = keyboard.readLine();
+            weld = weld.trim();
+            weld = weld.toUpperCase();
+        } catch (Exception e) {
+            System.out.println("Error reading input: " + e.getMessage());
+        }
 
         return weld;
     }

@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import static agentx.control.InventoryControl.fuel;
 import static agentx.control.InventoryControl.darts;
 import static agentx.control.InventoryControl.drill;
@@ -15,6 +16,7 @@ import static agentx.control.InventoryControl.knife;
 import static agentx.control.InventoryControl.welder;
 import static agentx.control.InventoryControl.wrench;
 import agentx.view.ViewInterface.View;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -22,7 +24,8 @@ import java.util.Scanner;
  * @author Chris
  */
 public class InventoryView extends View {
-
+    protected final static PrintWriter console = AgentX.getOutFile();
+    
     public InventoryView() {
         super("\n"
                 + "\n\t*****************************************************"
@@ -55,64 +58,64 @@ public class InventoryView extends View {
             case 'Q':
                 return true;
             default:
-                System.out.println("\n Invalid selection, try again!");
+                console.println("\n Invalid selection, try again!");
         }
         return true;
     }
 
     private void displayBackpack() {
 
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t*****************************************************"
                 + "\n\t*                    Backpack                       *"
                 + "\n\t*****************************************************");
         if (hammer() == true) {
-            System.out.println("\n\tHammer = 1");
+            console.println("\n\tHammer = 1");
         } else {
-            System.out.println("\n\tHammer = 0");
+            console.println("\n\tHammer = 0");
         }
         if (welder() == true) {
-            System.out.println("\n\tWelder = 1");
+            console.println("\n\tWelder = 1");
         } else {
-            System.out.println("\n\tWelder = 0");
+            console.println("\n\tWelder = 0");
         }
         if (wrench() == true) {
-            System.out.println("\n\tWrench = 1");
+            console.println("\n\tWrench = 1");
         } else {
-            System.out.println("\n\tWrench = 0");
+            console.println("\n\tWrench = 0");
         }
         if (drill() == true) {
-            System.out.println("\n\tDrill = 1");
+            console.println("\n\tDrill = 1");
         } else {
-            System.out.println("\n\tDrill = 0");
+            console.println("\n\tDrill = 0");
         }
     }
 
     private void displayWeaponsBelt() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t*****************************************************"
                 + "\n\t*                 Weapons Belt                      *"
                 + "\n\t*****************************************************");
-        System.out.println("\n\tGrenades = " + grenade());
-        System.out.println("\n\tPoison darts = " + darts());
+        console.println("\n\tGrenades = " + grenade());
+        console.println("\n\tPoison darts = " + darts());
         if (gun() == true) {
-            System.out.println("\n\tRay Gun = 1");
+            console.println("\n\tRay Gun = 1");
         } else {
-            System.out.println("\n\tRay Gun = 0");
+            console.println("\n\tRay Gun = 0");
         }
         if (knife() == true) {
-            System.out.println("\n\tKnife = 1");
+            console.println("\n\tKnife = 1");
         } else {
-            System.out.println("\n\tKnife = 0");
+            console.println("\n\tKnife = 0");
         }
     }
 
     private void displayFuelAmmount() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t*****************************************************"
                 + "\n\t*                 Fuel Ammount                      *"
                 + "\n\t*****************************************************");
-        System.out.println("\n\tYou have " + fuel() + " gallons of fuel.");
+        console.println("\n\tYou have " + fuel() + " gallons of fuel.");
     }
 
 }

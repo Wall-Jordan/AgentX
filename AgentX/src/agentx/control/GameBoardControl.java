@@ -5,11 +5,13 @@
  */
 package agentx.control;
 
+import agentx.AgentX;
 import agentx.model.GameBoard;
 import agentx.model.Location;
 import agentx.model.Scene;
 import agentx.model.Scene.SectionOne;
 import agentx.exceptions.GameBoardControlExceptions;
+import java.io.PrintWriter;
 
 /**
  *
@@ -17,13 +19,14 @@ import agentx.exceptions.GameBoardControlExceptions;
  */
 public class GameBoardControl {
     
+    protected final static PrintWriter console = AgentX.getOutFile();
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
-        System.out.println("called createGameboard");
+        console.println("called createGameboard");
         return null;
     }
     
     public static void moveActorsToStartingLocation(GameBoard gameBoard) {
-        System.out.println("Move actors to starting locatinon");
+        console.println("Move actors to starting locatinon");
     }
     
     private static void assignScenesToLocations(GameBoard gameBoard, Scene[] scenes) {
