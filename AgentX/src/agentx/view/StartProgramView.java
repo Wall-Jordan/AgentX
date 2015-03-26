@@ -25,7 +25,7 @@ public class StartProgramView {
 //        displayBanner();
 //    }
     protected final BufferedReader keyboard = AgentX.getInFile();
-    protected final PrintWriter console = AgentX.getOutFile();
+    protected final static PrintWriter console = AgentX.getOutFile();
 
     public StartProgramView() {
     }
@@ -40,7 +40,7 @@ public class StartProgramView {
             player = ProgramControl.createPlayer(playersName);
             this.displayWelcomeMessage(player);
         } catch (ProgramControlExceptions ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display("StartProgramView.java", ex.getMessage());
         }
 
         MainMenuView mainMenu = new MainMenuView();
@@ -48,15 +48,15 @@ public class StartProgramView {
     }
 
     public /*static*/ void displayBanner() {                                                        //Take out commits!
-        System.out.println("\n\n\t*****************************************************"
+        console.println("\n\n\t*****************************************************"
                 + "\n\t*                                                   *");
-        System.out.println("\t*                     AGENT X:                      *"
+        console.println("\t*                     AGENT X:                      *"
                 + "\n\t* Agent X is a game of adventure, creativity, and   *"
                 + "\n\t* problem solving in which the player takes on      *"
                 + "\n\t* the persona of a time agent chasing the terrorist *"
                 + "\n\t* Chaotica.                                         *");
 
-        System.out.println("\t*                                                   *"
+        console.println("\t*                                                   *"
                 + "\n\t*    YOUR MISSION TO CAPTURE CHAOTICA STARTS NOW!   *"
                 + "\n\t*                                                   *"
                 + "\n\t*****************************************************");
@@ -67,31 +67,31 @@ public class StartProgramView {
         String playersName = null;
         try {
             while (!valid) {
-                System.out.println("Please enter your name below:");
+                console.println("Please enter your name below:");
 
                 playersName = this.keyboard.readLine();
                 playersName = playersName.trim();
 
                 if (playersName.length() < 2) {
-                    System.out.println("\nInvalid Name\n");
+                    console.println("\nInvalid Name\n");
                     continue;
                 } else if ("Chaotica".equals(playersName) || "chaotica".equals(playersName)) {
-                    System.out.println("\nCongratulations you have found yourself. Now "
+                    console.println("\nCongratulations you have found yourself. Now "
                             + " please choose another name for your player.\n");
                     continue;
                 }
                 break;
             }
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            console.println("Error reading input: " + e.getMessage());
         }
 
         return playersName;
     }
 
     public void displayWelcomeMessage(Player player) {
-        System.out.println("\n\n\t*****************************************************"
+        console.println("\n\n\t*****************************************************"
                 + "\n\t\tWelcome to the game " + player.getName() + "!");
-        System.out.println("\t*****************************************************");
+        console.println("\t*****************************************************");
     }
 }

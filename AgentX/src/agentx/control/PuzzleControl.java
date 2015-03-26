@@ -15,7 +15,8 @@ import java.io.PrintWriter;
  * @author Chris
  */
 public class PuzzleControl {
-protected final static PrintWriter console = AgentX.getOutFile();
+    protected final static PrintWriter console = AgentX.getOutFile();
+    
     public static boolean calcEntrance(double x) {
         if (x == (2 * (x - 2) + (96 / 6)) / 4) {
             return true;
