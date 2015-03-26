@@ -92,7 +92,7 @@ public class TakeOffView extends View {
         } else if ("2046AD".equals(year)) {
             return true;
         } else {
-            System.out.println("Wrong year to travel to. You may want to go back "
+            this.console.println("Wrong year to travel to. You may want to go back "
                     + "to the explore sections in this time period and find year clue.");
             return false;
         }
