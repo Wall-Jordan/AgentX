@@ -23,7 +23,7 @@ public class HammerView extends View {
         String userSelection = (String) obj;
         switch (userSelection) {
             case "T3":
-                System.out.println("You cracked open the rock, found some water, drank it, and now have +3 stamina.");
+                this.console.println("You cracked open the rock, found some water, drank it, and now have +3 stamina.");
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -32,7 +32,7 @@ public class HammerView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Invalid Selection. Please try again");
+                this.console.println("Invalid Selection. Please try again");
                 break;
         }
         return false;
