@@ -5,8 +5,10 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.view.ViewInterface.View;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,6 +19,8 @@ import java.util.logging.Logger;
  */
 public class WelderInstructionsView extends View {
 
+    protected final static PrintWriter console = AgentX.getOutFile();
+    
     public WelderInstructionsView() {
         super(" ");
     }
@@ -47,14 +51,14 @@ public class WelderInstructionsView extends View {
 
     @Override
     public void display() {
-        System.out.println(WELD_INSTRUCTIONS);
+        console.println(WELD_INSTRUCTIONS);
 
         String weldInput = " ";
 
         boolean welded = false;
         String goBack = " ";
 
-        System.out.println(WELD);
+        console.println(WELD);
 
         do {
             String input = this.getInput();
@@ -71,14 +75,14 @@ public class WelderInstructionsView extends View {
     public String getInput() {
         String weld = null;
 
-        System.out.println("Welder Input:");
+        console.println("Welder Input:");
 
         try {
             weld = keyboard.readLine();
             weld = weld.trim();
             weld = weld.toUpperCase();
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display("WelderInstructionsView.java", "Error reading input: " + e.getMessage());
         }
 
         return weld;
@@ -89,12 +93,12 @@ public class WelderInstructionsView extends View {
         String weldInput = (String) obj;
 
         if ("T4 PUZZLE".equals(weldInput)) {
-            System.out.println("\tCongradulations you welded the puzzle together!"
+            console.println("\tCongradulations you welded the puzzle together!"
                     + "\n\tThe puzzle says: 2046ad");
             return true;
 
         } else {
-            System.out.println("\nSorry that item is not found try welding something else.");
+            console.println("\nSorry that item is not found try welding something else.");
         }
         return false;
     }
