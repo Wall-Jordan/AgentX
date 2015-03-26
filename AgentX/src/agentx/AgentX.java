@@ -7,6 +7,7 @@ package agentx;
 
 import agentx.model.Game;
 import agentx.model.Player;
+import agentx.view.ErrorView;
 import agentx.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -59,7 +60,7 @@ public class AgentX {
                     AgentX.logFile.close();
                 }
             } catch (IOException ex) {
-                System.out.println("Error closing files");
+                ErrorView.display("AgentX.java","Error closing files");
                 return;
             }
         }

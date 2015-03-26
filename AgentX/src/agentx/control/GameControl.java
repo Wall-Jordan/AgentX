@@ -14,6 +14,7 @@ import agentx.model.Inventory;
 import agentx.model.Player;
 import agentx.model.TimeShip;
 import agentx.view.GameBoardView;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -22,7 +23,7 @@ import java.util.Collections;
  * @author Chris
  */
 public class GameControl {
-
+protected final static PrintWriter console = AgentX.getOutFile();
     public static void createNewGame(Player player) {
         
 
@@ -93,18 +94,18 @@ public static Backpack[] createBackpackList() {
 	   listtools.add("Drill");
 
 	   /*Unsorted List*/
-	   System.out.println("Before Sorting:");
+	   console.println("Before Sorting:");
 	   for(String counter: listtools){
-			System.out.println(counter);
+			console.println(counter);
 		}
 
 	   /* Sort statement*/
 	   Collections.sort(listtools);
 
 	   /* Sorted List*/
-	   System.out.println("After Sorting:");
+	   console.println("After Sorting:");
 	   for(String counter: listtools){
-			System.out.println(counter);
+			console.println(counter);
 		}
 	
                 }
