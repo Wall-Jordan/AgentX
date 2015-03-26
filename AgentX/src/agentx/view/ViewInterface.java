@@ -39,7 +39,7 @@ public interface ViewInterface {
 
             do {
 
-                System.out.println(this.promptMessage);
+                console.println(this.promptMessage);
                 value = this.getInput();
                 done = this.doAction(value);
 
@@ -54,21 +54,21 @@ public interface ViewInterface {
             try {
                 while (!valid) {
 
-                    System.out.println("Enter your selection");
+                    console.println("Enter your selection");
                     selection = this.keyboard.readLine();
                     selection = selection.trim();
                     selection = selection.toUpperCase();
 
                     if (selection.length() < 1) {
 
-                        System.out.println("Invalid Selection. Please try again.");
+                        console.println("Invalid Selection. Please try again.");
                         continue;
 
                     }
                     break;
                 }
             } catch (Exception e) {
-                System.out.println("Error reading input: " + e.getMessage());
+                console.println("Error reading input: " + e.getMessage());
             }
 
             return selection;
