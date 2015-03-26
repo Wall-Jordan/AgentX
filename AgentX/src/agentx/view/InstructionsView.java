@@ -57,14 +57,14 @@ public class InstructionsView extends View {
             case 'Q':
                 return true;
             default:
-                System.out.println("\n Invalid selection, try again!");
+                console.println("\n Invalid selection, try again!");
 
         }
         return true;
     }
 
     private void displayGoal() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\t                   Goal of the Game                   "
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -78,7 +78,7 @@ public class InstructionsView extends View {
     }
 
     private void moveInstructions() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\t                How do I move locations?              "
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -86,20 +86,20 @@ public class InstructionsView extends View {
                 + "\n\tthat you are located at as long as you meet the "
                 + "\n\trequirements. To move use either of the commands"
                 + "\n\tlisted below:");
-        System.out.println("\n\tF - Move Forward");
-        System.out.println("\t\tThe player is moved forward on the game board"
+        console.println("\n\tF - Move Forward");
+        console.println("\t\tThe player is moved forward on the game board"
                 + "\n\t\tunless they have yet to complete the required"
                 + "\n\t\tactions in the combat square or the ship repair"
                 + "\n\t\tsquare.");
-        System.out.println("\tB - Move Backward");
-        System.out.println("\t\tThe player is moved backward unless they are in "
+        console.println("\tB - Move Backward");
+        console.println("\t\tThe player is moved backward unless they are in "
                 + "\n\t\tthe first square of their section of the game"
                 + "\n\t\tboard."
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 
     private void inventoryInstructions() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\t     How do I see what tools and resources I have?    "
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -112,7 +112,7 @@ public class InstructionsView extends View {
     }
 
     private void collectInstructions() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\t              How do I collect resources              "
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -128,35 +128,35 @@ public class InstructionsView extends View {
     }
 
     private void fightInstructions() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\t                   How do I fight?                    "
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\tThe combat menu accessed from the instructions menu "
                 + "\n\twill display all of the combat menu options.");
-        System.out.println("\n\t\tK - Kick");
-        System.out.println("\n\t\tP - Punch");
-        System.out.println("\n\t\tG - Grenade");
-        System.out.println("\n\t\tD - Use Darts");
-        System.out.println("\n\t\tS - Stab");
-        System.out.println("\n\t\tB - Block");
-        System.out.println("\n\t\tR - Ray Gun"
+        console.println("\n\t\tK - Kick");
+        console.println("\n\t\tP - Punch");
+        console.println("\n\t\tG - Grenade");
+        console.println("\n\t\tD - Use Darts");
+        console.println("\n\t\tS - Stab");
+        console.println("\n\t\tB - Block");
+        console.println("\n\t\tR - Ray Gun"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
     }
 
     private void toolInstructions() {
-        System.out.println("\n"
+        console.println("\n"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\t               How do I use my tools?                 "
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\tHow to use the tools");
-        System.out.println("\n\t\tFI - Fuel Inventory");
-        System.out.println("\n\t\tC - Collect Items");
-        System.out.println("\n\t\tT1 - Use Wrench");
-        System.out.println("\n\t\tT2 - Use Welder");
-        System.out.println("\n\t\tT3 - Use Hammer");
-        System.out.println("\n\t\tT4 - Use Drill"
+        console.println("\n\t\tFI - Fuel Inventory");
+        console.println("\n\t\tC - Collect Items");
+        console.println("\n\t\tT1 - Use Wrench");
+        console.println("\n\t\tT2 - Use Welder");
+        console.println("\n\t\tT3 - Use Hammer");
+        console.println("\n\t\tT4 - Use Drill"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
