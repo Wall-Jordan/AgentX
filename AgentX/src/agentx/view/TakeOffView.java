@@ -30,7 +30,7 @@ public class TakeOffView extends View {
         String goBack = " ";
 
         do {
-            System.out.println(TAKE_OFF);
+            this.console.println(TAKE_OFF);
 
             String input = this.getInput();
             year = input;
@@ -45,9 +45,9 @@ public class TakeOffView extends View {
         } while (!"Y".equals(goBack));
 
         if (traveled == true) {
-            System.out.println("You are now in " + year + ".");
+            this.console.println("You are now in " + year + ".");
         } else {
-            System.out.println("Go back and look for year clue.");
+            this.console.println("Go back and look for year clue.");
         }
         return;
 
@@ -57,14 +57,14 @@ public class TakeOffView extends View {
     public String getInput() {
         String year = null;
 
-        System.out.println("Destination year:");
+        this.console.println("Destination year:");
 
         try {
             year = this.keyboard.readLine();
             year = year.trim();
             year = year.toUpperCase();
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            this.console.println("Error reading input: " + e.getMessage());
         }
 
         return year;
@@ -73,13 +73,13 @@ public class TakeOffView extends View {
     private String getInput2() {
         String selection = null;
 
-        System.out.println("Would you like to go back? [Y, N]");
+        this.console.println("Would you like to go back? [Y, N]");
         try {
             selection = this.keyboard.readLine();
             selection = selection.trim();
             selection = selection.toUpperCase();
         } catch (Exception e) {
-            System.out.println("Error reading input: " + e.getMessage());
+            ErrorView.display("TakeOffView.java","Error reading input: " + e.getMessage());
         }
         return selection;
     }
