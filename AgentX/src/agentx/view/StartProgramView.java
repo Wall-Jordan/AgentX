@@ -25,7 +25,7 @@ public class StartProgramView {
 //        displayBanner();
 //    }
     protected final BufferedReader keyboard = AgentX.getInFile();
-    protected final PrintWriter console = AgentX.getOutFile();
+    protected final static PrintWriter console = AgentX.getOutFile();
 
     public StartProgramView() {
     }
@@ -40,7 +40,7 @@ public class StartProgramView {
             player = ProgramControl.createPlayer(playersName);
             this.displayWelcomeMessage(player);
         } catch (ProgramControlExceptions ex) {
-            System.out.println(ex.getMessage());
+            ErrorView.display("StartProgramView.java", ex.getMessage());
         }
 
         MainMenuView mainMenu = new MainMenuView();
@@ -48,9 +48,9 @@ public class StartProgramView {
     }
 
     public /*static*/ void displayBanner() {                                                        //Take out commits!
-        System.out.println("\n\n\t*****************************************************"
+        console.println("\n\n\t*****************************************************"
                 + "\n\t*                                                   *");
-        System.out.println("\t*                     AGENT X:                      *"
+        console.println("\t*                     AGENT X:                      *"
                 + "\n\t* Agent X is a game of adventure, creativity, and   *"
                 + "\n\t* problem solving in which the player takes on      *"
                 + "\n\t* the persona of a time agent chasing the terrorist *"
