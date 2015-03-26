@@ -8,6 +8,7 @@ package agentx.view;
 import agentx.AgentX;
 import agentx.control.GameControl;
 import agentx.view.ViewInterface.View;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -15,6 +16,8 @@ import java.util.Scanner;
  * @author Jordan
  */
 public class MainMenuView extends View {
+    
+    protected final static PrintWriter console = AgentX.getOutFile();
 
     public MainMenuView() {
         super("\n"
@@ -48,7 +51,7 @@ public class MainMenuView extends View {
             case 'E':
                 return true;
             default:
-                System.out.println("\n Invalid selection, try again!");
+                console.println("\n Invalid selection, try again!");
         }
         return true;
     }
@@ -63,7 +66,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("* startExistingGame function called *");
+        console.println("* startExistingGame function called *");
     }
 
     private void displayInstructions() {

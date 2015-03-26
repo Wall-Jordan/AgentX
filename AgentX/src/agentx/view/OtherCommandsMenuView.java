@@ -75,7 +75,7 @@ public class OtherCommandsMenuView extends View {
             case "R":
                 return false;
             default:
-                System.out.println("\n Invalid selection, try again!");
+                console.println("\n Invalid selection, try again!");
 
         }
         return true;

@@ -33,13 +33,13 @@ public class ExploreView extends View {
             PuzzleControl puzzleControl = new PuzzleControl();
             drillDepth = PuzzleControl.calcDrillDepth(choice);
         } catch (PuzzleControlExceptions pe) {
-            System.out.println(pe.getMessage());
+            this.console.println(pe.getMessage());
         }
         
         if ("S".equals(choice)) {
-            System.out.println("You've decided to not drill right now. That's fine, you can come back later.");
+            this.console.println("You've decided to not drill right now. That's fine, you can come back later.");
         } else if(drillDepth > 0) {
-            System.out.println("You collected: " + drillDepth);
+            this.console.println("You collected: " + drillDepth);
         } else {
             return false;
         }
