@@ -5,12 +5,15 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
+import java.io.PrintWriter;
+
 /**
  *
  * @author matiasmikkola
  */
 public class GameBoardView {
-
+protected final static PrintWriter console = AgentX.getOutFile();
     void display() {
         
         char gameBoard[][] = new char[3][10];
@@ -21,17 +24,17 @@ public class GameBoardView {
             }
         }
         
-        System.out.println("                           Agent X Gameboard          ");
-        System.out.println("                 1   2   3   4   5   6   7   8   9   10");
-        System.out.println("                 -   -   -   -   -   -   -   -   -   - ");
+        console.println("                           Agent X Gameboard          ");
+        console.println("                 1   2   3   4   5   6   7   8   9   10");
+        console.println("                 -   -   -   -   -   -   -   -   -   - ");
         for (int i = 0; i < 3; i++) {
-            System.out.print("Time Period " + (i+1) + ": | ");
+            console.print("Time Period " + (i+1) + ": | ");
             for (int j = 0; j < 10; j++) {
-                System.out.print(gameBoard[i][j]);
-                System.out.print(" | ");
+                console.print(gameBoard[i][j]);
+                console.print(" | ");
             }
-            System.out.print("\n");
-            System.out.println("                 -   -   -   -   -   -   -   -   -   - ");
+            console.print("\n");
+            console.println("                 -   -   -   -   -   -   -   -   -   - ");
         }
         
     }
