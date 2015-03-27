@@ -66,7 +66,16 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        console.println("* startExistingGame function called *");
+        console.println("Enter file path to save the game to.");
+        String filePath = this.getInput();
+        
+        try{
+            GameControl.getSavedGame(filePath);
+        }catch(Exception ex){
+            ErrorView.display("MainMenuView.java", ex.getMessage());
+        }
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayInstructions() {
