@@ -12,7 +12,9 @@ import agentx.control.PuzzleControl;
 import agentx.exceptions.InventoryControlExceptions;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
+import static agentx.view.MainMenuView.console;
 import agentx.view.ViewInterface.View;
+import java.io.FileInputStream;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,6 +52,7 @@ public class GameMenuView extends View{
             + "\n\t**** Y - Alphabetical order                      ****"
             + "\n\t**** Z - Find Weapon                             ****"
             + "\n\t**** C - CalcNeededFuel View                     ****"
+            + "\n\t**** A - Create Waepons Report                   ****"
             + "\n\t*****************************************************");
 }
 
@@ -67,6 +70,10 @@ public class GameMenuView extends View{
             case "E":
                 ExploreView exploreView = new ExploreView();
                 exploreView.display();
+                break;
+            case "A":
+                WeaponsReportView weaponsReportView = new WeaponsReportView();
+                weaponsReportView.display();
                 break;
             case "F":
                 this.moveForward();

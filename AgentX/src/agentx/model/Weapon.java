@@ -12,45 +12,32 @@ import java.io.Serializable;
  * @author Chris
  */
 public class Weapon implements Serializable {
-
-    private int damage;
+    
+    private int quantity;
+    private String name;
 
     public Weapon() {
     }
 
-    public int getDamage() {
-        return damage;
+    public Weapon(int quantity, String name) {
+        this.quantity = quantity;
+        this.name = name;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public String toString() {
-        return "Weapon{" + "damage=" + damage + '}';
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 97 * hash + this.damage;
-        return hash;
+    public int getQuantity() {
+        return quantity;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Weapon other = (Weapon) obj;
-        if (this.damage != other.damage) {
-            return false;
-        }
-        return true;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
 }
