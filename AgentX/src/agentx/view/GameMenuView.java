@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -162,7 +163,15 @@ public class GameMenuView extends View{
     }
 
     private void saveGame() {
-        console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("Enter the file path you want to save the game at.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(AgentX.getCurrentGame(), filePath);
+            
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
     }
 
     private void drillInstructionsView() {

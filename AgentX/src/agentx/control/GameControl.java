@@ -6,6 +6,7 @@
 package agentx.control;
 
 import agentx.AgentX;
+import agentx.exceptions.GameControlExceptions;
 import agentx.model.Backpack;
 import agentx.model.Boss;
 import agentx.model.Game;
@@ -14,6 +15,9 @@ import agentx.model.Inventory;
 import agentx.model.Player;
 import agentx.model.TimeShip;
 import agentx.view.GameBoardView;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -77,6 +81,19 @@ public static Backpack[] createBackpackList() {
     return backpack;
 
 }
+
+    public static void saveGame(Game game, String filePath) throws GameControlExceptions {
+        
+        try(FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(IOException e) {
+            throw new GameControlExceptions(e.getMessage());
+        }
+    }
+    
 
     public enum Tool {
         hammer,
