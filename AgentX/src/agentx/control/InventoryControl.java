@@ -7,16 +7,19 @@ package agentx.control;
 
 import agentx.AgentX;
 import agentx.exceptions.InventoryControlExceptions;
+import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
-import agentx.view.MainMenuView;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  *
  * @author Chris
  */
 public class InventoryControl {
-protected final static PrintWriter console = AgentX.getOutFile();
+
+    protected final static PrintWriter console = AgentX.getOutFile();
+
     public static boolean hammer() {
         return true;
     }
@@ -54,7 +57,7 @@ protected final static PrintWriter console = AgentX.getOutFile();
     }
 
     public static void findWeapon(Object obj) throws InventoryControlExceptions {
-        if (obj == null){
+        if (obj == null) {
             throw new InventoryControlExceptions("You have entered an invalid input");
         }
         String weapon = (String) obj;
@@ -89,5 +92,14 @@ protected final static PrintWriter console = AgentX.getOutFile();
         public String getName() {
             return name;
         }
+    }
+    
+    public static ArrayList<Weapon> createWeaponsList(){
+    ArrayList<Weapon> weapons = new ArrayList<>();
+    weapons.add(new Weapon(1, "Ray Gun"));
+    weapons.add(new Weapon(1, "Knife"));
+    weapons.add(new Weapon(5, "Darts"));
+    weapons.add(new Weapon(3, "Grenades"));
+    return weapons;
     }
 }
