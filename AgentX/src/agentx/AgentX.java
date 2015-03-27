@@ -44,7 +44,7 @@ public class AgentX {
             startProgramView.startProgram();
 
         } catch (Exception e) {
-            System.out.println("Exception: " + e.toString()
+            ErrorView.display("AgentX.java","Exception: " + e.toString()
                     + "\nCause: " + e.getCause()
                     + "\nMessage: " + e.getMessage());
         } finally {
