@@ -6,8 +6,13 @@
 package agentx.view;
 
 import agentx.control.InventoryControl;
+import static agentx.control.InventoryControl.createWeaponsList;
+import agentx.exceptions.InventoryControlExceptions;
 import agentx.model.Weapon;
 import agentx.view.ViewInterface.View;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -15,21 +20,34 @@ import java.util.ArrayList;
  * @author Chris
  */
 public class WeaponsReportView extends View {
-    
-    WeaponsReportView(){
+
+    WeaponsReportView() {
         super("Please enter the file path to save your report.");
     }
-    
-    
-    
+
     @Override
-    public boolean doAction(Object obj){
-        
+    public boolean doAction(Object obj) {
+
         String filePath = (String) obj;
-        ArrayList<Weapon> weaponsArray = agentx.control.InventoryControl.createWeaponsList();
-        
-        
-        
+        ArrayList<Weapon> weaponsArray = createWeaponsList();
+
+        try (FileWriter fw = new FileWriter(filePath, false)) {
+            fw.write("WEAPON NAME         QUANITITY");
+            fw.write(System.getProperty("line.separator"));
+            try {
+                for (int i = 0; i < weaponsArray.size(); i++) {
+                    Weapon weapon = weaponsArray.get(i);
+                    fw.write(weapon.getName() + "         \t" + weapon.getQuantity());
+                    fw.write(System.getProperty("line.separator"));
+                }
+                console.println("Write Successful!");
+            } catch (IOException exc) {
+                ErrorView.display("WeaponsReportView.java", exc.getMessage());
+            }
+        } catch (Exception ex) {
+            ErrorView.display("WeaponsReportView.java", ex.getMessage());
+        }
+
         return true;
     }
 }
