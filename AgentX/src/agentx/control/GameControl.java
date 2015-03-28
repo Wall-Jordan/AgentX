@@ -110,6 +110,10 @@ public class GameControl {
         AgentX.setCurrentGame(game);
     }
 
+    public static ArrayList<String> listtools() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public enum Tool {
 
         hammer,
