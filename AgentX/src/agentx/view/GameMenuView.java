@@ -145,8 +145,9 @@ public class GameMenuView extends View{
                 break;
                 
             case "G":
-                ListToolPrint listToolPrint = new ListToolPrint();
-                listToolPrint.display();
+                ListToolView listToolView = new ListToolView();
+                listToolView.display();
+                break;
         }
         return false;
     }

@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.model.Tool;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -12,9 +13,9 @@ import java.util.ArrayList;
  *
  * @author matiasmikkola
  */
-public class ListToolPrint extends View {
+public class ListToolView extends View {
     
-    ListToolPrint(){
+    ListToolView(){
         super("Please enter the file path to save your list.");
     }
 
@@ -23,10 +24,7 @@ public class ListToolPrint extends View {
     public boolean doAction(Object obj){
         
         String filePath = (String) obj;
-        ArrayList<String> listtools;
-        listtools = agentx.control.GameControl.listtools();
-        
-        
+        ArrayList<Tool> ListTools = agentx.control.GameControl.ListTools();
         
         return true;
     
