@@ -33,11 +33,12 @@ public class WeaponsReportView extends View {
 
         try (FileWriter fw = new FileWriter(filePath, false)) {
             fw.write("WEAPON NAME         QUANITITY");
+            fw.write(System.getProperty("line.separator"));
             try {
                 for (int i = 0; i < weaponsArray.size(); i++) {
                     Weapon weapon = weaponsArray.get(i);
-                    fw.write(weapon.getName() + "         " + weapon.getQuantity());
-                    fw.write("\n<-->");
+                    fw.write(weapon.getName() + "         \t" + weapon.getQuantity());
+                    fw.write(System.getProperty("line.separator"));
                 }
                 console.println("Write Successful!");
             } catch (IOException exc) {
