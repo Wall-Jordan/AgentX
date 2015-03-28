@@ -13,18 +13,51 @@ import java.io.Serializable;
  */
 public class Boss implements Serializable {
 
-
+    private String bossName;
     private double damage;
+    private int y;
+    private int x;
 
     public Boss() {
     }
-    
-    public int[] getBossDamage(){
+
+    public Boss(String bossName, double damage, int y, int x) {
+        this.bossName = bossName;
+        this.damage = damage;
+        this.y = y;
+        this.x = x;
+    }
+
+    public String getBossName() {
+        return bossName;
+    }
+
+    public void setBossName(String bossName) {
+        this.bossName = bossName;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int[] getBossDamage() {
         int[] bossDamage = new int[3];
         bossDamage[0] = 1;
         bossDamage[1] = 2;
         bossDamage[2] = 4;
-        
+
         return bossDamage;
     }
 
@@ -62,10 +95,5 @@ public class Boss implements Serializable {
         }
         return true;
     }
-    
-    public enum BossNames {
-        Jarik,
-        Nazeem,
-        Chaotica;
-    }
+
 }

@@ -111,7 +111,6 @@ public class GameControl {
         AgentX.setCurrentGame(game);
     }
 
-    
     public static ArrayList<Tool> createToolList() {
          
         ArrayList<Tool> toolList = new ArrayList<>();
@@ -120,7 +119,7 @@ public class GameControl {
         toolList.add(new Tool(1, "Wrench"));
         toolList.add(new Tool(1, "Drill"));
         return toolList;
-        }
+                }
 
      public static void listTools()  {
         
@@ -144,9 +143,14 @@ public class GameControl {
 	   for(String counter: listtools){
            console.println(counter);
 		}
-	
-                }
 
-    
+    }
+    // Boss(String bossName, double damage, int y, int x)
+    public static ArrayList<Boss> createBossList(){
+        ArrayList<Boss> boss = new ArrayList<>();
+        boss.add(new Boss("Jarik", 1, 0, 9));
+        boss.add(new Boss("Nazeem", 2, 1, 9));
+        boss.add(new Boss("Chaotica", 3, 2, 9));
+        return boss;
+    }
 }
-
