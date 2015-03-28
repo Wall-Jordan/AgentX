@@ -146,7 +146,6 @@ public class PuzzleControl {
     }
 
     public enum BossNames {
-
         Jarik,
         Nazeem,
         Chaotica;

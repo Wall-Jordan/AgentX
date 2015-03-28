@@ -142,4 +142,12 @@ public class GameControl {
         }
 
     }
+    // Boss(String bossName, double damage, int y, int x)
+    public static ArrayList<Boss> createBossList(){
+        ArrayList<Boss> boss = new ArrayList<>();
+        boss.add(new Boss("Jarik", 1, 0, 9));
+        boss.add(new Boss("Nazeem", 2, 1, 9));
+        boss.add(new Boss("Chaotica", 3, 2, 9));
+        return boss;
+    }
 }
