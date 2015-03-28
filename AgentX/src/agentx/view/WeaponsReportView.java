@@ -36,8 +36,7 @@ public class WeaponsReportView extends View {
             try {
                 for (int i = 0; i < weaponsArray.size(); i++) {
                     Weapon weapon = weaponsArray.get(i);
-                    fw.write(weapon.getName());
-                    fw.write(weapon.getQuantity());
+                    fw.write(weapon.getName() + "         " + weapon.getQuantity());
                 }
                 console.println("Write Successful!");
             } catch (IOException exc) {
