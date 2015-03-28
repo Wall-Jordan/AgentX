@@ -53,6 +53,7 @@ public class GameMenuView extends View{
             + "\n\t**** Z - Find Weapon                             ****"
             + "\n\t**** C - CalcNeededFuel View                     ****"
             + "\n\t**** A - Create Waepons Report                   ****"
+            + "\n\t**** G - Creat List Tools                        ****"
             + "\n\t*****************************************************");
 }
 
@@ -120,7 +121,7 @@ public class GameMenuView extends View{
                 break;
             case "Y":
                 GameControl gameControl = new GameControl();
-                GameControl.ListTools();
+                GameControl.listTools();
                 break;
             case "X":
                 PuzzleControl puzzleControl = new PuzzleControl();
@@ -141,6 +142,12 @@ public class GameMenuView extends View{
             case "C":
                 CalcFuelView calcFuelView = new CalcFuelView();
                 calcFuelView.display();
+                break;
+                
+            case "G":
+                ListToolView listToolView = new ListToolView();
+                listToolView.display();
+                break;
         }
         return false;
     }
