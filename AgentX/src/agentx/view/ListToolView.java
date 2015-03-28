@@ -24,7 +24,14 @@ public class ListToolView extends View {
     public boolean doAction(Object obj){
         
         String filePath = (String) obj;
-        ArrayList<Tool> ListTools = agentx.control.GameControl.ListTools();
+        ArrayList<Tool> ListTools = agentx.control.GameControl.createToolList();
+        
+        try (FileWriter fw = new FileWriter(filePath, false)) {
+            fw.write("QUANTITY         NAME");
+            try {
+                for (int i = 0; i < toolList)
+            }
+        }
         
         return true;
     

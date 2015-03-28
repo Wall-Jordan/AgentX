@@ -121,7 +121,7 @@ public class GameMenuView extends View{
                 break;
             case "Y":
                 GameControl gameControl = new GameControl();
-                GameControl.ListTools();
+                GameControl.listTools();
                 break;
             case "X":
                 PuzzleControl puzzleControl = new PuzzleControl();

@@ -111,30 +111,42 @@ public class GameControl {
         AgentX.setCurrentGame(game);
     }
 
-    public static ArrayList<Tool> ListTools() {
+    
+    public static ArrayList<Tool> createToolList() {
+         
+        ArrayList<Tool> toolList = new ArrayList<>();
+        toolList.add(new Tool(1, "Hammer"));
+        toolList.add(new Tool(1, "Welder"));
+        toolList.add(new Tool(1, "Wrench"));
+        toolList.add(new Tool(1, "Drill"));
+        return toolList;
+        }
+
+     public static void listTools()  {
         
-        ArrayList<Tool> listtools = new ArrayList<>();
-        listtools.add(new Tool(1, "Hammer"));
-        listtools.add(new Tool(1, "Welder"));
-        listtools.add(new Tool(1, "Wrench"));
-        listtools.add(new Tool(1, "Drill"));
+	   ArrayList<String> listtools = new ArrayList<>();
+	   listtools.add("Hammer");
+	   listtools.add("Welder");
+	   listtools.add("Wrench");
+	   listtools.add("Drill");
 
-        /*Unsorted List*/
-        console.println("Before Sorting:");
-        for (Tool counter : listtools) {
-            console.println(counter);
-        }
-//
-//        /* Sort statement*/
-//        Collections.sort(listtools);
-//        
-        /* Sorted List*/
-        console.println("After Sorting:");
-        for (Tool counter : listtools) {
-            console.println(counter);
-        }
-        return null;
+	   /*Unsorted List*/
+	   console.println("Before Sorting:");
+	   for(String counter: listtools){
+			console.println(counter);
+		}
 
-    }
+	   /* Sort statement*/
+	   Collections.sort(listtools);
+
+	   /* Sorted List*/
+	   console.println("After Sorting:");
+	   for(String counter: listtools){
+           console.println(counter);
+		}
+	
+                }
+
+    
 }
 
