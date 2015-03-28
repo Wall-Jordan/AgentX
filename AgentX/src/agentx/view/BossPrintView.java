@@ -32,10 +32,11 @@ public class BossPrintView extends View{
             try{
                 for (int i=0; i<bossArray.size(); i++){
                     Boss boss = bossArray.get(i);
-                    fw.write("Boss Name: " + boss.getBossName() + "Attack Damage: " + boss.getDamage() 
-                            + "/t Location: <" + boss.getY() + "," + boss.getX() + ">");
-                    console.println("Boss Name: " + boss.getBossName() + "Attack Damage: " + boss.getDamage() 
-                            + "/t Location: <" + boss.getY() + "," + boss.getX() + ">");
+                    fw.write("Boss Name: " + boss.getBossName() + "\tAttack Damage: " + boss.getDamage() 
+                            + "\t Location: <" + boss.getY() + "," + boss.getX() + ">");
+                    fw.write(System.getProperty( "line.separator" ));
+                    console.println("Boss Name: " + boss.getBossName() + "\tAttack Damage: " + boss.getDamage() 
+                            + "\t Location: <" + boss.getY() + "," + boss.getX() + ">");
                 }
             }catch(IOException e){
                 ErrorView.display("BossPrintView.java", e.getMessage());

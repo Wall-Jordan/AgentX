@@ -144,10 +144,11 @@ public class GameMenuView extends View{
                 calcFuelView.display();
                 break;
                 
-            case "G":
-                ListToolView listToolView = new ListToolView();
-                listToolView.display();
-                break;
+//            case "G":
+//                ListToolView listToolView = new ListToolView();
+//                listToolView.display();
+//                break;
+                
             case "L":
                 BossPrintView bossPrintView = new BossPrintView();
                 bossPrintView.display();
