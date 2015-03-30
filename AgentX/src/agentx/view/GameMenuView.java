@@ -53,7 +53,8 @@ public class GameMenuView extends View{
             + "\n\t**** Z - Find Weapon                             ****"
             + "\n\t**** C - CalcNeededFuel View                     ****"
             + "\n\t**** A - Create Waepons Report                   ****"
-            + "\n\t**** G - Creat List Tools                        ****"
+            + "\n\t**** G - Create List Tools                       ****"
+            + "\n\t**** L - Create Boss List                        ****"
             + "\n\t*****************************************************");
 }
 
@@ -144,10 +145,10 @@ public class GameMenuView extends View{
                 calcFuelView.display();
                 break;
                 
-//            case "G":
-//                ListToolView listToolView = new ListToolView();
-//                listToolView.display();
-//                break;
+            case "G":
+                ListToolView listToolView = new ListToolView();
+                listToolView.display();
+                break;
                 
             case "L":
                 BossPrintView bossPrintView = new BossPrintView();
