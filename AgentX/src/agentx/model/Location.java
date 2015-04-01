@@ -22,6 +22,7 @@ public class Location implements Serializable {
     private String sceneDescription;
     private Point coordinates;
     
+    
     public Boolean getVisited() {
         return visited;
     }

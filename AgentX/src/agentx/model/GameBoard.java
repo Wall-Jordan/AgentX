@@ -54,8 +54,6 @@ protected final static PrintWriter console = AgentX.getOutFile();
         for (int section = 0; section < noOfSection; section++) {
             for (int block = 0; block < noOfBlock; block++) {
                 Location location = new Location();
-                location.setSection(section);
-                location.setBlock(block);
                 location.setVisited(false);
                 
                 locations[section][block] = location;
