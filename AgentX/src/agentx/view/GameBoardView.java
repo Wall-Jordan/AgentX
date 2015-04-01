@@ -15,7 +15,6 @@ import java.io.PrintWriter;
 public class GameBoardView {
 protected final static PrintWriter console = AgentX.getOutFile();
     void display() {
-        
         char gameBoard[][] = new char[3][10];
 
         for (int i = 0; i < 3; i++) {
