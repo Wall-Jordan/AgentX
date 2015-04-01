@@ -7,6 +7,7 @@ package agentx.control;
 
 import agentx.AgentX;
 import agentx.exceptions.InventoryControlExceptions;
+import agentx.model.Location;
 import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
 import java.io.PrintWriter;
@@ -102,4 +103,5 @@ public class InventoryControl {
     weapons.add(new Weapon(3, "Grenades"));
     return weapons;
     }
+    
 }
