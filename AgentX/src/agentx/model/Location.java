@@ -20,7 +20,7 @@ public class Location implements Serializable {
     private Object boss;
     private int puzzle;
     private String sceneDescription;
-    private Point coordinates;
+   
     
     
     public Boolean getVisited() {
@@ -61,14 +61,6 @@ public class Location implements Serializable {
 
     public void setSceneDescription(String sceneDescription) {
         this.sceneDescription = sceneDescription;
-    }
-
-    public Point getCoordinates() {
-        return coordinates;
-    }
-
-    public void setCoordinates(Point coordinates) {
-        this.coordinates = coordinates;
     }
     
 }
