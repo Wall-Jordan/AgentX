@@ -5,6 +5,7 @@
  */
 package agentx.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -13,23 +14,14 @@ import java.util.Objects;
  * @author matiasmikkola
  */
 public class Location implements Serializable {
-
+    
     private Boolean visited;
-    private int section;
-
-    public void setSection(int section) {
-        this.section = section;
-    }
-
-    public void setBlock(int block) {
-        this.block = block;
-    }
-    private int block;
-           
-
-    public Location() {
-    }
-
+    private Boolean active;
+    private Object boss;
+    private int puzzle;
+    private String sceneDescription;
+    private Point coordinates;
+    
     public Boolean getVisited() {
         return visited;
     }
@@ -38,31 +30,46 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    @Override
-    public String toString() {
-        return "Location{" + "visited=" + visited + '}';
+    public Boolean getActive() {
+        return active;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 17 * hash + Objects.hashCode(this.visited);
-        return hash;
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        return true;
+    public Object getBoss() {
+        return boss;
     }
 
+    public void setBoss(Object boss) {
+        this.boss = boss;
+    }
+
+    public int getPuzzle() {
+        return puzzle;
+    }
+
+    public void setPuzzle(int puzzle) {
+        this.puzzle = puzzle;
+    }
+
+    public String getSceneDescription() {
+        return sceneDescription;
+    }
+
+    public void setSceneDescription(String sceneDescription) {
+        this.sceneDescription = sceneDescription;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+    
 }
+
+
