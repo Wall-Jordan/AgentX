@@ -5,6 +5,7 @@ package agentx.model;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -15,6 +16,15 @@ import java.util.Objects;
 public class Player implements Serializable {
 
     private String name;
+    private Point coordinates;
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
 
     public Player() {
     }
