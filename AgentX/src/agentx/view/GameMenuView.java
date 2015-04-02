@@ -6,10 +6,12 @@
 package agentx.view;
 
 import agentx.AgentX;
+import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.InventoryControlExceptions;
+import agentx.model.Location;
 import static java.lang.Character.toUpperCase;
 import agentx.view.GameBoardView;
 import static agentx.view.MainMenuView.console;

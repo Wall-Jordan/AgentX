@@ -11,6 +11,7 @@ import agentx.model.Location;
 import agentx.model.Scene;
 import agentx.model.Scene.SectionOne;
 import agentx.exceptions.GameBoardControlExceptions;
+import agentx.model.Boss;
 import java.io.PrintWriter;
 
 /**
@@ -20,7 +21,7 @@ import java.io.PrintWriter;
 public class GameBoardControl {
 
     protected final static PrintWriter console = AgentX.getOutFile();
-    
+
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
         console.println("called createGameboard");
         return null;
@@ -32,13 +33,13 @@ public class GameBoardControl {
 
     private static void assignScenesToLocations(GameBoard gameBoard, Scene[] scenes) {
         Location[][] locations = gameBoardLocations();
-        
+
     }
-    
+
     private static Location[][] gameBoardLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     private static void assignScenesToBlock(GameBoard gameBoard, Scene[] scenes) {
         Location[][] locations = gameBoard.getLocations();
 
@@ -61,9 +62,10 @@ public class GameBoardControl {
         L2.addToDoListItem("Collect Knife");
         L2.addCollectItem("KNIFE");
         Location L3 = new Location(false, false, null, 0, "You find Jackie Chan and he tells you the following: "
-                + "The number of attacks you can chain together is limted by the amount of stamina you have."
-                + "you can use any weapon that you have on your weapon belt or you can use your fists."
-                + "if you want to block it takes up one spot in your attack chain and blocks 50% of the opponents atack damage.", 3);
+                + "\nThe number of attacks you can chain together is limted by the amount of stamina you have."
+                + "\nyou can use any weapon that you have on your weapon belt or you can use your fists."
+                + "\nif you want to block it takes up one spot in your attack chain and blocks 50% of the opponents atack damage.", 3);
+        
     }
-   
+
 }
