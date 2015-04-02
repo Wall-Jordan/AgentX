@@ -17,9 +17,6 @@ import java.util.Objects;
 public class Location implements Serializable {
     private Boolean visited;
     private Boolean active;
-    private Object boss;
-    private int puzzle;
-    private String description;
     private double fuel;
 
     ArrayList<String> toDoList = new ArrayList<>();
@@ -41,12 +38,9 @@ public class Location implements Serializable {
         collectItems.remove(value);
     }
 
-    public Location(Boolean visited, Boolean active, Object boss, int puzzle, String description, double fuel) {
+    public Location(Boolean visited, Boolean active, double fuel) {
         this.visited = visited;
         this.active = active;
-        this.boss = boss;
-        this.puzzle = puzzle;
-        this.description = description;
         this.fuel = fuel;
     }
 
@@ -67,30 +61,6 @@ public class Location implements Serializable {
 
     public void setActive(Boolean active) {
         this.active = active;
-    }
-
-    public Object getBoss() {
-        return boss;
-    }
-
-    public void setBoss(Object boss) {
-        this.boss = boss;
-    }
-
-    public int getPuzzle() {
-        return puzzle;
-    }
-
-    public void setPuzzle(int puzzle) {
-        this.puzzle = puzzle;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public double getFuel() {
