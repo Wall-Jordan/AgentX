@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.model.Location;
 import java.util.ArrayList;
@@ -25,7 +26,8 @@ public class L28View extends ViewInterface.View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations;
+        locations = GameBoardControl.locations;
         String input = (String) obj;
         
         switch(input){
