@@ -29,8 +29,11 @@ public class L20View extends ViewInterface.View {
         ArrayList<Location> locations = createLocations();
         String input = (String) obj;
         
-        switch(input){
+       switch(input){
             case "TL":
+                for(String item : locations.get(20).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;
@@ -39,3 +42,4 @@ public class L20View extends ViewInterface.View {
         return true;
     }
 }
+

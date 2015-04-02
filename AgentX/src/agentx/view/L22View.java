@@ -31,6 +31,9 @@ public class L22View extends ViewInterface.View {
         
         switch(input){
             case "TL":
+                for(String item : locations.get(22).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;

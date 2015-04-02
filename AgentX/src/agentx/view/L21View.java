@@ -31,6 +31,9 @@ public class L21View extends ViewInterface.View {
         
         switch(input){
             case "TL":
+                for(String item : locations.get(21).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;

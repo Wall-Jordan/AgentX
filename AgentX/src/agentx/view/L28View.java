@@ -30,6 +30,9 @@ public class L28View extends ViewInterface.View {
         
         switch(input){
             case "TL":
+                for(String item : locations.get(28).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;
