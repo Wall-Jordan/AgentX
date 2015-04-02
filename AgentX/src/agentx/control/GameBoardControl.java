@@ -142,8 +142,8 @@ public class GameBoardControl {
     L26.addToDoListItem("Drill for Fuel");
     Location L27 = new Location(false, false, null, 0, "Looks like the Ship is broken again, better fix it.", 0);
     L27.addToDoListItem("Fix Ship");
-    Location L28 = new Location(false, false, null, 1, "CHAOTICA IS STANDING IN FRONT OF YOU! ATTACK!", 0);
     Boss chaotica = new Boss("Chaotica", 3, 30);
+    Location L28 = new Location(false, false, null, 1, "CHAOTICA IS STANDING IN FRONT OF YOU! ATTACK!", 0);
     L28.addToDoListItem("Kill Chaotica");
     Location L29 = new Location(false, false, null, 0, "You decide to return home, now that the galaxy is safe again!", 0);
     L29.addToDoListItem("Take Off");
