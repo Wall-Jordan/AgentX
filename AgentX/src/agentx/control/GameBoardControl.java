@@ -119,6 +119,33 @@ public class GameBoardControl {
         Location L18 = new Location(false,false,null,0,"You're back at your ship. there appears to be a hole in your fuek tank.",5);
         L18.addToDoListItem("Fix your Ship");
         Location L19 = new Location(false,false,null,0,"Its time to take off. Enter your destenation into the ships computer.",2);
-
+        Location L20 = new Location(true, true, null, 0, "You have landed at a what seems to be a tropical"
+                + "forest. You should probably explore and calculate the amount of fuel you have.", 2);
+    L20.addToDoListItem("Calculate Fuel");
+    Location L21 = new Location(false, false, null, 0, "You moved into an old village, which is empty. You move closer, and notice"
+                + "that there are bodies everywhere. Maybe this is where Chaotica is right now!", 0);
+    L21.addToDoListItem("Drill for Fuel");
+    Location L22 = new Location(false, false, null, 0, "The Agent explored the surroundings of the old village, and found a waterfall."
+                + "Could this be where Chaotica is hiding? Better explore. ", 2);
+    L22.addToDoListItem("Drill for Fuel");
+    Location L23 = new Location(false, false, null, 0, "You found an old toolbox under the waterfall. Wonder whats inside of it?", 0);
+    L23.addToDoListItem("Open ToolBox");
+    L23.addCollectItem("Wrench");
+    Location L24 = new Location(false, false, null, 0, "How lucky! There is a box of supplies right next to the toolbox. How convenient.", 4);
+    L24.addToDoListItem("Open SupplyBox");
+    L24.addCollectItem("Food");
+    Location L25 = new Location(false, false, null, 0, "You walk back to the village. I wonder if you need to use the Ship again. Better"
+                + "drill for more fuel.", 5);
+    L25.addToDoListItem("Drill for Fuel");
+    Location L26 = new Location(false, false, null, 0, "Looks like somebody has been at the village meanwhile we were at the waterfall."
+                + "It must be the evil Chaotica!", 3);
+    L26.addToDoListItem("Drill for Fuel");
+    Location L27 = new Location(false, false, null, 0, "Looks like the Ship is broken again, better fix it.", 0);
+    L27.addToDoListItem("Fix Ship");
+    Location L28 = new Location(false, false, null, 1, "CHAOTICA IS STANDING IN FRONT OF YOU! ATTACK!", 0);
+    Boss chaotica = new Boss("Chaotica", 3, 30);
+    L28.addToDoListItem("Kill Chaotica");
+    Location L29 = new Location(false, false, null, 0, "You decide to return home, now that the galaxy is safe again!", 0);
+    L29.addToDoListItem("Take Off");
     }
 }
