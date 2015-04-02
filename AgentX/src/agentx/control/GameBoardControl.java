@@ -24,7 +24,8 @@ public class GameBoardControl {
     protected final static PrintWriter console = AgentX.getOutFile();
 
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
-        console.println("called createGameboard");
+        createLocations();
+        Object[][] gameBoard = new Object[3][10];
         return null;
     }
 
