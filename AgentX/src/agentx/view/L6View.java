@@ -5,10 +5,39 @@
  */
 package agentx.view;
 
+import static agentx.control.GameBoardControl.createLocations;
+import agentx.model.Location;
+import agentx.view.ViewInterface.View;
+import java.util.ArrayList;
+
 /**
  *
  * @author Jordan
  */
-public class L6View {
-    
+public class L6View extends View{
+    public L6View() {
+        super("You crashed into a construction site.\n"
+                + "\n****************************************"
+                + "\nTL - Display to do list"
+                + "\nO - Other commands menu"
+                + "\n****************************************");
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        ArrayList<Location> locations = createLocations();
+        String input = (String) obj;
+
+        switch (input) {
+            case "TL":
+                for (String item : locations.get(6).getToDoList()) {
+                    console.println("*" + item);
+                }
+                break;
+            case "O":
+                break;
+        }
+
+        return true;
+    }
 }
