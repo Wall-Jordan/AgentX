@@ -158,110 +158,110 @@ public class GameBoardView extends View {
         }else{
             loc0 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(15).getVisited() == true && locations.get(15).getActive() == false){
+            loc15 = 'V';
+        }else if(locations.get(15).getVisited() == true && locations.get(15).getActive() == true){
+            loc15 = 'O';
         }else{
-            loc0 = 'X';
+            loc15 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(16).getVisited() == true && locations.get(16).getActive() == false){
+            loc16 = 'V';
+        }else if(locations.get(16).getVisited() == true && locations.get(16).getActive() == true){
+            loc16 = 'O';
         }else{
-            loc0 = 'X';
+            loc16 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(17).getVisited() == true && locations.get(17).getActive() == false){
+            loc17 = 'V';
+        }else if(locations.get(17).getVisited() == true && locations.get(17).getActive() == true){
+            loc17 = 'O';
         }else{
-            loc0 = 'X';
+            loc17 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(18).getVisited() == true && locations.get(18).getActive() == false){
+            loc18 = 'V';
+        }else if(locations.get(18).getVisited() == true && locations.get(18).getActive() == true){
+            loc18 = 'O';
         }else{
-            loc0 = 'X';
+            loc18 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(19).getVisited() == true && locations.get(19).getActive() == false){
+            loc19 = 'V';
+        }else if(locations.get(19).getVisited() == true && locations.get(19).getActive() == true){
+            loc19 = 'O';
         }else{
-            loc0 = 'X';
+            loc19 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(20).getVisited() == true && locations.get(20).getActive() == false){
+            loc20 = 'V';
+        }else if(locations.get(20).getVisited() == true && locations.get(20).getActive() == true){
+            loc20 = 'O';
         }else{
-            loc0 = 'X';
+            loc20 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(21).getVisited() == true && locations.get(21).getActive() == false){
+            loc21 = 'V';
+        }else if(locations.get(21).getVisited() == true && locations.get(21).getActive() == true){
+            loc21 = 'O';
         }else{
-            loc0 = 'X';
+            loc21 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(22).getVisited() == true && locations.get(22).getActive() == false){
+            loc22 = 'V';
+        }else if(locations.get(22).getVisited() == true && locations.get(22).getActive() == true){
+            loc22 = 'O';
         }else{
-            loc0 = 'X';
+            loc22 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(23).getVisited() == true && locations.get(23).getActive() == false){
+            loc23 = 'V';
+        }else if(locations.get(23).getVisited() == true && locations.get(23).getActive() == true){
+            loc23 = 'O';
         }else{
-            loc0 = 'X';
+            loc23 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(24).getVisited() == true && locations.get(24).getActive() == false){
+            loc24 = 'V';
+        }else if(locations.get(24).getVisited() == true && locations.get(24).getActive() == true){
+            loc24 = 'O';
         }else{
-            loc0 = 'X';
+            loc24 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(25).getVisited() == true && locations.get(25).getActive() == false){
+            loc25 = 'V';
+        }else if(locations.get(25).getVisited() == true && locations.get(25).getActive() == true){
+            loc25 = 'O';
         }else{
-            loc0 = 'X';
+            loc25 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(26).getVisited() == true && locations.get(26).getActive() == false){
+            loc26 = 'V';
+        }else if(locations.get(26).getVisited() == true && locations.get(26).getActive() == true){
+            loc26 = 'O';
         }else{
-            loc0 = 'X';
+            loc26 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(27).getVisited() == true && locations.get(27).getActive() == false){
+            loc27 = 'V';
+        }else if(locations.get(27).getVisited() == true && locations.get(27).getActive() == true){
+            loc27 = 'O';
         }else{
-            loc0 = 'X';
+            loc27 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(28).getVisited() == true && locations.get(28).getActive() == false){
+            loc28 = 'V';
+        }else if(locations.get(28).getVisited() == true && locations.get(28).getActive() == true){
+            loc28 = 'O';
         }else{
-            loc0 = 'X';
+            loc28 = 'X';
         }
-        if(locations.get(0).getVisited() == true && locations.get(0).getActive() == false){
-            loc0 = 'V';
-        }else if(locations.get(0).getVisited() == true && locations.get(0).getActive() == true){
-            loc0 = 'O';
+        if(locations.get(29).getVisited() == true && locations.get(29).getActive() == false){
+            loc29 = 'V';
+        }else if(locations.get(29).getVisited() == true && locations.get(29).getActive() == true){
+            loc29 = 'O';
         }else{
-            loc0 = 'X';
+            loc29 = 'X';
         }
 
     }
