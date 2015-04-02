@@ -31,6 +31,9 @@ public class L10View extends View {
         
         switch(input){
             case "TL":
+                for(String item : locations.get(12).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;
