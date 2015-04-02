@@ -5,7 +5,6 @@
  */
 package agentx.view;
 
-import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.model.Location;
 import agentx.view.ViewInterface.View;
@@ -15,9 +14,9 @@ import java.util.ArrayList;
  *
  * @author Chris
  */
-public class L10View extends View {
+public class L13View extends View {
 
-    public L10View() {
+    public L13View() {
         super("You crashed outside an old school\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
@@ -27,13 +26,12 @@ public class L10View extends View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        ArrayList<Location> locations = createLocations();
         String input = (String) obj;
         
         switch(input){
             case "TL":
-                for(String item : locations.get(10).getToDoList()){
+                for(String item : locations.get(12).getToDoList()){
                     console.println("*"+item);
                 }
                 break;

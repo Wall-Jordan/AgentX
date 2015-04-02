@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class GameBoardControl {
 
     protected final static PrintWriter console = AgentX.getOutFile();
+    public static ArrayList<Location> locations = createLocations();
 
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
         createLocations();
