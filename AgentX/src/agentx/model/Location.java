@@ -15,7 +15,6 @@ import java.util.Objects;
  * @author matiasmikkola
  */
 public class Location implements Serializable {
-
     private Boolean visited;
     private Boolean active;
     private Object boss;
@@ -29,16 +28,16 @@ public class Location implements Serializable {
     public void addToDoListItem(String value) {
         toDoList.add(value);
     }
-    
-    public void addCollectItem (String value) {
+
+    public void addCollectItem(String value) {
         collectItems.add(value);
     }
-    
-    public void removeToDoListItem (String value) {
+
+    public void removeToDoListItem(String value) {
         toDoList.remove(value);
     }
-    
-    public void removeCollectItem (String value) {
+
+    public void removeCollectItem(String value) {
         collectItems.remove(value);
     }
 
