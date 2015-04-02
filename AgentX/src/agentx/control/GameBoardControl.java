@@ -64,5 +64,7 @@ public class GameBoardControl {
                 + "The number of attacks you can chain together is limted by the amount of stamina you have."
                 + "you can use any weapon that you have on your weapon belt or you can use your fists."
                 + "if you want to block it takes up one spot in your attack chain and blocks 50% of the opponents atack damage.", 3);
+    
+    
     }
 }
