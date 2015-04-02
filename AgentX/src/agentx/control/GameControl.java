@@ -135,7 +135,7 @@ public class GameControl {
 			console.println(counter);
 		}
 
-	   /* Sort statement*/
+	   /* Sort sta\tement*/
 	   Collections.sort(listtools);
 
 	   /* Sorted List*/
