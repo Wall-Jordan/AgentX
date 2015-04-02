@@ -7,9 +7,12 @@ package agentx.control;
 
 import agentx.AgentX;
 import agentx.exceptions.InventoryControlExceptions;
+import agentx.model.FuelContainer;
 import agentx.model.Location;
+import agentx.model.TimeShip;
 import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
+import agentx.view.L21View;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -103,5 +106,10 @@ public class InventoryControl {
     weapons.add(new Weapon(3, "Grenades"));
     return weapons;
     }
-    
+      
+    public static void AddFuel(double gallons) {
+        double currentFuel = L21View.ship.fuel.getGallons();
+        double newFuel = currentFuel + gallons;
+        L21View.ship.fuel.setGallons(newFuel);
+}
 }

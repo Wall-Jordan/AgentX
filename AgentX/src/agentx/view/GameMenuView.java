@@ -153,6 +153,10 @@ public class GameMenuView extends View{
                 BossPrintView bossPrintView = new BossPrintView();
                 bossPrintView.display();
                 break;
+            case "MM":
+                L21View l21view = new L21View();
+                l21view.display();
+                break;
         }
         return false;
     }

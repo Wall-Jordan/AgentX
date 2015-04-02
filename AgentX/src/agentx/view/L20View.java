@@ -5,8 +5,13 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
+import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L21View.ship;
 import java.util.ArrayList;
 
 /**
@@ -16,8 +21,7 @@ import java.util.ArrayList;
 public class L20View extends ViewInterface.View {
 
     public L20View() {
-        super("You have landed at a what seems to be a tropical forest. You should probably"
-                + "explore and calculate the amount of fuel you have.\n"
+        super("You have landed at a what seems to be a tropical forest. Lets look around!"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
@@ -26,16 +30,68 @@ public class L20View extends ViewInterface.View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations;
+        locations = GameBoardControl.locations;
         String input = (String) obj;
         
-        switch(input){
+       switch(input){
             case "TL":
+                for(String item : locations.get(20).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;
+        case "T4":
+                try {
+                    String drillBit = getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (drillDepth == 4) {
+                        fuel = locations.get(21).getFuel();
+                        locations.get(21).setFuel(0);
+                       
+                    } 
+
+                    InventoryControl.AddFuel(fuel);
+                    console.println(ship.fuel.getGallons());
+                    
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L21View.java", pce.getMessage());
+                }
+
+                break;
         }
-        
+
         return true;
+    }
+
+    public String getDrillBit() {
+
+        boolean valid = false;
+        String selection = null;
+        try {
+            while (!valid) {
+
+                console.println("Choose drillbit:");
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
+                selection = selection.toUpperCase();
+
+                if (selection.length() < 1) {
+
+                    console.println("Invalid Selection. Please try again.");
+                    continue;
+
+                }
+                break;
+            }
+        } catch (Exception e) {
+            console.println("Error reading input: " + e.getMessage());
+        }
+
+        return selection;
+
     }
 }
