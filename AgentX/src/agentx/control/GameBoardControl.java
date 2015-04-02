@@ -80,5 +80,45 @@ public class GameBoardControl {
         Location L8 = new Location(false, false, jarik, 1, "Jarik is in your way. Show him who is boss.", 0);
         L8.addToDoListItem("Kill Jarik");
         Location L9 = new Location(false, false, null, 0, "Looks like Chaotica wasn't here try going to the next time period!", 0);
+        Location L10 = new Location(false, false, null, 0, "You crashed outside an old school", 3);
+        Location L11 = new Location(false, false, null, 2, "You are standing at the enterance to the school. "
+                + "\nThere is a keypad here and a sign that says..."
+                + "\n********************"
+                + "\nX=(2*(X-2)+(96/6))/4"
+                + "\n********************"
+                + "\nEnter the value of X to proceed.", 3);
+        Location L12 = new Location(false, false, null, 0, "You are in a toolshop.", 3);
+        L12.addToDoListItem("Collect Welder");
+        L12.addCollectItem("WELDER");
+        Location L13 = new Location(false, false, null, 0, "You have now entered the shop teachers office"
+                + "\nAs you explore the office you discover a set\n"
+                + "\nof instructions for the welder you found in the shop.\n"
+                + "\n"
+                + "\nThe instructions said:"
+                + "\n\tHow to use your Edison 5000:"
+                + "\n\tThe Edison 5000 is the top of the line welder that is ran by"
+                + "\n\ta computer, which makes it very simple to use."
+                + "\n\t1.)Choose what metal object needs welded"
+                + "\n\t2.)You simply type in \"T2\" and then you type in the name of"
+                + "\n\tobject the you want welded such as \"ship\""
+                + "\n"
+                + "\nNow it is your turn to try it!"
+                + "\nIn the office you found a few metal pieces that"
+                + "\ncame from a puzzle."
+                + "\nTry out the weld command by typing in: T4 Puzzle", 3);
+        Location L14 = new Location(false,false,null,0,"You are in a robotics lab of some kind.",3);
+        L14.addToDoListItem("Collect grenades");
+        L14.addCollectItem("GRENADES");
+        Location L15 = new Location(false,false,null,0,"You are in the cafeteria."
+                + "\nThere's a lot of rotten food out in the buffet but the fridge appears to still be working.",3);
+        L15.addToDoListItem("Collect Food");
+        L15.addCollectItem("FOOD");
+        Location L16 = new Location(false,false,null,0,"You are in the chemistry lab.",7);
+        Boss nazeem = new Boss();
+        Location L17 = new Location(false,false,nazeem,0,"Nazeem is in your way and confronts you.",3);
+        Location L18 = new Location(false,false,null,0,"You're back at your ship. there appears to be a hole in your fuek tank.",5);
+        L18.addToDoListItem("Fix your Ship");
+        Location L19 = new Location(false,false,null,0,"Its time to take off. Enter your destenation into the ships computer.",2);
+
     }
 }
