@@ -17,8 +17,15 @@ public class Boss implements Serializable {
     private double damage;
     private int y;
     private int x;
+    private int health;
 
     public Boss() {
+    }
+
+    public Boss(String bossName, double damage, int health) {
+        this.bossName = bossName;
+        this.damage = damage;
+        this.health = health;
     }
 
     public Boss(String bossName, double damage, int y, int x) {
@@ -69,6 +76,15 @@ public class Boss implements Serializable {
         this.damage = damage;
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    
+    
     @Override
     public String toString() {
         return "Boss{" + "damage=" + damage + '}';
