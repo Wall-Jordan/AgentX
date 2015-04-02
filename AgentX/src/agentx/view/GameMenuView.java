@@ -92,6 +92,10 @@ public class GameMenuView extends View{
             case "S":
                 this.saveGame();
                 break;
+            case "II":
+                L10View l10view = new L10View();
+                l10view.display();
+                break;
             case "T":
                 TakeOffView takeOffView = new TakeOffView();
                 takeOffView.display();

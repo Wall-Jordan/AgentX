@@ -20,7 +20,8 @@ public class L10View extends View {
         super("You crashed outside an old school"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu");
+                + "\nO - Other commands menu"
+                + "\n****************************************");
     }
     
     @Override
@@ -30,6 +31,9 @@ public class L10View extends View {
         
         switch(input){
             case "TL":
+                for(String item : locations.get(12).getToDoList()){
+                    console.println("*"+item);
+                }
                 break;
             case "O":
                 break;
