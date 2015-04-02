@@ -5,10 +5,37 @@
  */
 package agentx.view;
 
+import static agentx.control.GameBoardControl.createLocations;
+import agentx.model.Location;
+import java.util.ArrayList;
+
 /**
  *
  * @author matiasmikkola
  */
-public class L22View {
+public class L22View extends ViewInterface.View {
+
+    public L22View() {
+        super("The Agent explored the surroundings of the old village, and found a waterfall."
+                + "Could this be where Chaotica is hiding? Better explore.\n"
+                + "\n****************************************"
+                + "\nTL - Display to do list"
+                + "\nO  - Other commands menu"
+                + "\n****************************************\n");
+    }
     
+    @Override
+    public boolean doAction(Object obj){
+        ArrayList<Location> locations = createLocations();
+        String input = (String) obj;
+        
+        switch(input){
+            case "TL":
+                break;
+            case "O":
+                break;
+        }
+        
+        return true;
+    }
 }

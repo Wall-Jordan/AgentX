@@ -5,10 +5,37 @@
  */
 package agentx.view;
 
+import static agentx.control.GameBoardControl.createLocations;
+import agentx.model.Location;
+import java.util.ArrayList;
+
 /**
  *
  * @author matiasmikkola
  */
-public class L25View {
+public class L25View extends ViewInterface.View {
+
+    public L25View() {
+        super("You walk back to the village. I wonder if you need to use the Ship again. Better"
+                + "drill for more fuel.\n"
+                + "\n****************************************"
+                + "\nTL - Display to do list"
+                + "\nO  - Other commands menu"
+                + "\n****************************************\n");
+    }
     
+    @Override
+    public boolean doAction(Object obj){
+        ArrayList<Location> locations = createLocations();
+        String input = (String) obj;
+        
+        switch(input){
+            case "TL":
+                break;
+            case "O":
+                break;
+        }
+        
+        return true;
+    }
 }
