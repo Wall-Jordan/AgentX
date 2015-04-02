@@ -17,8 +17,7 @@ import java.util.ArrayList;
 public class L20View extends ViewInterface.View {
 
     public L20View() {
-        super("You have landed at a what seems to be a tropical forest. You should probably"
-                + "explore and calculate the amount of fuel you have.\n"
+        super("You have landed at a what seems to be a tropical forest. Lets look around!"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
