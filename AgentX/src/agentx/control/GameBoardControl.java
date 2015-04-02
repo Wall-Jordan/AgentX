@@ -19,27 +19,27 @@ import java.io.PrintWriter;
  * @author Chris
  */
 public class GameBoardControl {
-    
+
     protected final static PrintWriter console = AgentX.getOutFile();
-    
+
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
         console.println("called createGameboard");
         return null;
     }
-    
+
     public static void moveActorsToStartingLocation(GameBoard gameBoard) {
         console.println("Move actors to starting locatinon");
     }
-    
+
     private static void assignScenesToLocations(GameBoard gameBoard, Scene[] scenes) {
         Location[][] locations = gameBoardLocations();
-        
+
     }
-    
+
     private static Location[][] gameBoardLocations() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     private static void assignScenesToBlock(GameBoard gameBoard, Scene[] scenes) {
         Location[][] locations = gameBoard.getLocations();
 
@@ -76,8 +76,9 @@ public class GameBoardControl {
         L6.addCollectItem("FOOD");
         Location L7 = new Location(false, false, null, 0, "You examine your time machine and notice that it is not in good shape.", 0);
         L7.addToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
-        Boss jarik = new Boss();
+        Boss jarik = new Boss("Jarik", 1, 15);
         Location L8 = new Location(false, false, jarik, 1, "Jarik is in your way. Show him who is boss.", 0);
-        Location L9 = new Location(false, false, jarik, 1, "Looks like Chaotica wasn't here try going to the next time period!", 0);
+        L8.addToDoListItem("Kill Jarik");
+        Location L9 = new Location(false, false, null, 0, "Looks like Chaotica wasn't here try going to the next time period!", 0);
     }
 }
