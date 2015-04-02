@@ -6,8 +6,8 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.model.Location;
+import agentx.model.TimeShip;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -17,8 +17,9 @@ import java.util.ArrayList;
  */
 public class L10View extends View {
 
+    public static TimeShip ship2 = new TimeShip();
     public L10View() {
-        super("You crashed outside an old school\n"
+        super("\nYou crashed outside an old school\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
@@ -27,8 +28,7 @@ public class L10View extends View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
         
         switch(input){
@@ -36,8 +36,10 @@ public class L10View extends View {
                 for(String item : locations.get(10).getToDoList()){
                     console.println("*"+item);
                 }
-                break;
+                return false;
             case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
                 break;
         }
         
