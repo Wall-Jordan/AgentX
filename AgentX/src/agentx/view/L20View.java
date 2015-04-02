@@ -11,7 +11,7 @@ import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L21View.ship;
+import agentx.model.TimeShip;
 import java.util.ArrayList;
 
 /**
@@ -19,6 +19,8 @@ import java.util.ArrayList;
  * @author matiasmikkola
  */
 public class L20View extends ViewInterface.View {
+    
+    public static TimeShip ship3 = new TimeShip();
 
     public L20View() {
         super("You have landed at a what seems to be a tropical forest. Lets look around!"
@@ -55,7 +57,7 @@ public class L20View extends ViewInterface.View {
                     } 
 
                     InventoryControl.AddFuel(fuel);
-                    console.println(ship.fuel.getGallons());
+                    console.println(ship3.fuel.getGallons());
                     
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());

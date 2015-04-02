@@ -12,6 +12,7 @@ import agentx.model.Location;
 import agentx.model.TimeShip;
 import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
+import agentx.view.L20View;
 import agentx.view.L21View;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -108,8 +109,8 @@ public class InventoryControl {
     }
       
     public static void AddFuel(double gallons) {
-        double currentFuel = L21View.ship.fuel.getGallons();
+        double currentFuel = L20View.ship3.fuel.getGallons();
         double newFuel = currentFuel + gallons;
-        L21View.ship.fuel.setGallons(newFuel);
+        L20View.ship3.fuel.setGallons(newFuel);
 }
 }

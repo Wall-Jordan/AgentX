@@ -11,7 +11,7 @@ import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L21View.ship;
+import static agentx.view.L20View.ship3;
 import java.util.ArrayList;
 
 /**
@@ -55,7 +55,7 @@ public class L29View extends ViewInterface.View {
                     } 
 
                     InventoryControl.AddFuel(fuel);
-                    console.println(ship.fuel.getGallons());
+                    console.println(ship3.fuel.getGallons());
                     
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
