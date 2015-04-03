@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -19,21 +20,23 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class L0View extends View {
+
     public static TimeShip ship1 = new TimeShip();
+
     public L0View() {
-        super("You crashed into a construction site.\n"
+        super("\nYou crashed into a construction site.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
                 + "\nV - Return to Map"
-                + "\n****************************************");
+                + "\n****************************************\n");
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
-        
+
         switch (input) {
             case "TL":
                 for (String item : locations.get(0).getToDoList()) {
@@ -51,10 +54,14 @@ public class L0View extends View {
                 instructionsView.display();
                 break;
             case "C DRILL":
-                //Add drill to array list
-                locations.get(0).removeCollectItem("DRILL");
-                locations.get(0).removeToDoListItem("Collect drill");
-                console.println("Great Job! You stole a drill.");
+                if (locations.get(0).getCollectItems() != null) {
+                    locations.get(0).setCollectItems(null);
+                    locations.get(0).removeToDoListItem("Collect drill");
+                    console.println("Great Job! You stole a drill.");
+                    AgentX.getPlayer().backpack.addTool("Drill");
+                }else{
+                    console.println("You already took the drill.");
+                }
                 break;
             case "T4":
                 try {
@@ -77,7 +84,7 @@ public class L0View extends View {
 
                 break;
         }
-        
+
         return false;
     }
 }

@@ -35,8 +35,8 @@ public class L29View extends ViewInterface.View {
                 + "\n****************************************\n");
     }
 
-//    public String getInput() {
-//        String year = null;
+//    public String getYear() {
+//        String year;
 //
 //        this.console.println("Destination year:");
 //
@@ -100,27 +100,29 @@ public class L29View extends ViewInterface.View {
     
 
 //            case "TAKEOFF":
-//                int shipFixed = ship3.getStatus();
+//                boolean shipFixed = ship3.getStatus();
 //                FuelContainer shipFuel = ship3.getFuel();
-//                if (shipFixed < 1) {
-//                    console.println("You can not take off. You dont have enough fuel.");
+//                if (!shipFixed) {
+//                    console.println("You can not take off. Your ship needs fixed.");
 //                    return true;
 //                } else {
-//                    String year = " ";
+//                    String year;
 //                    boolean traveled = false;
-//                    String goBack = " ";
+//                    String goBack;
 //
 //                    do {
-////                        String input = this.getInput();
-//                        year = input;
-//
-//                        traveled = this.doAction(year);
-//
-//                        if (traveled == false) {
-//                            goBack = this.getInput2();
-//                        } else {
-//                            goBack = "Y";
+////                      String year = this.getYear();
+//                        boolean validYear = false;
+//                        while(!validYear){
+//                        validYear = yearCheck(year);
+//                        if (!validYear){
+//                          goBack=getInput2();
 //                        }
+//                        if ("Y".equals(goBack){
+//                        break;
+//                        }
+//                        }
+// 
 //                    } while (!"Y".equals(goBack));
 //
 //                    if (traveled == true) {
@@ -146,3 +148,19 @@ public class L29View extends ViewInterface.View {
 //        return selection;
 //    }
 //}
+//public boolean yearCheck(String year) {
+//        if ("3097AD".equals(year)) {
+//            return true;
+//        } else if ("2046AD".equals(year)) {
+//            return true;
+//        } else if ("2015".equals(year)) {
+//            GameEndView gameEndView = new GameEndView();
+//            gameEndView.display();
+//        } else {
+//            this.console.println("Wrong year to travel to. You may want to go back "
+//                    + "to the explore sections in this time period and find year clue.");
+//            return false;
+//        }
+//        return true;
+//    
+//    }

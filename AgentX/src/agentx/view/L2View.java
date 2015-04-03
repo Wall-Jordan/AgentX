@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
@@ -52,9 +53,13 @@ public class L2View extends View {
                 instructionsView.display();
                 break;
             case "C KNIFE":
-                //Add drill to array list
-                locations.get(0).removeCollectItem("KNIFE");
-                locations.get(0).removeToDoListItem("Collect Knife");
+                if(locations.get(2).getCollectItems() != null){
+                locations.get(2).setCollectItems(null);
+                locations.get(2).removeToDoListItem("Collect Knife");
+                AgentX.getPlayer().backpack.addTool("Knife");
+                }else{
+                    console.println("You already have the knife.");
+                }
                 break;
             case "T4":
                 try {

@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
@@ -54,8 +55,13 @@ public class L23View extends ViewInterface.View {
                 console.println("There is a wrench in the box! It is shiny and ready to be used!\n");
                 break;
             case "C WRENCH":
-                locations.get(0).removeCollectItem("WRENCH");
-                locations.get(0).removeToDoListItem("Collect Wrench");
+                if(locations.get(23).getCollectItems() != null){
+                locations.get(23).setCollectItems(null);
+                locations.get(23).removeToDoListItem("Collect Wrench");
+                AgentX.getPlayer().backpack.addTool("Wrench");
+                }else{
+                    console.println("You already have the wrench");
+                }
                 break;
             case "V":
                 return true;

@@ -26,7 +26,8 @@ public class L10View extends View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
-                + "\n****************************************");
+                + "\nV - Return to Map"
+                + "\n****************************************\n");
     }
     
     @Override
@@ -45,6 +46,7 @@ public class L10View extends View {
                 otherCommands.display();
                 break;
             case "V":
+                locations.get(10).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();

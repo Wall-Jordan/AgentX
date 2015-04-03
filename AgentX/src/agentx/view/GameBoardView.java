@@ -319,15 +319,15 @@ public class GameBoardView extends View {
         String selection = (String) obj;
         switch (selection) {
             case "F":
-                if (number == 9 ||number == 19 ||number == 29) {
-                    console.println("\nYou must use your time ship to change time periods."
-                            + "\nYou can use it in the last location of each time period.");
-                } else {
+//                if (number == 9 ||number == 19 ||number == 29) {
+//                    console.println("\nYou must use your time ship to change time periods."
+//                            + "\nYou can use it in the last location of each time period.");
+//                } else {
                     locations.get(number).setActive(false);
                     number += 1;
                     locations.get(number).setActive(true);
                     locations.get(number).setVisited(true);
-                }
+//                }
                 break;
             case "B":
                 if (number > 0) {

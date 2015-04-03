@@ -58,7 +58,7 @@ public class Game implements Serializable {
     public void setActor(Actor[] actor) {
         this.actor = actor;
     }
-    private Player player;
+    public Player player;
     private GameBoard gameBoard;
 
     private Inventory[] inventory;

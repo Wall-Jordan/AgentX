@@ -16,12 +16,12 @@ public class TimeShip implements Serializable {
 
     public FuelContainer fuel = new FuelContainer();
     
-    private int status;
+    private boolean status;
     private String description;
 
     public TimeShip() {
         this.description = "\nThis is the description of the TimeShip";
-        this.status = 0;
+        this.status = false;
         fuel.setGallons(0);
     }
     
@@ -34,11 +34,11 @@ public class TimeShip implements Serializable {
         this.fuel = fuel;
     }
 
-    public int getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

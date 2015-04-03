@@ -55,6 +55,11 @@ public class GameControl {
         GameBoardView gameBoardView = new GameBoardView();
 
     }
+    public static void addStamina(int staminaAdd){
+        int stamina = AgentX.getPlayer().getStamina();
+        int newStamina = stamina + staminaAdd;
+        AgentX.getPlayer().setStamina(newStamina);
+    }
 
     public static Inventory[] createInventoryList() {
 
