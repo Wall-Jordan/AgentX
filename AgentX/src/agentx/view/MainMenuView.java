@@ -58,7 +58,7 @@ public class MainMenuView extends View {
                 console.println("\n Invalid selection, try again!");
                 return false;
         }
-        return true;
+        return false;
     }
 
     private void startNewGame() {
