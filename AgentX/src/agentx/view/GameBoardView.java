@@ -319,15 +319,23 @@ public class GameBoardView extends View {
         String selection = (String) obj;
         switch(selection){
             case "F":
+                if(number < 29){
                 locations.get(number).setActive(false);
                 number +=1;
                 locations.get(number).setActive(true);
                 locations.get(number).setVisited(true);
+                }else{
+                    console.println("You are at the end of the game.");
+                }
                 break;
             case "B":
+                if(number > 0){
                 locations.get(number).setActive(false);
                 number -=1;
                 locations.get(number).setActive(true);
+                }else{
+                    console.println("You are at the beginning of the game.");
+                }
                 break;
             case "E":
                 break;
