@@ -25,6 +25,8 @@ public class L22View extends ViewInterface.View {
                 + "Could this be where Chaotica is hiding? Better explore.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
+                + "\nI  - Instructions"
+                + "\nV  - View Gameboard"
                 + "\nO  - Other commands menu"
                 + "\n****************************************\n");
     }

@@ -27,6 +27,8 @@ public class L29View extends ViewInterface.View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
+                + "\nI  - Instructions"
+                + "\nV  - View Gameboard"
                 + "\n****************************************\n");
     }
 
