@@ -42,7 +42,12 @@ public class L24View extends ViewInterface.View {
                 }
                 break;
             case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
                 break;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
             case "T3":
                 console.println("Finally some food! I've traveled through years and not eaten "
                         + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");

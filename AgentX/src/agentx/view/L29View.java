@@ -42,7 +42,12 @@ public class L29View extends ViewInterface.View {
                 }
                 break;
             case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
                 break;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
                 case "V":
                 return true;
         case "T4":
