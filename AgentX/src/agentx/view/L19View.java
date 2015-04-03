@@ -21,6 +21,8 @@ public class L19View extends View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nF  - Check Fuel"
+                + "\nTAKEOFF  - Take Off"
                 + "\n****************************************");
     }
     
