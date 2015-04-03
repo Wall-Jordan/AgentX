@@ -73,6 +73,7 @@ public class L7View extends View {
             case "T3 SHIP":
                 console.println("You fixed your ship! Great hammer work!");
                 locations.get(0).removeToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
+                ship1.setStatus(1);
                 break;
         }
 

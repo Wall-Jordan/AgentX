@@ -276,7 +276,6 @@ public class GameBoardView extends View {
         }else{
             loc29 = 'X';
         }
-        
         console.println("                           Agent X Gameboard          ");
         console.println("                 1   2   3   4   5   6   7   8   9   10");
         console.println("                 -   -   -   -   -   -   -   -   -   - ");
