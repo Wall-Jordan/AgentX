@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class GameBoardView extends View {
     ArrayList<Location> locations = GameBoardControl.locations;
-    int number = 0;
+    public int number = 0;
     public GameBoardView() {
         super("");
     }
