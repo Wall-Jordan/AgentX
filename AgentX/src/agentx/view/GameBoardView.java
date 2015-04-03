@@ -384,15 +384,18 @@ public class GameBoardView extends View {
                         l10View.display();
                         break;
                     case (11):
-                        L11View l1View = new L11View();
+                        L11View l11View = new L11View();
                         l11View.display();
-                    case '12':
-                        L12View l2View = new L12View();
+                        break;
+                    case (12):
+                        L12View l12View = new L12View();
                         l12View.display();
-                    case '13':
-                        L13View l3View = new L13View();
+                        break;
+                    case (13):
+                        L13View l13View = new L13View();
                         l13View.display();
-                    case '14':
+                        break;
+                    case (14):
                         L14View l14View = new L14View();
                         l14View.display();
                         break;

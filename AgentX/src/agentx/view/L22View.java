@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class L22View extends ViewInterface.View {
 
     public L22View() {
-        super("The Agent explored the surroundings of the old village, and found a waterfall."
+        super("The Agent explored the surroundings of the old village, and found a waterfall. "
                 + "Could this be where Chaotica is hiding? Better explore.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
