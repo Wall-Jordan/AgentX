@@ -7,9 +7,11 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L20View.ship3;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -35,37 +37,35 @@ public class L1View extends View {
 
     @Override
     public boolean doAction(Object obj) {
+        ArrayList<Location> locations = GameBoardControl.locations;
         String value = (String) obj;
-
         value = value.toUpperCase();
-        String choice = value;
+        
+        switch (value){
+        case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
 
-        if ("1".equals(choice)) {
-            try {
-                PuzzleControl puzzleControl = new PuzzleControl();
-                double drillDepth = PuzzleControl.calcDrillDepth(choice);
-                console.println("You collected: " + drillDepth);
-            } catch (PuzzleControlExceptions pe) {
-                ErrorView.display("DrillInstructionsView.java", pe.getMessage());
-            }
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (6 <= drillDepth) {
+                        fuel = locations.get(1).getFuel();
+                        locations.get(1).setFuel(0);
+                       
+                    } 
 
-        } else if ("2".equals(choice)) {
-            try {
-                PuzzleControl puzzleControl = new PuzzleControl();
-                double drillDepth = PuzzleControl.calcDrillDepth(choice);
-                console.println("You collected: " + drillDepth);
-            } catch (PuzzleControlExceptions pe) {
-                ErrorView.display("DrillInstructionsView.java", pe.getMessage());
-            }
+                    InventoryControl.AddFuel2(fuel);
+                    console.println(ship3.fuel.getGallons());
+                    
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L21View.java", pce.getMessage());
+                }
 
-        } else if ("Q".equals(choice)) {
-            console.println("Looks like you are done practicing. Good luck!");
-            return false;
-        } else {
-            console.println("Invalid drillbit");
+                break;
+        case "V":
             return true;
         }
-        return true;
+        return false;
 
     }
 }

@@ -69,6 +69,6 @@ public class L10View extends View {
                 break;
         }
         
-        return true;
+        return false;
     }
 }
