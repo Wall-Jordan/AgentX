@@ -9,6 +9,7 @@ import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import static agentx.control.InventoryControl.fuel;
+import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.FuelContainer;
@@ -60,7 +61,7 @@ public class L21View extends ViewInterface.View {
                        
                     } 
 
-                    InventoryControl.AddFuel(fuel);
+                    InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
                     
                 } catch (PuzzleControlExceptions pce) {
@@ -73,31 +74,4 @@ public class L21View extends ViewInterface.View {
         return true;
     }
 
-    public String getDrillBit() {
-
-        boolean valid = false;
-        String selection = null;
-        try {
-            while (!valid) {
-
-                console.println("Choose drillbit:");
-                selection = this.keyboard.readLine();
-                selection = selection.trim();
-                selection = selection.toUpperCase();
-
-                if (selection.length() < 1) {
-
-                    console.println("Invalid Selection. Please try again.");
-                    continue;
-
-                }
-                break;
-            }
-        } catch (Exception e) {
-            console.println("Error reading input: " + e.getMessage());
-        }
-
-        return selection;
-
-    }
 }

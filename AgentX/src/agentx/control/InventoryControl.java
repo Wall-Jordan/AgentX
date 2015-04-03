@@ -12,8 +12,11 @@ import agentx.model.Location;
 import agentx.model.TimeShip;
 import agentx.model.Weapon;
 import agentx.model.Weapons_Belt;
+import agentx.view.L0View;
+import agentx.view.L10View;
 import agentx.view.L20View;
 import agentx.view.L21View;
+import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -24,6 +27,7 @@ import java.util.ArrayList;
 public class InventoryControl {
 
     protected final static PrintWriter console = AgentX.getOutFile();
+    protected final static BufferedReader keyboard = AgentX.getInFile();
 
     public static boolean hammer() {
         return true;
@@ -59,6 +63,34 @@ public class InventoryControl {
 
     public static double fuel() {
         return 97.3;
+    }
+
+    public static String getDrillBit() {
+
+        boolean valid = false;
+        String selection = null;
+        try {
+            while (!valid) {
+
+                console.println("Choose drillbit:");
+                selection = keyboard.readLine();
+                selection = selection.trim();
+                selection = selection.toUpperCase();
+
+                if (selection.length() < 1) {
+
+                    console.println("Invalid Selection. Please try again.");
+                    continue;
+
+                }
+                break;
+            }
+        } catch (Exception e) {
+            console.println("Error reading input: " + e.getMessage());
+        }
+
+        return selection;
+
     }
 
     public static void findWeapon(Object obj) throws InventoryControlExceptions {
@@ -98,19 +130,29 @@ public class InventoryControl {
             return name;
         }
     }
-    
-    public static ArrayList<Weapon> createWeaponsList(){
-    ArrayList<Weapon> weapons = new ArrayList<>();
-    weapons.add(new Weapon(1, "Ray Gun"));
-    weapons.add(new Weapon(1, "Knife"));
-    weapons.add(new Weapon(5, "Darts"));
-    weapons.add(new Weapon(3, "Grenades"));
-    return weapons;
+
+    public static ArrayList<Weapon> createWeaponsList() {
+        ArrayList<Weapon> weapons = new ArrayList<>();
+        weapons.add(new Weapon(1, "Ray Gun"));
+        weapons.add(new Weapon(1, "Knife"));
+        weapons.add(new Weapon(5, "Darts"));
+        weapons.add(new Weapon(3, "Grenades"));
+        return weapons;
     }
-      
-    public static void AddFuel(double gallons) {
+
+    public static void AddFuel1(double gallons) {
+        double currentFuel = L0View.ship1.fuel.getGallons();
+        double newFuel = currentFuel + gallons;
+        L0View.ship1.fuel.setGallons(newFuel);
+    }
+    public static void AddFuel2(double gallons) {
+        double currentFuel = L10View.ship2.fuel.getGallons();
+        double newFuel = currentFuel + gallons;
+        L10View.ship2.fuel.setGallons(newFuel);
+    }
+    public static void AddFuel3(double gallons) {
         double currentFuel = L20View.ship3.fuel.getGallons();
         double newFuel = currentFuel + gallons;
         L20View.ship3.fuel.setGallons(newFuel);
-}
+    }
 }
