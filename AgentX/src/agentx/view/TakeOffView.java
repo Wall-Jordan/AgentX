@@ -92,8 +92,8 @@ public class TakeOffView extends View {
         } else if ("2046AD".equals(year)) {
             return true;
         } else if ("2015".equals(year)) {
-            GameOverView gameOverView = new GameOverView();
-            gameOverView.display();
+            GameEndView gameEndView = new GameEndView();
+            gameEndView.display();
         } else {
             this.console.println("Wrong year to travel to. You may want to go back "
                     + "to the explore sections in this time period and find year clue.");

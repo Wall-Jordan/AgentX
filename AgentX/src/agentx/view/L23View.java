@@ -26,6 +26,8 @@ public class L23View extends ViewInterface.View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
+                + "\nI  - Instructions"
+                + "\nV  - View Gameboard"
                 + "\n****************************************\n");
     }
 
@@ -50,6 +52,10 @@ public class L23View extends ViewInterface.View {
                 instructionsView.display();
             case "T3":
                 console.println("There is a wrench in the box! It is shiny and ready to be used!\n");
+                break;
+            case "C WRENCH":
+                locations.get(0).removeCollectItem("WRENCH");
+                locations.get(0).removeToDoListItem("Collect Wrench");
                 break;
             case "V":
                 return true;

@@ -11,6 +11,7 @@ import agentx.control.InventoryControl;
 import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
+import agentx.model.FuelContainer;
 import agentx.model.Location;
 import agentx.model.TimeShip;
 import static agentx.view.L10View.ship2;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  * @author matiasmikkola
  */
 public class L20View extends ViewInterface.View {
-    
+
     public static TimeShip ship3 = new TimeShip();
 
     public L20View() {
@@ -29,19 +30,21 @@ public class L20View extends ViewInterface.View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
+                + "\nI  - Instructions"
+                + "\nV  - View Gameboard"
                 + "\n****************************************\n");
     }
     
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations;
         locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-       switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(20).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(20).getToDoList()) {
+                    console.println("*" + item);
                 }
                 break;
             case "O":
@@ -53,7 +56,8 @@ public class L20View extends ViewInterface.View {
                 instructionsView.display();
             case "V":
                 return true;
-        case "T4":
+            
+            case "T4":
                 try {
                     String drillBit = getDrillBit();
 
@@ -62,12 +66,12 @@ public class L20View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
-                    
+
+                    }
+
                     InventoryControl.AddFuel3(fuel);
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
