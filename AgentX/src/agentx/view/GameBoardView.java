@@ -287,8 +287,7 @@ public class GameBoardView extends View {
         console.println("Time Period 3: | "+loc20+" | "+loc21+" | "+loc22+" | "+loc23+" | "+loc24+" | "+loc25+" | "+loc26+" | "+loc27+" | "+loc28+" | "+loc29+" | ");
         console.println("                 -   -   -   -   -   -   -   -   -   - ");
     }
-    
-    
+
 //    void display() {
 //        console.println();
 //        char gameBoard[][] = new char[3][10];

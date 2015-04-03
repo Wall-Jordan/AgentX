@@ -6,24 +6,28 @@
 package agentx.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author Chris
  */
-public class Weapons_Belt extends Inventory implements Serializable {
+public class WeaponsBelt extends Inventory implements Serializable {
 
-    private String beltItems;
+    private ArrayList<Weapon> beltItems = new ArrayList<>();
 
-    public Weapons_Belt() {
+    public WeaponsBelt() {
     }
-
-    public String getBeltItems() {
+    
+    public void addWeapon(String name, int damage){
+        beltItems.add(new Weapon(name, damage));
+    }
+    public ArrayList<Weapon> getBeltItems() {
         return beltItems;
     }
 
-    public void setBeltItems(String beltItems) {
+    public void setBeltItems(ArrayList<Weapon> beltItems) {
         this.beltItems = beltItems;
     }
 
@@ -47,7 +51,7 @@ public class Weapons_Belt extends Inventory implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Weapons_Belt other = (Weapons_Belt) obj;
+        final WeaponsBelt other = (WeaponsBelt) obj;
         if (!Objects.equals(this.beltItems, other.beltItems)) {
             return false;
         }
