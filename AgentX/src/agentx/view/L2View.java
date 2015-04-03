@@ -5,10 +5,48 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
+import static agentx.control.GameBoardControl.createLocations;
+import agentx.model.Location;
+import agentx.view.ViewInterface.View;
+import java.util.ArrayList;
+
 /**
  *
  * @author Jordan
  */
-public class L2View {
-    
+public class L2View extends View{
+    public L2View() {
+        super("At the construction site you see a knife.\n"
+                + "\n****************************************"
+                + "\nTL - Display to do list"
+                + "\nO - Other commands menu"
+                + "\nV - Return to Map"
+                + "\n****************************************");
+    }
+
+    @Override
+    public boolean doAction(Object obj) {
+        ArrayList<Location> locations = GameBoardControl.locations;
+        String input = (String) obj;
+
+        switch (input) {
+            case "TL":
+                for (String item : locations.get(2).getToDoList()) {
+                    console.println("*" + item);
+                }
+                break;
+            case "O":
+                break;
+            case "V":
+                return true;
+            case "C KNIFE":
+                //Add drill to array list
+                locations.get(0).removeCollectItem("KNIFE");
+                locations.get(0).removeToDoListItem("Collect Knife");
+                break;
+        }
+
+        return true;
+    }
 }
