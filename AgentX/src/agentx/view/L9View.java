@@ -26,8 +26,7 @@ public class L9View extends View{
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
 
         switch (input) {
@@ -38,12 +37,38 @@ public class L9View extends View{
                 break;
             case "O":
                 break;
-            case "C DRILL":
-                //Add drill to array list
-                
-                break;
+            case "V":
+                return true;
         }
 
         return true;
     }
+    
+    public String getDrillBit() {
+
+            boolean valid = false;
+            String selection = null;
+            try {
+                while (!valid) {
+
+                    console.println("Choose drill bit: ");
+                    selection = this.keyboard.readLine();
+                    selection = selection.trim();
+                    selection = selection.toUpperCase();
+
+                    if (selection.length() < 1) {
+
+                        console.println("Invalid Selection. Please try again.");
+                        continue;
+
+                    }
+                    break;
+                }
+            } catch (Exception e) {
+                console.println("Error reading input: " + e.getMessage());
+            }
+
+            return selection;
+
+        }
 }

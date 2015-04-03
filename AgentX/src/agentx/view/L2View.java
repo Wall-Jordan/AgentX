@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.model.Location;
 import agentx.view.ViewInterface.View;
@@ -16,16 +17,17 @@ import java.util.ArrayList;
  */
 public class L2View extends View{
     public L2View() {
-        super("You crashed into a construction site.\n"
+        super("At the construction site you see a knife.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nV - Return to Map"
                 + "\n****************************************");
     }
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
 
         switch (input) {
@@ -35,6 +37,13 @@ public class L2View extends View{
                 }
                 break;
             case "O":
+                break;
+            case "V":
+                return true;
+            case "C KNIFE":
+                //Add drill to array list
+                locations.get(0).removeCollectItem("KNIFE");
+                locations.get(0).removeToDoListItem("Collect Knife");
                 break;
         }
 

@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.model.Location;
 import agentx.view.ViewInterface.View;
@@ -25,7 +26,7 @@ public class L7View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
 
         switch (input) {
@@ -36,6 +37,8 @@ public class L7View extends View {
                 break;
             case "O":
                 break;
+            case "V":
+                return true;
         }
 
         return true;
