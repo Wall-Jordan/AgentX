@@ -60,7 +60,7 @@ public class InstructionsView extends View {
                 console.println("\n Invalid selection, try again!");
 
         }
-        return true;
+        return false;
     }
 
     private void displayGoal() {
