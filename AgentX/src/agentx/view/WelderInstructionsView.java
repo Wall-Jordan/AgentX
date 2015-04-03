@@ -93,7 +93,7 @@ public class WelderInstructionsView extends View {
         String weldInput = (String) obj;
 
         if ("T4 PUZZLE".equals(weldInput)) {
-            console.println("\tCongradulations you welded the puzzle together!"
+            console.println("\tCongratulations you welded the puzzle together!"
                     + "\n\tThe puzzle says: 2046ad");
             return true;
 

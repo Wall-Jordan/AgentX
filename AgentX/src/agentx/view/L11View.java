@@ -29,30 +29,29 @@ public class L11View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
 
         switch (input) {
-            case "TL":
-                for (String item : locations.get(11).getToDoList()) {
-                    console.println("*" + item);
+            case "V":
+                console.println("Okay, you can come back later.");
+                return true;
+            default:
+                try {
+                    double userIn = Double.parseDouble(input);
+                    boolean test = PuzzleControl.calcEntrance(userIn);
+                    if (test == true) {
+                        this.console.println("\n\tCORRECT! You may now proceed.");
+                        return true;
+                    } else {
+                        this.console.println("\n\tWRONG!!! Please try again.");
+                        return false;
+                    }
+                } catch (NumberFormatException nf) {
+                    this.console.println("\n You must enter in a number.");
                 }
-                break;
-            case "6":
-                Double userIn = Double.parseDouble(input);
-                boolean test = PuzzleControl.calcEntrance(userIn);
-                if (test == true) {
-                    this.console.println("\n\tCORRECT! You may now proceed.");
-                    return true;
-                } else {
-                    this.console.println("\n\tWRONG!!! Please try again.");
-                    return false;
-                }
-            case "O":
                 break;
         }
-
-        return true;
+        return false;
     }
 }

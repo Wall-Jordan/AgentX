@@ -91,7 +91,7 @@ public class GameBoardControl {
         locations.get(18).addToDoListItem("Fix your Ship");
         locations.add(new Location(false, false, 2));
         locations.add(new Location(false, false, 2));
-        locations.add(new Location(false, false, 0));
+        locations.add(new Location(false, false, 27));
         locations.add(new Location(false, false,  2));
         locations.add(new Location(false, false, 0));
         locations.get(23).addToDoListItem("Open ToolBox");

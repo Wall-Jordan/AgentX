@@ -11,11 +11,11 @@ import java.io.Serializable;
  *
  * @author Chris
  */
-public class Fuel_Container implements Serializable {
+public class FuelContainer implements Serializable {
 
     private double gallons;
 
-    public Fuel_Container() {
+    public FuelContainer() {
     }
 
     public double getGallons() {
@@ -46,7 +46,7 @@ public class Fuel_Container implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Fuel_Container other = (Fuel_Container) obj;
+        final FuelContainer other = (FuelContainer) obj;
         if (Double.doubleToLongBits(this.gallons) != Double.doubleToLongBits(other.gallons)) {
             return false;
         }
