@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * @author Chris
  */
 public class L11View extends View {
-
+    
     public L11View() {
         super("\nYou are standing at the enterance to the school. "
                 + "\nThere is a keypad here and a sign that says..."
