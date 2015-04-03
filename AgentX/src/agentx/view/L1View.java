@@ -26,7 +26,8 @@ public class L1View extends View {
                 + "\nfor fuel! Fuel is needed to use the ship, which allows you "
                 + "\nto look for Chaotica in a different time. Lets try this out:"
                 + "\n"
-                + "\nSelect the drillbit you want to use: [1, 2] (Click Q to Quit)"
+                + "\nSelect the drill by typing T4"
+                + "\nSelect the drillbit you want to use: [1, 2]"
                 + "\n****************************************"
                 + "\nV - Return to Map"
                 + "\n****************************************");

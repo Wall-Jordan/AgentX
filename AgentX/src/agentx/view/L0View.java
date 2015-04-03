@@ -48,6 +48,6 @@ public class L0View extends View {
                 break;
         }
         
-        return true;
+        return false;
     }
 }
