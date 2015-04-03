@@ -18,10 +18,7 @@ public class ErrorView {
     private static final PrintWriter logFile = AgentX.getLogFile();
 
     public static void display(String className, String errorMessage) {
-        errorFile.println(
-                "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-                + "\n Error" + errorMessage
-                + "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        errorFile.println("\n Error: " + errorMessage);
         logFile.println(className + " - " + errorMessage);
     }
 }

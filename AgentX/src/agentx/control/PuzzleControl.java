@@ -80,7 +80,7 @@ public class PuzzleControl {
             case "S":
                 return drillDepth;
             default:
-                throw new PuzzleControlExceptions("\n\nInvalid drill bit selected.");
+                throw new PuzzleControlExceptions("Invalid drill bit selected.");
         }
 
         //Calculate drillDepth of drillBit Type.
