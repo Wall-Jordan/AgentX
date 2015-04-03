@@ -8,6 +8,7 @@ package agentx.view;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
+import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
@@ -27,22 +28,28 @@ public class L24View extends ViewInterface.View {
                 + "\nO  - Other commands menu"
                 + "\n****************************************\n");
     }
-    
+
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations;
         locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-        switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(24).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(24).getToDoList()) {
+                    console.println("*" + item);
                 }
                 break;
             case "O":
                 break;
-        case "T4":
+            case "T3":
+                console.println("Finally some food! I've traveled through years and not eaten "
+                        + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
+                break;
+            case "V":
+                return true;
+            case "T4":
                 try {
                     String drillBit = getDrillBit();
 
@@ -51,12 +58,12 @@ public class L24View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
@@ -64,34 +71,7 @@ public class L24View extends ViewInterface.View {
                 break;
         }
 
-        return true;
+        return false;
     }
 
-    public String getDrillBit() {
-
-        boolean valid = false;
-        String selection = null;
-        try {
-            while (!valid) {
-
-                console.println("Choose drillbit:");
-                selection = this.keyboard.readLine();
-                selection = selection.trim();
-                selection = selection.toUpperCase();
-
-                if (selection.length() < 1) {
-
-                    console.println("Invalid Selection. Please try again.");
-                    continue;
-
-                }
-                break;
-            }
-        } catch (Exception e) {
-            console.println("Error reading input: " + e.getMessage());
-        }
-
-        return selection;
-
-    }
 }

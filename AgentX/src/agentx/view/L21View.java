@@ -27,7 +27,7 @@ public class L21View extends ViewInterface.View {
     
             
     public L21View() {
-        super("You moved into an old village, which is empty. You move closer, and notice"
+        super("You moved into an old village, which is empty. You move closer, and notice "
                 + "that there are bodies everywhere. Maybe this is where Chaotica is right now!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
@@ -49,6 +49,9 @@ public class L21View extends ViewInterface.View {
                 break;
             case "O":
                 break;
+            case "V":
+            return true;
+                
             case "T4":
                 try {
                     String drillBit = getDrillBit();
@@ -71,7 +74,7 @@ public class L21View extends ViewInterface.View {
                 break;
         }
 
-        return true;
+        return false;
     }
 
 }

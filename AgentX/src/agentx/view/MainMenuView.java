@@ -51,10 +51,12 @@ public class MainMenuView extends View {
             case 'B':
                 GameBoardView gameBoard = new GameBoardView();
                 gameBoard.display();
-            case 'E':
-                return true;
+                break;
+            case 'Q':
+                System.exit(0);
             default:
                 console.println("\n Invalid selection, try again!");
+                return false;
         }
         return true;
     }
