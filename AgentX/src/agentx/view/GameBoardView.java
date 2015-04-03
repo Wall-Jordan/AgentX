@@ -339,40 +339,51 @@ public class GameBoardView extends View {
                 break;
             case "E":
                 switch (number){
-                    case '0':
+                    case (0):
                         L0View l0View = new L0View();
                         l0View.display();
-                    case '1':
+                        break;
+                    case (1):
                         L1View l1View = new L1View();
                         l1View.display();
-                    case '2':
+                        break;
+                    case (2):
                         L2View l2View = new L2View();
                         l2View.display();
-                    case '3':
+                        break;
+                    case (3):
                         L3View l3View = new L3View();
                         l3View.display();
-                    case '4':
+                        break;
+                    case (4):
                         L4View l4View = new L4View();
                         l4View.display();
-                    case '5':
+                        break;
+                    case (5):
                         L5View l5View = new L5View();
                         l5View.display();
-                    case '6':
+                        break;
+                    case (6):
                         L6View l6View = new L6View();
                         l6View.display();
-                    case '7':
+                        break;
+                    case (7):
                         L7View l7View = new L7View();
                         l7View.display();
-                    case '8':
+                        break;
+                    case (8):
                         L8View l8View = new L8View();
                         l8View.display();
-                    case '9':
+                        break;
+                    case (9):
                         L9View l9View = new L9View();
                         l9View.display();
-                    case '10':
+                        break;
+                    case (10):
                         L10View l10View = new L10View();
                         l10View.display();
-                    case '11':
+                        break;
+                    case (11):
                         L11View l1View = new L11View();
                         l11View.display();
                     case '12':
