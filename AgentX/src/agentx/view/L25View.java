@@ -22,31 +22,31 @@ import java.util.ArrayList;
 public class L25View extends ViewInterface.View {
 
     public L25View() {
-        super("You walk back to the village. I wonder if you need to use the Ship again. Better"
+        super("You walk back to the village. I wonder if you need to use the Ship again. Better "
                 + "drill for more fuel.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
                 + "\n****************************************\n");
     }
-    
+
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations;
         locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-        switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(25).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(25).getToDoList()) {
+                    console.println("*" + item);
                 }
                 break;
             case "O":
                 break;
-                case "V":
+            case "V":
                 return true;
-        case "T4":
+            case "T4":
                 try {
                     String drillBit = getDrillBit();
 
@@ -55,12 +55,12 @@ public class L25View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }

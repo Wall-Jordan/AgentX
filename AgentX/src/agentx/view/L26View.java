@@ -22,30 +22,31 @@ import java.util.ArrayList;
 public class L26View extends ViewInterface.View {
 
     public L26View() {
-        super("Looks like somebody has been at the village meanwhile we were at the waterfall.\n"
+        super("Looks like somebody has been at the village meanwhile we were at the waterfall. "
+                + "It must be CHAOTICA!!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
                 + "\n****************************************\n");
     }
-    
+
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations;
         locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-        switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(26).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(26).getToDoList()) {
+                    console.println("*" + item);
                 }
                 break;
             case "O":
                 break;
-                case "V":
+            case "V":
                 return true;
-        case "T4":
+            case "T4":
                 try {
                     String drillBit = getDrillBit();
 
@@ -54,12 +55,12 @@ public class L26View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }

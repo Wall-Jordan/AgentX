@@ -28,24 +28,27 @@ public class L23View extends ViewInterface.View {
                 + "\nO  - Other commands menu"
                 + "\n****************************************\n");
     }
-    
+
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations;
         locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-        switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(23).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(23).getToDoList()) {
+                    console.println("*" + item);
                 }
                 break;
             case "O":
                 break;
-                case "V":
+            case "T3":
+                console.println("There is a wrench in the box! It is shiny and ready to be used!\n");
+                break;
+            case "V":
                 return true;
-        case "T4":
+            case "T4":
                 try {
                     String drillBit = getDrillBit();
 
@@ -54,12 +57,12 @@ public class L23View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
