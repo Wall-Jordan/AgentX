@@ -16,10 +16,25 @@ import java.util.ArrayList;
  */
 public class GameBoardView extends View {
     ArrayList<Location> locations = GameBoardControl.locations;
+    int number = 0;
     public GameBoardView() {
         super("");
     }
 
+    @Override
+    public void display(){
+        
+        String value;
+            boolean done = false;
+
+            do {
+                displayGameBoard();
+                value = this.getInput();
+                done = this.doAction(value);
+
+            } while (!done);
+    }
+    
     public void displayGameBoard(){
         char loc0;
         char loc1;
@@ -271,8 +286,8 @@ public class GameBoardView extends View {
         console.println("                 -   -   -   -   -   -   -   -   -   - ");
         console.println("Time Period 3: | "+loc20+" | "+loc21+" | "+loc22+" | "+loc23+" | "+loc24+" | "+loc25+" | "+loc26+" | "+loc27+" | "+loc28+" | "+loc29+" | ");
         console.println("                 -   -   -   -   -   -   -   -   -   - ");
-
     }
+    
     
 //    void display() {
 //        console.println();
@@ -301,6 +316,30 @@ public class GameBoardView extends View {
 
     @Override
     public boolean doAction(Object obj) {
+        String selection = (String) obj;
+        switch(selection){
+            case "F":
+                locations.get(number).setActive(false);
+                number +=1;
+                locations.get(number).setActive(true);
+                locations.get(number).setVisited(true);
+                break;
+            case "B":
+                locations.get(number).setActive(false);
+                number -=1;
+                locations.get(number).setActive(true);
+                break;
+            case "E":
+                break;
+            case "M":
+                
+                break;
+            case "I":
+                break;
+            default:
+                console.println("Invalid input. Please try again.");
+                break;
+        }
         return false;
     }
 }

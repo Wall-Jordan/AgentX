@@ -48,6 +48,9 @@ public class MainMenuView extends View {
             case 'I':
                 this.displayInstructions();
                 break;
+            case 'B':
+                GameBoardView gameBoard = new GameBoardView();
+                gameBoard.display();
             case 'E':
                 return true;
             default:
