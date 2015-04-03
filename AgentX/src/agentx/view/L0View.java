@@ -8,6 +8,7 @@ package agentx.view;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.model.Location;
+import agentx.model.TimeShip;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class L0View extends View {
-    
+    public static TimeShip ship1 = new TimeShip();
     public L0View() {
         super("You crashed into a construction site.\n"
                 + "\n****************************************"
