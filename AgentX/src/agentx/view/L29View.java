@@ -61,9 +61,8 @@ public class L29View extends ViewInterface.View {
                         locations.get(21).setFuel(0);
                        
                     } 
-
                     InventoryControl.AddFuel3(fuel);
-                    console.println(ship3.fuel.getGallons());
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
                     
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());

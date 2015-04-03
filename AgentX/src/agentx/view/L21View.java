@@ -24,8 +24,7 @@ import java.util.ArrayList;
  * @author matiasmikkola
  */
 public class L21View extends ViewInterface.View {
-    
-            
+
     public L21View() {
         super("You moved into an old village, which is empty. You move closer, and notice "
                 + "that there are bodies everywhere. Maybe this is where Chaotica is right now!\n"
@@ -55,8 +54,8 @@ public class L21View extends ViewInterface.View {
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
             case "V":
-            return true;
-                
+                return true;
+
             case "T4":
                 try {
                     String drillBit = getDrillBit();
@@ -66,12 +65,12 @@ public class L21View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel3(fuel);
-                    console.println(ship3.fuel.getGallons());
-                    
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }

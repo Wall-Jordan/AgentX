@@ -13,6 +13,7 @@ import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
 import agentx.model.TimeShip;
+import static agentx.view.L10View.ship2;
 import java.util.ArrayList;
 
 /**
@@ -63,9 +64,9 @@ public class L20View extends ViewInterface.View {
                         locations.get(21).setFuel(0);
                        
                     } 
-
+                    
                     InventoryControl.AddFuel3(fuel);
-                    console.println(ship3.fuel.getGallons());
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
                     
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());

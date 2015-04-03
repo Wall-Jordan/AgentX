@@ -64,7 +64,7 @@ public class L25View extends ViewInterface.View {
                     }
 
                     InventoryControl.AddFuel3(fuel);
-                    console.println(ship3.fuel.getGallons());
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
