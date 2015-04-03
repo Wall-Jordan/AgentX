@@ -41,6 +41,9 @@ public class L10View extends View {
                 OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
                 otherCommands.display();
                 break;
+            case "B":
+                GameBoardView gameBoard = new GameBoardView();
+                gameBoard.displayGameBoard();
         }
         
         return true;

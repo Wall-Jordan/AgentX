@@ -5,11 +5,9 @@
  */
 package agentx.view;
 
-import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import agentx.model.Location;
 import agentx.view.ViewInterface.View;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +20,7 @@ public class GameBoardView extends View {
         super("");
     }
 
-    private void displayGameBoard(){
+    public void displayGameBoard(){
         char loc0;
         char loc1;
         char loc2;
@@ -263,6 +261,16 @@ public class GameBoardView extends View {
         }else{
             loc29 = 'X';
         }
+        
+        console.println("                           Agent X Gameboard          ");
+        console.println("                 1   2   3   4   5   6   7   8   9   10");
+        console.println("                 -   -   -   -   -   -   -   -   -   - ");
+        console.println("Time Period 1: | "+loc0+" | "+loc1+" | "+loc2+" | "+loc3+" | "+loc4+" | "+loc5+" | "+loc6+" | "+loc7+" | "+loc8+" | "+loc9+" | ");
+        console.println("                 -   -   -   -   -   -   -   -   -   - ");
+        console.println("Time Period 2: | "+loc10+" | "+loc11+" | "+loc12+" | "+loc13+" | "+loc14+" | "+loc15+" | "+loc16+" | "+loc17+" | "+loc18+" | "+loc19+" | ");
+        console.println("                 -   -   -   -   -   -   -   -   -   - ");
+        console.println("Time Period 3: | "+loc20+" | "+loc21+" | "+loc22+" | "+loc23+" | "+loc24+" | "+loc25+" | "+loc26+" | "+loc27+" | "+loc28+" | "+loc29+" | ");
+        console.println("                 -   -   -   -   -   -   -   -   -   - ");
 
     }
     
