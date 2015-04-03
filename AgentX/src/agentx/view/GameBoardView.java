@@ -382,53 +382,53 @@ public class GameBoardView extends View {
                         L13View l3View = new L13View();
                         l13View.display();
                     case '14':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L14View l14View = new L14View();
+                        l14View.display();
                     case '15':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L15View l15View = new L15View();
+                        l15View.display();
                     case '16':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L16View l16View = new L16View();
+                        l16View.display();
                     case '17':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L17View l17View = new L17View();
+                        l17View.display();
                     case '18':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L18View l18View = new L18View();
+                        l18View.display();
                     case '19':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L19View l19View = new L19View();
+                        l19View.display();
                     case '20':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L20View l20View = new L20View();
+                        l20View.display();
                     case '21':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L21View l21View = new L21View();
+                        l21View.display();
                     case '22':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L22View l22View = new L22View();
+                        l22View.display();
                     case '23':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L23View l23View = new L23View();
+                        l23View.display();
                     case '24':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L24View l24View = new L24View();
+                        l24View.display();
                     case '25':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L25View l25View = new L25View();
+                        l25View.display();
                     case '26':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L26View l26View = new L26View();
+                        l26View.display();
                     case '27':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L27View l27View = new L27View();
+                        l27View.display();
                     case '28':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L28View l28View = new L28View();
+                        l28View.display();
                     case '29':
-                        L0View l0View = new L0View();
-                        l0View.display();
+                        L29View l29View = new L29View();
+                        l29View.display();
                 }
                 break;
             case "M":
