@@ -13,14 +13,15 @@ import java.io.Serializable;
  */
 public class Weapon implements Serializable {
     
-    private int quantity;
+    
     private String name;
+    private int damage;
 
     public Weapon() {
     }
 
-    public Weapon(int quantity, String name) {
-        this.quantity = quantity;
+    public Weapon(String name, int damage) {
+        this.damage = damage;
         this.name = name;
     }
 
@@ -32,12 +33,12 @@ public class Weapon implements Serializable {
         this.name = name;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getDamage() {
+        return damage;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setDamage(int quantity) {
+        this.damage = quantity;
     }
 
 }

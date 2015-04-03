@@ -6,7 +6,6 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
@@ -40,9 +39,9 @@ public class L1View extends View {
         ArrayList<Location> locations = GameBoardControl.locations;
         String value = (String) obj;
         value = value.toUpperCase();
-        
-        switch (value){
-        case "T4":
+
+        switch (value) {
+            case "T4":
                 try {
                     String drillBit = InventoryControl.getDrillBit();
 
@@ -51,19 +50,27 @@ public class L1View extends View {
                     if (6 <= drillDepth) {
                         fuel = locations.get(1).getFuel();
                         locations.get(1).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel2(fuel);
                     console.println(ship3.fuel.getGallons());
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
 
                 break;
-        case "V":
-            return true;
+            case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
+                break;
+            case "V":
+                return true;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
         }
         return false;
 

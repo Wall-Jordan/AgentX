@@ -7,7 +7,11 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
+import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L0View.ship1;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -15,7 +19,8 @@ import java.util.ArrayList;
  *
  * @author Jordan
  */
-public class L2View extends View{
+public class L2View extends View {
+
     public L2View() {
         super("At the construction site you see a knife.\n"
                 + "\n****************************************"
@@ -37,16 +42,42 @@ public class L2View extends View{
                 }
                 break;
             case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
                 break;
             case "V":
                 return true;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
             case "C KNIFE":
                 //Add drill to array list
                 locations.get(0).removeCollectItem("KNIFE");
                 locations.get(0).removeToDoListItem("Collect Knife");
                 break;
-        }
+            case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
 
-        return true;
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (6 <= drillDepth) {
+                        fuel = locations.get(1).getFuel();
+                        locations.get(1).setFuel(0);
+
+                    }
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println(ship1.fuel.getGallons());
+
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L2View.java", pce.getMessage());
+                }
+
+                break;
+        }
+        
+        return false;
     }
 }

@@ -5,8 +5,13 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
+import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L10View.ship2;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -17,16 +22,16 @@ import java.util.ArrayList;
 public class L12View extends View {
 
     public L12View() {
-        super("You crashed outside an old school\n"
+        super("\nYou're in a tool shop.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
                 + "\n****************************************");
     }
     
-    @Override
+     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
         
         switch(input){
@@ -34,11 +39,41 @@ public class L12View extends View {
                 for(String item : locations.get(12).getToDoList()){
                     console.println("*"+item);
                 }
-                break;
+                return false;
             case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
+                break;
+            case "V":
+                return true;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
+            case "Collect Welder":
+                locations.get(12).removeCollectItem(input);
+                break;
+            case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (drillDepth == 4) {
+                        fuel = locations.get(12).getFuel();
+                        locations.get(12).setFuel(0);
+                       
+                    } 
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
+                    
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L12View.java", pce.getMessage());
+                }
                 break;
         }
         
-        return true;
+        return false;
     }
 }

@@ -5,7 +5,6 @@ package agentx.model;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,14 +15,35 @@ import java.util.Objects;
 public class Player implements Serializable {
 
     private String name;
-    private Point coordinates;
+    private int stamina;
+    private double health;
+    private int location;
+    public Backpack backpack = new Backpack();
+    public WeaponsBelt weaponsBelt = new WeaponsBelt();
+    public FuelContainer fuelContainer = new FuelContainer();
 
-    public Point getCoordinates() {
-        return coordinates;
+    public int getStamina() {
+        return stamina;
     }
 
-    public void setCoordinates(Point coordinates) {
-        this.coordinates = coordinates;
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
+    }
+
+    public double getHealth() {
+        return health;
+    }
+
+    public void setHealth(double health) {
+        this.health = health;
+    }
+    
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
     }
 
     public Player() {

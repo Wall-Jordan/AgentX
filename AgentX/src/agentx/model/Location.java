@@ -4,20 +4,18 @@
  * and open the template in the editor.
  */
 package agentx.model;
-
-import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  *
  * @author matiasmikkola
  */
 public class Location implements Serializable {
-    private Boolean visited;
-    private Boolean active;
+    private boolean visited;
+    private boolean active;
     private double fuel;
+    private boolean complete;
 
     ArrayList<String> toDoList = new ArrayList<>();
     ArrayList<String> collectItems = new ArrayList<>();
@@ -38,13 +36,38 @@ public class Location implements Serializable {
         collectItems.remove(value);
     }
 
-    public Location(Boolean visited, Boolean active, double fuel) {
+    public Location(boolean visited, boolean active, double fuel, boolean complete) {
         this.visited = visited;
         this.active = active;
         this.fuel = fuel;
+        this.complete = complete;
     }
 
     public Location() {
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 
     public Boolean getVisited() {

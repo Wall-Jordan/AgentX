@@ -11,7 +11,7 @@ import agentx.model.FuelContainer;
 import agentx.model.Location;
 import agentx.model.TimeShip;
 import agentx.model.Weapon;
-import agentx.model.Weapons_Belt;
+import agentx.model.WeaponsBelt;
 import agentx.view.L0View;
 import agentx.view.L10View;
 import agentx.view.L20View;
@@ -100,7 +100,7 @@ public class InventoryControl {
         String weapon = (String) obj;
         Weapons[] names = Weapons.values();
 
-        Weapons_Belt name = new Weapons_Belt();
+        WeaponsBelt name = new WeaponsBelt();
         int index = -1;
         for (int i = 0; i < names.length; i++) {
 //            console.println(names[i]);
@@ -133,10 +133,10 @@ public class InventoryControl {
 
     public static ArrayList<Weapon> createWeaponsList() {
         ArrayList<Weapon> weapons = new ArrayList<>();
-        weapons.add(new Weapon(1, "Ray Gun"));
-        weapons.add(new Weapon(1, "Knife"));
-        weapons.add(new Weapon(5, "Darts"));
-        weapons.add(new Weapon(3, "Grenades"));
+        weapons.add(new Weapon("Ray Gun", 5));
+        weapons.add(new Weapon("Knife", 3));
+        weapons.add(new Weapon("Darts", 1));
+        weapons.add(new Weapon("Grenades", 4));
         return weapons;
     }
 
