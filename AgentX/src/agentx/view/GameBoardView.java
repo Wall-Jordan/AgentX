@@ -338,6 +338,98 @@ public class GameBoardView extends View {
                 }
                 break;
             case "E":
+                switch (number){
+                    case '0':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '1':
+                        L1View l1View = new L1View();
+                        l0View.display();
+                    case '2':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '3':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '4':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '5':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '6':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '7':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '8':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '9':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '10':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '11':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '12':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '13':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '14':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '15':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '16':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '17':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '18':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '19':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '20':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '21':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '22':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '23':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '24':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '25':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '26':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '27':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '28':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                    case '29':
+                        L0View l0View = new L0View();
+                        l0View.display();
+                }
                 break;
             case "M":
                 MainMenuView mainMenu = new MainMenuView();
