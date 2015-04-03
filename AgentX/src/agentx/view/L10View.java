@@ -45,8 +45,12 @@ public class L10View extends View {
                 OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
                 otherCommands.display();
                 break;
-            case "B":
+            case "V":
                 return true;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
             case "T4":
                 try {
                     String drillBit = InventoryControl.getDrillBit();
@@ -60,15 +64,14 @@ public class L10View extends View {
                     } 
 
                     InventoryControl.AddFuel2(fuel);
-                    console.println(ship3.fuel.getGallons());
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
                     
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
-
-                return false;
+                break;
         }
         
-        return true;
+        return false;
     }
 }

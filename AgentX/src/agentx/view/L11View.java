@@ -7,8 +7,11 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L10View.ship2;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -36,6 +39,25 @@ public class L11View extends View {
             case "V":
                 console.println("Okay, you can come back later.");
                 return true;
+                case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (drillDepth == 4) {
+                        fuel = locations.get(11).getFuel();
+                        locations.get(11).setFuel(0);
+                       
+                    } 
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
+                    
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L21View.java", pce.getMessage());
+                }
+                break;
             default:
                 try {
                     double userIn = Double.parseDouble(input);
