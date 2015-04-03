@@ -22,23 +22,24 @@ import java.util.ArrayList;
 public class L29View extends ViewInterface.View {
 
     public L29View() {
-        super("You decide to return home, now that the galaxy is safe again!\n"
+        super("You decide to return home, now that the galaxy is safe again!"
+                + " Return to year 2015!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
                 + "\n****************************************\n");
     }
-    
+
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations;
         locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-        switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(29).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(29).getToDoList()) {
+                    console.println("*" + item);
                 }
                 break;
             case "O":
@@ -48,9 +49,12 @@ public class L29View extends ViewInterface.View {
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
-                case "V":
+            case "V":
                 return true;
-        case "T4":
+            case "TAKEOFF":
+                TakeOffView takeOffView = new TakeOffView();
+                takeOffView.display();
+            case "T4":
                 try {
                     String drillBit = getDrillBit();
 
@@ -59,11 +63,11 @@ public class L29View extends ViewInterface.View {
                     if (drillDepth == 4) {
                         fuel = locations.get(21).getFuel();
                         locations.get(21).setFuel(0);
-                       
-                    } 
+
+                    }
                     InventoryControl.AddFuel3(fuel);
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
@@ -74,4 +78,3 @@ public class L29View extends ViewInterface.View {
         return false;
     }
 }
-
