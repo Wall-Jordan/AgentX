@@ -5,10 +5,12 @@
  */
 package agentx.view;
 
+import agentx.model.TimeShip;
+
 /**
  *
  * @author Jordan
  */
 public class L0View {
-    
+    public static TimeShip ship1 = new TimeShip();
 }

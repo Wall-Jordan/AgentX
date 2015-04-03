@@ -6,8 +6,12 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
+import agentx.control.InventoryControl;
+import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
 import agentx.model.TimeShip;
+import static agentx.view.L20View.ship3;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -42,8 +46,27 @@ public class L10View extends View {
                 otherCommands.display();
                 break;
             case "B":
-                GameBoardView gameBoard = new GameBoardView();
-                gameBoard.displayGameBoard();
+                return true;
+            case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (drillDepth == 4) {
+                        fuel = locations.get(10).getFuel();
+                        locations.get(10).setFuel(0);
+                       
+                    } 
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println(ship3.fuel.getGallons());
+                    
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L21View.java", pce.getMessage());
+                }
+
+                break;
         }
         
         return true;
