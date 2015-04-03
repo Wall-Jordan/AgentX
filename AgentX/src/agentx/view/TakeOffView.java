@@ -91,10 +91,15 @@ public class TakeOffView extends View {
             return true;
         } else if ("2046AD".equals(year)) {
             return true;
+        } else if ("2015".equals(year)) {
+            GameOverView gameOverView = new GameOverView();
+            gameOverView.display();
         } else {
             this.console.println("Wrong year to travel to. You may want to go back "
                     + "to the explore sections in this time period and find year clue.");
             return false;
         }
+        return true;
+    
     }
-}
+    }
