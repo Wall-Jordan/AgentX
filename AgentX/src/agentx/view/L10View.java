@@ -66,7 +66,7 @@ public class L10View extends View {
                     ErrorView.display("L21View.java", pce.getMessage());
                 }
 
-                break;
+                return false;
         }
         
         return true;

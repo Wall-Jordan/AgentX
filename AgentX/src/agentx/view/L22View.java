@@ -7,6 +7,7 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
+import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
@@ -42,6 +43,8 @@ public class L22View extends ViewInterface.View {
                 break;
             case "O":
                 break;
+                case "V":
+                return true;
         case "T4":
                 try {
                     String drillBit = getDrillBit();
@@ -64,34 +67,7 @@ public class L22View extends ViewInterface.View {
                 break;
         }
 
-        return true;
+        return false;
     }
 
-    public String getDrillBit() {
-
-        boolean valid = false;
-        String selection = null;
-        try {
-            while (!valid) {
-
-                console.println("Choose drillbit:");
-                selection = this.keyboard.readLine();
-                selection = selection.trim();
-                selection = selection.toUpperCase();
-
-                if (selection.length() < 1) {
-
-                    console.println("Invalid Selection. Please try again.");
-                    continue;
-
-                }
-                break;
-            }
-        } catch (Exception e) {
-            console.println("Error reading input: " + e.getMessage());
-        }
-
-        return selection;
-
-    }
 }

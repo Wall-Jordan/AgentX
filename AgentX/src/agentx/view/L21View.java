@@ -49,6 +49,9 @@ public class L21View extends ViewInterface.View {
                 break;
             case "O":
                 break;
+            case "V":
+            return true;
+                
             case "T4":
                 try {
                     String drillBit = getDrillBit();
@@ -71,7 +74,7 @@ public class L21View extends ViewInterface.View {
                 break;
         }
 
-        return true;
+        return false;
     }
 
 }
