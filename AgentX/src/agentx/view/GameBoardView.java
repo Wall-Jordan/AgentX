@@ -340,9 +340,12 @@ public class GameBoardView extends View {
             case "E":
                 break;
             case "M":
-                
+                MainMenuView mainMenu = new MainMenuView();
+                mainMenu.display();
                 break;
             case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
                 break;
             default:
                 console.println("Invalid input. Please try again.");
