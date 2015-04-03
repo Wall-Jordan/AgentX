@@ -54,7 +54,7 @@ public class L23View extends ViewInterface.View {
                        
                     } 
 
-                    InventoryControl.AddFuel(fuel);
+                    InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
                     
                 } catch (PuzzleControlExceptions pce) {

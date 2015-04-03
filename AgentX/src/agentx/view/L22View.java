@@ -6,7 +6,6 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
@@ -55,7 +54,7 @@ public class L22View extends ViewInterface.View {
                        
                     } 
 
-                    InventoryControl.AddFuel(fuel);
+                    InventoryControl.AddFuel3(fuel);
                     console.println(ship3.fuel.getGallons());
                     
                 } catch (PuzzleControlExceptions pce) {
