@@ -7,7 +7,11 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
+import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L0View.ship1;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -21,6 +25,7 @@ public class L8View extends View{
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nV - Return to Map"
                 + "\n****************************************");
     }
 
@@ -36,11 +41,37 @@ public class L8View extends View{
                 }
                 break;
             case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
                 break;
             case "V":
                 return true;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
+            case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (6 <= drillDepth) {
+                        fuel = locations.get(1).getFuel();
+                        locations.get(1).setFuel(0);
+
+                    }
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println(ship1.fuel.getGallons());
+
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L2View.java", pce.getMessage());
+                }
+
+                break;
         }
 
-        return true;
+        return false;
     }
 }
