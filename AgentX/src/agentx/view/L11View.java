@@ -6,7 +6,6 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
@@ -22,7 +21,7 @@ import java.util.ArrayList;
 public class L11View extends View {
 
     public L11View() {
-        super("You are standing at the enterance to the school. "
+        super("\nYou are standing at the enterance to the school. "
                 + "\nThere is a keypad here and a sign that says..."
                 + "\n********************"
                 + "\nX=(2*(X-2)+(96/6))/4"
@@ -55,7 +54,7 @@ public class L11View extends View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
                     
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L11View.java", pce.getMessage());
                 }
                 break;
             default:

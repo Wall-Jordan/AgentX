@@ -16,14 +16,17 @@ import java.util.Objects;
 public class Player implements Serializable {
 
     private String name;
-    private Point coordinates;
-
-    public Point getCoordinates() {
-        return coordinates;
+    private Location location = new Location();
+    public Backpack backpack = new Backpack();
+    public WeaponsBelt weaponsBelt = new WeaponsBelt();
+    public FuelContainer fuelContainer = new FuelContainer();
+  
+    public Location getLocation() {
+        return location;
     }
 
-    public void setCoordinates(Point coordinates) {
-        this.coordinates = coordinates;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public Player() {
