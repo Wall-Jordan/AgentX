@@ -395,51 +395,67 @@ public class GameBoardView extends View {
                     case '14':
                         L14View l14View = new L14View();
                         l14View.display();
-                    case '15':
+                        break;
+                    case (15):
                         L15View l15View = new L15View();
                         l15View.display();
-                    case '16':
+                        break;
+                    case (16):
                         L16View l16View = new L16View();
                         l16View.display();
-                    case '17':
+                        break;
+                    case (17):
                         L17View l17View = new L17View();
                         l17View.display();
-                    case '18':
+                        break;
+                    case (18):
                         L18View l18View = new L18View();
                         l18View.display();
-                    case '19':
+                        break;
+                    case (19):
                         L19View l19View = new L19View();
                         l19View.display();
-                    case '20':
+                        break;
+                    case (20):
                         L20View l20View = new L20View();
                         l20View.display();
-                    case '21':
+                        break;
+                    case (21):
                         L21View l21View = new L21View();
                         l21View.display();
-                    case '22':
+                        break;
+                    case (22):
                         L22View l22View = new L22View();
                         l22View.display();
-                    case '23':
+                        break;
+                    case (23):
                         L23View l23View = new L23View();
                         l23View.display();
-                    case '24':
+                        break;
+                    case (24):
                         L24View l24View = new L24View();
                         l24View.display();
-                    case '25':
+                        break;
+                    case (25):
                         L25View l25View = new L25View();
                         l25View.display();
-                    case '26':
+                        break;
+                    case (26):
                         L26View l26View = new L26View();
                         l26View.display();
-                    case '27':
+                        break;
+                    case (27):
                         L27View l27View = new L27View();
                         l27View.display();
-                    case '28':
+                        break;
+                    case (28):
                         L28View l28View = new L28View();
                         l28View.display();
-                    case '29':
+                        break;
+                    case (29):
                         L29View l29View = new L29View();
                         l29View.display();
+                        break;
                 }
                 break;
             case "M":
