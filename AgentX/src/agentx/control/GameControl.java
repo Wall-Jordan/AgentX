@@ -41,12 +41,6 @@ public class GameControl {
 
         game.setPlayer(player);
 
-        Inventory[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
-
-        TimeShip timeShip = new TimeShip();
-        game.setTimeShip(timeShip);
-
         GameBoard gameBoard = new GameBoard();
         game.setGameBoard(gameBoard);
 
