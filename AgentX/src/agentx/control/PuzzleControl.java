@@ -69,15 +69,8 @@ public class PuzzleControl {
     public static int bossAttack(int bossDamage) {
         boolean validRandom = false;
         int number = 0;
-        while (!validRandom) {
-            Random r = new Random(3);
-            number = r.nextInt(3);
-            if (number != 0 && number < 3) {
-                validRandom = true;
-            }else{
-                validRandom = false;
-            }
-        }
+        Random rn = new Random();
+        number = rn.nextInt(4) + 1;
         int attack = 0;
         switch (number) {
             case (1):
