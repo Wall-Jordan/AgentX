@@ -57,7 +57,7 @@ public class L2View extends View {
                 if(locations.get(2).getCollectItems() != null){
                 locations.get(2).setCollectItems(null);
                 locations.get(2).removeToDoListItem("Collect Knife");
-                AgentX.getPlayer().backpack.addTool("Knife");
+                AgentX.getPlayer().weaponsBelt.addWeapon("Knife", 3);
                 }else{
                     console.println("You already have the knife.");
                 }

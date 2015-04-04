@@ -78,6 +78,13 @@ public class L8View extends View {
                 }
 
                 break;
+            case "WI":
+                for (int i = 0; i < AgentX.getPlayer().weaponsBelt.getBeltItems().size(); i++) {
+                    String item;
+                    item = AgentX.getPlayer().weaponsBelt.getBeltItems().get(i).getName();
+                    console.println("*" + item);
+                }
+                break;
             case "FIGHT":
                 boolean fight = true;
                 int bossHealth = bosses.get(0).getHealth();
@@ -106,6 +113,7 @@ public class L8View extends View {
                             }
                             if (attack2.equals("B")) {
                                 playerBlockCount += 1;
+                            }else{
                             }
                         } else if (playerStamina == 2) {
                             String attack1 = getAttack1();
@@ -116,12 +124,14 @@ public class L8View extends View {
                             }
                             if (attack2.equals("B")) {
                                 playerBlockCount += 1;
+                            }else{
                             }
                         } else if (playerStamina == 1) {
                             String attack1 = getAttack1();
                             playerAttack = calcPlayerAttack(attack1);
                             if (attack1.equals("B")) {
                                 playerBlockCount += 1;
+                            }else{
                             }
                         } else {
                             console.println("You're stamina ran out, you fell on the ground,"
@@ -129,16 +139,14 @@ public class L8View extends View {
                             GameOverView gameOverView = new GameOverView();
                             gameOverView.display();
                         }
-
+                        console.println("You made it to here 142");
                         int bossAttack = bossAttack(bossDamage);
                         int bossBlockCount = 0;
                         if (bossAttack == 0) {
                             bossBlockCount += 3;
-                        }
-                        if (bossAttack == bossDamage) {
+                        }else if (bossAttack == bossDamage) {
                             bossBlockCount += 2;
-                        }
-                        if (bossAttack == (bossDamage * 2)) {
+                        }else if (bossAttack == (bossDamage * 2)) {
                             bossBlockCount += 1;
                         }
                         calcPlayerDamage(bossAttack, playerBlockCount, playerHealth);
@@ -163,22 +171,23 @@ public class L8View extends View {
         try {
             while (!valid) {
 
-                console.println("Enter your first attack.");
+                console.println("Enter your first attack:");
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
                 selection = selection.toUpperCase();
-
-                if (selection.length() < 1) {
+                if (selection.length() > 1) {
 
                     console.println("Invalid Selection. Please try again.");
                     continue;
 
                 }
-                if (!selection.equals("B") || !selection.equals("G") || !selection.equals("D")
-                        || !selection.equals("P") || !selection.equals("P") || !selection.equals("R") || !selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
+                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                }else{
                     console.println("Invalid Selection. Please try again.");
                     continue;
                 }
+                    
                 break;
             }
         } catch (Exception e) {
@@ -196,19 +205,19 @@ public class L8View extends View {
         try {
             while (!valid) {
 
-                console.println("Enter your second attack.");
+                console.println("Enter your second attack:");
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
                 selection = selection.toUpperCase();
-
-                if (selection.length() < 1) {
+                if (selection.length() > 1) {
 
                     console.println("Invalid Selection. Please try again.");
                     continue;
 
                 }
-                if (!selection.equals("B") || !selection.equals("G") || !selection.equals("D")
-                        || !selection.equals("P") || !selection.equals("P") || !selection.equals("R") || !selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
+                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                }else{
                     console.println("Invalid Selection. Please try again.");
                     continue;
                 }
@@ -229,19 +238,20 @@ public class L8View extends View {
         try {
             while (!valid) {
 
-                console.println("Enter your third attack.");
+                console.println("Enter your third attack:");
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
                 selection = selection.toUpperCase();
 
-                if (selection.length() < 1) {
+                if (selection.length() > 1) {
 
                     console.println("Invalid Selection. Please try again.");
                     continue;
 
                 }
-                if (!selection.equals("B") || !selection.equals("G") || !selection.equals("D")
-                        || !selection.equals("P") || !selection.equals("P") || !selection.equals("R") || !selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
+                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                }else{
                     console.println("Invalid Selection. Please try again.");
                     continue;
                 }

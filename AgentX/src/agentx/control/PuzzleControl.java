@@ -43,8 +43,9 @@ public class PuzzleControl {
                 playerDamage = (int) bossAttack;
                 break;
         }
-        AgentX.getCurrentGame().getPlayer().setHealth(playerHealth - playerDamage);
+        AgentX.getPlayer().setHealth(playerHealth - playerDamage);
     }
+
     public static double calcBossDamage(int playerAttack, int bossBlockCount, double bossHealth) {
         double bossDamage = 0;
         switch (bossBlockCount) {
@@ -66,26 +67,34 @@ public class PuzzleControl {
     }
 
     public static int bossAttack(int bossDamage) {
-
-        Random r = new Random();
-        int number = r.nextInt(1 - 3);
+        boolean validRandom = false;
+        int number = 0;
+        while (!validRandom) {
+            Random r = new Random(3);
+            number = r.nextInt(3);
+            if (number != 0 && number < 3) {
+                validRandom = true;
+            }else{
+                validRandom = false;
+            }
+        }
         int attack = 0;
         switch (number) {
             case (1):
                 attack = 0;
-                console.println("His three attacks are B:B:B which is worth" + attack + "damage.");
+                console.println("His three attacks are B:B:B which is worth " + attack + " damage.");
                 break;
             case (2):
                 attack = bossDamage;
-                console.println("His three attacks are B:B:A which is worth" + attack + "damage.");
+                console.println("His three attacks are B:B:A which is worth " + attack + " damage.");
                 break;
             case (3):
                 attack = bossDamage * 2;
-                console.println("His three attacks are B:A:A which is worth" + attack + "damage.");
+                console.println("His three attacks are B:A:A which is worth " + attack + " damage.");
                 break;
             case (4):
                 attack = bossDamage * 3;
-                console.println("His three attacks are A:A:A which is worth" + attack + "damage.");
+                console.println("His three attacks are A:A:A which is worth " + attack + " damage.");
                 break;
         }
         return attack;
