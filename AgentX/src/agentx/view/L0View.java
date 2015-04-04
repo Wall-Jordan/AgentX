@@ -78,7 +78,7 @@ public class L0View extends View {
                             locations.get(0).setFuel(0);
                         }
                         InventoryControl.AddFuel1(fuel);
-                        console.println(ship1.fuel.getGallons());
+                        console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
                     } catch (PuzzleControlExceptions pce) {
                         ErrorView.display("L0View.java", pce.getMessage());
                     }

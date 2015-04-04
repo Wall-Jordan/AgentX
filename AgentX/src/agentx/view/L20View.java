@@ -65,8 +65,8 @@ public class L20View extends ViewInterface.View {
                     double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
                     double fuel = 0;
                     if (drillDepth == 4) {
-                        fuel = locations.get(21).getFuel();
-                        locations.get(21).setFuel(0);
+                        fuel = locations.get(20).getFuel();
+                        locations.get(20).setFuel(0);
 
                     }
 
@@ -74,7 +74,7 @@ public class L20View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L20View.java", pce.getMessage());
                 }
 
                 break;

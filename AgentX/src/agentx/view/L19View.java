@@ -6,6 +6,7 @@
 package agentx.view;
 
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
@@ -51,6 +52,25 @@ public class L19View extends View {
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
+                break;
+                case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (drillDepth == 4) {
+                        fuel = locations.get(19).getFuel();
+                        locations.get(19).setFuel(0);
+
+                    }
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
+
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L18View.java", pce.getMessage());
+                }
                 break;
             case "TAKEOFF":
                 int currentYear = 3097;

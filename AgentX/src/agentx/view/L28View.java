@@ -60,8 +60,8 @@ public class L28View extends ViewInterface.View {
                     double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
                     double fuel = 0;
                     if (drillDepth == 4) {
-                        fuel = locations.get(21).getFuel();
-                        locations.get(21).setFuel(0);
+                        fuel = locations.get(28).getFuel();
+                        locations.get(28).setFuel(0);
                        
                     } 
                     InventoryControl.AddFuel3(fuel);

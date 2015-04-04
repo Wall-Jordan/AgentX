@@ -64,8 +64,8 @@ public class L24View extends ViewInterface.View {
                     double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
                     double fuel = 0;
                     if (drillDepth == 4) {
-                        fuel = locations.get(21).getFuel();
-                        locations.get(21).setFuel(0);
+                        fuel = locations.get(24).getFuel();
+                        locations.get(24).setFuel(0);
 
                     }
 

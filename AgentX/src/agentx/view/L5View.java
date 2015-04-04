@@ -61,13 +61,13 @@ public class L5View extends View {
                     double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
                     double fuel = 0;
                     if (6 <= drillDepth) {
-                        fuel = locations.get(1).getFuel();
-                        locations.get(1).setFuel(0);
+                        fuel = locations.get(5).getFuel();
+                        locations.get(5).setFuel(0);
 
                     }
 
-                    InventoryControl.AddFuel2(fuel);
-                    console.println(ship1.fuel.getGallons());
+                    InventoryControl.AddFuel1(fuel);
+                        console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L2View.java", pce.getMessage());
