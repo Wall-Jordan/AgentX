@@ -71,7 +71,7 @@ public class GameBoardControl {
         locations.get(7).addToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
         locations.add(new Location(false, false, 0, false));//Location 8
         locations.get(8).addToDoListItem("Kill Jarik");
-        locations.add(new Location(false, false, 0, false));//Location 9
+        locations.add(new Location(false, false, 50, false));//Location 9
         locations.add(new Location(false, false, 3, false));//Location 10
         locations.add(new Location(false, false, 3, false));//Location 11
         locations.add(new Location(false, false, 3, false));//Location 12
@@ -88,7 +88,7 @@ public class GameBoardControl {
         locations.add(new Location(false, false, 3, false));//Location 17
         locations.add(new Location(false, false, 5, false));//Location 18
         locations.get(18).addToDoListItem("Fix your Ship");
-        locations.add(new Location(false, false, 2, false));//Location 19
+        locations.add(new Location(false, false, 30, false));//Location 19
         locations.add(new Location(false, false, 2, false));//Location 20
         locations.add(new Location(false, false, 1, false));//Location 21
         locations.add(new Location(false, false, 2, false));//Location 22
@@ -104,7 +104,7 @@ public class GameBoardControl {
         locations.get(27).addToDoListItem("Fix Ship");
         locations.add(new Location(false, false, 1, false));//Location 28
         locations.get(28).addToDoListItem("Kill Chaotica");
-        locations.add(new Location(false, false, 0, false));//Location 29
+        locations.add(new Location(false, false, 5, false));//Location 29
         locations.get(29).addToDoListItem("Take Off");
         return locations;
     }
