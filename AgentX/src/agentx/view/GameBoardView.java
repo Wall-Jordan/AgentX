@@ -378,6 +378,12 @@ public class GameBoardView extends View {
                     case (9):
                         L9View l9View = new L9View();
                         l9View.display();
+                        if (locations.get(number).isComplete()){
+                        locations.get(number).setActive(false);
+                        number += 1;
+                        locations.get(number).setActive(true);
+                        locations.get(number).setVisited(true);
+                        }
                         break;
                     case (10):
                         L10View l10View = new L10View();
@@ -418,6 +424,12 @@ public class GameBoardView extends View {
                     case (19):
                         L19View l19View = new L19View();
                         l19View.display();
+                        if (locations.get(number).isComplete()){
+                        locations.get(number).setActive(false);
+                        number += 1;
+                        locations.get(number).setActive(true);
+                        locations.get(number).setVisited(true);
+                        }
                         break;
                     case (20):
                         L20View l20View = new L20View();
@@ -458,6 +470,10 @@ public class GameBoardView extends View {
                     case (29):
                         L29View l29View = new L29View();
                         l29View.display();
+                        if (locations.get(number).isComplete()){
+                            GameEndView gameEndView = new GameEndView();
+                            gameEndView.display();
+                        }
                         break;
                 }
                 break;
@@ -476,5 +492,3 @@ public class GameBoardView extends View {
         return false;
     }
 }
-
-

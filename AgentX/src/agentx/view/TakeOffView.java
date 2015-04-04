@@ -87,9 +87,9 @@ public class TakeOffView extends View {
     @Override
     public boolean doAction(Object obj) {
         String year = (String) obj;
-        if ("3097AD".equals(year)) {
+        if ("3097".equals(year)) {
             return true;
-        } else if ("2046AD".equals(year)) {
+        } else if ("2046".equals(year)) {
             return true;
         } else if ("2015".equals(year)) {
             GameEndView gameEndView = new GameEndView();
