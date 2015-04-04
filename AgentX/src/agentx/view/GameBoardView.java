@@ -279,7 +279,7 @@ public class GameBoardView extends View {
             loc29 = 'X';
         }
 
-        console.println("                           Agent X Gameboard          ");
+        console.println("\n                           Agent X Gameboard          ");
         console.println("                 1   2   3   4   5   6   7   8   9   10");
         console.println("                 -   -   -   -   -   -   -   -   -   - ");
         console.println("Time Period 1: | " + loc0 + " | " + loc1 + " | " + loc2 + " | " + loc3 + " | " + loc4 + " | " + loc5 + " | " + loc6 + " | " + loc7 + " | " + loc8 + " | " + loc9 + " | ");
@@ -319,15 +319,14 @@ public class GameBoardView extends View {
         String selection = (String) obj;
         switch (selection) {
             case "F":
-//                if (number == 9 ||number == 19 ||number == 29) {
-//                    console.println("\nYou must use your time ship to change time periods."
-//                            + "\nYou can use it in the last location of each time period.");
-//                } else {
+                if (!locations.get(number).isComplete()) {
+                    console.println("\nYou must complete the necessary actions for each location!");
+                } else {
                     locations.get(number).setActive(false);
                     number += 1;
                     locations.get(number).setActive(true);
                     locations.get(number).setVisited(true);
-//                }
+                }
                 break;
             case "B":
                 if (number > 0) {
@@ -335,7 +334,7 @@ public class GameBoardView extends View {
                     number -= 1;
                     locations.get(number).setActive(true);
                 } else {
-                    console.println("You are at the beginning of the game.");
+                    console.println("If you go back any farther you may run into space time paradox's.");
                 }
                 break;
             case "E":

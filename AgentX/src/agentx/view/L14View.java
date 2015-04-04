@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class L14View extends View {
 
     public L14View() {
-        super("\nYou are in a robotics lab of some kind.\n"
+        super("\nYou are in a robotics lab of some kind."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"

@@ -55,6 +55,7 @@ public class L24View extends ViewInterface.View {
                         + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
                 break;
             case "V":
+                locations.get(24).setComplete(true);
                 return true;
             case "T4":
                 try {

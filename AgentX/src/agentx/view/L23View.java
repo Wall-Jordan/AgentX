@@ -64,6 +64,7 @@ public class L23View extends ViewInterface.View {
                 }
                 break;
             case "V":
+                locations.get(23).setComplete(true);
                 return true;
             case "T4":
                 try {

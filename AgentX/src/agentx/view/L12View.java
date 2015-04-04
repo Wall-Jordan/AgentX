@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class L12View extends View {
 
     public L12View() {
-        super("\nYou're in a tool shop.\n"
+        super("\nYou're in a tool shop."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"

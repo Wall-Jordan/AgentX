@@ -52,6 +52,7 @@ public class L25View extends ViewInterface.View {
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
             case "V":
+                locations.get(25).setComplete(true);
                 return true;
             case "T4":
                 try {

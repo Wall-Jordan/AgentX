@@ -66,6 +66,7 @@ public class L1View extends View {
                 otherCommands.display();
                 break;
             case "V":
+                locations.get(1).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();

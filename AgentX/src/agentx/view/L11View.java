@@ -23,9 +23,9 @@ public class L11View extends View {
     public L11View() {
         super("\nYou are standing at the enterance to the school. "
                 + "\nThere is a keypad here and a sign that says..."
-                + "\n~~~~~~~~~~~~~~~~~~~~"
-                + "\nX=(2*(X-2)+(96/6))/4"
-                + "\n~~~~~~~~~~~~~~~~~~~~"
+                + "\n\t~~~~~~~~~~~~~~~~~~~~"
+                + "\n\tX=(2*(X-2)+(96/6))/4"
+                + "\n\t~~~~~~~~~~~~~~~~~~~~"
                 + "\nEnter the value of X to proceed."
                 + "\n****************************************"
                 + "\nTL - Display to do list"

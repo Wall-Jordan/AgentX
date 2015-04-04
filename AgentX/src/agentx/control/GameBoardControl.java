@@ -63,6 +63,7 @@ public class GameBoardControl {
         locations.get(4).setCollectItems("HAMMER");
         locations.add(new Location(false, false, 4, false));//Location 5
         locations.get(5).addToDoListItem("Use Hammer on Rock");
+        locations.get(5).setCollectItems("ROCK");
         locations.add(new Location(false, false, 8, false));//Location 6
         locations.get(6).addToDoListItem("Collect food.");
         locations.get(6).setCollectItems("FOOD");

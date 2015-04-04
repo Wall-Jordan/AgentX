@@ -48,6 +48,7 @@ public class L3View extends View {
                 otherCommands.display();
                 break;
             case "V":
+                locations.get(3).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();

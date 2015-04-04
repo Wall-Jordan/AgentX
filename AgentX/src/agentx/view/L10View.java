@@ -22,7 +22,7 @@ public class L10View extends View {
 
     public static TimeShip ship2 = new TimeShip();
     public L10View() {
-        super("\nYou crashed outside an old school\n"
+        super("\nYou crashed outside an old school."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
