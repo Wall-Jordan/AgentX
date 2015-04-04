@@ -147,9 +147,9 @@ public class GameControl {
     // Boss(String bossName, double damage, int y, int x)
     public static ArrayList<Boss> createBossList(){
         ArrayList<Boss> boss = new ArrayList<>();
-        boss.add(new Boss("Jarik", 1, 0, 9, 10));
-        boss.add(new Boss("Nazeem", 2, 1, 9, 15));
-        boss.add(new Boss("Chaotica", 3, 2, 9, 20));
+        boss.add(new Boss("Jarik", 1, 0, 9, 10.0));
+        boss.add(new Boss("Nazeem", 2, 1, 9, 15.0));
+        boss.add(new Boss("Chaotica", 3, 2, 9, 20.0));
         return boss;
     }
 }
