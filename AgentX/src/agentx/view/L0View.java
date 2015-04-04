@@ -48,7 +48,6 @@ public class L0View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(0).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -60,27 +59,29 @@ public class L0View extends View {
                     locations.get(0).removeToDoListItem("Collect drill");
                     console.println("Great Job! You stole a drill.");
                     AgentX.getPlayer().backpack.addTool("Drill");
-                }else{
+                    locations.get(0).setComplete(true);
+                } else {
                     console.println("You already took the drill.");
                 }
                 break;
             case "T4":
-                try {
-                    String drillBit = InventoryControl.getDrillBit();
+                if (locations.get(0).getCollectItems() != null) {
+                    try {
+                        String drillBit = InventoryControl.getDrillBit();
 
-                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
-                    double fuel = 0;
-                    if (6 <= drillDepth) {
-                        fuel = locations.get(1).getFuel();
-                        locations.get(1).setFuel(0);
-
+                        double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                        double fuel = 0;
+                        if (6 <= drillDepth) {
+                            fuel = locations.get(0).getFuel();
+                            locations.get(0).setFuel(0);
+                        }
+                        InventoryControl.AddFuel1(fuel);
+                        console.println(ship1.fuel.getGallons());
+                    } catch (PuzzleControlExceptions pce) {
+                        ErrorView.display("L0View.java", pce.getMessage());
                     }
-
-                    InventoryControl.AddFuel2(fuel);
-                    console.println(ship1.fuel.getGallons());
-
-                } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L0View.java", pce.getMessage());
+                }else{
+                    console.println("You don't have adrill yet.");
                 }
 
                 break;
