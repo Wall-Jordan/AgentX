@@ -66,6 +66,8 @@ public class L0View extends View {
                 break;
             case "T4":
                 if (locations.get(0).getCollectItems() != null) {
+                    console.println("You don't have a drill yet.");
+                }else{
                     try {
                         String drillBit = InventoryControl.getDrillBit();
 
@@ -80,8 +82,6 @@ public class L0View extends View {
                     } catch (PuzzleControlExceptions pce) {
                         ErrorView.display("L0View.java", pce.getMessage());
                     }
-                }else{
-                    console.println("You don't have adrill yet.");
                 }
 
                 break;
