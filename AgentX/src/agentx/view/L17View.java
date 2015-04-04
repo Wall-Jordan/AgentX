@@ -17,11 +17,12 @@ import java.util.ArrayList;
 public class L17View extends View {
 
     public L17View() {
-        super("You crashed outside an old school\n"
+        super("You crashed outside an old school"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
-                + "\n****************************************");
+                + "\nV - Return to Map"
+                + "\n****************************************\n");
     }
     
     @Override
@@ -31,14 +32,15 @@ public class L17View extends View {
         
         switch(input){
             case "TL":
-                for(String item : locations.get(12).getToDoList()){
+                for(String item : locations.get(17).getToDoList()){
                     console.println("*"+item);
                 }
                 break;
-            case "O":
-                break;
+            case "V":
+                locations.get(17).setComplete(true);
+                return true;
         }
         
-        return true;
+        return false;
     }
 }

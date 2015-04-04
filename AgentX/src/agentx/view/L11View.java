@@ -19,14 +19,19 @@ import java.util.ArrayList;
  * @author Chris
  */
 public class L11View extends View {
-    
+
     public L11View() {
         super("\nYou are standing at the enterance to the school. "
                 + "\nThere is a keypad here and a sign that says..."
-                + "\n********************"
-                + "\nX=(2*(X-2)+(96/6))/4"
-                + "\n********************"
-                + "\nEnter the value of X to proceed.");
+                + "\n\t~~~~~~~~~~~~~~~~~~~~"
+                + "\n\tX=(2*(X-2)+(96/6))/4"
+                + "\n\t~~~~~~~~~~~~~~~~~~~~"
+                + "\nEnter the value of X to proceed."
+                + "\n****************************************"
+                + "\nTL - Display to do list"
+                + "\nO - Other commands menu"
+                + "\nV - Return to Map"
+                + "\n****************************************\n");
     }
 
     @Override
@@ -35,10 +40,23 @@ public class L11View extends View {
         String input = (String) obj;
 
         switch (input) {
+            case "TL":
+                for(String item : locations.get(11).getToDoList()){
+                    console.println("*"+item);
+                }
+                return false;
+            case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
+                break;
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
             case "V":
                 console.println("Okay, you can come back later.");
                 return true;
-                case "T4":
+            case "T4":
                 try {
                     String drillBit = InventoryControl.getDrillBit();
 
@@ -47,12 +65,12 @@ public class L11View extends View {
                     if (drillDepth == 4) {
                         fuel = locations.get(11).getFuel();
                         locations.get(11).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel2(fuel);
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L11View.java", pce.getMessage());
                 }
@@ -63,6 +81,7 @@ public class L11View extends View {
                     boolean test = PuzzleControl.calcEntrance(userIn);
                     if (test == true) {
                         this.console.println("\n\tCORRECT! You may now proceed.");
+                        locations.get(11).setComplete(true);
                         return true;
                     } else {
                         this.console.println("\n\tWRONG!!! Please try again.");

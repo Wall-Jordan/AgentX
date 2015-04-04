@@ -55,7 +55,7 @@ public class L27View extends ViewInterface.View {
             case "T1 SHIP":
                 console.println("You fixed your ship! Great Wrenching work!");
                 locations.get(0).removeToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
-                ship3.setStatus(1);
+                ship3.setStatus(true);
                 break;
 
             case "T4":

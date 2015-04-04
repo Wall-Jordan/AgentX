@@ -22,11 +22,12 @@ public class L10View extends View {
 
     public static TimeShip ship2 = new TimeShip();
     public L10View() {
-        super("\nYou crashed outside an old school\n"
+        super("\nYou crashed outside an old school."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
-                + "\n****************************************");
+                + "\nV - Return to Map"
+                + "\n****************************************\n");
     }
     
     @Override
@@ -45,6 +46,7 @@ public class L10View extends View {
                 otherCommands.display();
                 break;
             case "V":
+                locations.get(10).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();

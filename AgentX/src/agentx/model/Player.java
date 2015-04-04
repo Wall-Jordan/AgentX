@@ -15,8 +15,8 @@ import java.util.Objects;
 public class Player implements Serializable {
 
     private String name;
-    private int stamina;
-    private double health;
+    private int stamina = 3;
+    private double health = 15;
     private int location;
     public Backpack backpack = new Backpack();
     public WeaponsBelt weaponsBelt = new WeaponsBelt();

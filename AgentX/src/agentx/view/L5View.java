@@ -7,6 +7,7 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
@@ -47,6 +48,7 @@ public class L5View extends View {
                 otherCommands.display();
                 break;
             case "V":
+                locations.get(5).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -73,7 +75,15 @@ public class L5View extends View {
 
                 break;
             case "T3 ROCK":
-                locations.get(5).removeToDoListItem("Use Hammer on Rock");
+                if(locations.get(5).getCollectItems() != null){
+                    locations.get(5).removeToDoListItem("Use Hammer on Rock");
+                    locations.get(5).setCollectItems(null);
+                    GameControl.addStamina(1);
+                    console.println("You broke the rock, found some water inside, drank it, and increased your stamina.");
+                }else{
+                    console.println("You already broke the rock.");
+                }
+                
                 break;
         }
 

@@ -55,6 +55,7 @@ public class L20View extends ViewInterface.View {
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
             case "V":
+                locations.get(20).setComplete(true);
                 return true;
             
             case "T4":

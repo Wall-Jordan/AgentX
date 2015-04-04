@@ -56,6 +56,7 @@ public class L21View extends ViewInterface.View {
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
             case "V":
+                locations.get(21).setComplete(true);
                 return true;
 
             case "T4":

@@ -16,25 +16,27 @@ public class Location implements Serializable {
     private boolean active;
     private double fuel;
     private boolean complete;
-
+    private String collectItems;
     ArrayList<String> toDoList = new ArrayList<>();
-    ArrayList<String> collectItems = new ArrayList<>();
 
+    public String getCollectItems() {
+        return collectItems;
+    }
+
+    public void setCollectItems(String collectItems) {
+        this.collectItems = collectItems;
+    }
+    
+    
     public void addToDoListItem(String value) {
         toDoList.add(value);
     }
 
-    public void addCollectItem(String value) {
-        collectItems.add(value);
-    }
 
     public void removeToDoListItem(String value) {
         toDoList.remove(value);
     }
 
-    public void removeCollectItem(String value) {
-        collectItems.remove(value);
-    }
 
     public Location(boolean visited, boolean active, double fuel, boolean complete) {
         this.visited = visited;
@@ -100,14 +102,6 @@ public class Location implements Serializable {
 
     public void setToDoList(ArrayList<String> toDoList) {
         this.toDoList = toDoList;
-    }
-
-    public ArrayList<String> getCollectItems() {
-        return collectItems;
-    }
-
-    public void setCollectItems(ArrayList<String> collectItems) {
-        this.collectItems = collectItems;
     }
 
 }

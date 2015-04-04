@@ -5,8 +5,13 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.InventoryControl;
+import agentx.control.PuzzleControl;
+import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
+import static agentx.view.L10View.ship2;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -17,11 +22,12 @@ import java.util.ArrayList;
 public class L18View extends View {
 
     public L18View() {
-        super("You crashed outside an old school\n"
+        super("\nYou're back at your ship. there appears to be a hole in your fuek tank."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
-                + "\n****************************************");
+                + "\nV - Return to Map"
+                + "\n****************************************\n");
     }
     
     @Override
@@ -29,16 +35,53 @@ public class L18View extends View {
         ArrayList<Location> locations = createLocations();
         String input = (String) obj;
         
-        switch(input){
+        switch (input) {
             case "TL":
-                for(String item : locations.get(12).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(18).getToDoList()) {
+                    console.println("*" + item);
+                }
+                return false;
+            case "O":
+                OtherCommandsMenuView otherCommands = new OtherCommandsMenuView();
+                otherCommands.display();
+                break;
+            case "V":
+                return true;
+            case "T2 SHIP":
+                if(!L10View.ship2.getStatus())
+                {
+                    L10View.ship2.setStatus(true);
+                    console.println("With dexterous skill you weld the crack in your fuel tank.");
+                    locations.get(18).setComplete(true);
+                }else{
+                    console.println("You already fixed the ship.");
                 }
                 break;
-            case "O":
+            case "I":
+                InstructionsView instructionsView = new InstructionsView();
+                instructionsView.display();
+                break;
+            case "T4":
+                try {
+                    String drillBit = InventoryControl.getDrillBit();
+
+                    double drillDepth = PuzzleControl.calcDrillDepth(drillBit);
+                    double fuel = 0;
+                    if (drillDepth == 4) {
+                        fuel = locations.get(18).getFuel();
+                        locations.get(18).setFuel(0);
+
+                    }
+
+                    InventoryControl.AddFuel2(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
+
+                } catch (PuzzleControlExceptions pce) {
+                    ErrorView.display("L18View.java", pce.getMessage());
+                }
                 break;
         }
         
-        return true;
+        return false;
     }
 }

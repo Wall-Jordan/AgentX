@@ -5,11 +5,14 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
+import agentx.model.Game;
 import agentx.model.Location;
 import static agentx.view.L10View.ship2;
 import agentx.view.ViewInterface.View;
@@ -22,22 +25,23 @@ import java.util.ArrayList;
 public class L12View extends View {
 
     public L12View() {
-        super("\nYou're in a tool shop.\n"
+        super("\nYou're in a tool shop."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
-                + "\n****************************************");
+                + "\nV - Return to Map"
+                + "\n****************************************\n");
     }
-    
-     @Override
-    public boolean doAction(Object obj){
+
+    @Override
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
-        
-        switch(input){
+
+        switch (input) {
             case "TL":
-                for(String item : locations.get(12).getToDoList()){
-                    console.println("*"+item);
+                for (String item : locations.get(12).getToDoList()) {
+                    console.println("*" + item);
                 }
                 return false;
             case "O":
@@ -45,13 +49,20 @@ public class L12View extends View {
                 otherCommands.display();
                 break;
             case "V":
+                locations.get(12).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
                 break;
-            case "Collect Welder":
-                locations.get(12).removeCollectItem(input);
+            case "C WELDER":
+                if(locations.get(12).getCollectItems() != null){
+                locations.get(12).setCollectItems(null);
+                locations.get(12).removeToDoListItem("Collect Welder");
+                AgentX.getPlayer().backpack.addTool("Welder");
+                }else{
+                    console.println("You already took the welder");
+                }
                 break;
             case "T4":
                 try {
@@ -62,18 +73,18 @@ public class L12View extends View {
                     if (drillDepth == 4) {
                         fuel = locations.get(12).getFuel();
                         locations.get(12).setFuel(0);
-                       
-                    } 
+
+                    }
 
                     InventoryControl.AddFuel2(fuel);
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
-                    
+
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L12View.java", pce.getMessage());
                 }
                 break;
         }
-        
+
         return false;
     }
 }
