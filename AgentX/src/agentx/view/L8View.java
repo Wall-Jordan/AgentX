@@ -85,8 +85,8 @@ public class L8View extends View {
                 int playerStamina;
                 int bossDamage;
                 bossDamage = (int) bosses.get(0).getDamage();
-                playerHealth = (int) AgentX.getCurrentGame().getPlayer().getHealth();
-                playerStamina = AgentX.getCurrentGame().getPlayer().getStamina();
+                playerHealth = (int) AgentX.getPlayer().getHealth();
+                playerStamina = AgentX.getPlayer().getStamina();
                 while (fight) {
                     while (playerHealth > 0 && bossHealth > 0) {
                         int playerBlockCount = 0;
@@ -127,7 +127,7 @@ public class L8View extends View {
                             GameOverView gameOverView = new GameOverView();
                             gameOverView.display();
                         }
-                        
+
                         int bossAttack = bossAttack(bossDamage);
                         int bossBlockCount = 0;
                         if (bossAttack == 0) {
@@ -140,15 +140,15 @@ public class L8View extends View {
                             bossBlockCount += 1;
                         }
                         calcPlayerDamage(bossAttack, playerBlockCount, playerHealth);
-                        
+
                         double newBossHealth = calcBossDamage(playerAttack, bossBlockCount, bossHealth);
-                        
+
                         bossHealth = bosses.get(0).getHealth();
-                        playerHealth = (int) AgentX.getCurrentGame().getPlayer().getHealth();
-                        playerStamina = AgentX.getCurrentGame().getPlayer().getStamina();
+                        playerHealth = (int) AgentX.getPlayer().getHealth();
+                        playerStamina = AgentX.getPlayer().getStamina();
                     }
+                    break;
                 }
-                break;
         }
 
         return false;
