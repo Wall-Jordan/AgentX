@@ -21,25 +21,17 @@ public class GameOverView extends View{
     }
     
     @Override
-    
     public boolean doAction(Object obj) {
-        String value = (String) obj;
-
-        value = value.toUpperCase();
-        char choice = value.charAt(0);
+        String choice = (String) obj;
 
         switch (choice) {
-            case 'E':
-                this.displayExit();
+            case "E":
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.display();
                 break;
             default:
                 console.println("\n Invalid selection, try again!");
         }
         return true;
     }
-
-    private boolean displayExit() {
-        return false;
-    }
-    
 }

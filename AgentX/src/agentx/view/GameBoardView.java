@@ -319,14 +319,14 @@ public class GameBoardView extends View {
         String selection = (String) obj;
         switch (selection) {
             case "F":
-                if (!locations.get(number).isComplete()) {
-                    console.println("\nYou must complete the necessary actions for each location!");
-                } else {
+                //if (!locations.get(number).isComplete()) {
+                //    console.println("\nYou must complete the necessary actions for each location!");
+                //} else {
                     locations.get(number).setActive(false);
                     number += 1;
                     locations.get(number).setActive(true);
                     locations.get(number).setVisited(true);
-                }
+                //}
                 break;
             case "B":
                 if (number > 0) {

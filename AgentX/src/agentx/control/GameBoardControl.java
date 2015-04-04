@@ -10,6 +10,7 @@ import agentx.model.GameBoard;
 import agentx.model.Location;
 import agentx.model.Scene;
 import agentx.exceptions.GameBoardControlExceptions;
+import agentx.model.Boss;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -46,7 +47,7 @@ public class GameBoardControl {
 
         //   locations[0][0].setBlock(scenes[SectionOne.drill.ordinal()]);
     }
-
+    public static ArrayList<Boss> bosses = GameControl.createBossList();
     // public Location(Boolean visited, Boolean active, Object boss, int puzzle, String description, Double fuel)    
     public static ArrayList<Location> createLocations() {
         ArrayList<Location> locations = new ArrayList<>();

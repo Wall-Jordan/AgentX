@@ -28,7 +28,7 @@ public class Boss implements Serializable {
         this.health = health;
     }
 
-    public Boss(String bossName, double damage, int y, int x) {
+    public Boss(String bossName, double damage, int y, int x, int health) {
         this.bossName = bossName;
         this.damage = damage;
         this.y = y;
