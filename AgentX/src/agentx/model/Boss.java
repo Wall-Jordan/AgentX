@@ -33,6 +33,7 @@ public class Boss implements Serializable {
         this.damage = damage;
         this.y = y;
         this.x = x;
+        this.health = health;
     }
 
     public String getBossName() {

@@ -88,6 +88,8 @@ public class L8View extends View {
                 playerHealth = (int) AgentX.getPlayer().getHealth();
                 playerStamina = AgentX.getPlayer().getStamina();
                 while (fight) {
+                    console.println(playerHealth);
+                    console.println(bossHealth);
                     while (playerHealth > 0 && bossHealth > 0) {
                         int playerBlockCount = 0;
                         int playerAttack = 0;
