@@ -103,7 +103,7 @@ public class L29View extends ViewInterface.View {
 //                int shipFixed = ship3.getStatus();
 //                FuelContainer shipFuel = ship3.getFuel();
 //                if (shipFixed < 1) {
-//                    console.println("You can not take off. You dont have enough fuel.");
+//                    console.println("You can not take off. Your ship needs fixed.");
 //                    return true;
 //                } else {
 //                    String year = " ";
