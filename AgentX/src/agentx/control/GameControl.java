@@ -54,6 +54,11 @@ public class GameControl {
         int newStamina = stamina + staminaAdd;
         AgentX.getPlayer().setStamina(newStamina);
     }
+    public static void addHealth(double healthAdd){
+        double health = AgentX.getPlayer().getHealth();
+        double newHealth = health + healthAdd;
+        AgentX.getPlayer().setHealth(newHealth);
+    }
 
     public static Inventory[] createInventoryList() {
 

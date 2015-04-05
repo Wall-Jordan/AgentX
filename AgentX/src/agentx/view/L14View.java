@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -33,7 +34,7 @@ public class L14View extends View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
         
         switch (input) {
@@ -55,6 +56,7 @@ public class L14View extends View {
                 locations.get(14).removeToDoListItem("Collect Grenades");
                 AgentX.getPlayer().weaponsBelt.addWeapon("Grenades", 5);
                 locations.get(14).setComplete(true);
+                console.println("These grenades might come in handy later.");
                 }else{
                     console.println("You already took the grenades");
                 }

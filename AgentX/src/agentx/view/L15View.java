@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.GameControl;
 import agentx.control.InventoryControl;
@@ -35,7 +36,7 @@ public class L15View extends View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
         
         switch (input) {
@@ -56,6 +57,7 @@ public class L15View extends View {
                     locations.get(15).setCollectItems(null);
                     locations.get(15).removeToDoListItem("Collect Food");
                     GameControl.addStamina(20);
+                    GameControl.addHealth(20);
                     console.println("Mmm, that food was delicious!");
                 }else{
                     console.println("You already ate the food");

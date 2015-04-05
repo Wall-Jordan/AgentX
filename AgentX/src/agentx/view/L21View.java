@@ -22,7 +22,7 @@ public class L21View extends ViewInterface.View {
 
     public L21View() {
         super("You moved into an old village, which is empty. You move closer, and notice "
-                + "that there are bodies everywhere. Maybe this is where Chaotica is right now!\n"
+                + "\nthat there are bodies everywhere. Maybe this is where Chaotica is right now!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"

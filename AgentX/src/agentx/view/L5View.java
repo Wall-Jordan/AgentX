@@ -78,7 +78,8 @@ public class L5View extends View {
                 if(locations.get(5).getCollectItems() != null){
                     locations.get(5).removeToDoListItem("Use Hammer on Rock");
                     locations.get(5).setCollectItems(null);
-                    GameControl.addStamina(1);
+                    GameControl.addStamina(10);
+                    GameControl.addHealth(10);
                     console.println("You broke the rock, found some water inside, drank it, and increased your stamina.");
                 }else{
                     console.println("You already broke the rock.");

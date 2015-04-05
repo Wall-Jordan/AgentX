@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.bosses;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
@@ -28,18 +29,19 @@ import java.util.ArrayList;
 public class L17View extends View {
 
     public L17View() {
-        super("You crashed outside an old school"
+        super("Nazeem is in your way. Show him who's boss!"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
                 + "\nI - Instructions"
+                + "\nFIGHT - Fight Nazeem"
                 + "\nV - Return to Map"
                 + "\n****************************************\n");
     }
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.locations;
         String input = (String) obj;
         
         switch (input) {

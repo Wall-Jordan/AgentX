@@ -66,7 +66,7 @@ public class GameBoardControl {
         locations.get(5).addToDoListItem("Use Hammer on Rock");
         locations.get(5).setCollectItems("ROCK");
         locations.add(new Location(false, false, 8, false));//Location 6
-        locations.get(6).addToDoListItem("Collect food.");
+        locations.get(6).addToDoListItem("Collect Food.");
         locations.get(6).setCollectItems("FOOD");
         locations.add(new Location(false, false, 0, false));//Location 7
         locations.get(7).addToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
@@ -82,7 +82,7 @@ public class GameBoardControl {
         locations.get(12).setCollectItems("WELDER");
         locations.add(new Location(false, false, 3, false));//Location 13
         locations.add(new Location(false, false, 3, false));//Location 14
-        locations.get(14).addToDoListItem("Collect grenades");
+        locations.get(14).addToDoListItem("Collect Grenades");
         locations.get(14).setCollectItems("GRENADES");
         locations.add(new Location(false, false, 3, false));//Location 15
         locations.get(15).addToDoListItem("Collect Food");

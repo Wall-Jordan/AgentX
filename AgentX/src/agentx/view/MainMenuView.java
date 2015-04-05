@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author Jordan
  */
 public class MainMenuView extends View {
-    
+
     protected final static PrintWriter console = AgentX.getOutFile();
 
     public MainMenuView() {
@@ -64,19 +64,18 @@ public class MainMenuView extends View {
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
 
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-        
+        GameBoardView gameBoard = new GameBoardView();
+        gameBoard.display();
 
     }
 
     private void startExistingGame() {
         console.println("Enter file path to save the game to.");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             GameControl.getSavedGame(filePath);
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView.java", ex.getMessage());
         }
         GameMenuView gameMenu = new GameMenuView();

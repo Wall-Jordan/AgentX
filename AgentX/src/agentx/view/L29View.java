@@ -75,7 +75,7 @@ public class L29View extends ViewInterface.View {
                 }
 
                 break;
-            case "TAKEOFF":
+            case "TAKE OFF":
                 int currentYear = 2046;
                 boolean shipFixed = ship3.getStatus();
                 double shipFuel = ship3.fuel.getGallons();
