@@ -67,10 +67,8 @@ public class PuzzleControl {
     }
 
     public static int bossAttack(int bossDamage) {
-        boolean validRandom = false;
-        int number = 0;
         Random rn = new Random();
-        number = rn.nextInt(4) + 1;
+        int number = rn.nextInt(4) + 1;
         int attack = 0;
         switch (number) {
             case (1):

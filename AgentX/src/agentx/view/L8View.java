@@ -52,7 +52,6 @@ public class L8View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(8).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -86,79 +85,90 @@ public class L8View extends View {
                 }
                 break;
             case "FIGHT":
-                boolean fight = true;
-                int bossHealth = bosses.get(0).getHealth();
+                double bossHealth = bosses.get(0).getHealth();
                 int playerHealth;
                 int playerStamina;
                 int bossDamage;
                 bossDamage = (int) bosses.get(0).getDamage();
                 playerHealth = (int) AgentX.getPlayer().getHealth();
                 playerStamina = AgentX.getPlayer().getStamina();
-                while (fight) {
-                    console.println(playerHealth);
-                    console.println(bossHealth);
-                    while (playerHealth > 0 && bossHealth > 0) {
-                        int playerBlockCount = 0;
-                        int playerAttack = 0;
-                        if (playerStamina >= 3) {
-                            String attack1 = getAttack1();
-                            String attack2 = getAttack2();
-                            String attack3 = getAttack3();
-                            playerAttack = calcPlayerAttack(attack1, attack2, attack3);
-                            if (attack1.equals("B")) {
-                                playerBlockCount += 1;
-                            }
-                            if (attack2.equals("B")) {
-                                playerBlockCount += 1;
-                            }
-                            if (attack2.equals("B")) {
-                                playerBlockCount += 1;
-                            }else{
-                            }
-                        } else if (playerStamina == 2) {
-                            String attack1 = getAttack1();
-                            String attack2 = getAttack2();
-                            playerAttack = calcPlayerAttack(attack1, attack2);
-                            if (attack1.equals("B")) {
-                                playerBlockCount += 1;
-                            }
-                            if (attack2.equals("B")) {
-                                playerBlockCount += 1;
-                            }else{
-                            }
-                        } else if (playerStamina == 1) {
-                            String attack1 = getAttack1();
-                            playerAttack = calcPlayerAttack(attack1);
-                            if (attack1.equals("B")) {
-                                playerBlockCount += 1;
-                            }else{
-                            }
+                while (playerHealth > 0 && bossHealth > 0) {
+                    console.println("Your health is " + playerHealth);
+                    console.println("Your Stamina is " + playerStamina);
+                    console.println("The bosses health is " + bossHealth);
+                    int playerBlockCount = 0;
+                    int playerAttack = 0;
+                    if (playerStamina >= 3) {
+                        String attack1 = getAttack1();
+                        String attack2 = getAttack2();
+                        String attack3 = getAttack3();
+                        playerAttack = calcPlayerAttack(attack1, attack2, attack3);
+                        if (attack1.equals("B")) {
+                            playerBlockCount += 1;
+                        }
+                        if (attack2.equals("B")) {
+                            playerBlockCount += 1;
+                        }
+                        if (attack2.equals("B")) {
+                            playerBlockCount += 1;
                         } else {
-                            console.println("You're stamina ran out, you fell on the ground,"
-                                    + "\nand the boss killed you. Congratulations.");
-                            GameOverView gameOverView = new GameOverView();
-                            gameOverView.display();
                         }
-                        console.println("You made it to here 142");
-                        int bossAttack = bossAttack(bossDamage);
-                        int bossBlockCount = 0;
-                        if (bossAttack == 0) {
-                            bossBlockCount += 3;
-                        }else if (bossAttack == bossDamage) {
-                            bossBlockCount += 2;
-                        }else if (bossAttack == (bossDamage * 2)) {
-                            bossBlockCount += 1;
+                        playerStamina -= 3;
+                        AgentX.getPlayer().setStamina(playerStamina);
+                    } else if (playerStamina == 2) {
+                        String attack1 = getAttack1();
+                        String attack2 = getAttack2();
+                        playerAttack = calcPlayerAttack(attack1, attack2);
+                        if (attack1.equals("B")) {
+                            playerBlockCount += 1;
                         }
-                        calcPlayerDamage(bossAttack, playerBlockCount, playerHealth);
-
-                        double newBossHealth = calcBossDamage(playerAttack, bossBlockCount, bossHealth);
-
-                        bossHealth = bosses.get(0).getHealth();
-                        playerHealth = (int) AgentX.getPlayer().getHealth();
-                        playerStamina = AgentX.getPlayer().getStamina();
+                        if (attack2.equals("B")) {
+                            playerBlockCount += 1;
+                        } else {
+                        }
+                        playerStamina -= 2;
+                        AgentX.getPlayer().setStamina(playerStamina);
+                    } else if (playerStamina == 1) {
+                        String attack1 = getAttack1();
+                        playerAttack = calcPlayerAttack(attack1);
+                        if (attack1.equals("B")) {
+                            playerBlockCount += 1;
+                        } else {
+                        }
+                        playerStamina -= 1;
+                        AgentX.getPlayer().setStamina(playerStamina);
+                    } else {
+                        console.println("You're stamina ran out, you fell on the ground,"
+                                + "\nand the boss killed you. Congratulations.");
+                        GameOverView gameOverView = new GameOverView();
+                        gameOverView.display();
                     }
-                    break;
+                    int bossAttack = bossAttack(bossDamage);
+                    int bossBlockCount = 0;
+                    if (bossAttack == 0) {
+                        bossBlockCount += 3;
+                    } else if (bossAttack == bossDamage) {
+                        bossBlockCount += 2;
+                    } else if (bossAttack == (bossDamage * 2)) {
+                        bossBlockCount += 1;
+                    }
+                    calcPlayerDamage(bossAttack, playerBlockCount, playerHealth);
+
+                    double newBossHealth = calcBossDamage(playerAttack, bossBlockCount, bossHealth);
+                    bosses.get(0).setHealth(newBossHealth);
+                    bossHealth = bosses.get(0).getHealth();
+                    playerHealth = (int) AgentX.getPlayer().getHealth();
+                    playerStamina = AgentX.getPlayer().getStamina();
                 }
+                if(playerHealth <=0){
+                    console.println("You died! It's time to move on to the after life.");
+                    GameOverView gameOverView = new GameOverView();
+                    gameOverView.display();
+                }else{
+                    console.println("You killed the boss!!!");
+                    locations.get(8).setComplete(true);
+                }
+            break;
         }
 
         return false;
@@ -183,11 +193,11 @@ public class L8View extends View {
                 }
                 if (selection.equals("B") || selection.equals("G") || selection.equals("D")
                         || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
-                }else{
+                } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
                 }
-                    
+
                 break;
             }
         } catch (Exception e) {
@@ -217,7 +227,7 @@ public class L8View extends View {
                 }
                 if (selection.equals("B") || selection.equals("G") || selection.equals("D")
                         || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
-                }else{
+                } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
                 }
@@ -251,7 +261,7 @@ public class L8View extends View {
                 }
                 if (selection.equals("B") || selection.equals("G") || selection.equals("D")
                         || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
-                }else{
+                } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
                 }
