@@ -8,7 +8,6 @@ package agentx.view;
 import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.bosses;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import static agentx.control.PuzzleControl.bossAttack;
@@ -26,16 +25,19 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class L8View extends View {
-
     public L8View() {
         super("Jarik is in your way. Show him who is boss.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
+                + "\nO  - Other commands menu"
+                + "\n   - Return to Map"
+                + "\nI - Instructions"
+                + "\nWI - View Weapons"
+                + "\nFIGHT - Fight Jarik"
                 + "\n****************************************");
     }
 
+    
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations = GameBoardControl.locations;
@@ -191,8 +193,7 @@ public class L8View extends View {
                     continue;
 
                 }
-                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("P") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
@@ -225,8 +226,7 @@ public class L8View extends View {
                     continue;
 
                 }
-                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("P") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
@@ -259,8 +259,7 @@ public class L8View extends View {
                     continue;
 
                 }
-                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("P") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;

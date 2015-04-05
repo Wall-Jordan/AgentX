@@ -25,8 +25,9 @@ public class L18View extends View {
         super("\nYou're back at your ship. there appears to be a hole in your fuek tank."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
+                + "\nO  - Other commands menu"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
     
@@ -53,6 +54,7 @@ public class L18View extends View {
                     L10View.ship2.setStatus(true);
                     console.println("With dexterous skill you weld the crack in your fuel tank.");
                     locations.get(18).setComplete(true);
+                    return true;
                 }else{
                     console.println("You already fixed the ship.");
                 }

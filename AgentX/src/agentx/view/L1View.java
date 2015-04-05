@@ -11,7 +11,6 @@ import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
 import static agentx.view.L0View.ship1;
-import static agentx.view.L20View.ship3;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -32,6 +31,7 @@ public class L1View extends View {
                 + "\nSelect the drillbit you want to use: [1, 2]"
                 + "\n****************************************"
                 + "\nV - Return to Map"
+                + "\nI - Instructions"
                 + "\n****************************************");
     }
 

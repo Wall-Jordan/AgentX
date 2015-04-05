@@ -28,6 +28,7 @@ public class L15View extends View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nI - Instructions"
                 + "\nV - Return to Map"
                 + "\n****************************************\n");
     }
@@ -54,7 +55,7 @@ public class L15View extends View {
                 if(locations.get(15).getCollectItems() != null){
                     locations.get(15).setCollectItems(null);
                     locations.get(15).removeToDoListItem("Collect Food");
-                    GameControl.addStamina(1);
+                    GameControl.addStamina(10);
                     console.println("Mmm, that food was delicious!");
                 }else{
                     console.println("You already ate the food");

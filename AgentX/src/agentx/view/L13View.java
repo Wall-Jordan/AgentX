@@ -37,10 +37,11 @@ public class L13View extends View {
                 + "\nNow it is your turn to try it!"
                 + "\nIn the office you found a few metal pieces that"
                 + "\ncame from a puzzle."
-                + "\nTry out the weld command by typing in: T4 Puzzle\n"
+                + "\nTry out the weld command by typing in: T2 Puzzle\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nI - Instructions"
                 + "\nV - Return to Map"
                 + "\n****************************************\n");
     }
@@ -86,6 +87,11 @@ public class L13View extends View {
                     ErrorView.display("L13View.java", pce.getMessage());
                 }
                 break;
+            case "T2 PUZZLE":
+                console.println("\tCongratulations you welded the puzzle together!"
+                    + "\n\tThe puzzle says: 2046");
+                locations.get(13).setComplete(true);
+            return true;
         }
 
         return false;

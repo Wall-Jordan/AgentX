@@ -32,6 +32,7 @@ public class L17View extends View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nI - Instructions"
                 + "\nV - Return to Map"
                 + "\n****************************************\n");
     }
@@ -191,8 +192,7 @@ public class L17View extends View {
                     continue;
 
                 }
-                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("G") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
@@ -225,8 +225,7 @@ public class L17View extends View {
                     continue;
 
                 }
-                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("G") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
@@ -259,8 +258,7 @@ public class L17View extends View {
                     continue;
 
                 }
-                if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                if (selection.equals("B") || selection.equals("G") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;

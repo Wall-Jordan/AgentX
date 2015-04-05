@@ -47,7 +47,7 @@ public class WelderInstructionsView extends View {
     private final String WELD = "\tIn the office you found a few metal pieces that"
             + "\n\tcame from a puzzle."
             + "\n"
-            + "\n\t Try out the weld command by typing in: T4 Puzzle";
+            + "\n\t Try out the weld command by typing in: T2 Puzzle";
 
     @Override
     public void display() {
@@ -92,7 +92,7 @@ public class WelderInstructionsView extends View {
     public boolean doAction(Object obj) {
         String weldInput = (String) obj;
 
-        if ("T4 PUZZLE".equals(weldInput)) {
+        if ("T2 PUZZLE".equals(weldInput)) {
             console.println("\tCongratulations you welded the puzzle together!"
                     + "\n\tThe puzzle says: 2046");
             return true;

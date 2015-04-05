@@ -50,7 +50,7 @@ public class L24View extends ViewInterface.View {
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
-            case "T3":
+            case "T3 SUPPLYBOX":
                 console.println("Finally some food! I've traveled through years and not eaten "
                         + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
                 break;
@@ -73,7 +73,7 @@ public class L24View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L24View.java", pce.getMessage());
                 }
 
                 break;

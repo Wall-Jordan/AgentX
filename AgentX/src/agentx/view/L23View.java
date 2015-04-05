@@ -51,20 +51,21 @@ public class L23View extends ViewInterface.View {
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
-            case "T3":
+            case "T3 TOOLBOX":
                 console.println("There is a wrench in the box! It is shiny and ready to be used!\n");
+                locations.get(23).removeToDoListItem("Open ToolBox (Hint: Use a tool)");
                 break;
             case "C WRENCH":
                 if(locations.get(23).getCollectItems() != null){
                 locations.get(23).setCollectItems(null);
-                locations.get(23).removeToDoListItem("Collect Wrench");
+                locations.get(23).removeToDoListItem("Collect Wrench");                
                 AgentX.getPlayer().backpack.addTool("Wrench");
                 }else{
                     console.println("You already have the wrench");
                 }
+                locations.get(23).setComplete(true);
                 break;
             case "V":
-                locations.get(23).setComplete(true);
                 return true;
             case "T4":
                 try {
@@ -82,7 +83,7 @@ public class L23View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L23View.java", pce.getMessage());
                 }
 
                 break;

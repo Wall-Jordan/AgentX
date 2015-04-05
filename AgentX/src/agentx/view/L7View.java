@@ -24,8 +24,9 @@ public class L7View extends View {
         super("You examine your time machine and notice that it is not in good shape.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
+                + "\nO  - Other commands menu"
+                + "\nV  - Return to Map"
+                + "\nI  - Instructions"
                 + "\n****************************************");
     }
 
@@ -71,11 +72,12 @@ public class L7View extends View {
                 }
 
                 break;
-            case "T3 SHIP":
+            case "T3 TIME MACHINE":
                 console.println("You fixed your ship! Great hammer work!");
-                locations.get(0).removeToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
+                locations.get(0).removeToDoListItem("Repair Ship (Hint: Use a tool that you have collected)");
                 ship1.setStatus(true);
-                break;
+                locations.get(7).setComplete(true);
+                return true;
         }
 
         return false;

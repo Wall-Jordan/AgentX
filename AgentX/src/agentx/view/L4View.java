@@ -7,7 +7,6 @@ package agentx.view;
 
 import agentx.AgentX;
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
@@ -27,6 +26,7 @@ public class L4View extends View{
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
                 + "\nV - Return to Map"
+                + "\nI - Instructions"
                 + "\n****************************************");
     }
 

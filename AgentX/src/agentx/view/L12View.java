@@ -29,6 +29,7 @@ public class L12View extends View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
+                + "\nI - Instructions"
                 + "\nV - Return to Map"
                 + "\n****************************************\n");
     }
@@ -63,6 +64,9 @@ public class L12View extends View {
                 }else{
                     console.println("You already took the welder");
                 }
+                break;
+            case "C RAY GUN":
+                
                 break;
             case "T4":
                 try {

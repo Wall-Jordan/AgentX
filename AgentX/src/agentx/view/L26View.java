@@ -69,7 +69,7 @@ public class L26View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L26View.java", pce.getMessage());
                 }
 
                 break;

@@ -193,7 +193,7 @@ public class L28View extends ViewInterface.View {
 
                 }
                 if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                        || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
@@ -227,7 +227,7 @@ public class L28View extends ViewInterface.View {
 
                 }
                 if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                        || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;
@@ -261,7 +261,7 @@ public class L28View extends ViewInterface.View {
 
                 }
                 if (selection.equals("B") || selection.equals("G") || selection.equals("D")
-                        || selection.equals("P") || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
+                        || selection.equals("P") || selection.equals("R") || selection.equals("K")) {
                 } else {
                     console.println("Invalid Selection. Please try again.");
                     continue;

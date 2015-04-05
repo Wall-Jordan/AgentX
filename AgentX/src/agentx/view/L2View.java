@@ -28,6 +28,7 @@ public class L2View extends View {
                 + "\nTL - Display to do list"
                 + "\nO - Other commands menu"
                 + "\nV - Return to Map"
+                + "\nI - Instructions"
                 + "\n****************************************");
     }
 

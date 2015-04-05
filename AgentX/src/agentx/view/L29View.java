@@ -31,7 +31,7 @@ public class L29View extends ViewInterface.View {
                 + "\nI  - Instructions"
                 + "\nV  - View Gameboard"
                 + "\nF  - Check Fuel"
-                + "\nTAKEOFF  - Take Off"
+                + "\nTAKE OFF  - Take Off"
                 + "\n****************************************\n");
     }
 
@@ -71,10 +71,10 @@ public class L29View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L29View.java", pce.getMessage());
                 }
 
-                return false;
+                break;
             case "TAKEOFF":
                 int currentYear = 2046;
                 boolean shipFixed = ship3.getStatus();
@@ -85,43 +85,57 @@ public class L29View extends ViewInterface.View {
                 } else {
                     boolean traveled = false;
                     String goBack = "";
-                    String year = getYear();
+                    String year = " ";
+                    boolean validYear = false;
+                    boolean needFuel = false;
 
                     do {
-                        boolean validYear = false;
                         while (!validYear) {
+                            year = getYear();
                             validYear = yearCheck(year);
-                            if (!validYear) {
+                            if (validYear) {
+                                break;
+                            } else {
                                 goBack = getInput2();
                             }
+
                             if ("Y".equals(goBack)) {
                                 break;
                             }
                         }
+                        if (!"Y".equals(goBack)) {
+                            double destinationYear = Integer.parseInt(year);
+                            double yearsToTravel = abs(destinationYear - currentYear);
 
-                    } while (!"Y".equals(goBack));
-                    int destinationYear = Integer.parseInt(year);
-
-                    double yearsToTravel = abs(destinationYear - currentYear);
-
-                    try {
-                        int neededFuelAmount = PuzzleControl.calcNeededFuelAmount(yearsToTravel, 3, 50);
-                        if (shipFuel >= neededFuelAmount) {
-                            traveled = true;
+                            try {
+                                int neededFuelAmount = PuzzleControl.calcNeededFuelAmount(yearsToTravel, 1, 50);
+                                if (shipFuel >= neededFuelAmount) {
+                                    traveled = true;
+                                    goBack = "Y";
+                                } else {
+                                    needFuel = true;
+                                    goBack = "Y";
+                                }
+                            } catch (PuzzleControlExceptions pce) {
+                                ErrorView.display("L29View.java", pce.getMessage());
+                            }
                         }
-                    } catch (PuzzleControlExceptions pce) {
-                        ErrorView.display("L29View.java", pce.getMessage());
-                    }
+                    } while (!"Y".equals(goBack));
 
                     if (traveled == true) {
-                        this.console.println("You are now in" + year + ".");
+                        this.console.println("You are now in " + year + ".");
                         locations.get(29).setComplete(true);
+                        return true;
 
+                    } else if (needFuel) {
+                        this.console.println("\nYou need more fuel to travel to that year!"
+                                + "\nGo back and drill for more fuel.\n");
+                        return true;
                     } else {
-                        this.console.println("Go back and look for a year clue.");
+                        this.console.println("Go back and look for a year clue.\n");
+                        return true;
                     }
                 }
-                break;
         }
 
         return false;

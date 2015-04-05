@@ -77,7 +77,9 @@ public class GameBoardControl {
         locations.add(new Location(false, false, 3, false));//Location 11
         locations.add(new Location(false, false, 3, false));//Location 12
         locations.get(12).addToDoListItem("Collect Welder");
+        locations.get(12).addToDoListItem("Collect Ray Gun");
         locations.get(12).setCollectItems("WELDER");
+        locations.get(12).setCollectItems("RAY GUN");
         locations.add(new Location(false, false, 3, false));//Location 13
         locations.add(new Location(false, false, 3, false));//Location 14
         locations.get(14).addToDoListItem("Collect grenades");
@@ -94,10 +96,11 @@ public class GameBoardControl {
         locations.add(new Location(false, false, 1, false));//Location 21
         locations.add(new Location(false, false, 2, false));//Location 22
         locations.add(new Location(false, false, 1, false));//Location 23
-        locations.get(23).addToDoListItem("Open ToolBox");
+        locations.get(23).addToDoListItem("Open ToolBox (Hint: Use a tool)");
+        locations.get(23).addToDoListItem("Collect Wrench");
         locations.get(23).setCollectItems("Wrench");
         locations.add(new Location(false, false, 4, false));//Location 24
-        locations.get(24).addToDoListItem("Open SupplyBox");
+        locations.get(24).addToDoListItem("Open SupplyBox (Hint: Use a tool)");
         locations.get(24).setCollectItems("Food");
         locations.add(new Location(false, false, 1, false));//Location 25
         locations.add(new Location(false, false, 3, false));//Location 26

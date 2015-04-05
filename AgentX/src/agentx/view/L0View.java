@@ -27,8 +27,9 @@ public class L0View extends View {
         super("\nYou crashed into a construction site.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
+                + "\nO  - Other commands menu"
+                + "\nV  - Return to Map"
+                + "\nI  - Instructions"
                 + "\n****************************************\n");
     }
 

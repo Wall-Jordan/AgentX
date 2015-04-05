@@ -6,7 +6,6 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
@@ -70,7 +69,7 @@ public class L25View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L25View.java", pce.getMessage());
                 }
 
                 break;

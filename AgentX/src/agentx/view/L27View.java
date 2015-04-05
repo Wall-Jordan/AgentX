@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class L27View extends ViewInterface.View {
 
     public L27View() {
-        super("You come back to the ship. Looks like the its broken, again. Better fix it.\n"
+        super("You come back to the ship. Looks like its broken, again. Better fix it.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
@@ -73,7 +73,7 @@ public class L27View extends ViewInterface.View {
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
-                    ErrorView.display("L21View.java", pce.getMessage());
+                    ErrorView.display("L27View.java", pce.getMessage());
                 }
 
                 break;
