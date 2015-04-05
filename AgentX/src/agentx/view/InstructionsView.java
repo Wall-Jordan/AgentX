@@ -134,11 +134,10 @@ public class InstructionsView extends View {
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
                 + "\n\tThe combat menu accessed from the instructions menu "
                 + "\n\twill display all of the combat menu options.");
-        console.println("\n\t\tK - Kick");
+        console.println("\n\t\tK - Use Knife");
         console.println("\n\t\tP - Punch");
         console.println("\n\t\tG - Grenade");
         console.println("\n\t\tD - Use Darts");
-        console.println("\n\t\tS - Stab");
         console.println("\n\t\tB - Block");
         console.println("\n\t\tR - Ray Gun"
                 + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");

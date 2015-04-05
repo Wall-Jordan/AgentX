@@ -30,7 +30,7 @@ public class L8View extends View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
-                + "\n   - Return to Map"
+                + "\nV  - Return to Map"
                 + "\nI - Instructions"
                 + "\nWI - View Weapons"
                 + "\nFIGHT - Fight Jarik"
