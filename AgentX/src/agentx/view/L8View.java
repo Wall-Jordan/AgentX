@@ -9,6 +9,7 @@ import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.bosses;
 import agentx.control.InventoryControl;
+import agentx.control.ProgramControl;
 import agentx.control.PuzzleControl;
 import static agentx.control.PuzzleControl.bossAttack;
 import static agentx.control.PuzzleControl.calcBossDamage;
@@ -45,7 +46,7 @@ public class L8View extends View {
 
         switch (input) {
             case "TL":
-                for (String item : locations.get(12).getToDoList()) {
+                for (String item : locations.get(8).getToDoList()) {
                     console.println("*" + item);
                 }
                 break;
@@ -70,7 +71,6 @@ public class L8View extends View {
                         locations.get(8).setFuel(0);
 
                     }
-
                     InventoryControl.AddFuel1(fuel);
                     console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
 
