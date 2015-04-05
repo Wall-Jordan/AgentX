@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class L27View extends ViewInterface.View {
 
     public L27View() {
-        super("You come back to the ship. Looks like its broken, again. Better fix it.\n"
+        super("You walk back to the ship and notice that it is broken, again. Better fix it.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"

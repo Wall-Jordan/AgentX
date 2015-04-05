@@ -26,7 +26,7 @@ import java.util.ArrayList;
 public class L28View extends ViewInterface.View {
 
     public L28View() {
-        super("You hear someone yell for you outside the ship while fixing it. You go outside"
+        super("You hear someone yell for you outside the ship, while fixing it. You go outside"
                 + " to see who it is. IT IS CHAOTICA!! ATTACK!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
