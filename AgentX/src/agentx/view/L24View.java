@@ -7,6 +7,7 @@ package agentx.view;
 
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
+import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
@@ -53,6 +54,7 @@ public class L24View extends ViewInterface.View {
             case "T3 SUPPLYBOX":
                 console.println("Finally some food! I've traveled through years and not eaten "
                         + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
+                GameControl.addStamina(20);
                 break;
             case "V":
                 locations.get(24).setComplete(true);

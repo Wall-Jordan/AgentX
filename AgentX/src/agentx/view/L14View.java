@@ -47,7 +47,6 @@ public class L14View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(14).setComplete(true);
                 return true;
             case "C GRENADES":
                 if(locations.get(14).getCollectItems() != null)
@@ -55,6 +54,7 @@ public class L14View extends View {
                 locations.get(14).setCollectItems(null);
                 locations.get(14).removeToDoListItem("Collect Grenades");
                 AgentX.getPlayer().weaponsBelt.addWeapon("Grenades", 5);
+                locations.get(14).setComplete(true);
                 }else{
                     console.println("You already took the grenades");
                 }

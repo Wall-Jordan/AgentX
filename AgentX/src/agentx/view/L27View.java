@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class L27View extends ViewInterface.View {
 
     public L27View() {
-        super("You walk back to the ship and notice that it is broken, again. Better fix it.\n"
+        super("You walk back to the time machine and notice that it is broken, again. Better fix it.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
@@ -52,10 +52,11 @@ public class L27View extends ViewInterface.View {
                 instructionsView.display();
             case "V":
                 return true;
-            case "T1 SHIP":
-                console.println("You fixed your ship! Great Wrenching work!");
-                locations.get(0).removeToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
+            case "T1 TIME MACHINE":
+                console.println("You fixed your time machine! Great Wrenching work!");
+                locations.get(0).removeToDoListItem("Repair Time Machine (Hint: use a tool that you have collected)");
                 ship3.setStatus(true);
+                locations.get(27).setComplete(true);
                 break;
 
             case "T4":

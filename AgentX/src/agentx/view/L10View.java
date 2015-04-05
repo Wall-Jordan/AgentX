@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -47,11 +48,21 @@ public class L10View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(10).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
+                break;
+            case "C RAY GUN":
+                if(locations.get(10).getCollectItems() != null)
+                {
+                locations.get(10).setCollectItems(null);
+                locations.get(10).removeToDoListItem("Collect Ray Gun");
+                AgentX.getPlayer().weaponsBelt.addWeapon("Ray Gun", 4);
+                locations.get(10).setComplete(true);
+                }else{
+                    console.println("You already took the ray gun");
+                }
                 break;
             case "T4":
                 try {

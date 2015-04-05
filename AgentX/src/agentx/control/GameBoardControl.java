@@ -74,12 +74,12 @@ public class GameBoardControl {
         locations.get(8).addToDoListItem("Kill Jarik");
         locations.add(new Location(false, false, 50, false));//Location 9
         locations.add(new Location(false, false, 3, false));//Location 10
+        locations.get(10).addToDoListItem("Collect Ray Gun");
+        locations.get(10).setCollectItems("RAY GUN");
         locations.add(new Location(false, false, 3, false));//Location 11
         locations.add(new Location(false, false, 3, false));//Location 12
         locations.get(12).addToDoListItem("Collect Welder");
-        locations.get(12).addToDoListItem("Collect Ray Gun");
         locations.get(12).setCollectItems("WELDER");
-        locations.get(12).setCollectItems("RAY GUN");
         locations.add(new Location(false, false, 3, false));//Location 13
         locations.add(new Location(false, false, 3, false));//Location 14
         locations.get(14).addToDoListItem("Collect grenades");
@@ -105,7 +105,7 @@ public class GameBoardControl {
         locations.add(new Location(false, false, 1, false));//Location 25
         locations.add(new Location(false, false, 3, false));//Location 26
         locations.add(new Location(false, false, 0, false));//Location 27
-        locations.get(27).addToDoListItem("Fix Ship");
+        locations.get(27).addToDoListItem("Repair Time Machine (Hint: use a tool that you have collected)");
         locations.add(new Location(false, false, 1, false));//Location 28
         locations.get(28).addToDoListItem("Kill Chaotica");
         locations.add(new Location(false, false, 5, false));//Location 29

@@ -55,7 +55,7 @@ public class L15View extends View {
                 if(locations.get(15).getCollectItems() != null){
                     locations.get(15).setCollectItems(null);
                     locations.get(15).removeToDoListItem("Collect Food");
-                    GameControl.addStamina(10);
+                    GameControl.addStamina(20);
                     console.println("Mmm, that food was delicious!");
                 }else{
                     console.println("You already ate the food");

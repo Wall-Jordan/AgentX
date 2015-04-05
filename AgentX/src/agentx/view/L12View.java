@@ -50,7 +50,6 @@ public class L12View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(12).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -61,12 +60,10 @@ public class L12View extends View {
                 locations.get(12).setCollectItems(null);
                 locations.get(12).removeToDoListItem("Collect Welder");
                 AgentX.getPlayer().backpack.addTool("Welder");
+                locations.get(12).setComplete(true);
                 }else{
                     console.println("You already took the welder");
                 }
-                break;
-            case "C RAY GUN":
-                
                 break;
             case "T4":
                 try {

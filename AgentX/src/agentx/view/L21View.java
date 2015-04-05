@@ -6,17 +6,12 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
-import static agentx.control.InventoryControl.fuel;
 import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
-import agentx.model.FuelContainer;
 import agentx.model.Location;
-import agentx.model.TimeShip;
 import static agentx.view.L20View.ship3;
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**

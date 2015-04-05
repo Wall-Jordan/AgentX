@@ -26,7 +26,7 @@ public class L20View extends ViewInterface.View {
     public static TimeShip ship3 = new TimeShip();
 
     public L20View() {
-        super("You have landed at a what seems to be a tropical forest. Lets look around!"
+        super("You have landed at what seems to be a tropical forest. Lets look around!"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
