@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class L29View extends ViewInterface.View {
 
     public L29View() {
-        super("You decide to return home, now that the galaxy is safe again!"
+        super("You decide to return home, now that the galaxy is safe of evil people again!"
                 + " Return to year 2015!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
