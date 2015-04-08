@@ -6,13 +6,10 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L0View.ship1;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -64,8 +61,8 @@ public class L7View extends View {
 
                     }
 
-                    InventoryControl.AddFuel1(fuel);
-                        console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                        console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L2View.java", pce.getMessage());
@@ -75,7 +72,7 @@ public class L7View extends View {
             case "T3 TIME MACHINE":
                 console.println("You fixed your ship! Great hammer work!");
                 locations.get(0).removeToDoListItem("Repair Ship (Hint: Use a tool that you have collected)");
-                ship1.setStatus(true);
+                AgentX.getPlayer().getTimeShip().setStatus(true);
                 locations.get(7).setComplete(true);
                 break;
         }

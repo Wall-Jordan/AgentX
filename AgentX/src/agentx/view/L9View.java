@@ -6,13 +6,10 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L0View.ship1;
-import static agentx.view.L20View.ship3;
 import agentx.view.ViewInterface.View;
 import static java.lang.Math.abs;
 import java.util.ArrayList;
@@ -67,8 +64,8 @@ public class L9View extends View {
 
                     }
 
-                    InventoryControl.AddFuel1(fuel);
-                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L2View.java", pce.getMessage());
@@ -77,8 +74,8 @@ public class L9View extends View {
                 break;
             case "TAKE OFF":
                 int currentYear = 1945;
-                boolean shipFixed = ship1.getStatus();
-                double shipFuel = ship1.fuel.getGallons();
+                boolean shipFixed = AgentX.getPlayer().getTimeShip().getStatus();
+                double shipFuel = AgentX.getPlayer().fuelContainer.getGallons();
                 if (!shipFixed) {
                     console.println("You can not take off. Your ship needs fixed.");
                     return true;
@@ -125,6 +122,8 @@ public class L9View extends View {
                     if (traveled == true) {
                         this.console.println("You are now in " + year + ".");
                         locations.get(9).setComplete(true);
+                        AgentX.getPlayer().fuelContainer.setGallons(0.0);
+                        AgentX.getPlayer().getTimeShip().setStatus(false);
                         return true;
 
                     } else if (needFuel) {

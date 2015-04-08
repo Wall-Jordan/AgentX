@@ -140,19 +140,9 @@ public class InventoryControl {
         return weapons;
     }
 
-    public static void AddFuel1(double gallons) {
-        double currentFuel = L0View.ship1.fuel.getGallons();
+    public static void AddFuel(double gallons) {
+        double currentFuel = AgentX.getPlayer().fuelContainer.getGallons();
         double newFuel = currentFuel + gallons;
-        L0View.ship1.fuel.setGallons(newFuel);
-    }
-    public static void AddFuel2(double gallons) {
-        double currentFuel = L10View.ship2.fuel.getGallons();
-        double newFuel = currentFuel + gallons;
-        L10View.ship2.fuel.setGallons(newFuel);
-    }
-    public static void AddFuel3(double gallons) {
-        double currentFuel = L20View.ship3.fuel.getGallons();
-        double newFuel = currentFuel + gallons;
-        L20View.ship3.fuel.setGallons(newFuel);
+        AgentX.getPlayer().fuelContainer.setGallons(newFuel);
     }
 }

@@ -5,14 +5,13 @@
 // */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import static agentx.control.InventoryControl.getDrillBit;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
-import agentx.model.FuelContainer;
 import agentx.model.Location;
-import static agentx.view.L20View.ship3;
 import static java.lang.Math.abs;
 import java.util.ArrayList;
 
@@ -67,8 +66,8 @@ public class L29View extends ViewInterface.View {
                         locations.get(29).setFuel(0);
 
                     }
-                    InventoryControl.AddFuel3(fuel);
-                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L29View.java", pce.getMessage());
@@ -77,8 +76,8 @@ public class L29View extends ViewInterface.View {
                 break;
             case "TAKE OFF":
                 int currentYear = 2046;
-                boolean shipFixed = ship3.getStatus();
-                double shipFuel = ship3.fuel.getGallons();
+                boolean shipFixed = AgentX.getPlayer().getTimeShip().getStatus();
+                double shipFuel = AgentX.getPlayer().fuelContainer.getGallons();
                 if (!shipFixed) {
                     console.println("You can not take off. Your ship needs fixed.");
                     return true;
@@ -125,6 +124,7 @@ public class L29View extends ViewInterface.View {
                     if (traveled == true) {
                         this.console.println("You are now in " + year + ".");
                         locations.get(29).setComplete(true);
+                        AgentX.getPlayer().fuelContainer.setGallons(0.0);
                         return true;
 
                     } else if (needFuel) {

@@ -6,14 +6,10 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
-import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L10View.ship2;
-import static agentx.view.L20View.ship3;
 import agentx.view.ViewInterface.View;
 import static java.lang.Math.abs;
 import java.util.ArrayList;
@@ -68,8 +64,8 @@ public class L19View extends View {
 
                     }
 
-                    InventoryControl.AddFuel2(fuel);
-                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L18View.java", pce.getMessage());
@@ -77,8 +73,8 @@ public class L19View extends View {
                 break;
             case "TAKE OFF":
                 int currentYear = 3097;
-                boolean shipFixed = ship2.getStatus();
-                double shipFuel = ship2.fuel.getGallons();
+                boolean shipFixed = AgentX.getPlayer().getTimeShip().getStatus();
+                double shipFuel = AgentX.getPlayer().fuelContainer.getGallons();
                 if (!shipFixed) {
                     console.println("You can not take off. Your ship needs fixed.");
                     return true;
@@ -125,6 +121,8 @@ public class L19View extends View {
                     if (traveled == true) {
                         this.console.println("You are now in " + year + ".");
                         locations.get(19).setComplete(true);
+                        AgentX.getPlayer().fuelContainer.setGallons(0.0);
+                        AgentX.getPlayer().getTimeShip().setStatus(false);
                         return true;
 
                     } else if (needFuel) {

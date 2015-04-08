@@ -22,21 +22,10 @@ public class GameBoardView extends View {
     
     public GameBoardView() {
         super("");
+        this.displayGameBoard();
     }
 
-    @Override
-    public void display() {
 
-        String value;
-        boolean done = false;
-
-        do {
-            displayGameBoard();
-            value = this.getInput();
-            done = this.doAction(value);
-
-        } while (!done);
-    }
 
     public void displayGameBoard() {
         console.println("                           Agent X Gameboard          ");
@@ -141,6 +130,7 @@ public class GameBoardView extends View {
                         number += 1;
                         locations.get(number).setActive(true);
                         locations.get(number).setVisited(true);
+                        AgentX.getPlayer().setLocation(number);
                         }
                         break;
                     case (10):
@@ -187,6 +177,7 @@ public class GameBoardView extends View {
                         number += 1;
                         locations.get(number).setActive(true);
                         locations.get(number).setVisited(true);
+                        AgentX.getPlayer().setLocation(number);
                         }
                         break;
                     case (20):
@@ -248,6 +239,7 @@ public class GameBoardView extends View {
                 console.println("Invalid input. Please try again.");
                 break;
         }
+        this.displayGameBoard();
         return false;
     }
 

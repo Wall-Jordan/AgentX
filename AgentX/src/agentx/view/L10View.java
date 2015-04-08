@@ -21,7 +21,6 @@ import java.util.ArrayList;
  */
 public class L10View extends View {
 
-    public static TimeShip ship2 = new TimeShip();
     public L10View() {
         super("\nYou crashed outside an old school."
                 + "\n****************************************"
@@ -76,8 +75,8 @@ public class L10View extends View {
                        
                     } 
 
-                    InventoryControl.AddFuel2(fuel);
-                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship2.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
                     
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L10View.java", pce.getMessage());

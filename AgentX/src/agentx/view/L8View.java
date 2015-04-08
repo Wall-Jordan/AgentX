@@ -6,10 +6,8 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.bosses;
 import agentx.control.InventoryControl;
-import agentx.control.ProgramControl;
 import agentx.control.PuzzleControl;
 import static agentx.control.PuzzleControl.bossAttack;
 import static agentx.control.PuzzleControl.calcBossDamage;
@@ -17,7 +15,6 @@ import static agentx.control.PuzzleControl.calcPlayerAttack;
 import static agentx.control.PuzzleControl.calcPlayerDamage;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L0View.ship1;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -71,8 +68,8 @@ public class L8View extends View {
                         locations.get(8).setFuel(0);
 
                     }
-                    InventoryControl.AddFuel1(fuel);
-                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L2View.java", pce.getMessage());

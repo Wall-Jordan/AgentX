@@ -6,12 +6,10 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import agentx.model.TimeShip;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -20,8 +18,6 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class L0View extends View {
-
-    public static TimeShip ship1 = new TimeShip();
 
     public L0View() {
         super("\nYou crashed into a construction site.\n"
@@ -78,8 +74,8 @@ public class L0View extends View {
                             fuel = locations.get(0).getFuel();
                             locations.get(0).setFuel(0);
                         }
-                        InventoryControl.AddFuel1(fuel);
-                        console.println("You collected " + fuel + " gallons of fuel. You now have " + ship1.fuel.getGallons() + " gallons of fuel.");
+                        InventoryControl.AddFuel(fuel);
+                        console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
                     } catch (PuzzleControlExceptions pce) {
                         ErrorView.display("L0View.java", pce.getMessage());
                     }

@@ -44,8 +44,6 @@ public class GameControl {
         GameBoardControl.createLocations();
         game.setLocations(GameBoardControl.getLocations());
 
-        GameBoardView gameBoardView = new GameBoardView();
-
     }
     public static void addStamina(int staminaAdd){
         int stamina = AgentX.getPlayer().getStamina();

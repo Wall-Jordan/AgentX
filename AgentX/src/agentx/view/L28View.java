@@ -16,7 +16,6 @@ import static agentx.control.PuzzleControl.calcPlayerAttack;
 import static agentx.control.PuzzleControl.calcPlayerDamage;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import static agentx.view.L20View.ship3;
 import java.util.ArrayList;
 
 /**
@@ -71,8 +70,8 @@ public class L28View extends ViewInterface.View {
 
                     }
 
-                    InventoryControl.AddFuel3(fuel);
-                    console.println("You collected " + fuel + " gallons of fuel. You now have " + ship3.fuel.getGallons() + " gallons of fuel.");
+                    InventoryControl.AddFuel(fuel);
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L28View.java", pce.getMessage());

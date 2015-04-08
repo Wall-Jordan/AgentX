@@ -18,6 +18,7 @@ public class Player implements Serializable {
     private int stamina = 40;
     private double health = 15;
     private int location = 0;
+    private TimeShip timeShip = new TimeShip();
     public Backpack backpack = new Backpack();
     public WeaponsBelt weaponsBelt = new WeaponsBelt();
     public FuelContainer fuelContainer = new FuelContainer();
@@ -55,6 +56,14 @@ public class Player implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public TimeShip getTimeShip() {
+        return timeShip;
+    }
+
+    public void setTimeShip(TimeShip timeShip) {
+        this.timeShip = timeShip;
     }
 
     @Override
