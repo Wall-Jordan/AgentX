@@ -6,10 +6,14 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import agentx.control.GameControl;
+import agentx.model.Location;
 import agentx.view.ViewInterface.View;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
+import agentx.view.GameBoardView;
 
 /**
  *
@@ -71,7 +75,8 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
-
+        
+        GameBoardControl.createLocations();
         GameBoardView gameBoard = new GameBoardView();
         gameBoard.display();
 

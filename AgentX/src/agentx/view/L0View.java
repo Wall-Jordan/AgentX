@@ -35,7 +35,7 @@ public class L0View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.getLocations();
+        ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {

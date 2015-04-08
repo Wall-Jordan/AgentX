@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import agentx.model.Location;
 import agentx.view.ViewInterface.View;
@@ -16,9 +17,9 @@ import java.util.ArrayList;
  */
 public class GameBoardView extends View {
 
-    ArrayList<Location> locations = GameBoardControl.getLocations();
-    public int number = 0;
-
+    ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
+    private int number = AgentX.getPlayer().getLocation();
+    
     public GameBoardView() {
         super("");
     }
@@ -81,6 +82,7 @@ public class GameBoardView extends View {
                     number += 1;
                     locations.get(number).setActive(true);
                     locations.get(number).setVisited(true);
+                    AgentX.getPlayer().setLocation(number);
                 }
                 break;
             case "B":
@@ -88,6 +90,7 @@ public class GameBoardView extends View {
                     locations.get(number).setActive(false);
                     number -= 1;
                     locations.get(number).setActive(true);
+                    AgentX.getPlayer().setLocation(number);
                 } else {
                     console.println("If you go back any farther you may run into space time paradox's.");
                 }
@@ -133,11 +136,11 @@ public class GameBoardView extends View {
                     case (9):
                         L9View l9View = new L9View();
                         l9View.display();
-                        if (locations.get(number).isComplete()) {
-                            locations.get(number).setActive(false);
-                            number += 1;
-                            locations.get(number).setActive(true);
-                            locations.get(number).setVisited(true);
+                        if (locations.get(number).isComplete()){
+                        locations.get(number).setActive(false);
+                        number += 1;
+                        locations.get(number).setActive(true);
+                        locations.get(number).setVisited(true);
                         }
                         break;
                     case (10):
@@ -179,11 +182,11 @@ public class GameBoardView extends View {
                     case (19):
                         L19View l19View = new L19View();
                         l19View.display();
-                        if (locations.get(number).isComplete()) {
-                            locations.get(number).setActive(false);
-                            number += 1;
-                            locations.get(number).setActive(true);
-                            locations.get(number).setVisited(true);
+                        if (locations.get(number).isComplete()){
+                        locations.get(number).setActive(false);
+                        number += 1;
+                        locations.get(number).setActive(true);
+                        locations.get(number).setVisited(true);
                         }
                         break;
                     case (20):
@@ -225,7 +228,7 @@ public class GameBoardView extends View {
                     case (29):
                         L29View l29View = new L29View();
                         l29View.display();
-                        if (locations.get(number).isComplete()) {
+                        if (locations.get(number).isComplete()){
                             GameEndView gameEndView = new GameEndView();
                             gameEndView.display();
                         }
@@ -235,6 +238,7 @@ public class GameBoardView extends View {
             case "M":
                 MainMenuView mainMenu = new MainMenuView();
                 mainMenu.display();
+                AgentX.getCurrentGame().setLocations(locations);
                 break;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -246,4 +250,22 @@ public class GameBoardView extends View {
         }
         return false;
     }
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+    
+    
 }

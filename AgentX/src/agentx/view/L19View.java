@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
@@ -36,7 +37,7 @@ public class L19View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.getLocations();
+        ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {

@@ -31,11 +31,6 @@ public class GameBoardControl {
         GameBoardControl.locations = locations;
     }
 
-    public static GameBoard createGameBoard() throws GameBoardControlExceptions {
-        createLocations();
-        Object[][] gameBoard = new Object[3][10];
-        return null;
-    }
 
     public static void moveActorsToStartingLocation(GameBoard gameBoard) {
         console.println("Move actors to starting locatinon");
@@ -50,11 +45,6 @@ public class GameBoardControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private static void assignScenesToBlock(GameBoard gameBoard, Scene[] scenes) {
-        Location[][] locations = gameBoard.getLocations();
-
-        //   locations[0][0].setBlock(scenes[SectionOne.drill.ordinal()]);
-    }
     public static ArrayList<Boss> bosses = GameControl.createBossList();
     // public Location(Boolean visited, Boolean active, Object boss, int puzzle, String description, Double fuel)    
     public static ArrayList<Location> createLocations() {
@@ -119,6 +109,8 @@ public class GameBoardControl {
         locations.add(new Location(false, false, 5, false));//Location 29
         locations.get(29).addToDoListItem("Take Off");
         GameBoardControl.locations = locations;
+        AgentX.getCurrentGame().setLocations(locations);
         return locations;
     }
+    
 }

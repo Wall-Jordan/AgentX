@@ -34,7 +34,7 @@ public class L2View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.getLocations();
+        ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -48,7 +48,6 @@ public class L2View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(2).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -59,6 +58,7 @@ public class L2View extends View {
                 locations.get(2).setCollectItems(null);
                 locations.get(2).removeToDoListItem("Collect Knife");
                 AgentX.getPlayer().weaponsBelt.addWeapon("Knife", 3);
+                locations.get(2).setComplete(true);
                 }else{
                     console.println("You already have the knife.");
                 }

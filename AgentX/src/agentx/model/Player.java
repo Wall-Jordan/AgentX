@@ -17,7 +17,7 @@ public class Player implements Serializable {
     private String name;
     private int stamina = 40;
     private double health = 15;
-    private int location;
+    private int location = 0;
     public Backpack backpack = new Backpack();
     public WeaponsBelt weaponsBelt = new WeaponsBelt();
     public FuelContainer fuelContainer = new FuelContainer();

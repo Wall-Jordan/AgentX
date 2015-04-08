@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.AgentX;
 import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -35,7 +36,7 @@ public class L9View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.getLocations();
+        ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {
