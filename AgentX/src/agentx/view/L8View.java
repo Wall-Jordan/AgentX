@@ -41,7 +41,7 @@ public class L8View extends View {
     
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {

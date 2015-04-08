@@ -37,7 +37,7 @@ public class L1View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String value = (String) obj;
         value = value.toUpperCase();
 

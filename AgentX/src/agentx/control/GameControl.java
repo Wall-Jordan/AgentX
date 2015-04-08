@@ -41,10 +41,8 @@ public class GameControl {
 
         game.setPlayer(player);
 
-        GameBoard gameBoard = new GameBoard();
-        game.setGameBoard(gameBoard);
-
-        GameBoardControl.moveActorsToStartingLocation(gameBoard);
+        GameBoardControl.createLocations();
+        game.setLocations(GameBoardControl.getLocations());
 
         GameBoardView gameBoardView = new GameBoardView();
 
@@ -113,6 +111,7 @@ public class GameControl {
             throw new GameControlExceptions(e.getMessage());
         }
         AgentX.setCurrentGame(game);
+        AgentX.setPlayer(game.getPlayer());
     }
 
     public static ArrayList<Tool> createToolList() {

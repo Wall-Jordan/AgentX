@@ -34,7 +34,7 @@ public class L21View extends ViewInterface.View {
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {

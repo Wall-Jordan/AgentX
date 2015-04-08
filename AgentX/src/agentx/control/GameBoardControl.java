@@ -21,7 +21,15 @@ import java.util.ArrayList;
 public class GameBoardControl {
 
     protected final static PrintWriter console = AgentX.getOutFile();
-    public static ArrayList<Location> locations = createLocations();
+    private static ArrayList<Location> locations;
+
+    public static ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public static void setLocations(ArrayList<Location> locations) {
+        GameBoardControl.locations = locations;
+    }
 
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
         createLocations();
@@ -110,6 +118,7 @@ public class GameBoardControl {
         locations.get(28).addToDoListItem("Kill Chaotica");
         locations.add(new Location(false, false, 5, false));//Location 29
         locations.get(29).addToDoListItem("Take Off");
+        GameBoardControl.locations = locations;
         return locations;
     }
 }
