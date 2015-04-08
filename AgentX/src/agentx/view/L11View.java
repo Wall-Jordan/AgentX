@@ -37,7 +37,7 @@ public class L11View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -83,7 +83,7 @@ public class L11View extends View {
                     if (test == true) {
                         this.console.println("\n\tCORRECT! You may now proceed.");
                         locations.get(11).setComplete(true);
-                        return true;
+                        break;
                     } else {
                         this.console.println("\n\tWRONG!!! Please try again.");
                         return false;

@@ -31,6 +31,7 @@ public class L28View extends ViewInterface.View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
+                + "\nFIGHT - Fight Chaotica"
                 + "\nI  - Instructions"
                 + "\nV  - View Gameboard"
                 + "\n****************************************\n");
@@ -39,7 +40,7 @@ public class L28View extends ViewInterface.View {
     @Override
     public boolean doAction(Object obj){
         ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        locations = GameBoardControl.getLocations();
         String input = (String) obj;
         
         switch (input) {

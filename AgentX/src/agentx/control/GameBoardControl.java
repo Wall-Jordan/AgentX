@@ -21,7 +21,15 @@ import java.util.ArrayList;
 public class GameBoardControl {
 
     protected final static PrintWriter console = AgentX.getOutFile();
-    public static ArrayList<Location> locations = createLocations();
+    private static ArrayList<Location> locations;
+
+    public static ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public static void setLocations(ArrayList<Location> locations) {
+        GameBoardControl.locations = locations;
+    }
 
     public static GameBoard createGameBoard() throws GameBoardControlExceptions {
         createLocations();
@@ -66,7 +74,7 @@ public class GameBoardControl {
         locations.get(5).addToDoListItem("Use Hammer on Rock");
         locations.get(5).setCollectItems("ROCK");
         locations.add(new Location(false, false, 8, false));//Location 6
-        locations.get(6).addToDoListItem("Collect food.");
+        locations.get(6).addToDoListItem("Collect Food.");
         locations.get(6).setCollectItems("FOOD");
         locations.add(new Location(false, false, 0, false));//Location 7
         locations.get(7).addToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
@@ -82,7 +90,7 @@ public class GameBoardControl {
         locations.get(12).setCollectItems("WELDER");
         locations.add(new Location(false, false, 3, false));//Location 13
         locations.add(new Location(false, false, 3, false));//Location 14
-        locations.get(14).addToDoListItem("Collect grenades");
+        locations.get(14).addToDoListItem("Collect Grenades");
         locations.get(14).setCollectItems("GRENADES");
         locations.add(new Location(false, false, 3, false));//Location 15
         locations.get(15).addToDoListItem("Collect Food");
@@ -110,6 +118,7 @@ public class GameBoardControl {
         locations.get(28).addToDoListItem("Kill Chaotica");
         locations.add(new Location(false, false, 5, false));//Location 29
         locations.get(29).addToDoListItem("Take Off");
+        GameBoardControl.locations = locations;
         return locations;
     }
 }

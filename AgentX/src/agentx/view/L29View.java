@@ -38,7 +38,7 @@ public class L29View extends ViewInterface.View {
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -75,7 +75,7 @@ public class L29View extends ViewInterface.View {
                 }
 
                 break;
-            case "TAKEOFF":
+            case "TAKE OFF":
                 int currentYear = 2046;
                 boolean shipFixed = ship3.getStatus();
                 double shipFuel = ship3.fuel.getGallons();

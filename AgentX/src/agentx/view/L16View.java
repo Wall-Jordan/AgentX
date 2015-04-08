@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -33,7 +34,7 @@ public class L16View extends View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
         
         switch (input) {

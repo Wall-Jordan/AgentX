@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author Jordan
  */
 public class MainMenuView extends View {
-    
+
     protected final static PrintWriter console = AgentX.getOutFile();
 
     public MainMenuView() {
@@ -26,7 +26,9 @@ public class MainMenuView extends View {
                 + "\n\t*****************************************************"
                 + "\n\t\tN - Start New Game"
                 + "\n\t\tL - Load Game"
+                + "\n\t\tS - Save Game"
                 + "\n\t\tI - Instructions"
+                + "\n\t\tC - Custom Functions"
                 + "\n\t\tQ - Quit"
                 + "\n\t*****************************************************");
     }
@@ -52,11 +54,17 @@ public class MainMenuView extends View {
                 GameBoardView gameBoard = new GameBoardView();
                 gameBoard.display();
                 break;
+            case 'C':
+                customFunctions();
+                break;
+            case 'S':
+                this.saveGame();
+                break;
             case 'Q':
                 System.exit(0);
             default:
                 console.println("\n Invalid selection, try again!");
-                return false;
+                break;
         }
         return false;
     }
@@ -64,23 +72,22 @@ public class MainMenuView extends View {
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
 
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-        
+        GameBoardView gameBoard = new GameBoardView();
+        gameBoard.display();
 
     }
 
     private void startExistingGame() {
         console.println("Enter file path to save the game to.");
         String filePath = this.getInput();
-        
-        try{
+
+        try {
             GameControl.getSavedGame(filePath);
-        }catch(Exception ex){
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView.java", ex.getMessage());
         }
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        GameBoardView gameBoard = new GameBoardView();
+        gameBoard.display();
     }
 
     private void displayInstructions() {
@@ -88,4 +95,19 @@ public class MainMenuView extends View {
         instructionsView.display();
     }
 
+    private void customFunctions() {
+        console.println("You have called the custom functions view."
+                + "\nRight now that view is unavailable.");
+    }
+     private void saveGame() {
+        this.console.println("Enter the file path you want to save the game at.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(AgentX.getCurrentGame(), filePath);
+            
+        } catch (Exception ex) {
+            ErrorView.display("GameMenuView", ex.getMessage());
+        }
+    }
 }

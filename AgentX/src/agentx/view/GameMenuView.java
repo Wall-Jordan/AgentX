@@ -89,9 +89,6 @@ public class GameMenuView extends View{
             case "M":
                 this.mainMenu();
                 return true;
-            case "S":
-                this.saveGame();
-                break;
             case "II":
                 L10View l10view = new L10View();
                 l10view.display();
@@ -183,18 +180,6 @@ public class GameMenuView extends View{
 
     private void mainMenu() {
         console.println("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void saveGame() {
-        this.console.println("Enter the file path you want to save the game at.");
-        String filePath = this.getInput();
-        
-        try {
-            GameControl.saveGame(AgentX.getCurrentGame(), filePath);
-            
-        } catch (Exception ex) {
-            ErrorView.display("GameMenuView", ex.getMessage());
-        }
     }
 
     private void drillInstructionsView() {

@@ -41,10 +41,8 @@ public class GameControl {
 
         game.setPlayer(player);
 
-        GameBoard gameBoard = new GameBoard();
-        game.setGameBoard(gameBoard);
-
-        GameBoardControl.moveActorsToStartingLocation(gameBoard);
+        GameBoardControl.createLocations();
+        game.setLocations(GameBoardControl.getLocations());
 
         GameBoardView gameBoardView = new GameBoardView();
 
@@ -53,6 +51,11 @@ public class GameControl {
         int stamina = AgentX.getPlayer().getStamina();
         int newStamina = stamina + staminaAdd;
         AgentX.getPlayer().setStamina(newStamina);
+    }
+    public static void addHealth(double healthAdd){
+        double health = AgentX.getPlayer().getHealth();
+        double newHealth = health + healthAdd;
+        AgentX.getPlayer().setHealth(newHealth);
     }
 
     public static Inventory[] createInventoryList() {
@@ -108,6 +111,7 @@ public class GameControl {
             throw new GameControlExceptions(e.getMessage());
         }
         AgentX.setCurrentGame(game);
+        AgentX.setPlayer(game.getPlayer());
     }
 
     public static ArrayList<Tool> createToolList() {

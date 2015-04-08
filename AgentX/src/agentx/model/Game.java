@@ -6,6 +6,7 @@
 package agentx.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -15,7 +16,15 @@ import java.util.Objects;
 public class Game implements Serializable {
 
     public Player player;
-    private GameBoard gameBoard;
+    private ArrayList<Location> locations;
+
+    public ArrayList<Location> getLocations() {
+        return locations;
+    }
+
+    public void setLocations(ArrayList<Location> locations) {
+        this.locations = locations;
+    }
     
            
     public Game() {
@@ -29,11 +38,5 @@ public class Game implements Serializable {
         this.player = player;
     }
 
-    public GameBoard getGameBoard() {
-        return gameBoard;
-    }
-
-    public void setGameBoard(GameBoard gameBoard) {
-        this.gameBoard = gameBoard;
-    }
+   
 }

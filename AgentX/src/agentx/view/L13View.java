@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -48,7 +49,7 @@ public class L13View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -62,7 +63,6 @@ public class L13View extends View {
                 otherCommands.display();
                 break;
             case "V":
-                locations.get(13).setComplete(true);
                 return true;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -91,7 +91,7 @@ public class L13View extends View {
                 console.println("\tCongratulations you welded the puzzle together!"
                     + "\n\tThe puzzle says: 2046");
                 locations.get(13).setComplete(true);
-            return true;
+            break;
         }
 
         return false;

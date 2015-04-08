@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class GameBoardView extends View {
 
-    ArrayList<Location> locations = GameBoardControl.locations;
+    ArrayList<Location> locations = GameBoardControl.getLocations();
     public int number = 0;
 
     public GameBoardView() {
@@ -68,7 +68,7 @@ public class GameBoardView extends View {
             }
         }
     }
-
+    
     @Override
     public boolean doAction(Object obj) {
         String selection = (String) obj;

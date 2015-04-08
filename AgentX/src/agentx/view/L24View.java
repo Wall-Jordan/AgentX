@@ -35,7 +35,7 @@ public class L24View extends ViewInterface.View {
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.locations;
+        locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -52,9 +52,14 @@ public class L24View extends ViewInterface.View {
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
             case "T3 SUPPLYBOX":
+                if(locations.get(24).getCollectItems() != null){
                 console.println("Finally some food! I've traveled through years and not eaten "
                         + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
                 GameControl.addStamina(20);
+                GameControl.addHealth(20);
+                locations.get(24).setCollectItems(null);
+                locations.get(24).removeToDoListItem("Open SupplyBox (Hint: Use a tool");
+                }
                 break;
             case "V":
                 locations.get(24).setComplete(true);

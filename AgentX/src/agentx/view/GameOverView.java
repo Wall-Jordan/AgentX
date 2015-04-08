@@ -28,10 +28,11 @@ public class GameOverView extends View{
             case "E":
                 MainMenuView mainMenuView = new MainMenuView();
                 mainMenuView.display();
-                break;
+                return true;
             default:
                 console.println("\n Invalid selection, try again!");
+                break;
         }
-        return true;
+        return false;
     }
 }

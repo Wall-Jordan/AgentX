@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.control.GameBoardControl;
+import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
@@ -31,7 +32,7 @@ public class L6View extends View{
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = GameBoardControl.locations;
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -50,6 +51,19 @@ public class L6View extends View{
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
+                break;
+            case "C FOOD":
+                if(locations.get(6).getCollectItems() != null)
+                {
+                GameControl.addStamina(20);
+                GameControl.addHealth(20);
+                locations.get(6).removeToDoListItem("Collect Food");
+                locations.get(6).setCollectItems(null);
+                console.println("Mmm, that was some good food.");
+                }else{
+                    console.println("You already ate the food.");
+                }
+                
                 break;
             case "T4":
                 try {

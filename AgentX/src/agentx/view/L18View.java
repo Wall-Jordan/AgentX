@@ -6,6 +6,7 @@
 package agentx.view;
 
 import agentx.AgentX;
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 public class L18View extends View {
 
     public L18View() {
-        super("\nYou're back at your ship. there appears to be a hole in your fuek tank."
+        super("\nYou're back at your time machine. there appears to be a hole in your fuek tank."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nO  - Other commands menu"
@@ -33,7 +34,7 @@ public class L18View extends View {
     
     @Override
     public boolean doAction(Object obj){
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
         
         switch (input) {
@@ -48,7 +49,7 @@ public class L18View extends View {
                 break;
             case "V":
                 return true;
-            case "T2 SHIP":
+            case "T2 TIME MACHINE":
                 if(!L10View.ship2.getStatus())
                 {
                     L10View.ship2.setStatus(true);

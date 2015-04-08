@@ -5,6 +5,7 @@
  */
 package agentx.view;
 
+import agentx.control.GameBoardControl;
 import static agentx.control.GameBoardControl.createLocations;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
@@ -35,7 +36,7 @@ public class L19View extends View {
 
     @Override
     public boolean doAction(Object obj) {
-        ArrayList<Location> locations = createLocations();
+        ArrayList<Location> locations = GameBoardControl.getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -73,7 +74,7 @@ public class L19View extends View {
                     ErrorView.display("L18View.java", pce.getMessage());
                 }
                 break;
-            case "TAKEOFF":
+            case "TAKE OFF":
                 int currentYear = 3097;
                 boolean shipFixed = ship2.getStatus();
                 double shipFuel = ship2.fuel.getGallons();
