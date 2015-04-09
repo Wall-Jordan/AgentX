@@ -25,16 +25,15 @@ public class L21View extends ViewInterface.View {
                 + "\nthat there are bodies everywhere. Maybe this is where Chaotica is right now!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {

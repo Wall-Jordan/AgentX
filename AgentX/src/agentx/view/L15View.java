@@ -25,17 +25,16 @@ public class L15View extends View {
                 + "\nThere's a lot of rotten food out in the buffet but the fridge appears to still be working."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
-                + "\nV - Return to Map"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
-    
+
     @Override
-    public boolean doAction(Object obj){
+    public boolean doAction(Object obj) {
         ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
-        
+
         switch (input) {
             case "TL":
                 for (String item : locations.get(15).getToDoList()) {
@@ -50,15 +49,20 @@ public class L15View extends View {
                 locations.get(15).setComplete(true);
                 return true;
             case "C FOOD":
-                if(locations.get(15).getCollectItems() != null){
+                if (locations.get(15).getCollectItems() != null) {
                     locations.get(15).setCollectItems(null);
                     locations.get(15).removeToDoListItem("Collect Food");
                     GameControl.addStamina(20);
                     GameControl.addHealth(20);
                     console.println("Mmm, that food was delicious!");
-                }else{
+                } else {
                     console.println("You already ate the food");
                 }
+                break;
+            case "SEA FOOD":
+                GameControl.addStamina(40);
+                GameControl.addHealth(40);
+                console.println("Mmm, that was some good food.");
                 break;
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
@@ -84,7 +88,7 @@ public class L15View extends View {
                 }
                 break;
         }
-        
+
         return false;
     }
 }

@@ -6,12 +6,10 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
 import agentx.control.InventoryControl;
 import agentx.control.PuzzleControl;
 import agentx.exceptions.PuzzleControlExceptions;
 import agentx.model.Location;
-import agentx.model.TimeShip;
 import agentx.view.ViewInterface.View;
 import java.util.ArrayList;
 
@@ -25,9 +23,8 @@ public class L10View extends View {
         super("\nYou crashed outside an old school."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
-                + "\nI - Instructions"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
     
@@ -59,6 +56,7 @@ public class L10View extends View {
                 locations.get(10).removeToDoListItem("Collect Ray Gun");
                 AgentX.getPlayer().weaponsBelt.addWeapon("Ray Gun", 4);
                 locations.get(10).setComplete(true);
+                console.println("You acquired Chaotica's Ray Gun! Better save it for evidence!");
                 }else{
                     console.println("You already took the ray gun");
                 }

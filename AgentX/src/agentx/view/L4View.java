@@ -22,10 +22,9 @@ public class L4View extends View{
         super("At the construction site you lift up a board and find a hammer!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
-                + "\nI - Instructions"
-                + "\n****************************************");
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
+                + "\n****************************************\n");
     }
 
     @Override

@@ -6,40 +6,40 @@
 package agentx.view;
 
 import agentx.view.ViewInterface.View;
+import static java.lang.System.exit;
 
 /**
  *
  * @author matiasmikkola
  */
 public class GameEndView extends View {
-    
+
     public GameEndView() {
         super("");
     }
-    
+
     @Override
-        public void display() {
-            String value;
-            boolean done = false;
+    public void display() {
+        String value;
+        boolean done = false;
 
-            do {
+        do {
 
-                console.println("\n"
-                + "***************************************\n"
-                + "* CONGRATULATIONS, YOU HAVE DEFEATED  *\n"
-                + "*     CHAOTICA, AND WON THE GAME!     *\n"
-                + "*         GOOD JOB AGENT!!           *\n"
-                + "***************************************");
-                value = this.getInput();
-                done = this.doAction(value);
+            console.println("\n"
+                    + "***************************************\n"
+                    + "* CONGRATULATIONS, YOU HAVE DEFEATED  *\n"
+                    + "*     CHAOTICA, AND WON THE GAME!     *\n"
+                    + "*         GOOD JOB AGENT!!           *\n"
+                    + "***************************************"
+                    + "\nE - To Exit");
+            value = this.getInput();
+            done = this.doAction(value);
 
-            } while (!done);
-        }
-    
-    
-    
+        } while (!done);
+    }
+
     @Override
-    
+
     public boolean doAction(Object obj) {
         String value = (String) obj;
 
@@ -53,10 +53,10 @@ public class GameEndView extends View {
             default:
                 console.println("");
         }
-        return true;
+        return false;
     }
 
-    private boolean displayExit() {
-        return false;
+    private void displayExit() {
+        exit(0);
     }
 }

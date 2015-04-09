@@ -45,8 +45,7 @@ public class GameBoardControl {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static ArrayList<Boss> bosses = GameControl.createBossList();
-    // public Location(Boolean visited, Boolean active, Object boss, int puzzle, String description, Double fuel)    
+    public static ArrayList<Boss> bosses = GameControl.createBossList();    
     public static ArrayList<Location> createLocations() {
         ArrayList<Location> locations = new ArrayList<>();
         locations.add(new Location(true, true, 0, false));//Location 0
@@ -56,44 +55,44 @@ public class GameBoardControl {
         locations.add(new Location(false, false, 3, false));//Location 2
         locations.get(2).addToDoListItem("Collect Knife");
         locations.get(2).setCollectItems("KNIFE");
-        locations.add(new Location(false, false, 4, false));//Location 3
-        locations.add(new Location(false, false, 3, false));//Location 4
+        locations.add(new Location(false, false, 7, false));//Location 3
+        locations.add(new Location(false, false, 2, false));//Location 4
         locations.get(4).addToDoListItem("Collect Hammer");
         locations.get(4).setCollectItems("HAMMER");
         locations.add(new Location(false, false, 4, false));//Location 5
         locations.get(5).addToDoListItem("Use Hammer on Rock");
         locations.get(5).setCollectItems("ROCK");
         locations.add(new Location(false, false, 8, false));//Location 6
-        locations.get(6).addToDoListItem("Collect Food.");
+        locations.get(6).addToDoListItem("Collect Food");
         locations.get(6).setCollectItems("FOOD");
         locations.add(new Location(false, false, 0, false));//Location 7
-        locations.get(7).addToDoListItem("Repair Ship (Hint: use a tool that you have collected)");
-        locations.add(new Location(false, false, 0, false));//Location 8
+        locations.get(7).addToDoListItem("Repair Ship (Hint: Use a tool that you have collected)");
+        locations.add(new Location(false, false, 5, false));//Location 8
         locations.get(8).addToDoListItem("Kill Jarik");
-        locations.add(new Location(false, false, 50, false));//Location 9
+        locations.add(new Location(false, false, 1, false));//Location 9
         locations.add(new Location(false, false, 3, false));//Location 10
         locations.get(10).addToDoListItem("Collect Ray Gun");
         locations.get(10).setCollectItems("RAY GUN");
-        locations.add(new Location(false, false, 3, false));//Location 11
-        locations.add(new Location(false, false, 3, false));//Location 12
+        locations.add(new Location(false, false, 0, false));//Location 11
+        locations.add(new Location(false, false, 1, false));//Location 12
         locations.get(12).addToDoListItem("Collect Welder");
         locations.get(12).setCollectItems("WELDER");
-        locations.add(new Location(false, false, 3, false));//Location 13
-        locations.add(new Location(false, false, 3, false));//Location 14
+        locations.add(new Location(false, false, 0.5, false));//Location 13
+        locations.add(new Location(false, false, 0, false));//Location 14
         locations.get(14).addToDoListItem("Collect Grenades");
         locations.get(14).setCollectItems("GRENADES");
-        locations.add(new Location(false, false, 3, false));//Location 15
+        locations.add(new Location(false, false, 12, false));//Location 15
         locations.get(15).addToDoListItem("Collect Food");
         locations.get(15).setCollectItems("FOOD");
-        locations.add(new Location(false, false, 7, false));//Location 16
+        locations.add(new Location(false, false, 0, false));//Location 16
         locations.add(new Location(false, false, 3, false));//Location 17
         locations.add(new Location(false, false, 5, false));//Location 18
         locations.get(18).addToDoListItem("Fix your Ship");
-        locations.add(new Location(false, false, 30, false));//Location 19
-        locations.add(new Location(false, false, 2, false));//Location 20
+        locations.add(new Location(false, false, 1, false));//Location 19
+        locations.add(new Location(false, false, 0, false));//Location 20
         locations.add(new Location(false, false, 1, false));//Location 21
-        locations.add(new Location(false, false, 2, false));//Location 22
-        locations.add(new Location(false, false, 1, false));//Location 23
+        locations.add(new Location(false, false, .5, false));//Location 22
+        locations.add(new Location(false, false, 0, false));//Location 23
         locations.get(23).addToDoListItem("Open ToolBox (Hint: Use a tool)");
         locations.get(23).addToDoListItem("Collect Wrench");
         locations.get(23).setCollectItems("Wrench");
@@ -106,7 +105,7 @@ public class GameBoardControl {
         locations.get(27).addToDoListItem("Repair Time Machine (Hint: use a tool that you have collected)");
         locations.add(new Location(false, false, 1, false));//Location 28
         locations.get(28).addToDoListItem("Kill Chaotica");
-        locations.add(new Location(false, false, 5, false));//Location 29
+        locations.add(new Location(false, false, 0, false));//Location 29
         locations.get(29).addToDoListItem("Take Off");
         GameBoardControl.locations = locations;
         AgentX.getCurrentGame().setLocations(locations);

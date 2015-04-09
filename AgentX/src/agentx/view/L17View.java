@@ -28,10 +28,10 @@ public class L17View extends View {
         super("Nazeem is in your way. Show him who's boss!"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
+                + "\nWI - View Weapons Inventory"
                 + "\nFIGHT - Fight Nazeem"
-                + "\nV - Return to Map"
                 + "\n****************************************\n");
     }
     

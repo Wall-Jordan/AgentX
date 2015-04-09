@@ -19,13 +19,11 @@ public class GameBoardView extends View {
 
     ArrayList<Location> locations = AgentX.getCurrentGame().getLocations();
     private int number = AgentX.getPlayer().getLocation();
-    
+
     public GameBoardView() {
         super("");
         this.displayGameBoard();
     }
-
-
 
     public void displayGameBoard() {
         console.println("                           Agent X Gameboard          ");
@@ -35,12 +33,12 @@ public class GameBoardView extends View {
         int timePeriod = 1;
         for (int i = 0; i < 30; i++) {
             char display = 'X';
-            if (locations.get(i).isActive()){
+            if (locations.get(i).isActive()) {
                 display = 'O';
-            } else if (locations.get(i).isVisited()){
+            } else if (locations.get(i).isVisited()) {
                 display = 'V';
             }
-            
+
             if (i == 0) {
                 console.print("Time Period " + timePeriod + ": | " + display + " | ");
                 timePeriod++;
@@ -52,30 +50,32 @@ public class GameBoardView extends View {
                 console.print(display);
                 console.print(" | ");
             }
-            if (i == 29){
+            if (i == 29) {
                 console.print("\n                 -   -   -   -   -   -   -   -   -   - ");
                 console.println("\n");
             }
         }
     }
-    
+
     @Override
     public boolean doAction(Object obj) {
         String selection = (String) obj;
         switch (selection) {
             case "F":
-                if (!locations.get(number).isComplete()) {
-                    console.println("\nYou must complete the necessary actions for each location!");
-                } else {
-                    locations.get(number).setActive(false);
-                    number += 1;
-                    locations.get(number).setActive(true);
-                    locations.get(number).setVisited(true);
-                    AgentX.getPlayer().setLocation(number);
-                }
+//                if (!locations.get(number).isComplete()) {
+//                    console.println("\nYou must complete the necessary actions for each location!");
+//                } else {
+                locations.get(number).setActive(false);
+                number += 1;
+                locations.get(number).setActive(true);
+                locations.get(number).setVisited(true);
+                AgentX.getPlayer().setLocation(number);
+//                }
                 break;
             case "B":
-                if (number > 0) {
+                if ((number == 10) || (number == 20)) {
+                    console.println("You can't jump back until you find Chaotica");
+                } else if (number > 0) {
                     locations.get(number).setActive(false);
                     number -= 1;
                     locations.get(number).setActive(true);
@@ -125,12 +125,12 @@ public class GameBoardView extends View {
                     case (9):
                         L9View l9View = new L9View();
                         l9View.display();
-                        if (locations.get(number).isComplete()){
-                        locations.get(number).setActive(false);
-                        number += 1;
-                        locations.get(number).setActive(true);
-                        locations.get(number).setVisited(true);
-                        AgentX.getPlayer().setLocation(number);
+                        if (locations.get(number).isComplete()) {
+                            locations.get(number).setActive(false);
+                            number += 1;
+                            locations.get(number).setActive(true);
+                            locations.get(number).setVisited(true);
+                            AgentX.getPlayer().setLocation(number);
                         }
                         break;
                     case (10):
@@ -172,12 +172,12 @@ public class GameBoardView extends View {
                     case (19):
                         L19View l19View = new L19View();
                         l19View.display();
-                        if (locations.get(number).isComplete()){
-                        locations.get(number).setActive(false);
-                        number += 1;
-                        locations.get(number).setActive(true);
-                        locations.get(number).setVisited(true);
-                        AgentX.getPlayer().setLocation(number);
+                        if (locations.get(number).isComplete()) {
+                            locations.get(number).setActive(false);
+                            number += 1;
+                            locations.get(number).setActive(true);
+                            locations.get(number).setVisited(true);
+                            AgentX.getPlayer().setLocation(number);
                         }
                         break;
                     case (20):
@@ -219,7 +219,7 @@ public class GameBoardView extends View {
                     case (29):
                         L29View l29View = new L29View();
                         l29View.display();
-                        if (locations.get(number).isComplete()){
+                        if (locations.get(number).isComplete()) {
                             GameEndView gameEndView = new GameEndView();
                             gameEndView.display();
                         }
@@ -258,6 +258,5 @@ public class GameBoardView extends View {
     public void setNumber(int number) {
         this.number = number;
     }
-    
-    
+
 }

@@ -25,16 +25,15 @@ public class L26View extends ViewInterface.View {
                 + "It must have been CHAOTICA!!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {

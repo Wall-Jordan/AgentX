@@ -23,9 +23,8 @@ public class L12View extends View {
         super("\nYou're in a tool shop."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
-                + "\nV - Return to Map"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 

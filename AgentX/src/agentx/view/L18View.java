@@ -23,7 +23,6 @@ public class L18View extends View {
         super("\nYou're back at your time machine. there appears to be a hole in your fuek tank."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
                 + "\nI  - Instructions"
                 + "\nV  - Return to Map"
                 + "\n****************************************\n");

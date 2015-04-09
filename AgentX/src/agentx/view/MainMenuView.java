@@ -59,7 +59,8 @@ public class MainMenuView extends View {
                 gameBoard.display();
                 break;
             case 'C':
-                customFunctions();
+                CustomFunctionsView customFunctionsView = new CustomFunctionsView();
+                customFunctionsView.display();
                 break;
             case 'S':
                 this.saveGame();
@@ -75,7 +76,7 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
         GameControl.createNewGame(AgentX.getPlayer());
-        
+
         GameBoardControl.createLocations();
         GameBoardView gameBoard = new GameBoardView();
         gameBoard.display();
@@ -83,16 +84,16 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        console.println("Enter file path to save the game to.");
+        console.println("Enter file path of saved game.");
         String filePath = this.getInput();
 
         try {
             GameControl.getSavedGame(filePath);
+            GameBoardView gameBoard = new GameBoardView();
+            gameBoard.display();
         } catch (Exception ex) {
             ErrorView.display("MainMenuView.java", ex.getMessage());
         }
-        GameBoardView gameBoard = new GameBoardView();
-        gameBoard.display();
     }
 
     private void displayInstructions() {
@@ -104,15 +105,16 @@ public class MainMenuView extends View {
         console.println("You have called the custom functions view."
                 + "\nRight now that view is unavailable.");
     }
-     private void saveGame() {
+
+    private void saveGame() {
         this.console.println("Enter the file path you want to save the game at.");
         String filePath = this.getInput();
-        
+
         try {
             GameControl.saveGame(AgentX.getCurrentGame(), filePath);
-            
+
         } catch (Exception ex) {
-            ErrorView.display("GameMenuView", ex.getMessage());
+            ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
 }

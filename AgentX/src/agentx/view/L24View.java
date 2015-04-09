@@ -6,7 +6,6 @@
 package agentx.view;
 
 import agentx.AgentX;
-import agentx.control.GameBoardControl;
 import agentx.control.GameControl;
 import agentx.control.InventoryControl;
 import static agentx.control.InventoryControl.getDrillBit;
@@ -25,16 +24,15 @@ public class L24View extends ViewInterface.View {
         super("How lucky! There is a box of supplies right next to the toolbox. How convenient.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -50,15 +48,20 @@ public class L24View extends ViewInterface.View {
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
-            case "T3 SUPPLYBOX":
-                if(locations.get(24).getCollectItems() != null){
-                console.println("Finally some food! I've traveled through years and not eaten "
-                        + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
-                GameControl.addStamina(20);
-                GameControl.addHealth(20);
-                locations.get(24).setCollectItems(null);
-                locations.get(24).removeToDoListItem("Open SupplyBox (Hint: Use a tool");
+            case "T3 SUPPLY BOX":
+                if (locations.get(24).getCollectItems() != null) {
+                    console.println("Finally some food! I've traveled through years and not eaten "
+                            + "a thing! I'm gonna eat this snickers right away. Omnomnom! \n");
+                    GameControl.addStamina(20);
+                    GameControl.addHealth(20);
+                    locations.get(24).setCollectItems(null);
+                    locations.get(24).removeToDoListItem("Open SupplyBox (Hint: Use a tool");
                 }
+                break;
+            case "SEA FOOD":
+                GameControl.addStamina(40);
+                GameControl.addHealth(40);
+                console.println("Mmm, that was some good food.");
                 break;
             case "V":
                 locations.get(24).setComplete(true);

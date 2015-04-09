@@ -24,11 +24,10 @@ public class L9View extends View {
         super("You crashed into a construction site.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
-                + "\nV - Return to Map"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\nTAKE OFF - Take Off"
-                + "\n****************************************");
+                + "\n****************************************\n");
     }
 
     @Override
@@ -51,6 +50,10 @@ public class L9View extends View {
             case "I":
                 InstructionsView instructionsView = new InstructionsView();
                 instructionsView.display();
+                break;
+            case "RFO":
+                InventoryControl.AddFuel(50);
+                console.println("You collected " + 50 + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
                 break;
             case "T4":
                 try {

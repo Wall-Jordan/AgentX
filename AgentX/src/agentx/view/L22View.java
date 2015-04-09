@@ -26,15 +26,14 @@ public class L22View extends ViewInterface.View {
                 + "\n****************************************"
                 + "\nTL - Display to do list"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
-                + "\nO  - Other commands menu"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {

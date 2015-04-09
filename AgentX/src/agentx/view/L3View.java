@@ -29,10 +29,9 @@ public class L3View extends View {
                 + "\n chain and blocks 50% of the opponents attack damage."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
-                + "\nI - Instructions"
-                + "\n****************************************");
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
+                + "\n****************************************\n");
     }
 
     @Override

@@ -23,9 +23,8 @@ public class L16View extends View {
         super("\nYou are in the chemistry lab."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
-                + "\nV - Return to Map"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
     

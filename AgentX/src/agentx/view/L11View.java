@@ -28,9 +28,8 @@ public class L11View extends View {
                 + "\nEnter the value of X to proceed."
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
-                + "\nV - Return to Map"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 

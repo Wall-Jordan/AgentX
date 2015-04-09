@@ -24,16 +24,15 @@ public class L27View extends ViewInterface.View {
         super("You walk back to the time machine and notice that it is broken, again. Better fix it.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -53,11 +52,10 @@ public class L27View extends ViewInterface.View {
                 return true;
             case "T1 TIME MACHINE":
                 console.println("You fixed your time machine! Great Wrenching work!");
-                locations.get(0).removeToDoListItem("Repair Time Machine (Hint: use a tool that you have collected)");
+                locations.get(27).removeToDoListItem("Repair Time Machine (Hint: use a tool that you have collected)");
                 AgentX.getPlayer().getTimeShip().setStatus(true);
                 locations.get(27).setComplete(true);
-                break;
-
+                return true;
             case "T4":
                 try {
                     String drillBit = getDrillBit();

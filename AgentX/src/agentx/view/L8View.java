@@ -24,15 +24,14 @@ import java.util.ArrayList;
  */
 public class L8View extends View {
     public L8View() {
-        super("Jarik is in your way. Show him who is boss.\n"
+        super("\nJarik is in your way. Show him who is boss.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
+                + "\nI  - Instructions"
                 + "\nV  - Return to Map"
-                + "\nI - Instructions"
-                + "\nWI - View Weapons"
+                + "\nWI - View Weapons Inventory"
                 + "\nFIGHT - Fight Jarik"
-                + "\n****************************************");
+                + "\n****************************************\n");
     }
 
     
@@ -164,8 +163,10 @@ public class L8View extends View {
                     GameOverView gameOverView = new GameOverView();
                     gameOverView.display();
                 }else{
-                    console.println("You killed the boss!!!");
+                    console.println("As Jarik dies, he murmurs in his last breath:\n"
+                            + "\"Whatever, you do, don't go to 3097!\"");
                     locations.get(8).setComplete(true);
+                    return true;
                 }
             break;
         }

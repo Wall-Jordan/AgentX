@@ -29,9 +29,10 @@ public class L1View extends View {
                 + "\nSelect the drill by typing T4"
                 + "\nSelect the drillbit you want to use: [1, 2]"
                 + "\n****************************************"
-                + "\nV - Return to Map"
-                + "\nI - Instructions"
-                + "\n****************************************");
+                + "\nTL - Display to do list"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
+                + "\n****************************************\n");
     }
 
     @Override

@@ -24,11 +24,10 @@ public class L19View extends View {
         super("You crashed outside an old school\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
-                + "\nI - Instructions"
-                + "\nF  - Check Fuel"
-                + "\nTAKE OFF  - Take Off"
-                + "\n****************************************");
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
+                + "\nTAKE OFF - Take Off"
+                + "\n****************************************\n");
     }
 
     @Override
@@ -70,6 +69,10 @@ public class L19View extends View {
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L18View.java", pce.getMessage());
                 }
+                break;
+            case "RFO":
+                InventoryControl.AddFuel(50);
+                console.println("You collected " + 50 + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
                 break;
             case "TAKE OFF":
                 int currentYear = 3097;

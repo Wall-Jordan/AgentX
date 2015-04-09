@@ -29,17 +29,17 @@ public class L28View extends ViewInterface.View {
                 + " to see who it is. IT IS CHAOTICA!! ATTACK!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
-                + "\nFIGHT - Fight Chaotica"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
+                + "\nV  - Return to Map"
+                + "\nWI - View Weapons Inventory"
+                + "\nFIGHT - FIGHT CHAOTICA!!!"
                 + "\n****************************************\n");
     }
     
     @Override
     public boolean doAction(Object obj){
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
         
         switch (input) {
@@ -168,6 +168,8 @@ public class L28View extends ViewInterface.View {
                 }else{
                     console.println("You killed the boss!!!");
                     locations.get(28).setComplete(true);
+                    locations.get(28).removeToDoListItem("Kill Chaotica");
+                    return true;
                 }
             break;
         }

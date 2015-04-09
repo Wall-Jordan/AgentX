@@ -38,9 +38,8 @@ public class L13View extends View {
                 + "\nTry out the weld command by typing in: T2 Puzzle\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nI - Instructions"
-                + "\nV - Return to Map"
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
@@ -86,9 +85,9 @@ public class L13View extends View {
                 break;
             case "T2 PUZZLE":
                 console.println("\tCongratulations you welded the puzzle together!"
-                    + "\n\tThe puzzle says: 2046");
+                        + "\n\tThe puzzle says: 2046");
                 locations.get(13).setComplete(true);
-            break;
+                return true;
         }
 
         return false;

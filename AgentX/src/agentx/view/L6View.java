@@ -18,15 +18,15 @@ import java.util.ArrayList;
  *
  * @author Jordan
  */
-public class L6View extends View{
+public class L6View extends View {
+
     public L6View() {
         super("You walk into the partially completed building. See what you can use from it!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO - Other commands menu"
-                + "\nV - Return to Map"
-                + "\nI - Instructions"
-                + "\n****************************************");
+                + "\nI  - Instructions"
+                + "\nV  - Return to Map"
+                + "\n****************************************\n");
     }
 
     @Override
@@ -52,17 +52,20 @@ public class L6View extends View{
                 instructionsView.display();
                 break;
             case "C FOOD":
-                if(locations.get(6).getCollectItems() != null)
-                {
-                GameControl.addStamina(20);
-                GameControl.addHealth(20);
-                locations.get(6).removeToDoListItem("Collect Food");
-                locations.get(6).setCollectItems(null);
-                console.println("Mmm, that was some good food.");
-                }else{
+                if (locations.get(6).getCollectItems() != null) {
+                    GameControl.addStamina(20);
+                    GameControl.addHealth(20);
+                    locations.get(6).removeToDoListItem("Collect Food");
+                    locations.get(6).setCollectItems(null);
+                    console.println("Mmm, that was some good food.");
+                } else {
                     console.println("You already ate the food.");
                 }
-                
+                break;
+            case "SEA FOOD":
+                GameControl.addStamina(40);
+                GameControl.addHealth(40);
+                console.println("Mmm, that was some good food.");
                 break;
             case "T4":
                 try {
@@ -77,7 +80,7 @@ public class L6View extends View{
                     }
 
                     InventoryControl.AddFuel(fuel);
-                        console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
+                    console.println("You collected " + fuel + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
 
                 } catch (PuzzleControlExceptions pce) {
                     ErrorView.display("L2View.java", pce.getMessage());

@@ -26,18 +26,16 @@ public class L29View extends ViewInterface.View {
                 + " Return to year 2015!\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
                 + "\nI  - Instructions"
-                + "\nV  - View Gameboard"
-                + "\nF  - Check Fuel"
-                + "\nTAKE OFF  - Take Off"
+                + "\nV  - Return to Map"
+                + "\nTAKE OFF - Take Off"
                 + "\n****************************************\n");
     }
 
     @Override
     public boolean doAction(Object obj) {
         ArrayList<Location> locations;
-        locations = GameBoardControl.getLocations();
+        locations = AgentX.getCurrentGame().getLocations();
         String input = (String) obj;
 
         switch (input) {
@@ -55,6 +53,10 @@ public class L29View extends ViewInterface.View {
                 instructionsView.display();
             case "V":
                 return true;
+            case "RFO":
+                InventoryControl.AddFuel(50);
+                console.println("You collected " + 50 + " gallons of fuel. You now have " + AgentX.getPlayer().fuelContainer.getGallons() + " gallons of fuel.");
+                break;
             case "T4":
                 try {
                     String drillBit = getDrillBit();

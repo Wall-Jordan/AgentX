@@ -23,9 +23,8 @@ public class L0View extends View {
         super("\nYou crashed into a construction site.\n"
                 + "\n****************************************"
                 + "\nTL - Display to do list"
-                + "\nO  - Other commands menu"
-                + "\nV  - Return to Map"
                 + "\nI  - Instructions"
+                + "\nV  - Return to Map"
                 + "\n****************************************\n");
     }
 
@@ -64,7 +63,7 @@ public class L0View extends View {
             case "T4":
                 if (locations.get(0).getCollectItems() != null) {
                     console.println("You don't have a drill yet.");
-                }else{
+                } else {
                     try {
                         String drillBit = InventoryControl.getDrillBit();
 

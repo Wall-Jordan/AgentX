@@ -42,7 +42,7 @@ public class GameControl {
         game.setPlayer(player);
 
         GameBoardControl.createLocations();
-        game.setLocations(GameBoardControl.getLocations());
+        game.setLocations(AgentX.getCurrentGame().getLocations());
 
     }
     public static void addStamina(int staminaAdd){
@@ -149,9 +149,9 @@ public class GameControl {
     // Boss(String bossName, double damage, int y, int x)
     public static ArrayList<Boss> createBossList(){
         ArrayList<Boss> boss = new ArrayList<>();
-        boss.add(new Boss("Jarik", 1, 0, 9, 10.0));
-        boss.add(new Boss("Nazeem", 2, 1, 9, 15.0));
-        boss.add(new Boss("Chaotica", 3, 2, 9, 20.0));
+        boss.add(new Boss("Jarik", 4, 0, 9, 15.0));
+        boss.add(new Boss("Nazeem", 6, 1, 9, 20.0));
+        boss.add(new Boss("Chaotica", 8, 2, 9, 30.0));
         return boss;
     }
 }
