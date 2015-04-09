@@ -115,6 +115,6 @@ public class MainMenuView extends View {
 
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
-        }
+        } 
     }
 }
