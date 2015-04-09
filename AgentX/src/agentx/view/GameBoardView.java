@@ -52,7 +52,13 @@ public class GameBoardView extends View {
             }
             if (i == 29) {
                 console.print("\n                 -   -   -   -   -   -   -   -   -   - ");
-                console.println("\n");
+                console.println("\n"
+                        + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+                        + "\n\t\tM - Main Menu"
+                        + "\n\t\tF - Forward"
+                        + "\n\t\tB - Backwards"
+                        + "\n\t\tI - Instructions"
+                        + "\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
         }
     }
@@ -62,15 +68,15 @@ public class GameBoardView extends View {
         String selection = (String) obj;
         switch (selection) {
             case "F":
-//                if (!locations.get(number).isComplete()) {
-//                    console.println("\nYou must complete the necessary actions for each location!");
-//                } else {
+                if (!locations.get(number).isComplete()) {
+                    console.println("\nYou must complete the necessary actions for each location!");
+                } else {
                 locations.get(number).setActive(false);
                 number += 1;
                 locations.get(number).setActive(true);
                 locations.get(number).setVisited(true);
                 AgentX.getPlayer().setLocation(number);
-//                }
+                }
                 break;
             case "B":
                 if ((number == 10) || (number == 20)) {
@@ -227,7 +233,7 @@ public class GameBoardView extends View {
                 }
                 break;
             case "M":
-                MainMenuView mainMenu = new MainMenuView();
+                MainMenuGameView mainMenu = new MainMenuGameView();
                 mainMenu.display();
                 AgentX.getCurrentGame().setLocations(locations);
                 break;
